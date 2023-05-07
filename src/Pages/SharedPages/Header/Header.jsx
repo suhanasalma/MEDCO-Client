@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useRef} from 'react';
 import logo from '../../../Assests/Logo/MEDCO1.png'
-import { TbBell, TbUserPlus, TbListSearch } from "react-icons/tb";
+import { TbBell, TbUserPlus, TbListSearch ,TbShoppingCartDiscount} from "react-icons/tb";
 import { Link } from 'react-router-dom';
 
 
@@ -9,6 +9,24 @@ const Header = () => {
      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/250px-Flag_of_the_United_States.svg.png"
    );
    const [open,setOpen] = useState(false)
+   const [notification,setNotification] = useState(1)
+   const navbarRef = useRef(null);
+   useEffect(() => {
+    // add event listener to document object
+    document.addEventListener('click', handleClickOutside);
+    // cleanup function to remove event listener when component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    // if click occurred outside the component, close the menu
+    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+
    const countries = [
      {
        name: "United States",
@@ -43,41 +61,30 @@ const Header = () => {
     
    ];
 
-useEffect(() => {
-  function handleClick(event) {
-    console.log("Window clicked!");
-  
-  }
-  // Add event listener when the component mounts
-  window.addEventListener("click", handleClick);
-
-  // Remove event listener when the component unmounts
-  return () => {
-    window.removeEventListener("click", handleClick);
-  };
-}, []);
-
    return (
-     <div className="bg-[#2c4c3b] p-2">
+     <div className=" p-2" >
        <section className="flex justify-around items-center ">
          <img className="w-16 rounded-lg" src={logo} alt="" />
-         <div className="w-2/12 bg-white rounded-lg text-center flex justify-between items-center p-2">
+         <div className="w-3/12 border-4 border-green rounded-lg text-center flex justify-between items-center p-2">
            <TbListSearch className="text-2xl" />
            <input type="text" className="outline-none " placeholder="search" />
          </div>
-         <div className="relative">
-           <TbBell className="text-2xl text-white " />
-           <p className="bg-red-500 rounded-full w-3 h-3  text-sm text-center font-bold absolute bottom-4 right-0"></p>
+         <div className="relative group">
+          <div>
+          <TbBell className="text-2xl text-green " />
+           {notification > 0 && <p className="bg-green rounded-full w-3 h-3  text-sm text-center font-bold absolute bottom-4 right-0"></p>}
+          </div>
+          {notification > 0 && <p class="opacity-0 group-hover:opacity-100 duration-300 absolute rounded-md bg-green text-white text-sm font-bold p-2">{notification}</p>}
          </div>
-         <div>
+         <div ref={navbarRef}>
            <TbUserPlus
              onClick={() => setOpen((prevOpen) => !prevOpen)}
-             className="text-2xl text-white relative"
+             className="text-2xl text-green relative"
            />
            <div
              className={`${
                open
-                 ? "block absolute p-4 border-8 border-white font-bold bg-[#2c4c3b] space-y-5 text-white"
+                 ? "block absolute py-2 px-4 border-2 border-green font-bold bg-white text-green"
                  : "hidden"
              }`}
            >
@@ -89,11 +96,18 @@ useEffect(() => {
              </p>
            </div>
          </div>
-         <div className="flex items-center gap-5">
+         <div className="relative group">
+          <div>
+          <TbShoppingCartDiscount className="text-2xl text-green " />
+           {notification > 0 && <p className="bg-green rounded-full w-3 h-3  text-sm text-center font-bold absolute bottom-4 right-0"></p>}
+          </div>
+          {notification > 0 && <p class="opacity-0 group-hover:opacity-100 duration-300 absolute rounded-md bg-green text-white text-sm font-bold p-2">{notification}</p>}
+         </div>
+         <div className="flex items-center gap-3">
            <img className="w-6 h-6 rounded-full" src={lan} alt="" />
            <select
              onClose={() => setOpen((prevOpen) => !prevOpen)}
-             className="bg-[#2c4c3b] text-white font-bold"
+             className="text-green font-bold"
              onChange={(e) => setLan(e.target.value)}
              id=""
            >
@@ -105,10 +119,13 @@ useEffect(() => {
            </select>
          </div>
        </section>
-       <section>
+       <hr  className='my-2 mx-14 bg-green'/>
+       <section className='flex justify-around items-center'>
          <p>Find a Doctor</p>
          <p>Find a Hospital</p>
-         <p>Find a Doctor</p>
+         <p>Find a Service</p>
+         <p>Find a Hospital</p>
+         <p>Find a Hospital</p>
          <p>Find a Hospital</p>
        </section>
      </div>
