@@ -21,6 +21,7 @@ const Header = () => {
   const [medicleTravel,setMedicleTravel] = useState(false);
   const [contactOpen,setContactOpen] = useState(false)
   const [notification, setNotification] = useState(1);
+  const [darkMode,setDarkMode] = useState(false)
   const navbarRef = useRef(null);
   const menuRef = useRef(null)
 
@@ -146,8 +147,12 @@ const Header = () => {
               </option>
             ))}
           </select>
-          <TbSunFilled className="text-3xl text-[#FDB813]"/>
-          <TbMoonStars className="text-3xl text-[#FEFCD7] hidden"/>
+        </div>
+        <div>
+       {!darkMode && <TbSunFilled onClick={()=>setDarkMode(true)} className="text-3xl text-[#FDB813]"/>}
+        { darkMode && 
+          <TbMoonStars onClick={()=>setDarkMode(false)} className="text-3xl text-[#FEFCD7]"/>
+        }
         </div>
       </section>
       <hr className="my-2  text-green" />
@@ -171,7 +176,7 @@ const Header = () => {
       <p>Book Appointments</p>
       <p>Send Inquiry</p>
      </section>
-    <section className=" bg-white w-11/12 mx-auto absolute -mt-12">
+    <section className=" bg-white w-11/12 mx-auto absolute -mt-12 z-10">
       {openAbout && <div className="border-t-8 border-green duration-300 w-full">
           {menus.AboutMedco.map((x) => (
           <p className="">{x.name}</p>
