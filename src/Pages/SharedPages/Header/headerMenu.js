@@ -10,6 +10,10 @@ export const menus = {
         {'name':"About Medco"},
         {'name':"About Medco"},
         {'name':"About Medco"},
+        {'name':"About Medco1"},
+        {'name':"About Medco"},
+        {'name':"About Medco"},
+        {'name':"About Medco"},
     ],
     "MedicalTravel":[
         {'name':"About Medco2"},
