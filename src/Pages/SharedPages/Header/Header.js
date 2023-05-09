@@ -85,7 +85,7 @@ const Header = () => {
 
 
   return (
-    <div className="p-2 mx-14">
+    <div style={{cursor: 'pointer'}} className="p-2 mx-14">
       <section className="flex justify-between items-center ">
         <img className="w-16 rounded-lg" src={logo} alt="" />
         <HeaderInput/>
@@ -176,30 +176,34 @@ const Header = () => {
       <p>Book Appointments</p>
       <p>Send Inquiry</p>
      </section>
-    <section className=" bg-white w-11/12 mx-auto absolute -mt-12 z-10">
-      {openAbout && <div className="border-t-8 border-green duration-300 w-full">
-          {menus.AboutMedco.map((x) => (
-          <p className="">{x.name}</p>
+    <section style={{ transition: 'all 0.3s ease-in-out'}} className={`bg-white w-11/12 mx-auto absolute -mt-12 z-10 ${openAbout || patientService || medicleTravel || contactOpen?"border-t-8 border-green p-10":''}`}>
+      {openAbout && 
+      <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
+          {menus.AboutMedco.map((x,i) => (
+          <li key={i} className=""><Link>{x.name}</Link></li>
         ))}
-        </div>
+      </u>
        }
-      {patientService && <div className="border-t-8 border-green duration-300 w-full">
-          {menus.PatientService.map((x) => (
-          <p className="">{x.name}</p>
+      {patientService && 
+      <u className="text-[#5C4033] decoration-dotted w-full space-y-4 ">
+          {menus.PatientService.map((x,i) => (
+          <li key={i} className=""><Link>{x.name}</Link></li>
         ))}
-        </div>
+      </u>
       }
-      {medicleTravel && <div className="border-t-8 border-green duration-300 w-full">
-          {menus.MedicalTravel.map((x) => (
-          <p className="">{x.name}</p>
+      {medicleTravel && 
+      <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
+          {menus.MedicalTravel.map((x,i) => (
+          <li key={i} className=""><Link>{x.name}</Link></li>
         ))}
-        </div>
+      </u>
       }
-      {contactOpen && <div className="border-t-8 border-green duration-300 w-full">
-          {menus.ContactUs.map((x) => (
-          <p className="">{x.name}</p>
+      {contactOpen && 
+      <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
+          {menus.ContactUs.map((x,i) => (
+          <li key={i} className=""><Link>{x.name}</Link></li>
         ))}
-        </div>
+      </u>
       }
     </section>
      </article>
