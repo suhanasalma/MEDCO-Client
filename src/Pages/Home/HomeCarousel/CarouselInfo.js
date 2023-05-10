@@ -1,8 +1,8 @@
-import autism from "../../../Assests/HomeCarousel/autism1.jpg";
+import autism from "../../../Assests/HomeCarousel/autism.jpg";
 import adhd from "../../../Assests/HomeCarousel/ADHD.jpg";
 import diabetics from "../../../Assests/HomeCarousel/diabetics.jpg";
 import pregnancy from "../../../Assests/HomeCarousel/pregnancy.jpg";
-import blood from "../../../Assests/HomeCarousel/blood.jpg";
+import blood from "../../../Assests/HomeCarousel/blood.png";
 import volunter from "../../../Assests/HomeCarousel/volunter.jpg";
 
 export const CarouselInfo = [
@@ -29,7 +29,7 @@ export const CarouselInfo = [
     id: 2,
     prev: 1,
     next: 3,
-    details: `<div class="absolute top-10 left-20 space-y-10 w-4/12 p-4"><p class=" text-green font-bold text-4xl">
+    details: `<div class="absolute top-10 left-20 space-y-10 w-4/12 p-4"><p class=" text-brown font-bold text-4xl">
         Feel better about <br> finding a healthcare
        </p>
        <p class=" text-green text-md">
@@ -66,14 +66,12 @@ export const CarouselInfo = [
     prev: 3,
     next: 5,
     details: `<div class="absolute top-10 left-20 space-y-10 w-4/12 p-4">
-        <p class=" text-green font-bold text-4xl">
-        Once a blood donor <br> always a lifesaver 
-       </p>
-       <p class=" text-green text-md">
+
+       <p class=" text-brown text-md mt-20">
        A blood donor is equal to a lifesaver. Saving a life won't cost you anything. Go ahead and donate blood <br> Be the reason for someone’s heartbeat.
        </p>
        <div>
-       <button class='bg-brown px-6 py-2 rounded-full text-green font-bold text-xl'>Be a Doner</button>
+       <button class='bg-green px-6 py-2 rounded-full text-white font-bold text-xl'>Be a Doner</button>
        </div>
        </div>
        `,

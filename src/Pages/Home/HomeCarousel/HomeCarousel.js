@@ -7,7 +7,7 @@ const HomeCarousel = () => {
 
   console.log(CarouselInfo);
   return (
-    <div className="w-full h-[30rem]">
+    <div className="w-full h-[40rem]">
       {CarouselInfo.map((item) => (
         <div
           id={`slide${item.id}`}
@@ -19,7 +19,7 @@ const HomeCarousel = () => {
             <div dangerouslySetInnerHTML={{ __html: item.details }} />
             <img
               src={item.img}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover lg:object-top"
               alt=""
             />
           </div>
