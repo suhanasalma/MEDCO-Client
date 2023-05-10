@@ -8,8 +8,8 @@ const HomeCarousel = () => {
   console.log(CarouselInfo);
   return (
     <div className="w-full h-[40rem]">
-      {CarouselInfo.map((item) => (
-        <div
+      {CarouselInfo.map((item,i) => (
+        <div key={i}
           id={`slide${item.id}`}
           className={`${
             index === item.id ? "relative w-full h-full" : "hidden"
