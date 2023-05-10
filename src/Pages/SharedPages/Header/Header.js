@@ -83,26 +83,27 @@ const Header = () => {
     setContactOpen(!contactOpen)
   }
 
-
   return (
-    <div style={{cursor: 'pointer'}} className="p-2 mx-14">
+    <div  className="p-2 w-9/12 mx-auto">
       <section className="flex justify-between items-center ">
+        <Link>
         <img className="w-16 rounded-lg" src={logo} alt="" />
+        </Link>
         <HeaderInput/>
         <div className="relative group">
-          <div>
+          <Link>
             <TbBell className="text-2xl text-green " />
             {notification > 0 && (
               <p className="bg-green rounded-full w-3 h-3 text-sm text-center font-bold absolute bottom-4 right-0"></p>
             )}
-          </div>
+          </Link>
           {notification > 0 && (
             <p className="opacity-0 group-hover:opacity-100 duration-300 absolute rounded-md bg-green text-white text-sm font-bold p-2">
               {notification}
             </p>
           )}
         </div>
-        <div ref={navbarRef}>
+        <div className="cursor-pointer" ref={navbarRef}>
           <TbUserPlus
             onClick={() => setOpen((prevOpen) => !prevOpen)}
             className="text-2xl text-green relative"
@@ -121,12 +122,12 @@ const Header = () => {
           }
         </div>
         <div className="relative group">
-          <div>
+          <Link>
             <TbShoppingCartDiscount className="text-2xl text-green" />
             {notification > 0 && (
               <p className="bg-green rounded-full w-3 h-3  text-sm text-center font-bold absolute bottom-4 right-0"></p>
             )}
-          </div>
+          </Link>
           {notification > 0 && (
             <p className="opacity-0 group-hover:opacity-100 duration-300 absolute rounded-md bg-green text-white text-sm font-bold p-2">
               {notification}
@@ -137,7 +138,7 @@ const Header = () => {
           <img className="w-6 h-6 rounded-full" src={lan} alt="" />
           <select
             onClose={() => setOpen((prevOpen) => !prevOpen)}
-            className="text-green font-bold"
+            className="text-green font-bold cursor-pointer"
             onChange={(e) => setLan(e.target.value)}
             id=""
           >
@@ -149,34 +150,34 @@ const Header = () => {
           </select>
         </div>
         <div>
-       {!darkMode && <TbSunFilled onClick={()=>setDarkMode(true)} className="text-3xl text-[#FDB813]"/>}
+       {!darkMode && <TbSunFilled onClick={()=>setDarkMode(true)} className="text-3xl text-[#FDB813] cursor-pointer"/>}
         { darkMode && 
-          <TbMoonStars onClick={()=>setDarkMode(false)} className="text-3xl text-[#FEFCD7]"/>
+          <TbMoonStars onClick={()=>setDarkMode(false)} className="text-3xl text-[#FEFCD7] cursor-pointer"/>
         }
         </div>
       </section>
       <hr className="my-2  text-green" />
      <article ref={menuRef}>
-     <section  className="flex justify-around items-center text-gray font-medium relative">
-        <p onClick={aboutToggle}>About Medco</p>
-        <p onClick={patientServiceToggle}>Patient Services</p>
-        <p onClick={medicleTravelToggle}>Medical Travel</p>
+     <section  className="flex justify-around items-center text-gray relative">
+        <p className="cursor-pointer" onClick={aboutToggle}>About Medco</p>
+        <p className="cursor-pointer" onClick={patientServiceToggle}>Patient Services</p>
+        <p className="cursor-pointer" onClick={medicleTravelToggle}>Medical Travel</p>
         <Link className="bg-brown px-4 py-1 text-white">Packages</Link>
-        <p onClick={aboutToggle}>Insurance</p>
-        <p onClick={contactToggle}>Contact Us</p>
+        <p className="cursor-pointer" onClick={aboutToggle}>Insurance</p>
+        <p className="cursor-pointer" onClick={contactToggle}>Contact Us</p>
         <a href="tel:+880151515151">
         +880151515151
         </a>
       </section>
       <hr className="my-2  text-gray" />
-      <section className="flex justify-around items-center text-gray font-medium mt-5">
-      <p>Find a Doctor</p>
-      <p>Clinics & Centers</p>
-      <p>Conditions & Treatments</p>
-      <p>Book Appointments</p>
-      <p>Send Inquiry</p>
+      <section className="flex justify-around items-center text-gray mt-5">
+      <Link>Find a Doctor</Link>
+      <Link>Clinics & Centers</Link>
+      <Link>Conditions & Treatments</Link>
+      <Link>Book Appointments</Link>
+      <Link>Send Inquiry</Link>
      </section>
-    <section style={{ transition: 'all 0.3s ease-in-out'}} className={`bg-white w-11/12 mx-auto absolute -mt-12 z-10 ${openAbout || patientService || medicleTravel || contactOpen?"border-t-8 border-green p-10":''}`}>
+    <section style={{ transition: 'all 0.3s ease-in-out'}} className={`bg-white w-9/12 mx-auto absolute -mt-12 z-10 ${openAbout || patientService || medicleTravel || contactOpen?"border-t-8 border-green p-10":''}`}>
       {openAbout && 
       <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
           {menus.AboutMedco.map((x,i) => (
