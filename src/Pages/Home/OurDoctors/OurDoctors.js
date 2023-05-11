@@ -32,7 +32,7 @@ const OurDoctors = () => {
       <div className="space-y-8">
         <p className="font-bold text-lg">Our Doctors</p>
         <Title
-          design="text-4xl font-bold text-green"
+          design="text-4xl"
           title="Qualified Doctors"
         />
         <Details

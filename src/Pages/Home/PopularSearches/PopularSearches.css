@@ -1,0 +1,17 @@
+.vertical-lines {
+    position: relative;
+  }
+  
+  .vertical-lines::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #2c4c3b;
+  }
+  
+  .vertical-lines::before {
+    left: 100px; /* adjust the positioning as needed */
+  }
+  
