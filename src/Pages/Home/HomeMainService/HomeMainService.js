@@ -34,7 +34,7 @@ const HomeMainService = () => {
         },
     ]
     return (
-        <div className='my-20 w-9/12 mx-auto '>
+        <div className='my-20 w-10/12 mx-auto '>
             <Title title="Our Main Services" design='text-4xl text-center'/>
            <div className='flex gap-10 mt-10 '>
            {

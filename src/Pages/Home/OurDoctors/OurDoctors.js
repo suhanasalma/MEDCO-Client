@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Title from "../../../Components/Title/Title";
 import Details from "../../../Components/Details/Details";
 import { Link } from "react-router-dom";
-import Button from "../../../Components/Button/Button";
 import { ourDoctorsInfo } from "./OurDoctorsInfo";
 import "./ourDoctors.css";
+import LinkButton from "../../../Components/LinkButton/LinkButton";
 
 const OurDoctors = () => {
   const [selectedDoctorIndex, setSelectedDoctorIndex] = useState(0);
@@ -31,10 +31,7 @@ const OurDoctors = () => {
     <div className="flex w-9/12 mx-auto justify-between mt-10 mb-20">
       <div className="space-y-8">
         <p className="font-bold text-lg">Our Doctors</p>
-        <Title
-          design="text-4xl"
-          title="Qualified Doctors"
-        />
+        <Title design="text-4xl" title="Qualified Doctors" />
         <Details
           design="w-96"
           details="Handle directly by general doctors and professional and experienced specialist doctors"
@@ -57,7 +54,7 @@ const OurDoctors = () => {
           </p>
         </div>
         <div>
-          <Button title='View All Doctors'/>
+          <LinkButton title="View All Doctors" />
         </div>
       </div>
       <div className="">
