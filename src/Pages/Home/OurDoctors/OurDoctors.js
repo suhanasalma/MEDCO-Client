@@ -36,7 +36,7 @@ const OurDoctors = () => {
           title="Qualified Doctors"
         />
         <Details
-          design="text-gray w-96"
+          design="w-96"
           details="Handle directly by general doctors and professional and experienced specialist doctors"
         />
         <div

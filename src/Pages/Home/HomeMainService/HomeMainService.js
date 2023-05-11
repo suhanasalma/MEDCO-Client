@@ -38,7 +38,7 @@ const HomeMainService = () => {
             <Title title="Our Main Services" design='text-4xl text-center'/>
            <div className='flex gap-10 mt-10 '>
            {
-                mainServices.map((card,i) => <Card key={i} details={card.details} title={card.name} imgDesign='w-20 mx-auto' CardDesign={`shadow-xl hover:bg-light-green space-y-5 p-4 h-96 flex flex-col justify-center rounded-lg hover:-translate-y-6 transition ease-in delay-75`} image={card.image} titleDesign='font-bold text-lg' detailsDesign='text-sm text-gray'/>)
+                mainServices.map((card,i) => <Card key={i} details={card.details} title={card.name} imgDesign='w-20 mx-auto' CardDesign={`shadow-xl hover:bg-light-green space-y-5 p-4 h-96 flex flex-col justify-center rounded-lg hover:-translate-y-6 transition ease-in delay-75`} image={card.image} titleDesign='font-bold text-lg' detailsDesign='text-sm'/>)
             }
            </div>
         </div>
