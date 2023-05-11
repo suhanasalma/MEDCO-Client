@@ -28,7 +28,7 @@ const OurDoctors = () => {
   };
 
   return (
-    <div className="flex w-9/12 mx-auto justify-between mt-10 mb-20">
+    <div className="flex w-10/12 mx-auto justify-between mt-10 mb-20">
       <div className="space-y-8">
         <p className="font-bold text-lg">Our Doctors</p>
         <Title design="text-4xl" title="Qualified Doctors" />

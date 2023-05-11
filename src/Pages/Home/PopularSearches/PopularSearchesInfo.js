@@ -27,6 +27,10 @@ export const searchInfos =
                 name:'Dentisty',
                 img:dentist
             },  
+            {
+                name:'Dentisty',
+                img:dentist
+            },  
         ],
         conditions:[
             {

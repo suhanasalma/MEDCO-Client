@@ -21,9 +21,9 @@ const PopularSearches = () => {
   };
 
   return (
-    <div className="w-9/12 mx-auto my-32 text-md">
+    <div className="w-10/12 mx-auto my-32 text-md">
       <Title title="Popular Searches on Medco" />
-      <section className="flex gap-20 items-end">
+      <section className="flex gap-16 items-end">
         <div className="vertical-lines space-y-2 mt-10">
           <p
             onClick={() => handleCategoryClick("specialties")}
