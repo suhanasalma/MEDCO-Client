@@ -58,8 +58,8 @@ const PopularSearches = () => {
           </p>
         </div>
         <div className="flex justify-between gap-5">
-          {searchInformation.map((data) => (
-            <div className="bg-light-green border-2 border-light-green w-40 h-24 p-2 mx-auto text-center rounded-lg hover:bg-white hover:border-2 hover:border-green transition ease-in-out lg:delay-100">
+          {searchInformation.map((data,i) => (
+            <div key={i} className="bg-light-green border-2 border-light-green w-40 h-24 p-2 mx-auto text-center rounded-lg hover:bg-white hover:border-2 hover:border-green transition ease-in-out lg:delay-100">
               <img
                 className="rounded-full border-4 border-white w-10 h-10 object-contain mx-auto"
                 alt=""
