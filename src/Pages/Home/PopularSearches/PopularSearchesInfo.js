@@ -29,14 +29,19 @@ export const searchInfos =
                 name:'Dentisty',
                 img:dentist
             },  
+           
+            {
+                name:'Internal Medicine',
+                img:internal
+            },
+            {
+                name:'Neurology',
+                img:neuro
+            },
             {
                 name:'genaral Medicine',
                 img:medicine
-            },
-            {
-                name:'Dentisty',
-                img:dentist
-            },  
+            },   
         ],
         conditions:[
             {
