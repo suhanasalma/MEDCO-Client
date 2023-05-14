@@ -54,7 +54,7 @@ const OurDoctors = () => {
           </p>
         </div>
         <div>
-          <LinkButton title="View All Doctors" />
+          <LinkButton design='w-44' title="View All Doctors" />
         </div>
       </div>
       <div className="">
