@@ -25,7 +25,7 @@ export const CarouselInfo = [
   {
     img: adhd,
     id: 2,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4"><p class=" text-white font-bold text-4xl">
+    details: `<div class="absolute top-32 left-20 space-y-10 w-4/12 p-4"><p class=" text-white font-bold text-4xl">
         Feel better about <br> finding a healthcare
        </p>
        <p class=" text-green text-md">

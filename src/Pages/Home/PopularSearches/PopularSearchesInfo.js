@@ -3,7 +3,6 @@ import internal from '../../../Assests/popularSearch/internal.png'
 import dentist from '../../../Assests/popularSearch/dentist.png'
 import medicine from '../../../Assests/popularSearch/medicine.png'
 import neuro from '../../../Assests/popularSearch/neuro.png'
-import styled from "styled-components";
 
 
 export const searchInfos = 
@@ -34,6 +33,14 @@ export const searchInfos =
                 name:'Internal Medicine',
                 img:internal
             },
+            {
+                name:'Neurology',
+                img:neuro
+            },
+            {
+                name:'genaral Medicine',
+                img:medicine
+            },   
             {
                 name:'Neurology',
                 img:neuro

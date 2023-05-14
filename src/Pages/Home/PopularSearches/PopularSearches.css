@@ -29,7 +29,7 @@
   line-height: 10px;
   align-self: center;
   background-color:#af976d;
-  color:white
+  color:white;
 }
 
 .rec.rec-arrow:hover:enabled, .rec.rec-arrow:focus:enabled{

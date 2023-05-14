@@ -8,11 +8,9 @@ import query from "../../../Assests/onlineconsultancy/query.jpg";
 import doctor from "../../../Assests/onlineconsultancy/doctor.jpg";
 import { FcSurvey, FcVideoCall, FcCallback, FcComments } from "react-icons/fc";
 import LinkButton from "../../../Components/LinkButton/LinkButton";
-import { Link } from "react-router-dom";
 
 const StartOnlineConsultancy = () => {
   const [selectOption, setSelectOption] = useState(null);
-  const [option, setOption] = useState({});
   const consultancyOptions = [
     {
       id: 1,

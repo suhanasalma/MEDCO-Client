@@ -24,10 +24,10 @@ const PopularSearches = () => {
   const breakPoints = [
     { width: 1, itemsToShow: 2 },
     { width: 550, itemsToShow: 5, itemsToScroll: 5, },
-    { width: 850, itemsToShow: 4 },
+    { width: 850, itemsToShow: 5 },
     { width: 1150, itemsToShow: 5, itemsToScroll: 5 },
-    { width: 1450, itemsToShow: 6 },
-    { width: 1750, itemsToShow: 7 },
+    { width: 1450, itemsToShow: 5 },
+    { width: 1750, itemsToShow: 5 },
   ]
 
   return (
