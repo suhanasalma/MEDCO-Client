@@ -2,7 +2,7 @@ import React from 'react';
 
 const Details = ({details,design}) => {
     return (
-        <p className={design}>
+        <p className={`text-gray ${design}`}>
            {details} 
         </p>
     );

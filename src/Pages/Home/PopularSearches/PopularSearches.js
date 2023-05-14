@@ -21,9 +21,9 @@ const PopularSearches = () => {
   };
 
   return (
-    <div className="w-9/12 mx-auto my-32 text-md">
+    <div className="w-10/12 mx-auto my-32 text-md">
       <Title title="Popular Searches on Medco" />
-      <section className="flex justify-between items-end">
+      <section className="flex gap-16 items-end">
         <div className="vertical-lines space-y-2 mt-10">
           <p
             onClick={() => handleCategoryClick("specialties")}
@@ -59,7 +59,7 @@ const PopularSearches = () => {
         </div>
         <div className="flex justify-between gap-5">
           {searchInformation.map((data) => (
-            <div className="bg-light-green border-2 border-light-green w-36 h-20 p-2 mx-auto text-center rounded-lg hover:bg-white hover:border-2 hover:border-green transition ease-in-out lg:delay-100">
+            <div className="bg-light-green border-2 border-light-green w-40 h-24 p-2 mx-auto text-center rounded-lg hover:bg-white hover:border-2 hover:border-green transition ease-in-out lg:delay-100">
               <img
                 className="rounded-full border-4 border-white w-10 h-10 object-contain mx-auto"
                 alt=""

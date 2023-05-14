@@ -2,14 +2,14 @@ import autism from "../../../Assests/HomeCarousel/autism.jpg";
 import adhd from "../../../Assests/HomeCarousel/ADHD.jpg";
 import diabetics from "../../../Assests/HomeCarousel/diabetics.jpg";
 import pregnancy from "../../../Assests/HomeCarousel/pregnancy.jpg";
-import blood from "../../../Assests/HomeCarousel/blood.png";
+import blood from "../../../Assests/HomeCarousel/blood.jpeg";
 import volunter from "../../../Assests/HomeCarousel/volunter.jpg";
 
 export const CarouselInfo = [
   {
     img: autism,
     id: 1,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4"><p class=" text-green font-bold text-4xl">
+    details: `<div class="absolute top-32 left-20 space-y-10 w-4/12 p-4"><p class=" text-green font-bold text-4xl">
         Consult a doctor <br> anytime, anywhere <br> by <span class='border-b-2 border-brown'>video call</span>
        </p>
        <p class=" text-brown text-md">
@@ -25,7 +25,7 @@ export const CarouselInfo = [
   {
     img: adhd,
     id: 2,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4"><p class=" text-brown font-bold text-4xl">
+    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4"><p class=" text-white font-bold text-4xl">
         Feel better about <br> finding a healthcare
        </p>
        <p class=" text-green text-md">
@@ -41,7 +41,7 @@ export const CarouselInfo = [
   {
     img: diabetics,
     id: 3,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4">
+    details: `<div class="absolute top-32 left-20 space-y-10 w-4/12 p-4">
         <p class=" text-green font-bold text-4xl">
         We Are Ready to <br> Help Your Health <br> Problem 
        </p>
@@ -57,8 +57,10 @@ export const CarouselInfo = [
   {
     img: blood,
     id: 4,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4">
-
+    details: `<div class="absolute top-32 left-20 space-y-10 w-4/12 p-4">
+        <p class=" text-green font-bold text-4xl">
+        Every Blood Doner is a Hero
+       </p>
        <p class=" text-brown text-md mt-20">
        A blood donor is equal to a lifesaver. Saving a life won't cost you anything. Go ahead and donate blood <br> Be the reason for someone’s heartbeat.
        </p>
@@ -71,7 +73,7 @@ export const CarouselInfo = [
   {
     img: pregnancy,
     id: 5,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4">
+    details: `<div class="absolute top-32 left-20 space-y-10 w-4/12 p-4">
         <p class=" text-green font-bold text-4xl">
         A grand adventure is about to begin and we will be your best company
        </p>
@@ -87,8 +89,11 @@ export const CarouselInfo = [
   {
     img: volunter,
     id: 6,
-    details: `<div class="absolute top-52 left-20 space-y-10 w-4/12 p-4">
-        <p class=" text-green font-bold text-2xl">
+    details: `<div class="absolute top-32 left-20 space-y-10 w-4/12 p-4">
+    <p class=" text-green font-bold text-4xl">
+        Volunteers doesn't have necessarily have the time, <br> They just have the heart
+       </p>
+        <p class=" text-brown font-bold text-md">
         As you grow older, you will discover that you have two hands <br> one for helping yourself, the other for helping others.
        </p>
        <div>

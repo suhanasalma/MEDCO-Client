@@ -3,6 +3,7 @@ import HomeCarousel from "../HomeCarousel/HomeCarousel";
 import HomeMainService from "../HomeMainService/HomeMainService";
 import OurDoctors from "../OurDoctors/OurDoctors";
 import PopularSearches from "../PopularSearches/PopularSearches";
+import StartOnlineConsultancy from "../StartOnlineConsultancy/StartOnlineConsultancy";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <HomeMainService/>
       <OurDoctors/>
       <PopularSearches/>
+      <StartOnlineConsultancy/>
     </div>
   );
 };

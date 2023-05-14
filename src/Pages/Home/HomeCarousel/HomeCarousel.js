@@ -27,7 +27,7 @@ const HomeCarousel = () => {
             <div dangerouslySetInnerHTML={{ __html: selectedSlider.details }} />
             <img
               src={selectedSlider.img}
-              className="w-full h-full object-cover lg:object-top"
+              className="w-full h-full object-cover object-top"
               alt=""
             />
           </div>
