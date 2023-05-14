@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Title from "../../../Components/Title/Title";
 import "./PopularSearches.css";
 import { searchInfos } from "./PopularSearchesInfo";
+import Carousel from 'react-elastic-carousel';
 
 const PopularSearches = () => {
   const [searchInformation, setSearchInformation] = useState(
@@ -19,6 +20,14 @@ const PopularSearches = () => {
       setSearchInformation(searchInfos.procedures);
     }
   };
+  const breakPoints = [
+    { width: 1, itemsToShow: 2 },
+    { width: 550, itemsToShow: 3, itemsToScroll: 2, },
+    { width: 850, itemsToShow: 4 },
+    { width: 1150, itemsToShow: 5, itemsToScroll: 2 },
+    { width: 1450, itemsToShow: 6 },
+    { width: 1750, itemsToShow: 7 },
+  ]
 
   return (
     <div className="w-10/12 mx-auto my-32 text-md">
@@ -57,9 +66,9 @@ const PopularSearches = () => {
             Procedures
           </p>
         </div>
-        <div className="flex justify-between gap-5">
+         <Carousel breakPoints={breakPoints}>
           {searchInformation.map((data) => (
-            <div className="bg-light-green border-2 border-light-green w-40 h-24 p-2 mx-auto text-center rounded-lg hover:bg-white hover:border-2 hover:border-green transition ease-in-out lg:delay-100">
+            <div className="bg-light-green border-2 border-light-green w-full mx-4  h-24 p-2 text-center rounded-lg hover:bg-white hover:border-2 hover:border-green transition ease-in-out lg:delay-100">
               <img
                 className="rounded-full border-4 border-white w-10 h-10 object-contain mx-auto"
                 alt=""
@@ -68,7 +77,7 @@ const PopularSearches = () => {
               <p className="font-bold text-green text-sm">{data.name}</p>
             </div>
           ))}
-        </div>
+        </Carousel>
       </section>
     </div>
   );
