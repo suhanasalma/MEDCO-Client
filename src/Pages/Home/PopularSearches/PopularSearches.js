@@ -69,7 +69,7 @@ const PopularSearches = () => {
         </div>
          <Carousel breakPoints={breakPoints}>
           {searchInformation.map((data) => (
-          <TreatmentCategoryCard data={data}/>
+          <TreatmentCategoryCard fontDesign='text-xs' imgDesign='w-12 h-12' data={data}/>
           ))}
         </Carousel>
       </section>
