@@ -18,6 +18,7 @@ const Header = () => {
   const [lan, setLan] = useState(
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/250px-Flag_of_the_United_States.svg.png"
   );
+  const [mainNavOpen,setMainOpen] = useState(false)
   const [open, setOpen] = useState(false);
   const [openAbout, setOpenAbout] = useState(false);
   const [patientService, setPatientService] = useState(false);
@@ -159,13 +160,16 @@ const Header = () => {
             />
           )}
         </div>
-        <div className="block xl:hidden">
-          <VscThreeBars/>
+        <div
+          onClick={() => setMainOpen(!mainNavOpen)}
+          className="block xl:hidden"
+        >
+          <VscThreeBars className="text-2xl" />
         </div>
       </section>
-     
-      <article className="hidden xl:block" ref={menuRef}>
-      <hr className="my-2  text-green" />
+
+      {/* <article className="hidden xl:block" ref={menuRef}>
+        <hr className="my-2  text-green" />
         <section className="flex justify-around items-center text-gray relative">
           <p className="cursor-pointer" onClick={aboutToggle}>
             About Medco
@@ -238,12 +242,94 @@ const Header = () => {
             </u>
           )}
         </section>
-      </article>
-      <article>
-        <ul>
-          
-        </ul>
-      </article>
+      </article> */}
+      {mainNavOpen && (
+        <article
+          className="xl:hidden block bg-light-green py-6 px-20 space-y-3 "
+          ref={menuRef}
+        >
+          <div className="">
+            <p className="cursor-pointer " onClick={aboutToggle}>
+              About Medco
+            </p>
+            {openAbout && (
+              <ul
+                className=" text-white px-10 py-4 decoration-dotted w-full space-y-4 bg-green"
+              >
+                {menus.AboutMedco.map((x, i) => (
+                  <li key={i} className="list-disc">
+                    <Link>{x.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div>
+            <p className="cursor-pointer" onClick={patientServiceToggle}>
+              Patient Services
+            </p>
+            {patientService && (
+              <ul className="text-[#5C4033] decoration-dotted w-full space-y-4 ">
+                {menus.PatientService.map((x, i) => (
+                  <li key={i} className="">
+                    <Link>{x.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div>
+            <p className="cursor-pointer" onClick={medicleTravelToggle}>
+              Medical Travel
+            </p>
+            {medicleTravel && (
+              <ul className="text-[#5C4033] decoration-dotted w-full space-y-4">
+                {menus.MedicalTravel.map((x, i) => (
+                  <li key={i} className="">
+                    <Link>{x.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className="bg-brown py-1 border-2 text-white">
+            <Link> Packages</Link>
+          </div>
+          <p className="cursor-pointer" onClick={aboutToggle}>
+            Insurance
+          </p>
+          <div>
+            <p className="cursor-pointer" onClick={contactToggle}>
+              Contact Us
+            </p>
+            {contactOpen && (
+              <ul className="text-[#5C4033] decoration-dotted w-full space-y-4">
+                {menus.ContactUs.map((x, i) => (
+                  <li key={i} className="">
+                    <Link>{x.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <a href="tel:+880151515151">+880151515151</a>
+          <div>
+            <Link>Find a Doctor</Link>
+          </div>
+          <div>
+            <Link>Clinics & Centers</Link>
+          </div>
+          <div>
+            <Link>Conditions & Treatments</Link>
+          </div>
+          <div>
+            <Link>Book Appointments</Link>
+          </div>
+          <div>
+            <Link>Send Inquiry</Link>
+          </div>
+        </article>
+      )}
     </div>
   );
 };
