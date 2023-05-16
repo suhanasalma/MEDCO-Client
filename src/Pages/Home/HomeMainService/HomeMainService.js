@@ -58,7 +58,7 @@ const HomeMainService = () => {
            </div> */}
            <div className='container mt-10 mb-32'>
             {
-                mainServices.map((card,i)=><div className='card'>
+                mainServices.map((card,i)=><div key={i} className='card'>
                     <div className='box'>
                         <Link  className='content'>
                         <img className="w-20 mx-auto" src={card.image} alt=''/>

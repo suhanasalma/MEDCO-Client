@@ -19,7 +19,7 @@ const HomeCarousel = () => {
   };
 
   return (
-    <div className="w-full h-[40rem]">
+    <div className="w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem]">
         <div
           className='relative w-full h-full'
         >
