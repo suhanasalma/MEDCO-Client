@@ -3,44 +3,49 @@ import "./homeCarousel.css";
 import { CarouselInfo } from "./CarouselInfo";
 
 const HomeCarousel = () => {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
+  const selectedSlider = CarouselInfo[index];
 
-  console.log(CarouselInfo);
+  const handleNextSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === CarouselInfo.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePreviousSlide = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? CarouselInfo.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <div className="w-full h-[40rem]">
-      {CarouselInfo.map((item,i) => (
-        <div key={i}
-          id={`slide${item.id}`}
-          className={`${
-            index === item.id ? "relative w-full h-full" : "hidden"
-          } `}
+    <div className="w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem]">
+        <div
+          className='relative w-full h-full'
         >
           <div className="w-full h-full relative">
-            <div dangerouslySetInnerHTML={{ __html: item.details }} />
+            <div dangerouslySetInnerHTML={{ __html: selectedSlider.details }} />
             <img
-              src={item.img}
-              className="w-full h-full object-cover lg:object-top"
+              src={selectedSlider.img}
+              className="w-full h-full object-cover object-top"
               alt=""
             />
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a
-              onClick={() => setIndex(item.prev)}
-              href={`#slide${item.prev}`}
+            <button
+              onClick={handlePreviousSlide}
               className="bg-brown px-4 py-1 text-white font-bold text-2xl rounded-sm"
             >
               ❮
-            </a>
-            <a
+            </button>
+            <button
               className="bg-brown px-4 rounded-sm py-1 text-white font-bold text-2xl"
-              onClick={() => setIndex(item.next)}
-              href={`#slide${item.next}`}
+              onClick={handleNextSlide}
             >
               ❯
-            </a>
+            </button>
           </div>
         </div>
-      ))}
     </div>
   );
 };
