@@ -27,6 +27,12 @@ export const menus = {
         {'name':"About Medco"},
         {'name':"About Medco"},
     ],
+    "Insurance": [
+        {'name':"About Medco3"},
+        {'name':"About Medco"},
+        {'name':"About Medco"},
+        {'name':"About Medco"},
+    ],
     "countries" : [
         {
           name: "United States",
