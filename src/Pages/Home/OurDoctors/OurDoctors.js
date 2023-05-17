@@ -23,19 +23,20 @@ const OurDoctors = () => {
   };
 
   const handleLowerSliderButton = (id) => {
-    console.log(id);
     setSelectedDoctorIndex(id);
   };
 
   return (
-    <div className="flex w-10/12 mx-auto justify-between mt-10 mb-20">
+    <div className="flex md:flex-row flex-col-reverse lg:gap-3 xl:gap-0 gap-8 flex-wrap  lg:w-10/12 md:w-full w-10/12 mx-auto lg:justify-between justify-center items-center mt-10 mb-20">
       <div className="space-y-8">
+        <div className="space-y-8 md:block hidden">
         <p className="font-bold text-lg">Our Doctors</p>
         <Title design="text-4xl" title="Qualified Doctors" />
         <Details
-          design="w-96"
+          design="w-80 lg:w-96"
           details="Handle directly by general doctors and professional and experienced specialist doctors"
         />
+        </div>
         <div
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${selectedDoctor.bg})`,
@@ -43,10 +44,10 @@ const OurDoctors = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-          className="text-white bg border-2 w-96 h-64 rounded-s-3xl rounded-br-3xl p-10 space-y-5"
+          className="text-white bg border-2 w-80 h-64 sm:w-96 sm:h-64 md:w-72 md:h-52 lg:w-96 lg:h-64 rounded-s-3xl rounded-br-3xl p-5 xl:p-10 space-y-5"
         >
-          <p className="text-2xl">{selectedDoctor.department}</p>
-          <p className="text-3xl font-bold leading-relaxed">
+          <p className="lg:text-2xl">{selectedDoctor.department}</p>
+          <p className="text-xl lg:text-3xl font-bold leading-relaxed">
             {selectedDoctor.name}
           </p>
           <p>
@@ -56,10 +57,30 @@ const OurDoctors = () => {
         <div>
           <LinkButton design='w-44' title="View All Doctors" />
         </div>
+        <div className="flex gap-5 justify-center items-center mt-5  md:hidden ">
+            {ourDoctorsInfo.map((doctor) => (
+              <button
+                key={doctor.id}
+                onClick={() => handleLowerSliderButton(doctor.id)}
+                className={`${
+                  selectedDoctor.id === doctor.id ? "bg-green" : ""
+                } w-5 h-5 border-4 border-green rounded-full`}
+              ></button>
+            ))}
+          </div>
       </div>
+      
       <div className="">
+      <div className="space-y-8 md:hidden block mb-10">
+        <p className="font-bold text-lg">Our Doctors</p>
+        <Title design="text-4xl" title="Qualified Doctors" />
+        <Details
+          design="w-96"
+          details="Handle directly by general doctors and professional and experienced specialist doctors"
+        />
+        </div>
         <section className="relative">
-          <div className="border-[16px] border-brown w-[30rem] h-[30rem]  rounded-s-full overflow-hidden">
+          <div className="border-[16px] border-brown w-[22rem] h-[22rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl  md:rounded-s-full overflow-hidden">
             <img
               className="w-full h-full object-cover object-top"
               src={selectedDoctor?.img}
@@ -79,7 +100,7 @@ const OurDoctors = () => {
             >
               ❮
             </button> */}
-          <div className="flex gap-5 justify-end items-center mt-5">
+          <div className="md:flex gap-5 justify-end items-center mt-5 hidden">
             {ourDoctorsInfo.map((doctor) => (
               <button
                 key={doctor.id}
