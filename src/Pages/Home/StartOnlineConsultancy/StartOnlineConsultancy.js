@@ -52,7 +52,7 @@ const StartOnlineConsultancy = () => {
   };
 
   return (
-    <div className="w-11/12 xl:w-10/12 mx-auto flex justify-between gap-10 my-32 ">
+    <div className="w-10/12 sm:w-11/12 lg:w-10/12 mx-auto flex justify-between gap-10 my-32 ">
       <div className="w-5/12 xl:w-4/12 sm:border-[16px] sm:rounded-full overflow-hidden border-green sm:block hidden">
         <img
           className="w-full h-full object-cover "
