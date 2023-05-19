@@ -215,7 +215,7 @@ const Header = () => {
         </section>
         <section
           style={{ transition: "all 0.3s ease-in-out" }}
-          className={`bg-white w-9/12 mx-auto absolute -mt-10 z-10 ${
+          className={`bg-white w-9/12 mx-auto absolute -mt-10 xl:-mt-11 z-10 ${
             openAbout || patientService || medicleTravel || contactOpen
               ? "border-t-8 border-green p-10"
               : ""
