@@ -65,7 +65,7 @@ const PatientFeedBack = () => {
   };
   return (
     <div className="w-11/12 lg:w-10/12 mx-auto sm:flex justify-between  my-32">
-      <Link className="bg-light-green sm:w-1/2  p-10 space-y-20 reviewCard">
+      <div className="bg-light-green sm:w-1/2  p-10 space-y-20 reviewCard">
         <div className="flex justify-between space-y-20">
           <img
             src={girl1}
@@ -80,9 +80,9 @@ const PatientFeedBack = () => {
         </div>
         <p className="text-2xl font-bold text-center text-green">
           What People are Saying About Us{" "}
-          <span className="hidden  px-4  border-b-2 border-gray text-gray">
+          <Link className="hidden  px-4  border-b-2 border-gray text-gray">
             View All
-          </span>
+          </Link>
         </p>
         <div className="flex justify-between -space-y-10">
           <img
@@ -96,7 +96,7 @@ const PatientFeedBack = () => {
             className="w-12 h-12 object-cover rounded-full ring-offset-2 ring-4"
           />
         </div>
-      </Link>
+      </div>
       <section className="bg-light-gray sm:w-1/2 relative p-10">
         <div className="flex gap-10 absolute right-0  p-5">
           <button
@@ -112,7 +112,7 @@ const PatientFeedBack = () => {
             ❯
           </button>
         </div>
-        <article className="mt-20 space-y-3">
+        <article className="my-20 space-y-3">
           <p className="font-bold text-green text-lg">{selectedReview.title}</p>
           <p className="">{selectedReview.details}</p>
           <div className="flex items-center gap-5">
@@ -129,7 +129,7 @@ const PatientFeedBack = () => {
             </div>
           </div>
         </article>
-        <div className="flex gap-3 absolute right-0 bottom-0 p-5 ">
+        <div className="flex gap-3 absolute right-0 bottom-0 p-5">
           {reviews.map((review, i) => (
             <img
               onClick={() => handleLowerSliderButton(i)}
