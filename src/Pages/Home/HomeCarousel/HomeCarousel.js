@@ -20,32 +20,30 @@ const HomeCarousel = () => {
 
   return (
     <div className="w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem]">
-        <div
-          className='relative w-full h-full'
-        >
-          <div className="w-full h-full relative">
-            <div dangerouslySetInnerHTML={{ __html: selectedSlider.details }} />
-            <img
-              src={selectedSlider.img}
-              className="w-full h-full object-cover object-top"
-              alt=""
-            />
-          </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <button
-              onClick={handlePreviousSlide}
-              className="bg-brown px-4 py-1 text-white font-bold text-2xl rounded-sm"
-            >
-              ❮
-            </button>
-            <button
-              className="bg-brown px-4 rounded-sm py-1 text-white font-bold text-2xl"
-              onClick={handleNextSlide}
-            >
-              ❯
-            </button>
-          </div>
+      <div className="relative w-full h-full">
+        <div className="w-full h-full relative">
+          <div dangerouslySetInnerHTML={{ __html: selectedSlider.details }} />
+          <img
+            src={selectedSlider.img}
+            className="w-full h-full object-cover object-top"
+            alt=""
+          />
         </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <button
+            onClick={handlePreviousSlide}
+            className="bg-brown w-10 h-10 rounded-full text-white font-bold text-2xl "
+          >
+            ❮
+          </button>
+          <button
+            className="bg-brown w-10 h-10 rounded-full text-white font-bold text-2xl"
+            onClick={handleNextSlide}
+          >
+            ❯
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
