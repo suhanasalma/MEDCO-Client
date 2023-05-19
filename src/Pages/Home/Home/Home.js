@@ -7,6 +7,7 @@ import StartOnlineConsultancy from "../StartOnlineConsultancy/StartOnlineConsult
 import ConsultingSpecilties from "../ConsultingSpecilties/ConsultingSpecilties";
 import HomeSpecialServices from "../HomeSpecialService/HomeSpecialServices";
 import PatientFeedBack from "../PatientFeedBacks/PatientFeedBack";
+import OurPartners from "../OurPartners/OurPartners";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <ConsultingSpecilties/>
       <HomeSpecialServices/>
       <PatientFeedBack/>
+      <OurPartners/>
     </div>
   );
 };

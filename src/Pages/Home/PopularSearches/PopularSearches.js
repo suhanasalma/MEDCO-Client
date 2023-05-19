@@ -22,7 +22,7 @@ const PopularSearches = () => {
     }
   };
   const breakPoints = [
-    { width: 1, itemsToShow: 1 },
+    { width: 1, itemsToShow: 2, itemsToScroll: 2 },
     { width: 550, itemsToShow: 3, itemsToScroll: 3 },
     { width: 850, itemsToShow: 4, itemsToScroll: 4 },
     { width: 1150, itemsToShow: 5, itemsToScroll: 5 },
@@ -31,7 +31,7 @@ const PopularSearches = () => {
   ];
 
   return (
-    <div className="w-10/12 mx-auto my-32 text-md">
+    <div className="w-11/12 md:w-10/12 mx-auto my-32 text-md">
       <Title title="Popular Searches on Medco" />
       <section className="flex gap-16 items-end">
         <div className="vertical-lines space-y-3 mt-10">
