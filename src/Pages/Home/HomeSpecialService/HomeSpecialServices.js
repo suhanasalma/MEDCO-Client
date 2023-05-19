@@ -8,6 +8,8 @@ import gift from "../../../Assests/specialService/gitCard.jpg";
 import period from "../../../Assests/specialService/period.jpg";
 import pharmacy from "../../../Assests/specialService/pharmacy.png";
 import "./SpecialServices.css";
+import LinkButton from "../../../Components/LinkButton/LinkButton";
+import { Link } from "react-router-dom";
 
 const HomeSpecialServices = () => {
   const specialServices = [
@@ -48,26 +50,77 @@ const HomeSpecialServices = () => {
         "Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered",
     },
   ];
+ const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
+
+const handleMouseEnter = (index) => {
+  setHoveredCardIndex(index);
+};
+
+const handleMouseLeave = () => {
+  setHoveredCardIndex(null);
+};
 
   return (
-    <div className="my-20 w-10/12 mx-auto ">
-      <Title title="Our Main Services" design="text-4xl text-center" />
-      <div className="grid grid-cols-3 gap-10 justify-items-center content-center	">
+    <div className="my-20 w-11/12 lg:w-10/12 mx-auto">
+      <Title title="Our Special Services" design="text-4xl " />
+      <Details
+        details="In times like today your health is very important, Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered"
+        design="text-sm sm:w-8/12 lg:w-5/12 my-5"
+      />
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-10 lg:gap-x-5 2xl:gap-x-10 gap-y-10  justify-items-center content-center ">
         {specialServices.map((card, i) => (
-          <div className="w-72 h-52 transition-all delay-150 hover:w-96 border-2" key={i}>
-                <img className="w-20 h-20 object-cover" src={card.image} alt="" />
-                <Title title={card.name} design="font-bold text-lg" />
-                {/* <Details details={card.details} design='text-sm'/> */}
+          <div
+            onMouseEnter={() => handleMouseEnter(i)}
+            onMouseLeave={() => handleMouseLeave(i)}
+            style={{
+              backgroundImage:
+                hoveredCardIndex === i &&
+                `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${card.image})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+              // transition: "all ease-in-out .5s",
+            }}
+            className="w-80 sm:w-64  md:w-[200px] lg:w-[240px] 2xl:w-72 h-[225px] border-4 rounded-s-3xl rounded-br-3xl p-4 transition-all ease-in-out delay-300"
+            key={i}
+          >
+            <img
+              className={`${
+                hoveredCardIndex === i
+                  ? "hidden"
+                  : " w-20 h-20 object-cover rounded-md"
+              }`}
+              src={card.image}
+              alt=""
+            />
+            <Title
+              title={card.name}
+              design={`${
+                hoveredCardIndex === i
+                  ? "text-white font-bold text-base lg:text-xl my-4 text-center"
+                  : "font-bold text-base lg:text-lg my-4"
+              }`}
+            />
+            {hoveredCardIndex === i && (
+              <Details
+                details="details to tell "
+                design="text-lg text-white text-center mb-5"
+              />
+            )}
+            {hoveredCardIndex === i ? (
+              <div className="text-center">
+                <Link className="border-4 border-green bg-white px-6  rounded-s-3xl rounded-br-3xl text-green font-bold py-1 ">
+                  See More
+                </Link>
+              </div>
+            ) : (
+              <Link className="border-2  bg-green px-6  rounded-s-3xl rounded-br-3xl text-white  py-1">
+                See More
+              </Link>
+            )}
           </div>
         ))}
       </div>
-      <div class="grid hover:grid-flow-row-dense grid-cols-3 grid-rows-3  gap-10">
-  <div class="hover:col-span-2 w-52 bg-green ">01</div>
-  <div class="hover:col-span-2  w-52 bg-green ">02</div>
-  <div class=" bg-green  w-52">03</div>
-  <div class=" bg-green  w-52">04</div>
-  <div class=" bg-green  w-52">05</div>
-</div>
     </div>
   );
 };
