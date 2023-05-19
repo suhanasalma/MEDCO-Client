@@ -79,6 +79,7 @@ const handleMouseLeave = () => {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
+             
               // transition: "all ease-in-out .5s",
             }}
             className="w-80 sm:w-64  md:w-[200px] lg:w-[240px] 2xl:w-72 h-[225px] border-4 rounded-s-3xl rounded-br-3xl p-4 transition-all ease-in-out delay-300"

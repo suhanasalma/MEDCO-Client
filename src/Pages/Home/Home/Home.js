@@ -6,6 +6,7 @@ import PopularSearches from "../PopularSearches/PopularSearches";
 import StartOnlineConsultancy from "../StartOnlineConsultancy/StartOnlineConsultancy";
 import ConsultingSpecilties from "../ConsultingSpecilties/ConsultingSpecilties";
 import HomeSpecialServices from "../HomeSpecialService/HomeSpecialServices";
+import PatientFeedBack from "../PatientFeedBacks/PatientFeedBack";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <StartOnlineConsultancy/>
       <ConsultingSpecilties/>
       <HomeSpecialServices/>
+      <PatientFeedBack/>
     </div>
   );
 };
