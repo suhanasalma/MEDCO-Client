@@ -22,13 +22,13 @@ const PopularSearches = () => {
     }
   };
   const breakPoints = [
-    { width: 1, itemsToShow: 2 },
-    { width: 550, itemsToShow: 5, itemsToScroll: 5, },
-    { width: 850, itemsToShow: 5 },
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 3, itemsToScroll: 3 },
+    { width: 850, itemsToShow: 4, itemsToScroll: 4 },
     { width: 1150, itemsToShow: 5, itemsToScroll: 5 },
-    { width: 1450, itemsToShow: 5 },
-    { width: 1750, itemsToShow: 5 },
-  ]
+    { width: 1450, itemsToShow: 5, itemsToScroll: 5 },
+    { width: 1750, itemsToShow: 5, itemsToScroll: 5 },
+  ];
 
   return (
     <div className="w-10/12 mx-auto my-32 text-md">

@@ -52,8 +52,8 @@ const StartOnlineConsultancy = () => {
   };
 
   return (
-    <div className="w-10/12 mx-auto flex justify-between mb-32">
-      <div className="w-4/12 border-[16px] rounded-full overflow-hidden border-green">
+    <div className="w-10/12 sm:w-11/12 lg:w-10/12 mx-auto flex justify-between gap-10 my-32 ">
+      <div className="w-5/12 xl:w-4/12 sm:border-[16px] sm:rounded-full overflow-hidden border-green sm:block hidden">
         <img
           className="w-full h-full object-cover "
           src={
@@ -62,9 +62,9 @@ const StartOnlineConsultancy = () => {
           alt=""
         />
       </div>
-      <div className="w-1/2 space-y-10 ">
+      <div className="w-full sm:w-1/2 space-y-10 ">
         <Title
-          design="text-5xl leading-relaxed"
+          design="lg:text-4xl xl:text-5xl lg:leading-normal xl:leading-relaxed"
           title="Start an online chat, consultation with a doctor"
         />
         <Details

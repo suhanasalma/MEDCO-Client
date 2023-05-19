@@ -1,14 +1,13 @@
 .container {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-content: center;
+    display: flex;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
   }
   
   .card {
     position: relative;
-    max-width: 280px;
+    width: 280px;
     height: 380px;
     box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05), 
     inset -5px -5px 5px rgba(255,255,255,0.5), 
