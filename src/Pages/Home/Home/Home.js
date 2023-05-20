@@ -8,19 +8,22 @@ import ConsultingSpecilties from "../ConsultingSpecilties/ConsultingSpecilties";
 import HomeSpecialServices from "../HomeSpecialService/HomeSpecialServices";
 import PatientFeedBack from "../PatientFeedBacks/PatientFeedBack";
 import OurPartners from "../OurPartners/OurPartners";
+import RecommendedPackages from "../RecommendedPackages/RecommendedPackages";
+
 
 const Home = () => {
   return (
     <div className="">
       <HomeCarousel />
-      <HomeMainService/>
-      <OurDoctors/>
-      <PopularSearches/>
-      <StartOnlineConsultancy/>
-      <ConsultingSpecilties/>
-      <HomeSpecialServices/>
-      <PatientFeedBack/>
-      <OurPartners/>
+      <HomeMainService />
+      <OurDoctors />
+      <PopularSearches />
+      <StartOnlineConsultancy />
+      <ConsultingSpecilties />
+      <HomeSpecialServices />
+      <PatientFeedBack />
+      <RecommendedPackages />
+      <OurPartners />
     </div>
   );
 };

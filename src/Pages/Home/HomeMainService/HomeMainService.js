@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from '../../../Components/Title/Title';
-import Card from '../../../Components/Card/Card';
 import doctor from '../../../Assests/MainService/doctor.png'
 import hotel from '../../../Assests/MainService/hotel.png'
 import hospital from '../../../Assests/MainService/hospital.png'
