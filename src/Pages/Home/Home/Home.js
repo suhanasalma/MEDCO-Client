@@ -9,6 +9,7 @@ import HomeSpecialServices from "../HomeSpecialService/HomeSpecialServices";
 import PatientFeedBack from "../PatientFeedBacks/PatientFeedBack";
 import OurPartners from "../OurPartners/OurPartners";
 import RecommendedPackages from "../RecommendedPackages/RecommendedPackages";
+import AllKindOfForms from "../AllKindOfForms/AllKindOfForms";
 
 
 const Home = () => {
@@ -23,7 +24,9 @@ const Home = () => {
       <HomeSpecialServices />
       <PatientFeedBack />
       <RecommendedPackages />
+      <AllKindOfForms/>
       <OurPartners />
+
     </div>
   );
 };
