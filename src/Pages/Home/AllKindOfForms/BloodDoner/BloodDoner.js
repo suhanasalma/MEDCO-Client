@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../Components/Title/Title";
-import Select from "react-select";
+import DateTime from "./DateTime";
+
+
 
 const BloodDoner = () => {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
+ 
 
 
   return (
@@ -89,6 +92,10 @@ const BloodDoner = () => {
                 <option value="mercedes">O+</option>
                 <option value="audi">O-</option>
               </select>
+            </div>
+            <div>
+              <p>When is Your BirthDay</p>
+              <DateTime title="Select Birthday" />
             </div>
           </div>
         </section>
