@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import BookAppointment from './BookAppointment/BookAppointment';
 import BloodDoner from './BloodDoner/BloodDoner';
+import { FaBars } from "react-icons/fa";
 
 const AllKindOfForms = () => {
+  const [menu,setMenu] = useState(false)
 
    const forms = [
      {
        id: 0,
-       name: "appointment",
+       name: "Appointment",
        component: BookAppointment,
      },
      {
        id: 1,
-       name: "bloodDoner",
+       name: "Blood Doner",
        component: BloodDoner,
      },
    ];
@@ -39,19 +41,36 @@ const AllKindOfForms = () => {
      <section className="mb-32 bg-green w-10/12 mx-auto flex justify-between  gap-10 p-20 text-white">
        <div className="flex gap-10   p-5">
          <button
-             onClick={handlePreviousSlide}
+           onClick={handlePreviousSlide}
            className="ring-offset-2 ring-4 w-10 h-10 rounded-full text-white font-bold"
          >
            ❮
          </button>
          <button
-             onClick={handleNextSlide}
+           onClick={handleNextSlide}
            className="ring-offset-2 ring-4 w-10 h-10 rounded-full text-white font-bold"
          >
            ❯
          </button>
        </div>
-       <selectedReview.component/>
+       <selectedReview.component />
+       <div onMouseLeave={() => setMenu(false)}>
+         <FaBars onMouseOverCapture={() => setMenu(true)} />
+         <div
+           className={`${
+             menu
+               ? "bg-white text-green font-medium p-5 text-sm space-y-4"
+               : "hidden"
+           }`}
+         >
+           {forms.map((form) => (
+             <div className="">
+               <p>{form.name}</p>
+               <hr />
+             </div>
+           ))}
+         </div>
+       </div>
      </section>
    );
 };

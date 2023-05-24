@@ -82,7 +82,9 @@ const BloodDoner = () => {
                 className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-1  rounded-lg w-full"
                 name="blood"
                 id="blood"
+                placeholder="Select"
               >
+                <option value="volvo">Select</option>
                 <option value="volvo">A+</option>
                 <option value="saab">A-</option>
                 <option value="mercedes">B+</option>
@@ -96,6 +98,10 @@ const BloodDoner = () => {
             <div>
               <p>When is Your BirthDay</p>
               <DateTime title="Select Birthday" />
+            </div>
+            <div>
+              <p>Last Donation Day</p>
+              <DateTime title="Select Day" />
             </div>
           </div>
         </section>

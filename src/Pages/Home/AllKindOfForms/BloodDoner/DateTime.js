@@ -8,7 +8,7 @@ import './DateTime.css'
 
 const DateTime = ({title}) => {
   console.log(title);
-      const [startDate, setStartDate] = useState(new Date());
+      const [startDate, setStartDate] = useState(null);
       const years = Array.from(
         { length: getYear(new Date()) - 1900 },
         (_, index) => 1990 + index
@@ -70,6 +70,7 @@ const DateTime = ({title}) => {
        //  )}
        selected={startDate}
        isClearable
+       dateFormat="dd/MM/yyyy"
        className="red-border"
        onChange={(date) => setStartDate(date)}
        shouldCloseOnSelect={false}
