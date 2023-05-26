@@ -1,3 +1,11 @@
-.input{
-    width: 100% !important;
+.input {
+  width: 100% !important;
+}
+
+.stick {
+  position: static ;
+  top: 0 ;
+  background-color: red;
+  z-index: 50;
+  width: 100%;
 }

@@ -43,13 +43,13 @@ export const CarouselInfo = [
     id: 3,
     details: `<div class="absolute top-10 md:top-5 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4">
         <p class=" text-green font-bold  text-2xl xl:text-4xl">
-        We Are Ready to <br> Help Your Health <br> Problem 
+        24/7 Ambulance Service 
        </p>
-       <p class=" hidden md:block text-brown lg:text-md">
+       <p class=" hidden md:block text-white lg:text-md">
         in times like today, your health is very important, <br> especially since the number of COVID-19 cases is <br> increasing day by day, so we are ready to help you <br> with your health consultation.
        </p>
        <div>
-       <button class='lg:w-72 bg-green px-6 py-2 rounded-full text-white font-bold text-xl'>Try Free Consultation</button>
+       <button class='lg:w-72 bg-green px-6 py-2 rounded-full text-white font-bold text-xl'>Book Ambulance</button>
        </div>
        </div>
        `,
@@ -74,7 +74,7 @@ export const CarouselInfo = [
     img: pregnancy,
     id: 5,
     details: `<div class="absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10  lg:w-4/12 p-4">
-        <p class=" text-green font-bold  text-2xl xl:text-4xl">
+        <p class=" text-brown font-bold  text-2xl xl:text-4xl">
         A grand adventure is about to begin and we will be your best company
        </p>
        <p class="hidden md:block text-green lg:text-md">
