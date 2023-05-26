@@ -18,6 +18,8 @@ const AllKindOfForms = () => {
        component: BloodDoner,
      },
    ];
+
+  
      const [selectedFormIndex, setSelectedFormIndex] = useState(0);
      const selectedReview = forms[selectedFormIndex];
 
@@ -38,24 +40,27 @@ const AllKindOfForms = () => {
      };
 
    return (
-     <section className="mb-32 bg-green w-10/12 mx-auto flex justify-between  gap-10 p-20 text-white">
-       <div className="flex gap-10   p-5">
+     <section className="mb-32 bg-green w-11/12 md:w-10/12 mx-auto flex justify-between gap-5 sm:gap-10 py-10 lg-py-20 px-5 lg:px-10 text-white">
+       <div className="flex md:gap-10 gap-5 py-5 md:p-5">
          <button
            onClick={handlePreviousSlide}
-           className="ring-offset-2 ring-4 w-10 h-10 rounded-full text-white font-bold"
+           className="ring-offset-2 ring-2 md:ring-4 md:w-10 md:h-10 h-5 w-5 rounded-full text-white font-bold text-xs md:text-base"
          >
            ❮
          </button>
          <button
            onClick={handleNextSlide}
-           className="ring-offset-2 ring-4 w-10 h-10 rounded-full text-white font-bold"
+           className="ring-offset-2 ring-2 md:ring-4 md:w-10 md:h-10 h-5 w-5 rounded-full text-white font-bold text-xs md:text-base"
          >
            ❯
          </button>
        </div>
        <selectedReview.component />
-       <div onMouseLeave={() => setMenu(false)}>
-         <FaBars onMouseOverCapture={() => setMenu(true)} />
+       <div
+         className="transition-all ease-in-out delay-300 "
+         onMouseLeave={() => setMenu(false)}
+       >
+         <FaBars className="" onMouseOverCapture={() => setMenu(true)} />
          <div
            className={`${
              menu
@@ -63,8 +68,12 @@ const AllKindOfForms = () => {
                : "hidden"
            }`}
          >
-           {forms.map((form) => (
-             <div className="">
+           {forms.map((form, i) => (
+             <div
+               key={i}
+               onClick={() => handleLowerSliderButton(form.id)}
+               className="cursor-pointer"
+             >
                <p>{form.name}</p>
                <hr />
              </div>

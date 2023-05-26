@@ -44,8 +44,8 @@ const RecommendedPackages = () => {
         />
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-items-center	 content-center	 gap-10 mt-10">
-        {specialPackage.map((pack) => (
-          <RecommendedPackage pack={pack} />
+        {specialPackage.map((pack, i) => (
+          <RecommendedPackage key={i} pack={pack} />
         ))}
       </div>
       <div className="w-52 mx-auto  mt-20 shadow-lg shadow-light-green">

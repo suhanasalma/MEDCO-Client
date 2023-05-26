@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Title from "../../../../Components/Title/Title";
 
-
 const BookAppointment = () => {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
+
+  const handleForm = (data) => {
+    console.log("data");
+  };
   return (
     <article className="w-9/12">
       <Title design="text-white" title="Make an appointment with a doctor" />
-      <form
-        className="mt-10"
-        onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
-      >
+      <form className="mt-10" onSubmit={handleSubmit(handleForm)}>
         <section>
           <p className="font-bold text-lg my-5">About Yourself</p>
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid lg:grid-cols-2 gap-10">
             <input
               className="ring-offset-2 ring-4 outline-none  px-4 py-2 rounded-full text-[black]"
               {...register("fullName")}
@@ -26,7 +26,7 @@ const BookAppointment = () => {
               {...register("PhoneNumber")}
               placeholder="+880 15....."
             />
-            <input className="outline-none w-0 " />
+            <input className="outline-none w-0 hidden lg:inline" />
             <input
               className="ring-offset-2 ring-4 outline-none  px-4 py-2 rounded-full text-[black]"
               {...register("email")}
@@ -36,10 +36,10 @@ const BookAppointment = () => {
         </section>
         <section>
           <p className="font-bold text-lg my-5">Booking Date</p>
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <select
               className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-2 rounded-lg"
-              {...register("category", { required: true })}
+              {...register("Specialization", { required: true })}
             >
               <option value="">Specialization</option>
               <option value="A">Option A</option>
@@ -47,7 +47,7 @@ const BookAppointment = () => {
             </select>
             <select
               className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-2  rounded-lg"
-              {...register("category", { required: true })}
+              {...register("Expert", { required: true })}
             >
               <option value="">Expert</option>
               <option value="A">Option A</option>
@@ -55,7 +55,7 @@ const BookAppointment = () => {
             </select>
             <select
               className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-2 rounded-lg"
-              {...register("category", { required: true })}
+              {...register("Date", { required: true })}
             >
               <option value="">Date</option>
               <option value="A">Option A</option>
@@ -63,7 +63,7 @@ const BookAppointment = () => {
             </select>
             <select
               className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-2  rounded-lg"
-              {...register("category", { required: true })}
+              {...register("Time", { required: true })}
             >
               <option value="">Time</option>
               <option value="A">Option A</option>
@@ -71,7 +71,6 @@ const BookAppointment = () => {
             </select>
           </div>
         </section>
-        <p>{data}</p>
         <input
           className="ring-offset-2 ring-4 mt-10 w-52 rounded-full px-4 py-2"
           type="submit"

@@ -179,7 +179,7 @@ const BloodDoner = () => {
               <p>Do you suffer from or have suffered from any of the following diseases?</p>
               <div className="grid grid-cols-2">
               {
-                diseases.map(disease=><div><input  type="checkbox" id={disease.name} name="disease" value={disease.name} /> {" "}
+                diseases.map((disease,i)=><div><input  key ={i}type="checkbox" id={disease.name} name="disease" value={disease.name} /> {" "}
                 <label for={disease.name}>{disease.name}</label></div>)
               }
               </div>
@@ -188,7 +188,7 @@ const BloodDoner = () => {
               <p>Is there any history of surgery or blood transfusion in the past six months?</p>
              
               {
-                diseases.slice(0,3).map(disease=><div><input  type="radio" id={disease.name} name="disease" value={disease.name} /> {" "}
+                diseases.slice(0,3).map((disease,i)=><div><input key={i} type="radio" id={disease.name} name="disease" value={disease.name} /> {" "}
                 <label for={disease.name}>Minor</label></div>)
               }
            

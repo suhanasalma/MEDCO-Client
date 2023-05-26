@@ -3,3 +3,8 @@
    padding: 5px;
    border-radius: 10px;
 }
+
+.react-datepicker__year-select {
+  max-height: 200px; /* Set the desired max-height */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
