@@ -2,10 +2,17 @@
   width: 100% !important;
 }
 
-.stick {
-  position: static ;
-  top: 0 ;
-  background-color: red;
-  z-index: 50;
-  width: 100%;
+
+.transition-transform {
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 }
+
+.transform {
+  transform-origin: center;
+}
+
+/* .rotate-45 {
+  transform: rotate(-45deg);
+} */
