@@ -1,15 +1,16 @@
-import autism from "../../../Assests/HomeCarousel/autism.jpg";
-import adhd from "../../../Assests/HomeCarousel/ADHD.jpg";
-import diabetics from "../../../Assests/HomeCarousel/diabetics.jpg";
+import video from "../../../Assests/HomeCarousel/autism.jpg";
+import doctors from "../../../Assests/HomeCarousel/ADHD.jpg";
+import ambulance from "../../../Assests/HomeCarousel/diabetics.jpg";
 import pregnancy from "../../../Assests/HomeCarousel/pregnancy.jpg";
 import blood from "../../../Assests/HomeCarousel/blood.jpeg";
 import volunter from "../../../Assests/HomeCarousel/volunter.jpg";
 
 export const CarouselInfo = [
   {
-    img: autism,
+    img: video,
+    imgClass: "animate__animated animate__slideInUp",
     id: 1,
-    details: `<div class="absolute top-5 xl:top-32 left-20 space-y-3 lg:space-y-10 2xl:w-4/12 p-4 "><p class=" text-green font-bold  text-2xl xl:text-4xl">
+    details: `<div class="z-50 absolute top-5 xl:top-32 left-20 space-y-3 lg:space-y-10 2xl:w-4/12 p-4  animate__animated animate__slideInDown"><p class=" text-green font-bold  text-2xl xl:text-4xl">
         Consult a doctor <br> anytime, anywhere <br> by <span class='border-b-2 border-brown'>video call</span>
        </p>
        <p class=" hidden md:block text-brown lg:text-md">
@@ -23,9 +24,10 @@ export const CarouselInfo = [
        `,
   },
   {
-    img: adhd,
+    img: doctors,
+    imgClass: "animate__animated animate__slideInRight",
     id: 2,
-    details: `<div class="absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10 2xl:w-4/12 p-4 "><p class=" text-white font-bold  text-2xl xl:text-4xl">
+    details: `<div class="z-50 absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10 2xl:w-4/12 p-4  animate__animated animate__slideInLeft"><p class=" text-white font-bold  text-2xl xl:text-4xl">
         Feel better about <br> finding a healthcare
        </p>
        <p class=" hidden md:block text-green lg:text-md">
@@ -39,9 +41,10 @@ export const CarouselInfo = [
        `,
   },
   {
-    img: diabetics,
+    img: ambulance,
+    imgClass: "animate__animated animate__fadeInLeft",
     id: 3,
-    details: `<div class="absolute top-10 md:top-5 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4">
+    details: `<div class="z-50 absolute top-10 md:top-5 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4 animate__animated animate__fadeInRight">
         <p class=" text-green font-bold  text-2xl xl:text-4xl">
         24/7 Ambulance Service 
        </p>
@@ -56,8 +59,9 @@ export const CarouselInfo = [
   },
   {
     img: blood,
+    imgClass: "animate__animated animate__rotateInUpRight",
     id: 4,
-    details: `<div class="absolute top-20 sm:top-10 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4">
+    details: `<div class="z-50 absolute top-20 sm:top-10 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4 animate__animated animate__rotateInDownLeft">
         <p class=" text-green font-bold text-2xl xl:text-4xl">
         Every Blood Doner is a Hero
        </p>
@@ -72,8 +76,9 @@ export const CarouselInfo = [
   },
   {
     img: pregnancy,
+    imgClass: "animate__animated animate__slideInUp",
     id: 5,
-    details: `<div class="absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10  lg:w-4/12 p-4">
+    details: `<div class="z-50 absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10  lg:w-4/12 p-4 animate__animated animate__slideInDown">
         <p class=" text-brown font-bold  text-2xl xl:text-4xl">
         A grand adventure is about to begin and we will be your best company
        </p>
@@ -88,8 +93,9 @@ export const CarouselInfo = [
   },
   {
     img: volunter,
+    imgClass: "animate__animated animate__fadeInLeft",
     id: 6,
-    details: `<div class="absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4">
+    details: `<div class="z-50 absolute top-10 xl:top-32 left-20 space-y-3 lg:space-y-10 lg:w-4/12 p-4 animate__animated animate__fadeInRight">
     <p class=" text-green font-bold  text-2xl xl:text-4xl">
         Volunteers doesn't have necessarily have the time, <br> They just have the heart
        </p>
