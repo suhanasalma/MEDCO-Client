@@ -5,8 +5,7 @@ import { CarouselInfo } from "./CarouselInfo";
 const HomeCarousel = () => {
   const [index, setIndex] = useState(0);
   const selectedSlider = CarouselInfo[index];
-  const timerRef = useRef(null)
-
+  const timerRef = useRef(null);
   const handleNextSlide = () => {
     setIndex((prevIndex) =>
       prevIndex === CarouselInfo.length - 1 ? 0 : prevIndex + 1
@@ -19,13 +18,17 @@ const HomeCarousel = () => {
     );
   };
 
+  const lowerSliderButton = (id) =>{
+     setIndex(id)
+  }
+
   // useEffect(()=>{
   //   if(timerRef.current){
   //     clearTimeout(timerRef.current)
   //   }
   //   timerRef.current = setTimeout(() => {
   //     handleNextSlide()
-  //   }, 2000); 
+  //   }, 10000);
 
   //   return () =>clearTimeout(timerRef.current)
   // })
@@ -54,6 +57,14 @@ const HomeCarousel = () => {
           >
             ❯
           </button>
+        </div>
+        <div className="flex  gap-2 absolute z-50 bottom-5 left-1/2	">
+          {CarouselInfo.map((carousel, i) => (
+            <button
+              onClick={() => lowerSliderButton(i)}
+              className={` w-3 h-3 rounded-full ${index === i?"bg-white":"bg-green "}`}
+            ></button>
+          ))}
         </div>
       </div>
     </div>

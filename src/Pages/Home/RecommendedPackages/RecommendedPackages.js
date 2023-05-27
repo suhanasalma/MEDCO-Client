@@ -36,7 +36,7 @@ const RecommendedPackages = () => {
       <div className="space-y-6 ">
         <Title
           title="Recommended Packages"
-          design="text-center text-2xl sm:text-4xl"
+          design="title text-center text-2xl sm:text-4xl"
         />
         <Details
           design="text-sm md:w-8/12 lg:w-8/12 mx-auto text-center"

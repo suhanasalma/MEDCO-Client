@@ -1,3 +1,27 @@
-.carousel-slide {
-  transition:transform 1s ease-in-out;
+.btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn::after {
+  position: absolute;
+  content: "";
+  background: #e5f6df;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  
+  z-index: -1;
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+  color: #2c4c3b;
+}
+
+.btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  color: #2c4c3b;
 }

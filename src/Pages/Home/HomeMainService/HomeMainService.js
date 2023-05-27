@@ -39,7 +39,7 @@ const HomeMainService = () => {
     ];
     return (
       <div className="my-20 w-10/12 mx-auto ">
-        <Title title="Our Main Services" design="text-4xl text-center" />
+        <Title title="Our Main Services" design="title text-4xl text-center" />
         <Details
           details="In times like today your health is very important, Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered"
           design="text-sm text-gray text-center mb-5 sm:w-7/12 mx-auto my-5"
@@ -50,7 +50,9 @@ const HomeMainService = () => {
               <div className="box">
                 <Link className="content">
                   <img className="w-20 mx-auto" src={card.image} alt="" />
-                  <Title title={card.name} design="font-bold text-lg my-5" />
+                  <p className="font-bold text-lg my-5 text-green">
+                    {card.name}
+                  </p>
                   <Details details={card.details} design="text-sm" />
                 </Link>
               </div>

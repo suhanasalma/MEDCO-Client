@@ -1,0 +1,28 @@
+.title {
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #2c4c3b;
+  left: 50%;
+  right: 50%;
+  top: 50px;
+  transform: translate(-50%, -50%);
+  transition: transform 500ms ease-in-out;
+  transform: scale(0);
+  transform-origin:center;
+  transform: scale(0);
+
+  /* opacity: 0; */
+}
+
+.title:hover::after {
+  transform: scale(1);
+  transform-origin:initial;
+  width: 30%;
+
+}

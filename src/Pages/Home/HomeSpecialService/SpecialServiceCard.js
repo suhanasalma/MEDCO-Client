@@ -36,14 +36,15 @@ const SpecialServiceCard = ({
         src={card.image}
         alt=""
       />
-      <Title
-        title={card.name}
-        design={`${
+      <p
+        className={`text-green font-bold ${
           hoveredCardIndex === i
             ? "text-white font-bold text-base lg:text-xl my-4 text-center"
-            : "font-bold text-base lg:text-lg my-4"
+            : "font-bold text-base text-green lg:text-lg my-4"
         }`}
-      />
+      >
+        {card.name}
+      </p>
       {hoveredCardIndex === i && (
         <Details
           details="details to tell "
