@@ -9,8 +9,8 @@ import {
 const ContactFooter = () => {
 
    return (
-     <section className='flex justify-around items-center text-center bg-light-green' >
-       <div>
+     <section className="flex justify-around items-center text-center bg-light-green">
+       <div className=" border-2 border-white p-10">
          <FaPhoneVolume />
          <p>
            1111 (Bangladesh Only) <br />
@@ -19,7 +19,7 @@ const ContactFooter = () => {
            <span>Available 24 hours every day</span>
          </p>
        </div>
-       <div>
+       <div className=" border-2 border-white p-10">
          <FaPhoneAlt />
          <p>
            Call Medco <br /> <span>+880 1515151</span>
@@ -27,12 +27,12 @@ const ContactFooter = () => {
            <span>Available 24 hours every day</span>
          </p>
        </div>
-       <div>
+       <div className=" border-2 border-white p-10">
          <FaEnvelopeOpen />
          <p>Subscribe to our Newsletter</p>
          <button>SIGN UP NOW</button>
        </div>
-       <div>
+       <div className=" border-2 border-white p-10">
          <FaMapMarkerAlt />
          <p>Map and Directions</p>
          <button>GET DIRECTIONS</button>
