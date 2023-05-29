@@ -290,7 +290,7 @@ const BloodDoner = () => {
           // firstPage={firstPage}
         />
 
-        <div className="flex gap-2 mt-5">
+        <div className="flex gap-2 mt-5 cursor-pointer">
           <p
             className={`${
               !secondPage ? "text-white font-bold" : "text-light-gray "

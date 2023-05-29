@@ -43,13 +43,13 @@ const RecommendedPackages = () => {
           details="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio necessitatibus ipsum quidem ut? Libero possimus placeat unde enim consequatur quis numquam itaque ut illo? Officiis assumenda modi facilis sed optio incidunt ipsa aspernatur consequuntur amet laboriosam. Velit eaque voluptates dignissimos, deserunt ipsam praesentium, commodi a eos reprehenderit nemo ipsa?"
         />
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-items-center	 content-center	 gap-10 mt-10">
+      <div className=" md:flex container mx-auto mt-10  xl:justify-between md:justify-center xl:flex-nowrap md:flex-wrap grid sm:grid-cols-2 grid-cols-1 justify-items-center ">
         {specialPackage.map((pack, i) => (
           <RecommendedPackage key={i} pack={pack} />
         ))}
       </div>
-      <div className="w-52 mx-auto  mt-20 shadow-lg shadow-light-green">
-        <LinkButton title="See All Packages" design="w-52 border-2 border-green" />
+      <div className="w-52 mx-auto  mt-10 shadow-lg shadow-light-green">
+        <LinkButton title="See All Packages" design="w-52  border-2 border-green" />
       </div>
     </div>
   );

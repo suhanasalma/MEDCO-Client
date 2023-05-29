@@ -5,7 +5,7 @@ import './RecommendedPackage.css'
 
 const RecommendedPackage = ({ pack }) => {
   return (
-    <div className="rounded-lg overflow-hidden w-72 lg:w-64 2xl:w-72  shadow-lg shadow-gray hover:shadow-green hover:shadow-xl cursor-pointer ">
+    <div className="rounded-lg overflow-hidden w-72 h-96 lg:w-64 2xl:w-72  shadow-lg shadow-gray hover:shadow-green hover:shadow-xl cursor-pointer ">
       <img className="w-full  object-cover" src={pack.img} alt="" />
       <div className="p-6 space-y-4">
         <p className="text-green font-bold text-lg">{pack.title}</p>

@@ -44,7 +44,7 @@ const OurDoctors = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-          className={`${selectedDoctor.imgClass} text-white bg border-2 w-80 h-64 sm:w-96 sm:h-64 md:w-72 md:h-52 lg:w-96 lg:h-64 rounded-s-3xl rounded-br-3xl p-5 xl:p-10 space-y-5`}
+          className={`${selectedDoctor.imgClass} text-white bg border-2  h-64 w-96 sm:h-64 md:w-72 md:h-52 lg:w-96 lg:h-64 rounded-s-3xl rounded-br-3xl p-5 xl:p-10 space-y-5`}
         >
           <p className="lg:text-2xl">{selectedDoctor.department}</p>
           <p className="text-xl lg:text-3xl font-bold leading-relaxed">
@@ -80,7 +80,7 @@ const OurDoctors = () => {
         />
         </div>
         <section className="relative">
-          <div className="border-[16px] border-brown w-[22rem] h-[22rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl  md:rounded-s-full overflow-hidden">
+          <div className="border-[16px] border-brown w-[24rem] h-[24rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl  md:rounded-s-full overflow-hidden">
             <img
               className={`${selectedDoctor.imgClass} w-full h-full object-cover object-top `}
               src={selectedDoctor?.img}
