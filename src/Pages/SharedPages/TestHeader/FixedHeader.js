@@ -19,7 +19,7 @@ import {
   FaAngleUp,
 } from "react-icons/fa";
 import HeaderInput from "../Header/HeaderInput";
-import FullMenuBar from "./FullMenuBar";
+import FlotingMenuBar from "./FlotingMenuBar";
 
 // import HeaderInput from "../Header/HeaderInput";
 
@@ -191,7 +191,7 @@ const FixedHeader = () => {
           <VscThreeBars className="text-2xl" />
         )}
       </div>
-      <FullMenuBar
+      <FlotingMenuBar
         setMainNavOpen={setMainNavOpen}
         mainNavOpen={mainNavOpen}
         aboutToggle={aboutToggle}

@@ -55,7 +55,7 @@ const OurDoctors = () => {
           </p>
         </div>
         <div>
-          <LinkButton design='w-52' title="View All Doctors" />
+          <LinkButton design='w-52 border-2 border-green' title="View All Doctors" />
         </div>
         <div className="flex gap-5 justify-center items-center mt-5  md:hidden ">
             {ourDoctorsInfo.map((doctor) => (

@@ -97,7 +97,7 @@ const StartOnlineConsultancy = () => {
         </div>
         <div className="">
           <LinkButton
-            design="w-72 text-lg"
+            design="w-72  border-2 border-green"
             title={
               selectOption?.button ? selectOption?.button : "Choose a Option"
             }

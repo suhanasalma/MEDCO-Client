@@ -49,7 +49,7 @@ const RecommendedPackages = () => {
         ))}
       </div>
       <div className="w-52 mx-auto  mt-20 shadow-lg shadow-light-green">
-        <LinkButton title="See All Packages" design="" />
+        <LinkButton title="See All Packages" design="w-52 border-2 border-green" />
       </div>
     </div>
   );

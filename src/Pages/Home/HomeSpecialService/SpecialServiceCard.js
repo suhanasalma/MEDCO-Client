@@ -1,5 +1,4 @@
 import React from 'react';
-import Title from '../../../Components/Title/Title';
 import Details from '../../../Components/Details/Details';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ const SpecialServiceCard = ({
   card,
 }) => {
   return (
-    <div
+    <Link
       onMouseEnter={() => handleMouseEnter(i)}
       onMouseLeave={() => handleMouseLeave(i)}
       style={{
@@ -24,7 +23,7 @@ const SpecialServiceCard = ({
 
         // transition: "all ease-in-out .5s",
       }}
-      className="w-80 sm:w-64  md:w-[200px] lg:w-[240px] 2xl:w-72 h-[225px] border-4 rounded-s-3xl rounded-br-3xl p-4 transition-all ease-in-out delay-300"
+      className="w-80 sm:w-64  md:w-[200px] lg:w-[240px] 2xl:w-72 h-[225px] border-4 rounded-s-3xl rounded-br-3xl p-4 transition-all ease-in-out delay-300  hover:overflow-y-scroll"
       key={i}
     >
       <img
@@ -47,8 +46,8 @@ const SpecialServiceCard = ({
       </p>
       {hoveredCardIndex === i && (
         <Details
-          details="details to tell "
-          design="text-lg text-white text-center mb-5"
+          details= {card.details}
+          design="text-sm w-full text-white text-center mb-5"
         />
       )}
       {hoveredCardIndex === i ? (
@@ -58,11 +57,11 @@ const SpecialServiceCard = ({
           </Link>
         </div>
       ) : (
-        <Link className="border-2  bg-green px-6  rounded-s-3xl rounded-br-3xl text-white  py-1">
+        <Link className=" bg-green px-6  rounded-s-3xl rounded-br-3xl text-white  py-1">
           See More
         </Link>
       )}
-    </div>
+    </Link>
   );
 };
 

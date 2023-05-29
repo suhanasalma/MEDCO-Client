@@ -58,7 +58,7 @@ const HomeCarousel = () => {
             ❯
           </button>
         </div>
-        <div className="flex  gap-2 absolute z-50 bottom-5 left-1/2	">
+        <div className="flex  gap-2 absolute z-30 bottom-5 left-1/2	">
           {CarouselInfo.map((carousel, i) => (
             <button
               onClick={() => lowerSliderButton(i)}
