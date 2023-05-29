@@ -10,7 +10,7 @@ const SpecialServiceCard = ({
   card,
 }) => {
   return (
-    <Link
+    <div
       onMouseEnter={() => handleMouseEnter(i)}
       onMouseLeave={() => handleMouseLeave(i)}
       style={{
@@ -61,7 +61,7 @@ const SpecialServiceCard = ({
           See More
         </Link>
       )}
-    </Link>
+    </div>
   );
 };
 

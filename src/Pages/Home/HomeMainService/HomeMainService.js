@@ -3,7 +3,6 @@ import Title from '../../../Components/Title/Title';
 import doctor from '../../../Assests/MainService/doctor.png'
 import hotel from '../../../Assests/MainService/hotel.png'
 import hospital from '../../../Assests/MainService/hospital.png'
-import pharmacy from '../../../Assests/MainService/pharmacy.png'
 import ambulance from '../../../Assests/MainService/ambulance.png'
 import { Link } from 'react-router-dom';
 import Details from '../../../Components/Details/Details';
@@ -31,7 +30,7 @@ const HomeMainService = () => {
           "Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered",
       },
       {
-        name: "Book a Hotel",
+        name: "Telemedicine 24/7",
         image: hotel,
         details:
           "Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered",

@@ -1,5 +1,10 @@
 import React from "react";
-import { TbChevronDown, TbArrowsMinimize } from "react-icons/tb";
+import {
+  TbChevronDown,
+  TbArrowsMinimize,
+} from "react-icons/tb";
+import { FaMobileAlt } from "react-icons/fa";
+
 import { Link, NavLink } from "react-router-dom";
 import { menus } from "../Header/headerMenu";
 
@@ -237,6 +242,10 @@ const FlotingMenuBar = ({
           >
             Send Inquiry
           </NavLink>
+        </div>
+        <div className="px-2 cursor-pointer flex items-center gap-2">
+          <FaMobileAlt className="text-white text-xl" />
+          <a href="tel:+880151515151">+880 1515151</a>
         </div>
       </div>
     </section>
