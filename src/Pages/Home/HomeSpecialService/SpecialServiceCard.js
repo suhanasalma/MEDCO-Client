@@ -23,7 +23,7 @@ const SpecialServiceCard = ({
 
         // transition: "all ease-in-out .5s",
       }}
-      className="w-80 sm:w-64  md:w-[200px] lg:w-[240px] 2xl:w-72 h-[225px] border-4 rounded-s-3xl rounded-br-3xl p-4 transition-all ease-in-out delay-300  hover:overflow-y-scroll"
+      className="w-80 sm:w-64  md:w-[200px] lg:w-[240px] 2xl:w-72 h-[225px] border-4 rounded-s-3xl rounded-br-3xl p-4 ease-in-out delay-300  hover:overflow-y-scroll"
       key={i}
     >
       <img

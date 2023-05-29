@@ -21,12 +21,14 @@ export const ourDoctorsInfo = [
       department: "Orthopedy",
       img: docImg1,
       bg: ortho,
+      imgClass: "animate__animated animate__pulse",
     },
     { id: 1, 
       name: "DR. Farhana",
       department: "Dermatology", 
       img: docImg2 ,
       bg: derma,
+      imgClass: "animate__animated animate__fadeIn",
     },
     {
       id: 2,
@@ -34,6 +36,7 @@ export const ourDoctorsInfo = [
       department: "Trichology",
       img: docImg3,
       bg: hair,
+      imgClass: "animate__animated animate__pulse",
     },
     {
       id: 3,
@@ -41,6 +44,7 @@ export const ourDoctorsInfo = [
       department: "Otolaryngology",
       img: docImg4,
       bg: ear,
+      imgClass: "animate__animated animate__fadeIn",
     },
     {
       id: 4,
@@ -48,6 +52,7 @@ export const ourDoctorsInfo = [
       department: "Nephrology",
       img: docImg5,
       bg: kidney,
+      imgClass: "animate__animated animate__pulse",
     },
     {
       id: 5,
@@ -55,6 +60,7 @@ export const ourDoctorsInfo = [
       department: "Pediatric",
       img: docImg6,
       bg: child,
+      imgClass: "animate__animated animate__fadeIn",
     },
     {
       id: 6,
@@ -62,5 +68,6 @@ export const ourDoctorsInfo = [
       department: "Dental",
       img: docImg7,
       bg: dental,
+      imgClass: "animate__animated animate__pulse",
     },
   ];
