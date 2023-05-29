@@ -4,7 +4,7 @@ import './Title.css'
 const Title = ({title,design}) => {
     return (
         <div>
-            <p className={` text-green font-bold text-3xl ${design}`}>{title}</p>
+            <p className={` sideTitle text-green font-bold text-3xl ${design}`}>{title}</p>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-.title {
+/* .title {
   position: relative;
 }
 
@@ -7,9 +7,9 @@
   position: absolute;
   height: 2px;
   width: 0;
-  background: #2c4c3b;
-  left: 50%;
-  right: 50%;
+  background: #af976d;
+  left: 0;
+  right: 0%;
   top: 50px;
   transform: translate(-50%, -50%);
   transition: transform 500ms ease-in-out;
@@ -17,12 +17,68 @@
   transform-origin:center;
   transform: scale(0);
 
-  /* opacity: 0; */
 }
 
 .title:hover::after {
   transform: scale(1);
   transform-origin:initial;
-  width: 30%;
+  width: 40%;
+  margin: auto;
 
 }
+
+
+.sideTitle {
+  position: relative;
+}
+
+.sideTitle::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #af976d;
+  left: 0;
+
+  top: 50px;
+  transform: translate(-50%, -50%);
+  transition: transform 500ms ease-in-out;
+  transform: scale(0);
+  transform-origin:center;
+  transform: scale(0);
+}
+
+.sideTitle:hover::after {
+  transform: scale(1);
+  transform-origin:initial;
+  width: 40%;
+  margin: auto;
+
+}
+.onlineConsultancyTitle {
+  position: relative;
+}
+
+.onlineConsultancyTitle::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #af976d;
+  left: 0;
+
+  top: 220px;
+  transform: translate(-50%, -50%);
+  transition: transform 500ms ease-in-out;
+  transform: scale(0);
+  transform-origin:center;
+  transform: scale(0);
+}
+
+.onlineConsultancyTitle:hover::after {
+  transform: scale(1);
+  transform-origin:initial;
+  width: 60%;
+  margin: auto;
+
+} */

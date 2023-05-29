@@ -64,7 +64,7 @@ const StartOnlineConsultancy = () => {
       </div>
       <div className="w-full sm:w-1/2 space-y-10 ">
         <Title
-          design="lg:text-4xl xl:text-5xl lg:leading-normal xl:leading-relaxed"
+          design="lg:text-4xl xl:text-5xl lg:leading-normal xl:leading-relaxed onlineConsultancyTitle"
           title="Start an online chat, consultation with a doctor"
         />
         <Details
