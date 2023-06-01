@@ -11,7 +11,6 @@ const Main = () => {
       <Outlet />
       {/* <Header/> */}
       <Footer/>
-
     </div>
   );
 };

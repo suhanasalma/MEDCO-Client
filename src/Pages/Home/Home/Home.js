@@ -11,8 +11,8 @@ import OurPartners from "../OurPartners/OurPartners";
 import RecommendedPackages from "../RecommendedPackages/RecommendedPackages";
 import AllKindOfForms from "../AllKindOfForms/AllKindOfForms";
 
-
 const Home = () => {
+
   return (
     <div className="">
       <HomeCarousel />
@@ -24,9 +24,8 @@ const Home = () => {
       <HomeSpecialServices />
       <PatientFeedBack />
       <RecommendedPackages />
-      <AllKindOfForms/>
+      <AllKindOfForms />
       <OurPartners />
-
     </div>
   );
 };
