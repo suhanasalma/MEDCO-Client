@@ -27,7 +27,7 @@ const OurDoctors = () => {
   };
 
   return (
-    <div className="flex md:flex-row flex-col-reverse lg:gap-3 xl:gap-0 gap-8 flex-wrap  lg:w-10/12 md:w-full w-10/12 mx-auto lg:justify-between justify-center items-center mt-10 mb-20">
+    <div className="flex md:flex-row flex-col-reverse lg:gap-3 xl:gap-0 gap-8 flex-wrap lg:w-10/12 w-11/12 mx-auto md:justify-between justify-center items-center mt-10 mb-20 ">
       <div className="space-y-8">
         <div className="space-y-8 md:block hidden">
         <p className="font-bold text-lg">Our Doctors</p>
@@ -44,7 +44,7 @@ const OurDoctors = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-          className={`${selectedDoctor.imgClass} text-white bg border-2  h-64 w-96 sm:h-64 md:w-72 md:h-52 lg:w-96 lg:h-64 rounded-s-3xl rounded-br-3xl p-5 xl:p-10 space-y-5`}
+          className={`${selectedDoctor.imgClass} text-white bg border-2  h-64 w-80 sm:h-64 md:w-72 md:h-52 lg:w-96 lg:h-64 rounded-s-3xl rounded-br-3xl p-5 xl:p-10 space-y-5 mx-auto`}
         >
           <p className="lg:text-2xl">{selectedDoctor.department}</p>
           <p className="text-xl lg:text-3xl font-bold leading-relaxed">
@@ -80,7 +80,7 @@ const OurDoctors = () => {
         />
         </div>
         <section className="relative">
-          <div className="border-[16px] border-brown w-[24rem] h-[24rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl  md:rounded-s-full overflow-hidden">
+          <div className="border-[16px] border-brown w-[21rem] h-[22rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl  md:rounded-s-full overflow-hidden mx-auto">
             <img
               className={`${selectedDoctor.imgClass} w-full h-full object-cover object-top `}
               src={selectedDoctor?.img}

@@ -50,34 +50,34 @@ const FooterMenu = () => {
       </div>
       <div className="mt-10 md:flex lg:justify-center gap-20 flex-wrap lg:flex-nowrap p-10 hidden">
         <div>
-          <p className="border-b-4">Service</p>
+          <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
             {services.map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="border-b-4">Service</p>
+          <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
             {services.map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="border-b-4">Service</p>
+          <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
             {services.slice(0, 5).map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="border-b-4">Service</p>
+          <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
             {services.map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
@@ -97,7 +97,7 @@ const FooterMenu = () => {
             }`}
           >
             {services.map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
@@ -115,7 +115,7 @@ const FooterMenu = () => {
             }`}
           >
             {services.map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
@@ -133,7 +133,7 @@ const FooterMenu = () => {
             }`}
           >
             {services.slice(0, 5).map((service) => (
-              <li>{service.name}</li>
+              <li className="cursor-pointer">{service.name}</li>
             ))}
           </ul>
         </div>
@@ -150,8 +150,10 @@ const FooterMenu = () => {
               open4 ? "text-sm text-gray list-disc ml-7 mt-5" : "hidden"
             }`}
           >
-            {services.map((service) => (
-              <li>{service.name}</li>
+            {services.map((service, i) => (
+              <li className="cursor-pointer" key={i}>
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
