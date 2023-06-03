@@ -20,7 +20,7 @@ import {
 } from "react-icons/fa";
 import HeaderInput from "../Header/HeaderInput";
 import FlotingMenuBar from "./FlotingMenuBar";
-import LogInRegister from "../../LoginRegister/LogInRegister";
+import AuthForm from "../../LoginRegister/AuthForm";
 
 // import HeaderInput from "../Header/HeaderInput";
 
@@ -213,7 +213,7 @@ const FixedHeader = () => {
         contactToggle={contactToggle}
         contactOpen={contactOpen}
       />
-      <LogInRegister isOpen={isModalOpen} onClose={handleCloseModal} />
+      <AuthForm isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
