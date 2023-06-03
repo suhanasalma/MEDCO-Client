@@ -20,6 +20,7 @@ import {
 } from "react-icons/fa";
 import HeaderInput from "../Header/HeaderInput";
 import FlotingMenuBar from "./FlotingMenuBar";
+import LogInRegister from "../../LoginRegister/LogInRegister";
 
 // import HeaderInput from "../Header/HeaderInput";
 
@@ -34,7 +35,7 @@ const FixedHeader = () => {
   const [medicleTravel, setMedicleTravel] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [insuranceOpen, setInsuranceOpen] = useState(false);
-  const navbarRef = useRef(null);
+  const logRef = useRef(null);
   const menuRef = useRef(null);
 
   const insuranceServiceToggle = () => {
@@ -71,6 +72,15 @@ const FixedHeader = () => {
     setMedicleTravel(false);
     setContactOpen(!contactOpen);
     setInsuranceOpen(false);
+  };
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   useEffect(() => {
@@ -134,8 +144,9 @@ const FixedHeader = () => {
           </p>
         )}
       </div>
-      <div className="cursor-pointer" ref={userMenuRef}>
+      <div className="cursor-pointer">
         <div
+          ref={userMenuRef}
           onClick={() => setUserOpen((prevUserOpen) => !prevUserOpen)}
           className="flex items-center gap-2 "
         >
@@ -149,9 +160,9 @@ const FixedHeader = () => {
         >
           <li className="flex items-center gap-2">
             <FaSignInAlt />
-            <Link>Login</Link>
+            <Link to="/">Login</Link>
           </li>
-          <li className="flex items-center gap-2">
+          <li onClick={handleOpenModal} className="flex items-center gap-2">
             <FaRegUserCircle />
             <Link>Register</Link>
           </li>
@@ -181,10 +192,7 @@ const FixedHeader = () => {
           />
         )}
       </div>
-      <div
-        onClick={() => setMainNavOpen(!mainNavOpen)}
-        className="text-green"
-      >
+      <div onClick={() => setMainNavOpen(!mainNavOpen)} className="text-green">
         {mainNavOpen ? (
           <TbArrowsCross className="text-2xl" />
         ) : (
@@ -205,6 +213,7 @@ const FixedHeader = () => {
         contactToggle={contactToggle}
         contactOpen={contactOpen}
       />
+      <LogInRegister isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
