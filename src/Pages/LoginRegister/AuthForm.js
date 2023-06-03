@@ -3,7 +3,7 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import { useRef } from "react";
 
-const LogInRegister = ({isOpen }) => {
+const AuthForm = ({isOpen }) => {
   const [signIn, setSignIn] = useState(false);
    const logRef = useRef(null)
   useEffect(() => {
@@ -38,4 +38,4 @@ const LogInRegister = ({isOpen }) => {
   );
 };
 
-export default LogInRegister;
+export default AuthForm;
