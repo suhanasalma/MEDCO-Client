@@ -22,12 +22,12 @@ const PopularSearches = () => {
     }
   };
   const breakPoints = [
-    { width: 1, itemsToShow: 2, itemsToScroll: 2 },
-    { width: 550, itemsToShow: 3, itemsToScroll: 3 },
-    { width: 850, itemsToShow: 5, itemsToScroll: 5 },
-    { width: 1150, itemsToShow: 5, itemsToScroll: 5 },
-    { width: 1450, itemsToShow: 5, itemsToScroll: 5 },
-    { width: 1750, itemsToShow: 5, itemsToScroll: 5 },
+    { width: 1, itemsToShow: 1, itemsToScroll: 2 },
+    { width: 300, itemsToShow: 2, itemsToScroll: 3 },
+    { width: 400, itemsToShow: 3, itemsToScroll: 5 },
+    { width: 600, itemsToShow: 4, itemsToScroll: 5 },
+    { width: 800, itemsToShow: 5, itemsToScroll: 5 },
+    { width: 1000, itemsToShow: 6, itemsToScroll: 5 },
   ];
 
   return (

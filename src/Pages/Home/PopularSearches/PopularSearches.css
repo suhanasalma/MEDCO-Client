@@ -18,6 +18,7 @@
 
   .rec.rec-arrow:disabled {
     visibility: hidden;
+    display: hidden;
 }
 .rec.rec-arrow {
   height: 20px;
@@ -38,4 +39,9 @@
 
 .rec.lwuiq {
   display: none;
+  display: hidden;
+}
+
+.fAQxiW{
+   display: none !important;
 }

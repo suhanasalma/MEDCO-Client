@@ -157,7 +157,7 @@ const FixedHeader = () => {
           {userOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-          className={` duration-700 ease-in-out border-2 border-green font-bold text-green bg-white absolute px-4  space-y-2 ${
+          className={` duration-700 ease-in-out border-2 border-green font-bold text-green bg-white absolute px-4 py-2 space-y-4 ${
             !userOpen ? " z-0 opacity-0" : "  z-20 "
           }`}
         >
@@ -169,18 +169,21 @@ const FixedHeader = () => {
             <FaRegUserCircle />
             <Link>Register</Link>
           </li>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-sm font-bold flex items-center gap-2 ${
+                  isActive ? "text-brown" : "text-green"
+                }`
+              }
+            >
+              <TbLayoutDashboard /> DashBoard
+            </NavLink>
+          </li>
         </ul>
       </div>
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          `text-sm font-bold flex items-center gap-2 ${
-            isActive ? "text-brown" : "text-green"
-          }`
-        }
-      >
-        <TbLayoutDashboard /> DashBoard{" "}
-      </NavLink>
+
       <div className="sm:block hidden">
         {!darkMode && (
           <TbSunFilled
