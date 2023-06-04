@@ -79,9 +79,12 @@ const FixedHeader = () => {
     setModalOpen(true);
   };
 
+  
   const handleCloseModal = () => {
+    console.log("object");
     setModalOpen(false);
   };
+
 
   useEffect(() => {
     // add event listener to document object
