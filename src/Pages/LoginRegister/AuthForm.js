@@ -3,13 +3,14 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import { useRef } from "react";
 
-const AuthForm = ({isOpen }) => {
+const AuthForm = ({isOpen ,onClose}) => {
   const [signIn, setSignIn] = useState(false);
    const logRef = useRef(null)
   useEffect(() => {
     if (isOpen) {
       // Prevent scrolling of the page when the modal is open
       document.body.style.overflow = "hidden";
+      
     } else {
       // Restore scrolling of the page when the modal is closed
       document.body.style.overflow = "auto";
@@ -31,9 +32,9 @@ const AuthForm = ({isOpen }) => {
         boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
       }}
     >
-      <Register signIn={signIn} setSignIn={setSignIn} />
+      <Register onClose={onClose} signIn={signIn} setSignIn={setSignIn} />
 
-      <Login signIn={signIn} setSignIn={setSignIn} />
+      <Login onClose={onClose} signIn={signIn} setSignIn={setSignIn} />
     </div>
   );
 };

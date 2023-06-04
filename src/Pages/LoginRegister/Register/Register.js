@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaGooglePlusG, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-const Register = ({ isOpen, signIn, setSignIn }) => {
+import { VscChromeClose } from "react-icons/vsc";
+
+const Register = ({ isOpen, signIn, setSignIn ,onClose}) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
   const [lastNameFocus, setLastNameFocus] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
@@ -23,8 +25,8 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
           color: "#FFFFFF",
           transition: "transform 0.6s ease-in-out",
         }}
-        className={`w-5/12 p-10 text-center text-white flex items-center justify-center duration-1000 ease-in-out ${
-          signIn ? " translate-x-[140%] " : ""
+        className={`w-5/12 p-10 text-center text-white hidden sm:flex items-center justify-center duration-1000 ease-in-out ${
+          signIn ? " sm:translate-x-[140%] " : ""
         }`}
       >
         <div className="space-y-5">
@@ -41,12 +43,15 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
         </div>
       </div>
 
-      <form
-        className={`w-7/12 bg-white p-10 duration-1000 ease-in-out ${
-          signIn ? " -translate-x-[71%]" : ""
+      <div
+        className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out ${
+          signIn ? " sm:-translate-x-[71%]" : ""
         }`}
       >
-        <h1 className="text-center mb-5 font-bold text-green text-xl">
+        <div className="flex justify-end">
+        <VscChromeClose className="font-bold text-2xl" onClick={onClose}/>
+        </div>
+        <h1  className="text-center mb-5 font-bold text-green text-xl">
           Create Account
         </h1>
         <div className="flex gap-5 my-5 items-center justify-center">
@@ -63,7 +68,7 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
             <FaLinkedinIn />
           </div>
         </div>
-        <section className=" grid grid-cols-2 gap-10">
+        <form className="mt-10 grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="relative">
             <label
               onFocus={() => setfirstNameFocus(true)}
@@ -77,7 +82,7 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
             <input
               onFocus={() => setfirstNameFocus(true)}
               // onBlur={() => setfirstNameFocus(false)}
-              className={`w-11/12 px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
+              className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
              
                `}
               type="text"
@@ -97,7 +102,7 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
             <input
               onFocus={() => setLastNameFocus(true)}
               // onBlur={() => setLastNameFocus(false)}
-              className={`w-11/12 px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
+              className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
              
                `}
               type="text"
@@ -117,7 +122,7 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
             <input
               onFocus={() => setEmailFocus(true)}
               // onBlur={() => setEmailFocus(false)}
-              className={`w-11/12 px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
+              className={`w-full px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
              
                `}
               type="text"
@@ -137,7 +142,7 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
             <input
               onFocus={() => setPhoneFocus(true)}
               // onBlur={() => setPhoneFocus(false)}
-              className={`w-11/12 px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
+              className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
              
                `}
               type="tel"
@@ -146,11 +151,20 @@ const Register = ({ isOpen, signIn, setSignIn }) => {
               // placeholder="First Name"
             />
           </div>
-        </section>
-        <div className="text-white hover:text-green text-center my-5 btn w-52 rounded-lg px-4 py-2 bg-brown cursor-pointer mx-auto">
-          <input className=" font-bold text-lg text-center  " type="submit" />
+        </form>
+        <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">
+        <button className=" font-medium text-base text-center  " type="submit" >Sign Up</button>
         </div>
-      </form>
+       <div className="font-bold text-green text-xs text-center sm:hidden">
+        <span className="font-medium">already have an account? </span>
+        <span
+            onClick={() => setSignIn(!signIn)}
+            className="border-b-2 cursor-pointer"
+          >
+            Login
+          </span>
+       </div>
+      </div>
     </div>
   );
 };
