@@ -5,7 +5,7 @@ import Footer from "../Pages/SharedPages/Footer/Footer/Footer";// import Header 
 
 const Main = () => {
   return (
-    <div className="border-4 mx-auto max-w-screen-2xl">
+    <div className=" overflow-hidden mx-auto max-w-screen-2xl">
       <TestHeader />
       <Outlet />
       {/* <Header/> */}

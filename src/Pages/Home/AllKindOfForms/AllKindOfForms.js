@@ -56,16 +56,11 @@ const AllKindOfForms = () => {
          </button>
        </div>
        <selectedReview.component />
-       <div
-         className="relative"
-         onMouseLeave={() => setMenu(false)}
-       >
+       <div className="relative" onMouseLeave={() => setMenu(false)}>
          <FaBars className="" onMouseOverCapture={() => setMenu(true)} />
          <div
-           className={`absolute bg-white border-2 text-green font-medium p-5 text-sm space-y-4 -right-5 transition-all ease-in-out delay-300  ${
-             menu
-               ? "opacity-1"
-               : "opacity-0"
+           className={`absolute bg-white border-2 text-green font-medium p-5 text-sm space-y-4 -right-5 transition-all duration-100 ease-in-out delay-300  ${
+             menu ? "opacity-1 " : "opacity-0 left-52"
            }`}
          >
            {forms.map((form, i) => (
