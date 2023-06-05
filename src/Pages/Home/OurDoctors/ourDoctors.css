@@ -5,3 +5,60 @@
     background-size: cover;
    
 } */
+
+
+
+@media screen and (max-width:730px) {
+    .doctorsHeader{
+      display: none;
+      color: red;
+    }
+    .secondDetails{
+        display: block;
+    }
+    .imgBtn{
+        top: 10rem;
+    }
+  }
+@media screen and (max-width:682px) {
+    .doctorCard{
+        width: 15rem;
+    }
+    .doctorImage{
+        width: 17rem;
+        height: 17rem;
+        object-fit: cover;
+    }
+    
+  }
+@media screen and (max-width:600px) {
+    .doctorCard{
+        width: 13rem;
+    }
+    .doctorImage{
+        width: 14rem;
+        height: 16rem;
+        object-fit: cover;
+    }
+    
+  }
+@media screen and (max-width:515px) {
+    .doctorCard{
+        width: 16rem;
+    }
+    .doctorImage{
+        width: 16rem;
+        height: 17rem;
+        object-fit: cover;
+    }
+    .secondBtn{
+        display: flex;
+    }
+    .firstBtn{
+        display: none;
+    }
+
+    .ourDocContainer{
+        flex-direction:column-reverse;
+    }
+  }
