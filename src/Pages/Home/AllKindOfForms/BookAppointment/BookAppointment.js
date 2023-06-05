@@ -10,7 +10,7 @@ const BookAppointment = () => {
     console.log("data");
   };
   return (
-    <article className="w-9/12">
+    <article className="flex-1">
       <Title design="text-white" title="Make an appointment with a doctor" />
       <form className="mt-10" onSubmit={handleSubmit(handleForm)}>
         <section>
@@ -38,10 +38,10 @@ const BookAppointment = () => {
           <p className="font-bold text-lg my-5">Booking Date</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <select
-              className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-2 rounded-lg"
+              className="text-white bg-green  ring-offset-2 ring-4 outline-none  px-4 py-2 rounded-lg overflow-hidden"
               {...register("Specialization", { required: true })}
             >
-              <option value="">Specialization</option>
+              <option className=" border-4 border-red" value="">Specialization</option>
               <option value="A">Option A</option>
               <option value="B">Option B</option>
             </select>

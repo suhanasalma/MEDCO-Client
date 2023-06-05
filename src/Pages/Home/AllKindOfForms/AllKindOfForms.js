@@ -40,8 +40,8 @@ const AllKindOfForms = () => {
      };
 
    return (
-     <section className="mb-32 bg-green w-11/12 md:w-10/12 mx-auto flex justify-between gap-5 sm:gap-10 py-10 lg-py-20 px-5 lg:px-10 text-white">
-       <div className="flex md:gap-10 gap-5 py-5 md:p-5">
+     <section className="mb-32 bg-green sm:w-11/12 md:w-10/12 mx-auto flex justify-between gap-5 sm:gap-10 py-10 lg-py-20 px-5 lg:px-10 text-white">
+       <div className="hidden sm:flex md:gap-10 gap-5 py-5 md:p-5">
          <button
            onClick={handlePreviousSlide}
            className="ring-offset-2 ring-2 md:ring-4 md:w-10 md:h-10 h-5 w-5 rounded-full text-white font-bold text-xs md:text-base"
@@ -62,7 +62,7 @@ const AllKindOfForms = () => {
        >
          <FaBars className="" onMouseOverCapture={() => setMenu(true)} />
          <div
-           className={`absolute bg-white border-2 text-green font-medium p-5 text-sm space-y-4 -right-10 transition-all ease-in-out delay-300  ${
+           className={`absolute bg-white border-2 text-green font-medium p-5 text-sm space-y-4 -right-5 transition-all ease-in-out delay-300  ${
              menu
                ? "opacity-1"
                : "opacity-0"
