@@ -34,9 +34,9 @@ const HomeCarousel = () => {
   // })
 
   return (
-    <div className="w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem] ">
+    <div className="w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem] overflow-hidden">
       <div className="relative w-full h-full">
-        <div className="w-full h-full relative">
+        <div className="w-full h-full relative ">
           <div dangerouslySetInnerHTML={{ __html: selectedSlider.details }} />
           <img
             src={selectedSlider.img}
@@ -47,12 +47,12 @@ const HomeCarousel = () => {
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
           <button
             onClick={handlePreviousSlide}
-            className="bg-brown w-10 h-10 rounded-full text-white font-bold text-2xl "
+            className="bg-brown w-7 h-7 sm:w-10 sm:h-10 rounded-full text-white font-bold sm:text-2xl "
           >
             ❮
           </button>
           <button
-            className="bg-brown w-10 h-10 rounded-full text-white font-bold text-2xl"
+            className="bg-brown w-7 h-7 sm:w-10 sm:h-10 rounded-full text-white font-bold sm:text-2xl"
             onClick={handleNextSlide}
           >
             ❯
