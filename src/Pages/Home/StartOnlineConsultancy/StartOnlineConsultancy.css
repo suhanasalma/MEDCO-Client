@@ -1,0 +1,12 @@
+@media screen and (max-width:462px) {
+    .Onlineconsultency{
+        grid-template-columns: repeat(1,1fr);
+        /* justify-items: center; */
+       
+
+    }
+    .onlineConBnt{
+        width: 80%;
+    }
+   
+  }

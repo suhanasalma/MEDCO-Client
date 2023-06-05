@@ -27,7 +27,7 @@ const OurDoctors = () => {
   };
 
   return (
-    <div className="lg:w-10/12 w-11/12 mx-auto mt-10 mb-20 border-4">
+    <div className="lg:w-10/12 w-11/12 mx-auto mt-10 mb-20">
       <div className="space-y-4 hidden mb-5 secondDetails">
         <p className="font-bold text-lg">Our Doctors2</p>
         <Title design="text-4xl" title="Qualified Doctors" />

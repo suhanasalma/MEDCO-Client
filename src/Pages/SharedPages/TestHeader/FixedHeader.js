@@ -147,7 +147,7 @@ const FixedHeader = () => {
           </p>
         )}
       </div>
-      <div className="cursor-pointer">
+      <div className="cursor-pointer relative">
         <div
           ref={userMenuRef}
           onClick={() => setUserOpen((prevUserOpen) => !prevUserOpen)}
@@ -157,7 +157,7 @@ const FixedHeader = () => {
           {userOpen ? <FaAngleUp /> : <FaAngleDown />}
         </div>
         <ul
-          className={` duration-700 ease-in-out border-2 border-green font-bold text-green bg-white absolute px-4 py-2 space-y-4 ${
+          className={` duration-700 ease-in-out border-2 border-green font-bold text-green bg-white absolute right-0 px-4 py-2 space-y-4 ${
             !userOpen ? " z-0 opacity-0" : "  z-20 "
           }`}
         >

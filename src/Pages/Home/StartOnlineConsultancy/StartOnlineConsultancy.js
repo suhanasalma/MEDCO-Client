@@ -8,6 +8,7 @@ import query from "../../../Assests/onlineconsultancy/query.jpg";
 import doctor from "../../../Assests/onlineconsultancy/doctor.jpg";
 import { FcSurvey, FcVideoCall, FcCallback, FcComments } from "react-icons/fc";
 import LinkButton from "../../../Components/LinkButton/LinkButton";
+import './StartOnlineConsultancy.css'
 
 const StartOnlineConsultancy = () => {
   const [selectOption, setSelectOption] = useState(null);
@@ -52,7 +53,7 @@ const StartOnlineConsultancy = () => {
   };
 
   return (
-    <div className="w-10/12 sm:w-11/12 lg:w-10/12 mx-auto flex justify-between gap-10 my-32 ">
+    <div className="w-10/12 sm:w-11/12 lg:w-10/12 mx-auto flex justify-between gap-10 my-32">
       <div className="w-5/12 xl:w-4/12 sm:border-[16px] sm:rounded-full overflow-hidden border-green sm:block hidden">
         <img
           className="w-full h-full object-cover "
@@ -71,7 +72,7 @@ const StartOnlineConsultancy = () => {
           design="text-sm"
           details="Post unlimited follow-ups to the doctor for the next 50 or 100 hours by picking one of out #iclinic100hrs chat services."
         />
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-2 gap-10 Onlineconsultency">
           {consultancyOptions.map((option, i) => (
             <section key={i} className="flex items-center">
               <div
@@ -88,14 +89,14 @@ const StartOnlineConsultancy = () => {
                   <div className="w-3 h-3 bg-green rounded-full"></div>
                 )}
               </div>
-              <div className="flex items-center bg-light-green px-4 py-2 w-52 gap-5 rounded-full text-lg font-bold border-green border-2">
+              <div className="flex items-center bg-light-green px-4 py-2 w-52 gap-5 rounded-full text-lg font-bold border-green border-2 onlineConBnt">
                 <option.icon className="text-2xl" />
                 <p>{option.name}</p>
               </div>
             </section>
           ))}
         </div>
-        <div className="">
+        <div className="onlineBtn ">
           <LinkButton
             design="w-72  border-2 border-green"
             title={
