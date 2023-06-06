@@ -49,7 +49,7 @@ const Login = ({ signIn, setSignIn, isOpen,onClose }) => {
       <VscChromeClose className="font-bold text-2xl" onClick={onClose}/>
       </div>
         <h1 className="text-center mb-5 font-bold text-green text-xl">
-          Create Account 2
+         Login
         </h1>
         
         <div className="flex gap-5 my-5 items-center justify-center">
@@ -64,9 +64,9 @@ const Login = ({ signIn, setSignIn, isOpen,onClose }) => {
           </div>
         </div>
         <form className="mt-10 grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="relative">
+        <div className="relative">
             <label
-              onFocus={() => setfirstNameFocus(true)}
+              onClick={() => setfirstNameFocus(true)}
               className={`absolute duration-500 ease-in-out left-2    ${
                 firstNameFocus ? "bottom-10 text-green" : "bottom-3 text-gray"
               }`}
@@ -76,8 +76,8 @@ const Login = ({ signIn, setSignIn, isOpen,onClose }) => {
             </label>
             <input
               onFocus={() => setfirstNameFocus(true)}
-              // onBlur={() => setfirstNameFocus(false)}
-              className={`w-full px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
+              // onBlur={() => setLastNameFocus(false)}
+              className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
              
                `}
               type="text"
