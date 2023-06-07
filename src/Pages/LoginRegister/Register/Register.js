@@ -4,7 +4,6 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useRef } from "react";
 
 const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
@@ -18,7 +17,8 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
   const [data, setData] = useState("");
 
   const RegistrationSchema = yup
-    .object({
+    .object()
+    .shape({
       firstName: yup
         .string("name should be in string")
         .required("please enter name")
@@ -60,10 +60,7 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
         .string()
         .required("Please confirm your password")
         .oneOf([yup.ref("createPass")], "Passwords doesn't match"),
-      phone: yup
-        .string()
-        .required("Please enter a phone number")
-        .matches(/^(\+?88)?01[0-9]{9}$/, "Not a valid phone number"),
+      phone: yup.string().required("Please enter a phone number"),
       address: yup
         .string()
         .required("Please enter address")
@@ -77,9 +74,6 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
     formState: { errors },
     reset,
     trigger,
-    setValue,
-    getValues,
-    watch,
   } = useForm({
     resolver: yupResolver(RegistrationSchema),
   });
@@ -90,12 +84,13 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
   const [textareaHeight, setTextareaHeight] = useState("auto");
 
   const handleTextareaChange = (event) => {
+    setAddressFocus(true);
+    trigger("address");
     event.target.style.height = "auto";
     event.target.style.height = event.target.scrollHeight + "px";
     setTextareaHeight(event.target.style.height);
-    setAddressFocus(true);
   };
- const password = watch("firstName", "");
+
   return (
     <div
       className={`min-h-[500px] flex my-10 duration-500 ease-in-out  mx-10 lg:mx-0 overflow-hidden absolute ${
@@ -168,21 +163,19 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 First Name
               </label>
               <input
-                {...register("firstName")}
                 onFocus={() => setfirstNameFocus(true)}
-                // onChange={() => setfirstNameFocus(true)}
-                onChange={() => {
+                onInput={() => {
+                  setfirstNameFocus(true);
                   trigger("firstName");
                 }}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
+                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md `}
+                {...register("firstName", { required: true })}
                 type="text"
               />
 
               {errors.firstName && (
                 <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.firstName?.message}{" "}
+                  {errors.firstName.message}
                 </span>
               )}
             </div>
@@ -199,12 +192,13 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 Last Name
               </label>
               <input
-                {...register("lastName")}
                 onFocus={() => setLastNameFocus(true)}
-                onChange={() => setLastNameFocus(true)}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
+                onInput={() => {
+                  setLastNameFocus(true);
+                  trigger("lastName");
+                }}
+                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
+                {...register("lastName")}
                 type="text"
               />
               {errors.lastName && (
@@ -226,13 +220,14 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 Age
               </label>
               <input
-                {...register("age", { min: 0, max: 200 })}
                 onFocus={() => setAgeFocus(true)}
-                onChange={() => setAgeFocus(true)}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
+                onInput={() => {
+                  setAgeFocus(true);
+                  trigger("age");
+                }}
+                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
                 type="text"
+                {...register("age", { min: 0, max: 200 })}
               />
               {errors.age && (
                 <span className="text-red text-xs absolute left-5 -bottom-2 ">
@@ -253,11 +248,13 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 Email
               </label>
               <input
-                {...register("email", { required: true })}
                 onFocus={() => setEmailFocus(true)}
-                onChange={() => setEmailFocus(true)}
+                onInput={() => {
+                  setEmailFocus(true);
+                  trigger("email"); // Trigger validation when the input value changes
+                }}
                 className={`w-full px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
-                type="email"
+                {...register("email", { required: true })}
               />
               {errors.email && (
                 <span className="text-red text-xs absolute left-5 -bottom-2 ">
@@ -278,13 +275,14 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 Phone
               </label>
               <input
-                {...register("phone")}
                 onFocus={() => setPhoneFocus(true)}
-                onChange={() => setPhoneFocus(true)}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
-                type="tel"
+                onInput={() => {
+                  setPhoneFocus(true);
+                  trigger("phone");
+                }}
+                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md `}
+                type="text"
+                {...register("phone")}
               />
               {errors.phone && (
                 <span className="text-red text-xs absolute left-5 -bottom-2  ">
@@ -306,12 +304,12 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
               </label>
 
               <textarea
-                {...register("address")}
                 onFocus={() => setAddressFocus(true)}
-                onChange={handleTextareaChange}
+                onInput={handleTextareaChange}
                 className={`w-full px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
                 type="text"
                 style={{ height: textareaHeight }}
+                {...register("address")}
               />
               {errors.address && (
                 <span className="text-red text-xs absolute left-5 -bottom-2  ">
@@ -332,11 +330,14 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 Create Password
               </label>
               <input
-                {...register("createPass")}
                 onFocus={() => setCreatePassFocus(true)}
-                onChange={() => setCreatePassFocus(true)}
                 className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
                 type="password"
+                {...register("createPass")}
+                onInput={() => {
+                  setCreatePassFocus(true);
+                  trigger("createPass"); // Trigger validation when the input value changes
+                }}
               />
               {errors.createPass && (
                 <span className="text-red text-xs absolute left-5 -bottom-2 ">
@@ -357,13 +358,14 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 Match password
               </label>
               <input
-                {...register("matchPass")}
                 onFocus={() => setMatchPassFocus(true)}
-                onChange={() => setMatchPassFocus(true)}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
+                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
                 type="password"
+                {...register("matchPass")}
+                onInput={() => {
+                  setMatchPassFocus(true);
+                  trigger("matchPass");
+                }}
               />
               {errors.matchPass && (
                 <span className="text-red text-xs absolute left-5 -bottom-2 ">
