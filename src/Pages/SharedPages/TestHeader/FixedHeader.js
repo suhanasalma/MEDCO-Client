@@ -20,7 +20,7 @@ import {
 } from "react-icons/fa";
 import HeaderInput from "../Header/HeaderInput";
 import FlotingMenuBar from "./FlotingMenuBar";
-import AuthForm from "../../LoginRegister/AuthForm";
+import AuthForm from "../../LoginRegister/Auth/AuthForm";
 
 // import HeaderInput from "../Header/HeaderInput";
 

@@ -4,8 +4,10 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import InputField from "../../../Components/InputField/InputField";
+import AuthSideBar from "../Auth/AuthSideBar";
 
-const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
+const Register = ({  signIn, setSignIn, onClose }) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
   const [lastNameFocus, setLastNameFocus] = useState(false);
   const [ageFocus, setAgeFocus] = useState(false);
@@ -14,7 +16,6 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
   const [addressFocus, setAddressFocus] = useState(false);
   const [createPassFocus, setCreatePassFocus] = useState(false);
   const [matchPassFocus, setMatchPassFocus] = useState(false);
-  const [data, setData] = useState("");
 
   const RegistrationSchema = yup
     .object()
@@ -80,6 +81,7 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
 
   const handleRegistration = (data) => {
     console.log(data);
+    reset()
   };
   const [textareaHeight, setTextareaHeight] = useState("auto");
 
@@ -97,34 +99,7 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
         signIn ? "opacity-0 z-0" : "z-10 opacity-100"
       }`}
     >
-      <div
-        style={{
-          background: "#2c4c3b",
-          background: "-webkit-linear-gradient(to right, #2c4c3b, #af976d)",
-          background: "linear-gradient(to right, #2c4c3b, #af976d)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "0 0",
-          color: "#FFFFFF",
-          transition: "transform 0.6s ease-in-out",
-        }}
-        className={`w-5/12 p-10 text-center text-white hidden sm:flex items-center justify-center duration-1000 ease-in-out ${
-          signIn ? " sm:translate-x-[140%] " : ""
-        }`}
-      >
-        <div className="space-y-5">
-          <h1 className="text-3xl font-bold">Welcome Back</h1>
-          <p className="text-sm">
-            To keep connected with us please login with your personal info
-          </p>
-          <button
-            onClick={() => setSignIn(!signIn)}
-            className="border-2 border-white w-52 rounded-lg px-4 py-2"
-          >
-            Sign In
-          </button>
-        </div>
-      </div>
+      <AuthSideBar setSignIn={setSignIn} signIn={signIn} title='Welcome Back' details=' To keep connected with us please login with your email'/>
 
       <div
         className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out ${
@@ -150,146 +125,12 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
         </div>
         <form onSubmit={handleSubmit(handleRegistration)}>
           <section className="mt-10 grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start	">
-            <div className="relative">
-              <label
-                onClick={() => setfirstNameFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  firstNameFocus || errors.firstName
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                First Name
-              </label>
-              <input
-                onFocus={() => setfirstNameFocus(true)}
-                onInput={() => {
-                  setfirstNameFocus(true);
-                  trigger("firstName");
-                }}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md `}
-                {...register("firstName", { required: true })}
-                type="text"
-              />
+            <InputField label='First Name' name='firstName' setFocus={setfirstNameFocus} focus = {firstNameFocus} register={register} errors={errors} trigger={trigger}/>
 
-              {errors.firstName && (
-                <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.firstName.message}
-                </span>
-              )}
-            </div>
-            <div className="relative">
-              <label
-                onClick={() => setLastNameFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  lastNameFocus || errors.lastName
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                Last Name
-              </label>
-              <input
-                onFocus={() => setLastNameFocus(true)}
-                onInput={() => {
-                  setLastNameFocus(true);
-                  trigger("lastName");
-                }}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
-                {...register("lastName")}
-                type="text"
-              />
-              {errors.lastName && (
-                <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.lastName?.message}{" "}
-                </span>
-              )}
-            </div>
-            <div className="relative">
-              <label
-                onClick={() => setAgeFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  ageFocus || errors.age
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                Age
-              </label>
-              <input
-                onFocus={() => setAgeFocus(true)}
-                onInput={() => {
-                  setAgeFocus(true);
-                  trigger("age");
-                }}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
-                type="text"
-                {...register("age", { min: 0, max: 200 })}
-              />
-              {errors.age && (
-                <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.age?.message}
-                </span>
-              )}
-            </div>
-            <div className="relative">
-              <label
-                onClick={() => setEmailFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  emailFocus || errors.email
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                Email
-              </label>
-              <input
-                onFocus={() => setEmailFocus(true)}
-                onInput={() => {
-                  setEmailFocus(true);
-                  trigger("email"); // Trigger validation when the input value changes
-                }}
-                className={`w-full px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
-                {...register("email", { required: true })}
-              />
-              {errors.email && (
-                <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.email?.message}{" "}
-                </span>
-              )}
-            </div>
-            <div className="relative">
-              <label
-                onClick={() => setPhoneFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  phoneFocus || errors.phone
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                Phone
-              </label>
-              <input
-                onFocus={() => setPhoneFocus(true)}
-                onInput={() => {
-                  setPhoneFocus(true);
-                  trigger("phone");
-                }}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md `}
-                type="text"
-                {...register("phone")}
-              />
-              {errors.phone && (
-                <span className="text-red text-xs absolute left-5 -bottom-2  ">
-                  {errors.phone.message}
-                </span>
-              )}
-            </div>
+            <InputField label='Last Name' name='lastName' setFocus={setLastNameFocus} focus = {lastNameFocus} register={register} errors={errors} trigger={trigger}/>
+            <InputField label='Age' name='age' setFocus={setAgeFocus} focus = {ageFocus} register={register} errors={errors} trigger={trigger}/>
+            <InputField label='Email' name='email' setFocus={setEmailFocus} focus = {emailFocus} register={register} errors={errors} trigger={trigger}/>
+            <InputField label='Phone' name='phone' setFocus={setPhoneFocus} focus = {phoneFocus} register={register} errors={errors} trigger={trigger}/>
             <div className="relative">
               <label
                 onClick={() => setAddressFocus(true)}
@@ -317,62 +158,8 @@ const Register = ({ isOpen, signIn, setSignIn, onClose }) => {
                 </span>
               )}
             </div>
-            <div className="relative">
-              <label
-                onClick={() => setCreatePassFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  createPassFocus || errors.createPass
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                Create Password
-              </label>
-              <input
-                onFocus={() => setCreatePassFocus(true)}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
-                type="password"
-                {...register("createPass")}
-                onInput={() => {
-                  setCreatePassFocus(true);
-                  trigger("createPass"); // Trigger validation when the input value changes
-                }}
-              />
-              {errors.createPass && (
-                <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.createPass?.message}{" "}
-                </span>
-              )}
-            </div>
-            <div className="relative">
-              <label
-                onClick={() => setMatchPassFocus(true)}
-                className={`absolute duration-500 ease-in-out left-2    ${
-                  matchPassFocus || errors.matchPass
-                    ? "bottom-8 text-green font-semibold"
-                    : "bottom-3 text-sm text-brown"
-                }`}
-                htmlFor=""
-              >
-                Match password
-              </label>
-              <input
-                onFocus={() => setMatchPassFocus(true)}
-                className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
-                type="password"
-                {...register("matchPass")}
-                onInput={() => {
-                  setMatchPassFocus(true);
-                  trigger("matchPass");
-                }}
-              />
-              {errors.matchPass && (
-                <span className="text-red text-xs absolute left-5 -bottom-2 ">
-                  {errors.matchPass?.message}
-                </span>
-              )}
-            </div>
+            <InputField label='Create Password' type ='password' name='createPass' setFocus={setCreatePassFocus} focus = {createPassFocus} register={register} errors={errors} trigger={trigger}/>
+            <InputField label='Match password' type ='password' name='matchPass' setFocus={setMatchPassFocus} focus = {matchPassFocus} register={register} errors={errors} trigger={trigger}/>
           </section>
           <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">
             <button

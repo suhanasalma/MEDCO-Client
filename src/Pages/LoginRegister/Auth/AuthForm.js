@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Login from "./Login/Login";
-import Register from "./Register/Register";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 import { useRef } from "react";
 
 const AuthForm = ({isOpen ,onClose}) => {
   const [signIn, setSignIn] = useState(false);
-   const logRef = useRef(null)
   useEffect(() => {
     if (isOpen) {
       // Prevent scrolling of the page when the modal is open
