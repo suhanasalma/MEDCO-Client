@@ -24,7 +24,8 @@ const InputField = ({
         {label}
       </label>
       <input
-        onFocus={() => setFocus(true)}
+        onFocus={() =>{ setFocus(true)
+        trigger(name)}}
         onInput={() => {
           setFocus(true);
           trigger(name);

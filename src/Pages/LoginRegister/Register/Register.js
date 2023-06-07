@@ -3,11 +3,11 @@ import { FaGooglePlusG, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import InputField from "../../../Components/InputField/InputField";
 import AuthSideBar from "../Auth/AuthSideBar";
+import { useSelector } from "react-redux";
 
-const Register = ({  signIn, setSignIn, onClose }) => {
+const Register = ({ signIn, setSignIn, onClose }) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
   const [lastNameFocus, setLastNameFocus] = useState(false);
   const [ageFocus, setAgeFocus] = useState(false);
@@ -16,58 +16,8 @@ const Register = ({  signIn, setSignIn, onClose }) => {
   const [addressFocus, setAddressFocus] = useState(false);
   const [createPassFocus, setCreatePassFocus] = useState(false);
   const [matchPassFocus, setMatchPassFocus] = useState(false);
-
-  const RegistrationSchema = yup
-    .object()
-    .shape({
-      firstName: yup
-        .string("name should be in string")
-        .required("please enter name")
-        .max(20, "Name should not exceed 20 characters")
-        .matches(/^[^0-9][^0-9]*$/, "Name should not contain numbers"), //Name should not start with a number or contain numbers
-      age: yup
-        .mixed()
-        .test("is-valid-age", "Age must be a valid number", function (value) {
-          if (typeof value === "number" && value > -1 && value <= 200) {
-            return true;
-          }
-          if (
-            typeof value === "string" &&
-            !isNaN(parseInt(value)) &&
-            parseInt(value) > -1 &&
-            parseInt(value) <= 200
-          ) {
-            return true;
-          }
-          return false;
-        })
-        .required("Please enter your age"),
-      email: yup
-        .string()
-        .email("Please enter a valid email address")
-        .required("Please enter your email")
-        .matches(
-          /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i,
-          "Please enter a valid email address"
-        ),
-      createPass: yup
-        .string()
-        .required("Please enter a password")
-        .min(8, "Password should be at least 8 characters")
-        .max(100, "Password should not exceed 100 characters")
-        .matches(/^(?=.*[A-Z]).*$/, "at least 1 uppercase letter")
-        .matches(/^(?=.*\d.*\d).*$/, "at least 2 numbers"),
-      matchPass: yup
-        .string()
-        .required("Please confirm your password")
-        .oneOf([yup.ref("createPass")], "Passwords doesn't match"),
-      phone: yup.string().required("Please enter a phone number"),
-      address: yup
-        .string()
-        .required("Please enter address")
-        .max(400, "Address should not exceed 400 characters"),
-    })
-    .required();
+  const [textareaHeight, setTextareaHeight] = useState("auto");
+  const registrationSchema = useSelector((state) => state?.validation?.validationSchema);
 
   const {
     register,
@@ -76,14 +26,12 @@ const Register = ({  signIn, setSignIn, onClose }) => {
     reset,
     trigger,
   } = useForm({
-    resolver: yupResolver(RegistrationSchema),
+    resolver: yupResolver(registrationSchema),
   });
 
   const handleRegistration = (data) => {
-    console.log(data);
-    reset()
+    reset();
   };
-  const [textareaHeight, setTextareaHeight] = useState("auto");
 
   const handleTextareaChange = (event) => {
     setAddressFocus(true);
@@ -93,13 +41,65 @@ const Register = ({  signIn, setSignIn, onClose }) => {
     setTextareaHeight(event.target.style.height);
   };
 
+  const formInputs = [
+    {
+      name: "firstName",
+      label: "First Name",
+      setFocusFunction: setfirstNameFocus,
+      settedFoucs: firstNameFocus,
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      setFocusFunction: setLastNameFocus,
+      settedFoucs: lastNameFocus,
+    },
+    {
+      name: "age",
+      label: "Age",
+      setFocusFunction: setAgeFocus,
+      settedFoucs: ageFocus,
+    },
+    {
+      name: "email",
+      label: "Email",
+      setFocusFunction: setEmailFocus,
+      settedFoucs: emailFocus,
+    },
+    {
+      name: "phone",
+      label: "Phone",
+      setFocusFunction: setPhoneFocus,
+      settedFoucs: phoneFocus,
+    },
+    {
+      name: "createPass",
+      label: "Create password",
+      fieldType: "password",
+      setFocusFunction: setCreatePassFocus,
+      settedFoucs: createPassFocus,
+    },
+    {
+      name: "matchPass",
+      label: "Match password",
+      fieldType: "password",
+      setFocusFunction: setMatchPassFocus,
+      settedFoucs: matchPassFocus,
+    },
+  ];
+
   return (
     <div
       className={`min-h-[500px] flex my-10 duration-500 ease-in-out  mx-10 lg:mx-0 overflow-hidden absolute ${
         signIn ? "opacity-0 z-0" : "z-10 opacity-100"
       }`}
     >
-      <AuthSideBar setSignIn={setSignIn} signIn={signIn} title='Welcome Back' details=' To keep connected with us please login with your email'/>
+      <AuthSideBar
+        setSignIn={setSignIn}
+        signIn={signIn}
+        title="Welcome Back"
+        details=" To keep connected with us please login with your email"
+      />
 
       <div
         className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out ${
@@ -125,12 +125,19 @@ const Register = ({  signIn, setSignIn, onClose }) => {
         </div>
         <form onSubmit={handleSubmit(handleRegistration)}>
           <section className="mt-10 grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start	">
-            <InputField label='First Name' name='firstName' setFocus={setfirstNameFocus} focus = {firstNameFocus} register={register} errors={errors} trigger={trigger}/>
-
-            <InputField label='Last Name' name='lastName' setFocus={setLastNameFocus} focus = {lastNameFocus} register={register} errors={errors} trigger={trigger}/>
-            <InputField label='Age' name='age' setFocus={setAgeFocus} focus = {ageFocus} register={register} errors={errors} trigger={trigger}/>
-            <InputField label='Email' name='email' setFocus={setEmailFocus} focus = {emailFocus} register={register} errors={errors} trigger={trigger}/>
-            <InputField label='Phone' name='phone' setFocus={setPhoneFocus} focus = {phoneFocus} register={register} errors={errors} trigger={trigger}/>
+            {formInputs.map((field) => (
+              <InputField
+                label={field.label}
+                name={field.name}
+                setFocus={field.setFocusFunction}
+                focus={field.settedFoucs}
+                register={register}
+                errors={errors}
+                trigger={trigger}
+                type={field.fieldType}
+              />
+            ))}
+          
             <div className="relative">
               <label
                 onClick={() => setAddressFocus(true)}
@@ -145,7 +152,10 @@ const Register = ({  signIn, setSignIn, onClose }) => {
               </label>
 
               <textarea
-                onFocus={() => setAddressFocus(true)}
+                onFocus={() => {
+                  setAddressFocus(true);
+                  trigger("address");
+                }}
                 onInput={handleTextareaChange}
                 className={`w-full px-4 py-2 outline-none bg-[#F9F6EE] rounded-md`}
                 type="text"
@@ -158,8 +168,6 @@ const Register = ({  signIn, setSignIn, onClose }) => {
                 </span>
               )}
             </div>
-            <InputField label='Create Password' type ='password' name='createPass' setFocus={setCreatePassFocus} focus = {createPassFocus} register={register} errors={errors} trigger={trigger}/>
-            <InputField label='Match password' type ='password' name='matchPass' setFocus={setMatchPassFocus} focus = {matchPassFocus} register={register} errors={errors} trigger={trigger}/>
           </section>
           <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">
             <button
