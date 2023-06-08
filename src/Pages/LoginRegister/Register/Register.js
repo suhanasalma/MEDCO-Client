@@ -191,12 +191,13 @@ const Register = ({ signIn, setSignIn, onClose }) => {
 
         <div className="font-bold text-green text-xs text-center sm:hidden">
           <span className="font-medium">already have an account? </span>
-          <span
+          <button
+            disabled={signIn}
             onClick={() => setSignIn(!signIn)}
             className="border-b-2 cursor-pointer"
           >
             Login
-          </span>
+          </button>
         </div>
       </div>
     </div>
