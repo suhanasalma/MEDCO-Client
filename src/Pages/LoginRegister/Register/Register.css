@@ -1,0 +1,8 @@
+
+@media screen and (max-width:560px) {
+    .registration{
+      grid-template-columns: repeat(1,1fr);
+    }
+    
+    
+  }

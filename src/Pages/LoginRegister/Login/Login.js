@@ -10,7 +10,7 @@ const Login = ({ signIn, setSignIn, onClose }) => {
   return (
     <div
       className={`min-h-[500px] flex my-10 duration-500 ease-in-out  mx-10 lg:mx-0 overflow-hidden absolute ${
-        signIn ? "z-10 opacity-100" : "opacity-0 z-0"
+        signIn ? "z-10 opacity-1" : "opacity-0 z-0"
       }`}
     >
       
@@ -39,46 +39,8 @@ const Login = ({ signIn, setSignIn, onClose }) => {
           </div>
         </div>
         <form className="mt-10 grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="relative">
-            <label
-              onClick={() => setfirstNameFocus(true)}
-              className={`absolute duration-500 ease-in-out left-2    ${
-                firstNameFocus ? "bottom-10 text-green" : "bottom-3 text-gray"
-              }`}
-              htmlFor=""
-            >
-              firstName
-            </label>
-            <input
-              onFocus={() => setfirstNameFocus(true)}
-              // onBlur={() => setLastNameFocus(false)}
-              className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
-              type="text"
-              // placeholder="First Name"
-            />
-          </div>
-          <div className="relative">
-            <label
-              onClick={() => setLastNameFocus(true)}
-              className={`absolute duration-500 ease-in-out left-2    ${
-                lastNameFocus ? "bottom-10 text-green" : "bottom-3 text-gray"
-              }`}
-              htmlFor=""
-            >
-              firstName
-            </label>
-            <input
-              onFocus={() => setLastNameFocus(true)}
-              // onBlur={() => setLastNameFocus(false)}
-              className={`w-full  px-4 py-2 outline-none bg-[#F9F6EE] rounded-md 
-             
-               `}
-              type="text"
-              // placeholder="First Name"
-            />
-          </div>
+        
+         
           <div className="relative">
             <label
               onClick={() => setEmailFocus(true)}
