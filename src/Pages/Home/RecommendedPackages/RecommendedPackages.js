@@ -29,7 +29,6 @@ const RecommendedPackages = () => {
       price: "20000tk",
       img: skin,
     },
-  
   ];
   return (
     <div className=" w-11/12 lg:w-10/12 mx-auto my-40">
@@ -44,12 +43,15 @@ const RecommendedPackages = () => {
         />
       </div>
       <div className=" md:flex container mx-auto mt-10  xl:justify-between md:justify-center xl:flex-nowrap md:flex-wrap grid sm:grid-cols-2 grid-cols-1 justify-items-center ">
-        {specialPackage.map((pack, i) => (
+        {specialPackage?.map((pack, i) => (
           <RecommendedPackage key={i} pack={pack} />
         ))}
       </div>
       <div className="w-52 mx-auto  mt-10 shadow-lg shadow-light-green">
-        <LinkButton title="See All Packages" design="w-52  border-2 border-green" />
+        <LinkButton
+          title="See All Packages"
+          design="w-52  border-2 border-green"
+        />
       </div>
     </div>
   );

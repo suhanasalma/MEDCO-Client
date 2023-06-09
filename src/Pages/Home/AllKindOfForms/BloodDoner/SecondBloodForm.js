@@ -1,6 +1,6 @@
-import React from 'react';
-import DateTime from './DateTime';
-import { useState } from 'react';
+import React from "react";
+import DateTime from "./DateTime";
+import { useState } from "react";
 
 const SecondBloodForm = ({
   setSelectedCity,
@@ -40,7 +40,7 @@ const SecondBloodForm = ({
               placeholder="Select"
               onChange={(e) => setSelectedCity(cities[e.target.value])}
             >
-              {countries.map((country, i) => (
+              {countries?.map((country, i) => (
                 <option key={i} value={country.name}>
                   {country.name}
                 </option>
@@ -56,7 +56,7 @@ const SecondBloodForm = ({
               placeholder="Select"
               onChange={(e) => setSelectedState(states[e.target.value])}
             >
-              {selectedCity.map((city, i) => (
+              {selectedCity?.map((city, i) => (
                 <option key={i} value={city.name}>
                   {city.name}
                 </option>
@@ -71,7 +71,7 @@ const SecondBloodForm = ({
               id="blood"
               placeholder="Select"
             >
-              {selectedState.map((state, i) => (
+              {selectedState?.map((state, i) => (
                 <option key={i} value={state.name}>
                   {state.name}
                 </option>
@@ -80,7 +80,7 @@ const SecondBloodForm = ({
           </div>
         </article>
       </section>
-      <div className='text-center'>
+      <div className="text-center">
         <input
           type="submit"
           className="ring-offset-2 ring-4 mt-10 w-52 rounded-full px-4 py-2 "

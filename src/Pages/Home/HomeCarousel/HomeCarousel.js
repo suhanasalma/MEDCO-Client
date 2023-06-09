@@ -18,9 +18,9 @@ const HomeCarousel = () => {
     );
   };
 
-  const lowerSliderButton = (id) =>{
-     setIndex(id)
-  }
+  const lowerSliderButton = (id) => {
+    setIndex(id);
+  };
 
   // useEffect(()=>{
   //   if(timerRef.current){
@@ -59,10 +59,13 @@ const HomeCarousel = () => {
           </button>
         </div>
         <div className="flex  gap-2 absolute z-30 bottom-5 left-1/2	">
-          {CarouselInfo.map((carousel, i) => (
+          {CarouselInfo?.map((carousel, i) => (
             <button
+              key={i}
               onClick={() => lowerSliderButton(i)}
-              className={` w-3 h-3 rounded-full ${index === i?"bg-white":"bg-green "}`}
+              className={` w-3 h-3 rounded-full ${
+                index === i ? "bg-white" : "bg-green "
+              }`}
             ></button>
           ))}
         </div>

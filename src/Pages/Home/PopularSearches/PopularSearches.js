@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Title from "../../../Components/Title/Title";
 import "./PopularSearches.css";
 import { searchInfos } from "./PopularSearchesInfo";
-import Carousel from 'react-elastic-carousel';
+import Carousel from "react-elastic-carousel";
 import TreatmentCategoryCard from "../../../Components/Card/TreatmentCategoryCard/TreatmentCategoryCard";
 
 const PopularSearches = () => {
@@ -67,9 +67,14 @@ const PopularSearches = () => {
             Procedures
           </p>
         </div>
-         <Carousel breakPoints={breakPoints}>
-          {searchInformation.map((data,i) => (
-          <TreatmentCategoryCard key={i} fontDesign='text-xs' imgDesign='w-12 h-12' data={data}/>
+        <Carousel breakPoints={breakPoints}>
+          {searchInformation?.map((data, i) => (
+            <TreatmentCategoryCard
+              key={i}
+              fontDesign="text-xs"
+              imgDesign="w-12 h-12"
+              data={data}
+            />
           ))}
         </Carousel>
       </section>

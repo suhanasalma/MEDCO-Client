@@ -7,6 +7,7 @@ import InputField from "../../../Components/InputField/InputField";
 import AuthSideBar from "../Auth/AuthSideBar";
 import { useSelector } from "react-redux";
 import "./Register.css";
+import FirebaseLogin from "../FirebaseLogin/FirebaseLogin";
 
 const Register = ({ signIn, setSignIn, onClose }) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
@@ -33,6 +34,7 @@ const Register = ({ signIn, setSignIn, onClose }) => {
   });
 
   const handleRegistration = (data) => {
+    console.log(data);
     reset();
   };
 
@@ -114,25 +116,16 @@ const Register = ({ signIn, setSignIn, onClose }) => {
         <h1 className="text-center mb-5 font-bold text-green text-xl">
           Create Account
         </h1>
-        <div className="flex gap-5 my-5 items-center justify-center">
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaFacebookF />
-          </div>
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaGooglePlusG />
-          </div>
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaLinkedinIn />
-          </div>
-        </div>
+        <FirebaseLogin />
 
         <form className="" onSubmit={handleSubmit(handleRegistration)}>
           <section
             className="mt-10  grid grid-cols-2 
           sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start registration"
           >
-            {formInputs.map((field) => (
+            {formInputs?.map((field, i) => (
               <InputField
+                key={i}
                 label={field.label}
                 name={field.name}
                 setFocus={field.setFocusFunction}
@@ -159,7 +152,7 @@ const Register = ({ signIn, setSignIn, onClose }) => {
               </label>
 
               <textarea
-                disabled={!signIn}
+                disabled={signIn}
                 onFocus={() => {
                   setAddressFocus(true);
                   trigger("address");

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { FaGooglePlusG, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import AuthSideBar from "../Auth/AuthSideBar";
 import { useForm } from "react-hook-form";
 import InputField from "../../../Components/InputField/InputField";
+import FirebaseLogin from "../FirebaseLogin/FirebaseLogin";
 const Login = ({ signIn, setSignIn, onClose }) => {
   const [emailFocus, setEmailFocus] = useState(false);
-   const [passFocus, setPassFocus] = useState(false);
-   const {
+  const [passFocus, setPassFocus] = useState(false);
+  const {
     register,
     handleSubmit,
     formState: { errors },
@@ -15,25 +15,26 @@ const Login = ({ signIn, setSignIn, onClose }) => {
     trigger,
   } = useForm();
 
-   const handleLogin = (data) => {
-     reset();
-   };
+  const handleLogin = (data) => {
+    reset();
+  };
 
-    const formInputs = [
-      {
-        name: "email",
-        label: "Email",
-        setFocusFunction: setEmailFocus,
-        settedFoucs: emailFocus,
-      },
-      {
-        name: "password",
-        label: "Password",
-        setFocusFunction: setPassFocus,
-        settedFoucs: passFocus,
-        fieldType: "password",
-      },
-    ];
+  const formInputs = [
+    {
+      name: "email",
+      label: "Email",
+      setFocusFunction: setEmailFocus,
+      settedFoucs: emailFocus,
+    },
+    {
+      name: "password",
+      label: "Password",
+      setFocusFunction: setPassFocus,
+      settedFoucs: passFocus,
+      fieldType: "password",
+    },
+  ];
+
   return (
     <div
       className={`w-11/12  md:w-auto min-h-[500px] flex my-10 duration-1000 ease-in-out  mx-20 lg:mx-0 absolute ${
@@ -56,20 +57,14 @@ const Login = ({ signIn, setSignIn, onClose }) => {
           <VscChromeClose className="font-bold text-2xl" onClick={onClose} />
         </div>
         <h1 className="text-center mb-5 font-bold text-green text-xl">Login</h1>
-        <div className="flex gap-5 my-5 items-center justify-center">
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaFacebookF />
-          </div>
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaGooglePlusG />
-          </div>
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaLinkedinIn />
-          </div>
-        </div>
-        <form className="mt-10 grid grid-cols-1 gap-10">
-          {formInputs.map((field) => (
+        <FirebaseLogin />
+        <form
+          onSubmit={handleSubmit(handleLogin)}
+          className="mt-10 grid grid-cols-1 gap-10"
+        >
+          {formInputs?.map((field, i) => (
             <InputField
+              key={i}
               label={field.label}
               name={field.name}
               setFocus={field.setFocusFunction}
@@ -83,13 +78,18 @@ const Login = ({ signIn, setSignIn, onClose }) => {
           ))}
         </form>
         <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">
-          <button  disabled={!signIn} className=" font-bold text-lg text-center" type="submit">
+          <button
+            disabled={!signIn}
+            className=" font-bold text-lg text-center"
+            type="submit"
+          >
             Sign In
           </button>
         </div>
         <div className="font-bold text-green text-xs text-center sm:hidden">
           <span className="font-medium">already have an account? </span>
-          <button  disabled={!signIn}
+          <button
+            disabled={!signIn}
             onClick={() => setSignIn(!signIn)}
             className="border-b-2 cursor-pointer"
           >

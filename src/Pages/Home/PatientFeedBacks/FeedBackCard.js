@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const FeedBackCard = ({
   handlePreviousSlide,
@@ -39,7 +39,7 @@ const FeedBackCard = ({
         </div>
       </article>
       <div className="flex gap-3 absolute right-0 bottom-0 p-5">
-        {reviews.map((review, i) => (
+        {reviews?.map((review, i) => (
           <img
             onClick={() => handleLowerSliderButton(i)}
             key={i}

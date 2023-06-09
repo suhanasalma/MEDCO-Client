@@ -8,51 +8,51 @@ const BloodDoner = () => {
   const [data, setData] = useState("");
   const diseases = [
     {
-      name:'Heart Disease'
+      name: "Heart Disease",
     },
     {
-      name:'Cancer'
+      name: "Cancer",
     },
     {
-      name:'Diabetes'
+      name: "Diabetes",
     },
     {
-      name:'Hepatitis B/C'
+      name: "Hepatitis B/C",
     },
     {
-      name:'Sexually Transmitted Diseases'
+      name: "Sexually Transmitted Diseases",
     },
     {
-      name:'Typhoid (last on year)'
+      name: "Typhoid (last on year)",
     },
     {
-      name:'Lung Disease'
+      name: "Lung Disease",
     },
     {
-      name:'Tuberculosis'
+      name: "Tuberculosis",
     },
     {
-      name:'Allergic Disease'
+      name: "Allergic Disease",
     },
     {
-      name:'Kidney Diseases'
+      name: "Kidney Diseases",
     },
     {
-      name:'Epilepsy'
+      name: "Epilepsy",
     },
     {
-      name:'Abnormal Bleeding Tendency'
+      name: "Abnormal Bleeding Tendency",
     },
     {
-      name:'Jaundice (last one year)'
+      name: "Jaundice (last one year)",
     },
     {
-      name:'Malaria'
+      name: "Malaria",
     },
     {
-      name:'Fainting spells'
+      name: "Fainting spells",
     },
-  ]
+  ];
   //  const addressRef = useRef(null)
   //  const [height,setHeight] = useState()
   // const resizeTextArea = () => {
@@ -132,76 +132,102 @@ const BloodDoner = () => {
             </div>
             <div className="">
               <p>What is your blood type: </p> {" "}
-             <section className="grid grid-cols-2">
-             <div>
-                <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
-                <label for="yes">O +</label>
-              </div>
-              <div>
-                <input type="radio" id="no" name="HIV" value="no" /> {" "}
-                <label for="no">O -</label>
-              </div>
+              <section className="grid grid-cols-2">
+                <div>
+                  <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
+                  <label for="yes">O +</label>
+                </div>
+                <div>
+                  <input type="radio" id="no" name="HIV" value="no" /> {" "}
+                  <label for="no">O -</label>
+                </div>
 
-              <div>
-                <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
-                <label for="yes">A +</label>
-              </div>
-           
-              <div>
-                <input type="radio" id="no" name="HIV" value="no" /> {" "}
-                <label for="no">A -</label>
-              </div>
-        
-              <div>
-                <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
-                <label for="yes">B +</label>
-              </div>
-      
-              <div>
-                <input type="radio" id="no" name="HIV" value="no" /> {" "}
-                <label for="no">B -</label>
-              </div>
-      
-              <div>
-                <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
-                <label for="yes">AB +</label>
-              </div>
-       
-              <div>
-                <input type="radio" id="no" name="HIV" value="no" /> {" "}
-                <label for="no">AB -</label>
-              </div>
-             </section>
+                <div>
+                  <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
+                  <label for="yes">A +</label>
+                </div>
+
+                <div>
+                  <input type="radio" id="no" name="HIV" value="no" /> {" "}
+                  <label for="no">A -</label>
+                </div>
+
+                <div>
+                  <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
+                  <label for="yes">B +</label>
+                </div>
+
+                <div>
+                  <input type="radio" id="no" name="HIV" value="no" /> {" "}
+                  <label for="no">B -</label>
+                </div>
+
+                <div>
+                  <input type="radio" id="yes" name="HIV" value="yes" /> {" "}
+                  <label for="yes">AB +</label>
+                </div>
+
+                <div>
+                  <input type="radio" id="no" name="HIV" value="no" /> {" "}
+                  <label for="no">AB -</label>
+                </div>
+              </section>
             </div>
-          
           </div>
           <div className="mt-10">
-              <p>Do you suffer from or have suffered from any of the following diseases?</p>
-              <div className="grid grid-cols-2">
-              {
-                diseases.map((disease,i)=><div><input  key ={i}type="checkbox" id={disease.name} name="disease" value={disease.name} /> {" "}
-                <label for={disease.name}>{disease.name}</label></div>)
-              }
+            <p>
+              Do you suffer from or have suffered from any of the following
+              diseases?
+            </p>
+            <div className="grid grid-cols-2">
+              {diseases?.map((disease, i) => (
+                <div>
+                  <input
+                    key={i}
+                    type="checkbox"
+                    id={disease.name}
+                    name="disease"
+                    value={disease.name}
+                  />
+                    <label for={disease.name}>{disease.name}</label>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-10">
+            <p>
+              Is there any history of surgery or blood transfusion in the past
+              six months?
+            </p>
+
+            {diseases.slice(0, 3)?.map((disease, i) => (
+              <div>
+                <input
+                  key={i}
+                  type="radio"
+                  id={disease.name}
+                  name="disease"
+                  value={disease.name}
+                />
+                  <label for={disease.name}>Minor</label>
               </div>
-            </div>
-            <div className="mt-10">
-              <p>Is there any history of surgery or blood transfusion in the past six months?</p>
-             
-              {
-                diseases.slice(0,3).map((disease,i)=><div><input key={i} type="radio" id={disease.name} name="disease" value={disease.name} /> {" "}
-                <label for={disease.name}>Minor</label></div>)
-              }
-           
-            </div>
-            <div className="mt-10">
-              <p>Do You Smoke</p>
-             
-              {
-                diseases.slice(0,3).map(disease=><div><input  type="radio" id={disease.name} name="disease" value={disease.name} /> {" "}
-                <label for={disease.name}>Minor</label></div>)
-              }
-           
-            </div>
+            ))}
+          </div>
+          <div className="mt-10">
+            <p>Do You Smoke</p>
+
+            {diseases.slice(0, 3)?.map((disease, i) => (
+              <div key={i}>
+                <input
+                  type="radio"
+                  id={disease.name}
+                  name="disease"
+                  value={disease.name}
+                />
+                  <label for={disease.name}>Minor</label>
+              </div>
+            ))}
+          </div>
         </section>
         {/* <section>
            <p className="font-bold text-lg my-5">Booking Date</p>

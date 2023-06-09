@@ -52,32 +52,40 @@ const FooterMenu = () => {
         <div>
           <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
-            {services.map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
         <div>
           <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
-            {services.map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
         <div>
           <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
-            {services.slice(0, 5).map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services.slice(0, 5)?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
         <div>
           <p className="border-b-2 border-brown">Service</p>
           <ul className="text-sm text-gray list-disc ml-7 mt-5">
-            {services.map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
@@ -96,8 +104,10 @@ const FooterMenu = () => {
               open1 ? "text-sm text-gray list-disc ml-7 mt-5" : "hidden"
             }`}
           >
-            {services.map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
@@ -114,8 +124,10 @@ const FooterMenu = () => {
               open2 ? "text-sm text-gray list-disc ml-7 mt-5" : "hidden"
             }`}
           >
-            {services.map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
@@ -132,8 +144,10 @@ const FooterMenu = () => {
               open3 ? "text-sm text-gray list-disc ml-7 mt-5" : "hidden"
             }`}
           >
-            {services.slice(0, 5).map((service) => (
-              <li className="cursor-pointer">{service.name}</li>
+            {services.slice(0, 5)?.map((service, i) => (
+              <li key={i} className="cursor-pointer">
+                {service.name}
+              </li>
             ))}
           </ul>
         </div>
@@ -150,7 +164,7 @@ const FooterMenu = () => {
               open4 ? "text-sm text-gray list-disc ml-7 mt-5" : "hidden"
             }`}
           >
-            {services.map((service, i) => (
+            {services?.map((service, i) => (
               <li className="cursor-pointer" key={i}>
                 {service.name}
               </li>

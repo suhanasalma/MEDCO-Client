@@ -70,7 +70,7 @@ const OurDoctors = () => {
             />
           </div>
           <div className="gap-2 justify-center items-center mt-5  hidden secondBtn">
-            {ourDoctorsInfo.map((doctor) => (
+            {ourDoctorsInfo?.map((doctor) => (
               <button
                 key={doctor.id}
                 onClick={() => handleLowerSliderButton(doctor.id)}
@@ -99,7 +99,7 @@ const OurDoctors = () => {
               ❯
             </button>
             <div className="flex gap-2 md:gap-5 justify-end items-center mt-5 firstBtn">
-              {ourDoctorsInfo.map((doctor) => (
+              {ourDoctorsInfo?.map((doctor) => (
                 <button
                   key={doctor.id}
                   onClick={() => handleLowerSliderButton(doctor.id)}
