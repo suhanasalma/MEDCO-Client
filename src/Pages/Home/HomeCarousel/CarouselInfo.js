@@ -68,8 +68,8 @@ export const CarouselInfo = [
        <p class=" hidden sm:block text-brown lg:text-md">
        A blood donor is equal to a lifesaver. Saving a life won't cost you anything. Go ahead and donate blood <br> Be the reason for someone’s heartbeat.
        </p>
-       <div class='lg:w-72'>
-       <button class='w-full btn hover:text-green bg-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Be a Doner</button>
+       <div class='w-52 lg:w-72' >
+       <button class='w-full  btn hover:text-green bg-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Be a Doner</button>
        </div>
        </div>
        `,
@@ -102,8 +102,8 @@ export const CarouselInfo = [
         <p class="hidden md:block text-brown lg:text-md">
         As you grow older, you will discover that you have two hands <br> one for helping yourself, the other for helping others.
        </p>
-       <div >
-       <button class='lg:w-72 bg-green btn hover:text-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Volunteer </button>
+       <div class='w-52 lg:w-72'>
+       <button class='w-full bg-green btn hover:text-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Volunteer </button>
        </div>
        </div>
        `,
