@@ -15,7 +15,10 @@ const InputField = ({
     <div className="relative">
       <label
         disabled={disabled}
-        onClick={() => setFocus(true)}
+        onClick={() => {
+          setFocus(true);
+          trigger(name);
+        }}
         className={`absolute duration-500 ease-in-out left-2    ${
           focus || errors[name]
             ? "bottom-8 text-green font-semibold"
