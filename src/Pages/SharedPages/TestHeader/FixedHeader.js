@@ -83,7 +83,9 @@ const FixedHeader = () => {
   const handleCloseModal = () => {
     setModalOpen(false);
   };
-
+    const logout = () => {
+      window.open("http://localhost:5000/auth/logout", "_self");
+    };
 
   useEffect(() => {
     // add event listener to document object
@@ -162,7 +164,9 @@ const FixedHeader = () => {
         >
           <li className="flex items-center gap-2">
             <FaSignInAlt />
-            <Link to="/">Login</Link>
+            <Link onClick={logout}>
+              Login
+            </Link>
           </li>
           <li onClick={handleOpenModal} className="flex items-center gap-2">
             <FaRegUserCircle />

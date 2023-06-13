@@ -13,19 +13,20 @@ const FirebaseLogin = () => {
     dispatch(signInWithGoogleAsync());
   };
 
-  const googleAuth = () => {
-		window.open(
-			`http://localhost:5000/auth/google/callback`
-		);
-	};
+  const googleLogin = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
 
+    const logout = () => {
+      window.open("http://localhost:5000/auth/logout", "_self");
+    };
   return (
     <div className="flex gap-5 my-5 items-center justify-center">
       <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
         <FaFacebookF />
       </div>
-      <Link  onClick={googleAuth} 
-
+      <Link
+        onClick={googleLogin}
         className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown"
       >
         <FaGooglePlusG />
