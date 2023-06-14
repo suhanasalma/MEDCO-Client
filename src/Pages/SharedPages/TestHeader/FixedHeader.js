@@ -85,6 +85,7 @@ const FixedHeader = () => {
   };
     const logout = () => {
       window.open("http://localhost:5000/auth/logout", "_self");
+      localStorage.removeItem('user')
     };
 
   useEffect(() => {
