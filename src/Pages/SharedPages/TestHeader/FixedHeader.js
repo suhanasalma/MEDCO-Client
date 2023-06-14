@@ -81,10 +81,12 @@ const FixedHeader = () => {
 
   
   const handleCloseModal = () => {
-    console.log("object");
     setModalOpen(false);
   };
-
+    const logout = () => {
+      window.open("http://localhost:5000/auth/logout", "_self");
+      localStorage.removeItem('user')
+    };
 
   useEffect(() => {
     // add event listener to document object
@@ -158,12 +160,14 @@ const FixedHeader = () => {
         </div>
         <ul
           className={` duration-700 ease-in-out border-2 border-green font-bold text-green bg-white absolute right-0 px-4 py-2 space-y-4 ${
-            !userOpen ? " z-0 opacity-0" : "  z-20 "
+            !userOpen ? " z-0 opacity-0" : "  z-50 "
           }`}
         >
           <li className="flex items-center gap-2">
             <FaSignInAlt />
-            <Link to="/">Login</Link>
+            <Link onClick={logout}>
+              Login
+            </Link>
           </li>
           <li onClick={handleOpenModal} className="flex items-center gap-2">
             <FaRegUserCircle />

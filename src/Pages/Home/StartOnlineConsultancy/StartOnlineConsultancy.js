@@ -8,7 +8,7 @@ import query from "../../../Assests/onlineconsultancy/query.jpg";
 import doctor from "../../../Assests/onlineconsultancy/doctor.jpg";
 import { FcSurvey, FcVideoCall, FcCallback, FcComments } from "react-icons/fc";
 import LinkButton from "../../../Components/LinkButton/LinkButton";
-import './StartOnlineConsultancy.css'
+import "./StartOnlineConsultancy.css";
 
 const StartOnlineConsultancy = () => {
   const [selectOption, setSelectOption] = useState(null);
@@ -44,12 +44,11 @@ const StartOnlineConsultancy = () => {
   ];
 
   const handleToggled = (option) => {
-    
-     if (selectOption?.id === option.id) {
-       setSelectOption(null);
-     } else {
-       setSelectOption(option);
-     }
+    if (selectOption?.id === option.id) {
+      setSelectOption(null);
+    } else {
+      setSelectOption(option);
+    }
   };
 
   return (
@@ -73,7 +72,7 @@ const StartOnlineConsultancy = () => {
           details="Post unlimited follow-ups to the doctor for the next 50 or 100 hours by picking one of out #iclinic100hrs chat services."
         />
         <div className="grid grid-cols-2 gap-10 Onlineconsultency">
-          {consultancyOptions.map((option, i) => (
+          {consultancyOptions?.map((option, i) => (
             <section key={i} className="flex items-center">
               <div
                 className={`rounded-full bg-white border-4 border-green w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 `}

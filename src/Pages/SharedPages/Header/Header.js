@@ -155,7 +155,7 @@ const Header = () => {
             onChange={(e) => setLan(e.target.value)}
             id=""
           >
-            {menus.countries.map((country, i) => (
+            {menus.countries?.map((country, i) => (
               <option key={i} value={country.image}>
                 {country.alpha2code}
               </option>
@@ -223,7 +223,7 @@ const Header = () => {
         >
           {openAbout && (
             <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
-              {menus.AboutMedco.map((x, i) => (
+              {menus.AboutMedco?.map((x, i) => (
                 <li key={i} className="">
                   <Link>{x.name}</Link>
                 </li>
@@ -232,7 +232,7 @@ const Header = () => {
           )}
           {patientService && (
             <u className="text-[#5C4033] decoration-dotted w-full space-y-4 ">
-              {menus.PatientService.map((x, i) => (
+              {menus.PatientService?.map((x, i) => (
                 <li key={i} className="">
                   <Link>{x.name}</Link>
                 </li>
@@ -241,7 +241,7 @@ const Header = () => {
           )}
           {medicleTravel && (
             <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
-              {menus.MedicalTravel.map((x, i) => (
+              {menus.MedicalTravel?.map((x, i) => (
                 <li key={i} className="">
                   <Link>{x.name}</Link>
                 </li>
@@ -250,7 +250,7 @@ const Header = () => {
           )}
           {contactOpen && (
             <u className="text-[#5C4033] decoration-dotted w-full space-y-4">
-              {menus.ContactUs.map((x, i) => (
+              {menus.ContactUs?.map((x, i) => (
                 <li key={i} className="">
                   <Link>{x.name}</Link>
                 </li>

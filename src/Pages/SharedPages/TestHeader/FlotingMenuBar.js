@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  TbChevronDown,
-  TbArrowsMinimize,
-} from "react-icons/tb";
+import { TbChevronDown, TbArrowsMinimize } from "react-icons/tb";
 import { FaMobileAlt } from "react-icons/fa";
 
 import { Link, NavLink } from "react-router-dom";
@@ -24,7 +21,7 @@ const FlotingMenuBar = ({
 }) => {
   return (
     <section
-      className={`h-fit duration-1000 ease-in-out absolute z-50 w-full bg-green text-white  ${
+      className={`h-fit duration-1000 ease-in-out absolute z-40 w-full bg-green text-white  ${
         mainNavOpen ? "p-5 top-14 md:top-12 lg:top-20 " : "top-[-500px] "
       }`}
     >
@@ -44,7 +41,7 @@ const FlotingMenuBar = ({
           </div>
           {openAbout && (
             <ul className="  pl-10 py-4 decoration-dotted w-full space-y-2 bg-green text-white">
-              {menus.AboutMedco.map((x, i) => (
+              {menus.AboutMedco?.map((x, i) => (
                 <li key={i} className="list-disc  border-light-gray">
                   <NavLink
                     to="/"
@@ -71,7 +68,7 @@ const FlotingMenuBar = ({
           </div>
           {patientService && (
             <ul className="  pl-10 py-4 decoration-dotted w-full space-y-2 bg-green text-white">
-              {menus.PatientService.map((x, i) => (
+              {menus.PatientService?.map((x, i) => (
                 <li key={i} className="list-disc  border-light-gray">
                   <NavLink
                     to="/"
@@ -98,7 +95,7 @@ const FlotingMenuBar = ({
           </div>
           {medicleTravel && (
             <ul className="pl-10 py-4 decoration-dotted w-full space-y-2 bg-green text-white">
-              {menus.MedicalTravel.map((x, i) => (
+              {menus.MedicalTravel?.map((x, i) => (
                 <li key={i} className="list-disc  border-light-gray">
                   <NavLink
                     to="/"
@@ -125,7 +122,7 @@ const FlotingMenuBar = ({
           </div>
           {insuranceOpen && (
             <ul className="pl-10 py-4 decoration-dotted w-full space-y-2 bg-green text-white">
-              {menus.Insurance.map((x, i) => (
+              {menus.Insurance?.map((x, i) => (
                 <li key={i} className="list-disc  border-light-gray">
                   <NavLink
                     to="/"
@@ -152,7 +149,7 @@ const FlotingMenuBar = ({
           </div>
           {contactOpen && (
             <ul className=" text-white px-10 py-4 decoration-dotted w-full space-y-4 bg-green">
-              {menus.ContactUs.map((x, i) => (
+              {menus.ContactUs?.map((x, i) => (
                 <li key={i} className="list-disc">
                   <NavLink
                     to="/"

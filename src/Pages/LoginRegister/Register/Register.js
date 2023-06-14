@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import InputField from "../../../Components/InputField/InputField";
 import AuthSideBar from "../Auth/AuthSideBar";
 import { useSelector } from "react-redux";
+import "./Register.css";
+import FirebaseLogin from "../FirebaseLogin/FirebaseLogin";
 
 const Register = ({ signIn, setSignIn, onClose }) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
@@ -17,7 +19,9 @@ const Register = ({ signIn, setSignIn, onClose }) => {
   const [createPassFocus, setCreatePassFocus] = useState(false);
   const [matchPassFocus, setMatchPassFocus] = useState(false);
   const [textareaHeight, setTextareaHeight] = useState("auto");
-  const registrationSchema = useSelector((state) => state?.validation?.validationSchema);
+  const registrationSchema = useSelector(
+    (state) => state?.validation?.validationSchema
+  );
 
   const {
     register,
@@ -30,6 +34,7 @@ const Register = ({ signIn, setSignIn, onClose }) => {
   });
 
   const handleRegistration = (data) => {
+    console.log(data);
     reset();
   };
 
@@ -90,9 +95,8 @@ const Register = ({ signIn, setSignIn, onClose }) => {
 
   return (
     <div
-      className={`min-h-[500px] flex my-10 duration-500 ease-in-out  mx-10 lg:mx-0 overflow-hidden absolute ${
-        signIn ? "opacity-0 z-0" : "z-10 opacity-100"
-      }`}
+      className={`w-full md:w-auto min-h-[500px] flex my-10 duration-1000 ease-in-out  mx-10 lg:mx-0 
+      ${signIn ? "opacity-0 z-0 " : "z-10 opacity-100"}`}
     >
       <AuthSideBar
         setSignIn={setSignIn}
@@ -102,7 +106,7 @@ const Register = ({ signIn, setSignIn, onClose }) => {
       />
 
       <div
-        className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out ${
+        className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out  ${
           signIn ? " sm:-translate-x-[71%]" : ""
         }`}
       >
@@ -112,21 +116,16 @@ const Register = ({ signIn, setSignIn, onClose }) => {
         <h1 className="text-center mb-5 font-bold text-green text-xl">
           Create Account
         </h1>
-        <div className="flex gap-5 my-5 items-center justify-center">
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaFacebookF />
-          </div>
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaGooglePlusG />
-          </div>
-          <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
-            <FaLinkedinIn />
-          </div>
-        </div>
-        <form onSubmit={handleSubmit(handleRegistration)}>
-          <section className="mt-10 grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start	">
-            {formInputs.map((field) => (
+        <FirebaseLogin />
+
+        <form className="" onSubmit={handleSubmit(handleRegistration)}>
+          <section
+            className="mt-10  grid grid-cols-2 
+          sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start registration"
+          >
+            {formInputs?.map((field, i) => (
               <InputField
+                key={i}
                 label={field.label}
                 name={field.name}
                 setFocus={field.setFocusFunction}
@@ -135,9 +134,10 @@ const Register = ({ signIn, setSignIn, onClose }) => {
                 errors={errors}
                 trigger={trigger}
                 type={field.fieldType}
+                disabled={signIn}
               />
             ))}
-          
+
             <div className="relative">
               <label
                 onClick={() => setAddressFocus(true)}
@@ -152,6 +152,7 @@ const Register = ({ signIn, setSignIn, onClose }) => {
               </label>
 
               <textarea
+                disabled={signIn}
                 onFocus={() => {
                   setAddressFocus(true);
                   trigger("address");
@@ -169,8 +170,10 @@ const Register = ({ signIn, setSignIn, onClose }) => {
               )}
             </div>
           </section>
+
           <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">
             <button
+              disabled={signIn}
               className=" font-medium text-base text-center  "
               type="submit"
             >
@@ -181,12 +184,13 @@ const Register = ({ signIn, setSignIn, onClose }) => {
 
         <div className="font-bold text-green text-xs text-center sm:hidden">
           <span className="font-medium">already have an account? </span>
-          <span
+          <button
+            disabled={signIn}
             onClick={() => setSignIn(!signIn)}
             className="border-b-2 cursor-pointer"
           >
             Login
-          </span>
+          </button>
         </div>
       </div>
     </div>
