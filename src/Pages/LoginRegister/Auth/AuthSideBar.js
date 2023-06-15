@@ -1,5 +1,5 @@
 import React from 'react';
-const AuthSideBar = ({signIn,setSignIn,details,title}) => {
+const AuthSideBar = ({signIn,setSignIn,details,title,button}) => {
     return (
         <div
         style={{
@@ -25,7 +25,7 @@ const AuthSideBar = ({signIn,setSignIn,details,title}) => {
             onClick={() => setSignIn(!signIn)}
             className="border-2 border-white w-52 rounded-lg px-4 py-2"
           >
-            Sign In
+            {button}
           </button>
         </div>
       </div>

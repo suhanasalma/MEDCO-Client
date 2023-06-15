@@ -37,7 +37,7 @@ const Login = ({ signIn, setSignIn, onClose }) => {
 
   return (
     <div
-      className={`w-11/12  md:w-auto min-h-[500px] flex my-10 duration-1000 ease-in-out  mx-20 lg:mx-0 absolute ${
+      className={`w-11/12  md:w-auto min-h-[500px] max-h-[600px] flex my-10 duration-1000 ease-in-out  mx-20 lg:mx-0 absolute ${
         signIn ? "z-10 opacity-1" : "opacity-0 z-0"
       }`}
     >
@@ -46,10 +46,11 @@ const Login = ({ signIn, setSignIn, onClose }) => {
         signIn={signIn}
         title="Create Account"
         details=" To keep connected with us please sign with personal details"
+        button = "Sign Up"
       />
 
       <div
-        className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out ${
+        className={`w-full sm:w-7/12 bg-white  p-10 duration-1000 ease-in-out ${
           signIn ? " sm:-translate-x-[71%]" : ""
         }`}
       >
