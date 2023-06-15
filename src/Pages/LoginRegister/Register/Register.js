@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { FaGooglePlusG, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import React, { useRef, useState } from "react";
 import { VscChromeClose } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,6 +7,7 @@ import AuthSideBar from "../Auth/AuthSideBar";
 import { useSelector } from "react-redux";
 import "./Register.css";
 import FirebaseLogin from "../FirebaseLogin/FirebaseLogin";
+import selectImage from "../../../Assests/Logo/selectimages.png";
 
 const Register = ({ signIn, setSignIn, onClose }) => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
@@ -19,6 +19,9 @@ const Register = ({ signIn, setSignIn, onClose }) => {
   const [createPassFocus, setCreatePassFocus] = useState(false);
   const [matchPassFocus, setMatchPassFocus] = useState(false);
   const [textareaHeight, setTextareaHeight] = useState("auto");
+  const [selectedImage, setSelectedImage] = useState(selectImage);
+  const fileInputRef = useRef(null);
+
   const registrationSchema = useSelector(
     (state) => state?.validation?.validationSchema
   );
@@ -29,12 +32,19 @@ const Register = ({ signIn, setSignIn, onClose }) => {
     formState: { errors },
     reset,
     trigger,
+    control,
+    setValue,
+    watch,
   } = useForm({
     resolver: yupResolver(registrationSchema),
   });
 
   const handleRegistration = (data) => {
-    console.log(data);
+    const submittedData = {
+      ...data,
+      selectedImage
+    }
+    console.log(submittedData);
     reset();
   };
 
@@ -92,10 +102,30 @@ const Register = ({ signIn, setSignIn, onClose }) => {
       settedFoucs: matchPassFocus,
     },
   ];
+  const displaySelectedImage = (e) => {
+    const files = e.target.files
+    if (files && files[0] && files[0].size < 240000) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            console.log(event.target.result);
+            setSelectedImage(event.target.result);
+          };
+          reader.readAsDataURL(files[0]);
+    } else {
+        window.prompt('file size is bigger then 3kb')
+        fileInputRef.current.value = "";
+        setSelectedImage(selectImage);
+    }
+  };
+
+  const deleteImage = () => {
+    setSelectedImage(selectImage);
+    fileInputRef.current.value = "";
+  };
 
   return (
     <div
-      className={`w-full md:w-auto min-h-[500px] flex my-10 duration-1000 ease-in-out  mx-10 lg:mx-0 
+      className={`w-full md:w-auto min-h-[500px] max-h-[500px] flex my-10 duration-1000 ease-in-out  mx-10 lg:mx-0 
       ${signIn ? "opacity-0 z-0 " : "z-10 opacity-100"}`}
     >
       <AuthSideBar
@@ -103,14 +133,15 @@ const Register = ({ signIn, setSignIn, onClose }) => {
         signIn={signIn}
         title="Welcome Back"
         details=" To keep connected with us please login with your email"
+        button="Sign In"
       />
 
       <div
-        className={`w-full sm:w-7/12 bg-white p-10 duration-1000 ease-in-out  ${
+        className={`w-full sm:w-7/12 overflow-scroll bg-white p-10 duration-1000 ease-in-out  ${
           signIn ? " sm:-translate-x-[71%]" : ""
         }`}
       >
-        <div className="flex justify-end">
+        <div className="flex justify-end ">
           <VscChromeClose className="font-bold text-2xl" onClick={onClose} />
         </div>
         <h1 className="text-center mb-5 font-bold text-green text-xl">
@@ -120,7 +151,7 @@ const Register = ({ signIn, setSignIn, onClose }) => {
 
         <form className="" onSubmit={handleSubmit(handleRegistration)}>
           <section
-            className="mt-10  grid grid-cols-2 
+            className=" grid grid-cols-2 
           sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start registration"
           >
             {formInputs?.map((field, i) => (
@@ -169,6 +200,36 @@ const Register = ({ signIn, setSignIn, onClose }) => {
                 </span>
               )}
             </div>
+          </section>
+          <section className="relative mt-10">
+            <div className="image-input h-32 w-32">
+              <label
+                htmlFor="upload-image"
+                className="image-input-label w-full h-full mx-auto"
+              >
+                <img
+                  alt="select"
+                  id="selected-image"
+                  className="w-full h-full object-cover selected-image"
+                  src={selectedImage}
+                />
+              </label>
+              <input
+                accept=".jpg, .jpeg, .png"
+                ref={fileInputRef}
+                //  {...register("img")}
+                type="file"
+                id="upload-image"
+                className="image-input-field"
+                onChange={(e) => displaySelectedImage(e)}
+              />
+            </div>
+            <span
+              onClick={deleteImage}
+              className="absolute -top-3 left-0 font-bold "
+            >
+              X
+            </span>
           </section>
 
           <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">
