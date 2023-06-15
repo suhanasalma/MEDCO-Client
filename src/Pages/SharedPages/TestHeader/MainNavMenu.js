@@ -5,7 +5,7 @@ const MainNavMenu = () => {
   return (
     <div className="hidden md:flex justify-between items-center gap-5 text-gray text-sm">
       <NavLink
-        to="/"
+        to="/findDoctors"
         className={({ isActive }) =>
           `text-sm  flex items-center gap-2 ${
             isActive ? "text-brown font-bold" : "text-green"
