@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { VscChromeClose } from "react-icons/vsc";
+import { VscChromeClose, VscTrash } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputField from "../../../Components/InputField/InputField";
@@ -107,7 +107,6 @@ const Register = ({ signIn, setSignIn, onClose }) => {
     if (files && files[0] && files[0].size < 240000) {
           const reader = new FileReader();
           reader.onload = function (event) {
-            console.log(event.target.result);
             setSelectedImage(event.target.result);
           };
           reader.readAsDataURL(files[0]);
@@ -224,12 +223,12 @@ const Register = ({ signIn, setSignIn, onClose }) => {
                 onChange={(e) => displaySelectedImage(e)}
               />
             </div>
-            <span
-              onClick={deleteImage}
-              className="absolute -top-3 left-0 font-bold "
-            >
-              X
-            </span>
+           
+              <VscTrash
+                onClick={deleteImage}
+                className="absolute -top-3 left-0 font-bold text-white w-6 h-6  border-2 rounded-full  bg-red flex items-center justify-center"
+              />
+
           </section>
 
           <div className="text-white hover:text-green text-center mt-10 btn w-52 rounded-lg px-4 py-2 hover:border-green border-2 border-brown bg-brown cursor-pointer mx-auto">

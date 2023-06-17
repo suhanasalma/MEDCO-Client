@@ -29,13 +29,12 @@ function App() {
           setUser(JSON.parse(user));
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
     };
     getUser();
   }, []);
 
-  console.log(user);
   return (
     <div>
       <RouterProvider router={router}/>
