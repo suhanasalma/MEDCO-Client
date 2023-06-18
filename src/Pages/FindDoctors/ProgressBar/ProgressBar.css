@@ -1,0 +1,27 @@
+.progress-bar {
+    height: 5px;
+    background-color: blue; /* Choose your desired background color */
+    transition: width 0.3s ease-in-out; /* Optional: Adds a smooth transition effect */
+  }
+  
+  .step-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+  
+  .step-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray; /* Choose your desired background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .step-indicator.active {
+    background-color: blue; /* Choose your desired active color */
+  }
+

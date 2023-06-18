@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AffectedOrgans = ({ setSymptom, organ, organsInfos, symptom }) => {
+const AffectedOrgans = ({ organ, organsInfos, symptom ,handleOrganClick}) => {
   return (
     <section className="grid grid-cols-3 gap-4 h-full overflow-scroll mt-5">
       {organsInfos[organ]?.map((item, i) => (
@@ -10,7 +10,7 @@ const AffectedOrgans = ({ setSymptom, organ, organsInfos, symptom }) => {
               ? "bg-light-brown text-white font-bold rounded-full "
               : ""
           } cursor-pointer flex items-center justify-center w-20 h-20`}
-          onClick={() => setSymptom(item.name)}
+          onClick={() => handleOrganClick(item.name)}
           key={i}
         >
           <div>

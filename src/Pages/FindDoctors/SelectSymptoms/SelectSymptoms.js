@@ -4,7 +4,7 @@ const SelectSymptoms = ({ Symptoms, symptom }) => {
   return (
     <section className="h-full overflow-scroll">
       {Symptoms[symptom]?.map((item, i) => (
-        <div className="border-2 border-brown px-10 py-2 mt-5" key={i}>
+        <div className="border-2 border-brown px-6 py-2 mt-5" key={i}>
           <p className="text-center">{item}</p>
         </div>
       ))}

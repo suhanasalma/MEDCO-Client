@@ -411,4 +411,18 @@ export const Symptoms = {
     "Can not speak clearly",
     "Depression",
   ],
+  Eye: [
+    "ADHD",
+    "Adjustment disorders",
+    "Adolescent development",
+    "Aggressive",
+    "Alzheimer's disease",
+    "Anxiety disorder",
+    "Bipolar",
+    "Brain atrophy",
+    "Brain Cancer",
+    "Brain Tumor",
+    "Can not speak clearly",
+    "Depression",
+  ],
 };
