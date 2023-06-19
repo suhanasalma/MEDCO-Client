@@ -7,16 +7,19 @@ import "./findDoctor.css";
 import AffectedOrgans from "../AffectedOrgans/AffectedOrgans";
 import SelectSymptoms from "../SelectSymptoms/SelectSymptoms";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import { FaClock } from "react-icons/fa";
+
 
 const FindDoctors = () => {
   const [organ, setOrgan] = useState("MaleHead");
   const [symptom, setSymptom] = useState("");
+  const [selectDoctor, setSelectDoctor] = useState("");
   const [visibleHuman, setVisibleHuman] = useState(true);
   const [visibleOrgan, setVisibleOrgan] = useState(false);
   const [visibleSymptom, setVisibleSymptom] = useState(false);
   const [visibleDoctors, setVisibleDoctors] = useState(false);
+  const [doctorsAvaialble, setDoctorsAvailable] = useState(true);
   const [currentStep, setCurrentStep] = useState(1);
-  const [indexNumber, setIndexNumber] = useState(1);
 
   const handleBodyPartClick = (event) => {
     setOrgan(event);
@@ -35,6 +38,7 @@ const FindDoctors = () => {
     setCurrentStep(3);
   };
   const handleSymptomsClick = (event) => {
+    setSelectDoctor(event)
     setVisibleDoctors(true);
     setVisibleOrgan(false);
     setVisibleHuman(false);
@@ -49,31 +53,36 @@ const FindDoctors = () => {
     setVisibleHuman(true);
     setVisibleOrgan(false);
     setVisibleSymptom(false);
-    setVisibleDoctors(false);
-    setIndexNumber(1);
+    setVisibleDoctors(false);;
   };
   const showOrgans = () => {
-    setVisibleHuman(false);
-    setVisibleOrgan(true);
-    setVisibleSymptom(false);
-    setVisibleDoctors(false);
-    setIndexNumber(2);
+    if (progress >= 33.33333333333333 && progress <= 100) {
+      setVisibleHuman(false);
+      setVisibleOrgan(true);
+      setVisibleSymptom(false);
+      setVisibleDoctors(false);
+    }
+    
   };
   const showSymptoms = () => {
-    setVisibleHuman(false);
-    setVisibleOrgan(false);
-    setVisibleDoctors(false);
-    setVisibleSymptom(true);
-    setIndexNumber(3);
+     if (progress >= 66.66666666666666 && progress <=100) {
+       setVisibleHuman(false);
+       setVisibleOrgan(false);
+       setVisibleDoctors(false);
+       setVisibleSymptom(true);
+     }
+   
   };
   const showDoctor = () => {
-    setVisibleHuman(false);
-    setVisibleOrgan(false);
-    setVisibleDoctors(true);
-    setVisibleSymptom(false);
-    setIndexNumber(3);
+    if (progress === 100) {
+        setVisibleHuman(false);
+        setVisibleOrgan(false);
+        setVisibleDoctors(true);
+        setVisibleSymptom(false);
+    }
+   
   };
-  console.log(currentStep);
+
   const stepsName = [
     { id: 1, name: "Regions", show: showBodys },
     { id: 2, name: "Organs", show: showOrgans },
@@ -84,6 +93,7 @@ const FindDoctors = () => {
 
   // Calculate progress percentage
   const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+  console.log(progress);
 
   return (
     <div className="p-2 sm:w-10/12 mx-auto my-10">
@@ -98,7 +108,6 @@ const FindDoctors = () => {
         ]}
       />
       <ProgressBar
-        indexNumber={indexNumber}
         stepsName={stepsName}
         currentStep={currentStep}
         progress={progress}
@@ -107,7 +116,9 @@ const FindDoctors = () => {
         showBodys={showBodys}
       />
       <div
-        className={`my-14 h-[440px] px-6 py-10 ${visibleDoctors && "hidden xl:block"}`}
+        className={`my-14 h-[440px] px-6 py-10 ${
+          visibleDoctors && "hidden xl:block"
+        }`}
         style={{ boxShadow: " 0 .5rem 1rem rgba(0,0,0,.15)" }}
       >
         {/* <ProgressBar indexNumber={indexNumber} stepsName={stepsName} currentStep={currentStep} progress={progress} showSymptoms={showSymptoms} showOrgans={showOrgans} showBodys= {showBodys}/> */}
@@ -164,7 +175,36 @@ const FindDoctors = () => {
           visibleDoctors ? "" : "hidden xl:block "
         }  xl:inline h-full w-full xl:w-3/12 mt-20 xl:mt-5`}
       >
-        <p className="text-center text-brown xl:text-green">Select a Doctor:</p>
+        <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl">
+          Select a Doctor:
+        </p>
+        <div className="w-full my-5 flex justify-center items-center">
+          <div className="w-3/6 space-y-4">
+            <div className="border-2">
+              <select name="" id="">
+                <option value="">
+                  <FaClock className="text-black text-2xl border-2" /> No time
+                  Select
+                </option>
+              </select>
+            </div>
+            <div className="border-2">
+              <select name="" id="">
+                <option value="">
+                  <FaClock className="text-black text-2xl border-2" /> No time
+                  Select
+                </option>
+              </select>
+            </div>
+            <button
+              className={` bg-green text-white text-md  px-4 py-1 mx-auto w-full rounded-md ${
+                doctorsAvaialble ? "" : "hidden"
+              }`}
+            >
+              Search Doctor
+            </button>
+          </div>
+        </div>
       </article>
     </div>
   );
