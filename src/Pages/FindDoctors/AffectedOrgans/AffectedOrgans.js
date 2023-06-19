@@ -2,7 +2,7 @@ import React from 'react';
 
 const AffectedOrgans = ({ organ, organsInfos, symptom ,handleOrganClick}) => {
   return (
-    <section className="grid grid-cols-3 gap-4 h-full overflow-scroll mt-5">
+    <section className="grid grid-cols-3 gap-4 h-full overflow-scroll mt-5 justify-items-center	">
       {organsInfos[organ]?.map((item, i) => (
         <div
           className={`${

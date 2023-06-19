@@ -3,26 +3,18 @@
 import React, { useState } from 'react';
 import './ProgressBar.css'
 
-const ProgressBar = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const stepsName = ["Regions", "Organs", "Symptoms", "Doctor"];
-  const totalSteps = stepsName.length;
-
-  // Calculate progress percentage
-  const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
-
+const ProgressBar = ( {progress,currentStep,stepsName,indexNumber}) => {
+ 
   return (
-    <div>
-      <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-      <div className="step-indicators">
+    <div className='xl:hidden mt-10 px-6'>
+      <div className="progress-bar " style={{ width: `${progress}%` }}></div>
+      <div className="step-indicators ">
         {stepsName.map((step, index) => (
-          <div
+          <div onClick={step.show}
             key={index + 1}
-            className={`step-indicator ${
-              currentStep === index ? 'active' : ''
-            }`}
+            className={`step-indicator ${index <= currentStep - 1 || step.id===indexNumber? 'active' : ''}`}
           >
-            <span className='mt-10'>{step}</span>
+            <span className='mt-10 ml-2 text-xs text-gray font-normal'>{step.name}</span>
           </div>
         ))}
       </div>
