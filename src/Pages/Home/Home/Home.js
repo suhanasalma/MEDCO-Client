@@ -10,12 +10,14 @@ import PatientFeedBack from "../PatientFeedBacks/PatientFeedBack";
 import OurPartners from "../OurPartners/OurPartners";
 import RecommendedPackages from "../RecommendedPackages/RecommendedPackages";
 import AllKindOfForms from "../AllKindOfForms/AllKindOfForms";
+import Carousel from "../Carousel/Carousel";
 
 const Home = () => {
 
   return (
     <div className="">
-      <HomeCarousel />
+      {/* <HomeCarousel /> */}
+      <Carousel/>
       <HomeMainService />
       <OurDoctors />
       <PopularSearches />

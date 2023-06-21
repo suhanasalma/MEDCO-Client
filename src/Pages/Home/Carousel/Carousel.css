@@ -1,0 +1,34 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carousel-btn {
+  padding: 8px;
+  margin: 4px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-image-container {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  height: 300px;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
