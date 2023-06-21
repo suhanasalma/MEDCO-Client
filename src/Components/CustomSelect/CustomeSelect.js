@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-const CustomSelect = ({ height, selectorDetails }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const CustomSelect = ({
+  height,
+  selectorDetails,
+  toggleSelect,
+  isOpen,
+  setOpenSelectIndex,
+}) => {
   const [selectedOption, setSelectedOption] = useState(selectorDetails.title);
   const handleSelect = (option) => {
     setSelectedOption(option);
-    setIsOpen(false);
+    setOpenSelectIndex(null);
   };
 
-  const toggleSelect = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <div className="custom-select w-full">
@@ -22,7 +24,11 @@ const CustomSelect = ({ height, selectorDetails }) => {
         <selectorDetails.icon />
         {selectedOption}
       </div>
-      <div className={`select-items  ${height ? `h-${height}` : "h-[300px]"} text-sm ${isOpen ? "" : "select-hide"}`}>
+      <div
+        className={`select-items  ${
+          height ? `h-${height}` : "h-[300px]"
+        } text-sm ${isOpen ? "" : "select-hide"}`}
+      >
         {selectorDetails?.options?.map((option, index) => (
           <div
             key={index}

@@ -20,6 +20,11 @@ const FindDoctors = () => {
   const [visibleDoctors, setVisibleDoctors] = useState(false);
   const [doctorsAvaialble, setDoctorsAvailable] = useState(true);
   const [currentStep, setCurrentStep] = useState(1);
+  const [openSelectIndex, setOpenSelectIndex] = useState(null);
+
+  const handleSelectToggle = (index) => {
+    setOpenSelectIndex(index === openSelectIndex ? null : index);
+  };
 
   const handleBodyPartClick = (event) => {
     setOrgan(event);
@@ -192,26 +197,39 @@ const FindDoctors = () => {
         </section>
       </div>
       <article
-        className={`border-2 border-red ${
+        className={` ${
           visibleDoctors ? "" : "hidden xl:block "
-        }  xl:inline h-full w-full xl:w-3/12 mt-20 xl:mt-5`}
+        }  h-full w-full  mt-20 xl:mt-5`}
       >
         <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl xl:hidden">
           Select a Doctor:
         </p>
         <div className="w-full my-5 flex justify-center items-center">
-          
-          <div className="w-5/6 sm:w-3/6 space-y-4">
-            <CustomSelect height={52} selectorDetails={dateSelector} />
-            <CustomSelect height={40} selectorDetails={timeSelector} />
-            <button
-              className={` bg-green text-white text-md  px-4 py-1 mx-auto w-full rounded-md ${
-                doctorsAvaialble ? "" : "hidden"
-              }`}
-            >
-              Search Doctor
-            </button>
-          </div>
+          {selectDoctor === "Others" && (
+            <div className="w-5/6 sm:w-4/6 gap-10 space-y-6 xl:space-y-0 xl:flex items-center mx-auto">
+              <CustomSelect
+                setOpenSelectIndex={setOpenSelectIndex}
+                isOpen={openSelectIndex === 0}
+                toggleSelect={() => handleSelectToggle(0)}
+                height={52}
+                selectorDetails={dateSelector}
+              />
+              <CustomSelect
+                setOpenSelectIndex={setOpenSelectIndex}
+                isOpen={openSelectIndex === 1}
+                toggleSelect={() => handleSelectToggle(1)}
+                height={40}
+                selectorDetails={timeSelector}
+              />
+              <button
+                className={` bg-green text-white text-md  px-4 py-1 mx-auto w-full rounded-md ${
+                  doctorsAvaialble ? "" : "hidden"
+                }`}
+              >
+                Search Doctor
+              </button>
+            </div>
+          )}
         </div>
         <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl hidden xl:block">
           Select a Doctor:

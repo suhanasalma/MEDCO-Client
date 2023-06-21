@@ -410,6 +410,7 @@ export const Symptoms = {
     "Brain Tumor",
     "Can not speak clearly",
     "Depression",
+    "Others",
   ],
   Eye: [
     "ADHD",
@@ -424,5 +425,6 @@ export const Symptoms = {
     "Brain Tumor",
     "Can not speak clearly",
     "Depression",
+    "Others",
   ],
 };
