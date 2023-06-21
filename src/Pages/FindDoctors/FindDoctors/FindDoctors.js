@@ -7,8 +7,8 @@ import "./findDoctor.css";
 import AffectedOrgans from "../AffectedOrgans/AffectedOrgans";
 import SelectSymptoms from "../SelectSymptoms/SelectSymptoms";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import { FaClock } from "react-icons/fa";
-
+import CustomSelect from "../../../Components/CustomSelect/CustomeSelect";
+import { FaClock, FaCalendarAlt } from "react-icons/fa";
 
 const FindDoctors = () => {
   const [organ, setOrgan] = useState("MaleHead");
@@ -38,7 +38,7 @@ const FindDoctors = () => {
     setCurrentStep(3);
   };
   const handleSymptomsClick = (event) => {
-    setSelectDoctor(event)
+    setSelectDoctor(event);
     setVisibleDoctors(true);
     setVisibleOrgan(false);
     setVisibleHuman(false);
@@ -53,7 +53,7 @@ const FindDoctors = () => {
     setVisibleHuman(true);
     setVisibleOrgan(false);
     setVisibleSymptom(false);
-    setVisibleDoctors(false);;
+    setVisibleDoctors(false);
   };
   const showOrgans = () => {
     if (progress >= 33.33333333333333 && progress <= 100) {
@@ -62,25 +62,22 @@ const FindDoctors = () => {
       setVisibleSymptom(false);
       setVisibleDoctors(false);
     }
-    
   };
   const showSymptoms = () => {
-     if (progress >= 66.66666666666666 && progress <=100) {
-       setVisibleHuman(false);
-       setVisibleOrgan(false);
-       setVisibleDoctors(false);
-       setVisibleSymptom(true);
-     }
-   
+    if (progress >= 66.66666666666666 && progress <= 100) {
+      setVisibleHuman(false);
+      setVisibleOrgan(false);
+      setVisibleDoctors(false);
+      setVisibleSymptom(true);
+    }
   };
   const showDoctor = () => {
     if (progress === 100) {
-        setVisibleHuman(false);
-        setVisibleOrgan(false);
-        setVisibleDoctors(true);
-        setVisibleSymptom(false);
+      setVisibleHuman(false);
+      setVisibleOrgan(false);
+      setVisibleDoctors(true);
+      setVisibleSymptom(false);
     }
-   
   };
 
   const stepsName = [
@@ -93,7 +90,32 @@ const FindDoctors = () => {
 
   // Calculate progress percentage
   const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
-  console.log(progress);
+
+  const dateSelector = {
+    icon: FaCalendarAlt,
+    title: "No Date Specified",
+    options: [
+      "No Date Specified",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+    ],
+  };
+  const timeSelector = {
+    icon: FaClock,
+    title: "No Time Specified",
+    options: [
+      "12:00 AM - 08:00 AM",
+      "08:00 AM - 01:00 PM",
+      "01:00 PM - 04:00 PM",
+      "04:00 PM - 08:00 PM",
+      "08:00 PM - 12:00 AM",
+    ],
+  };
 
   return (
     <div className="p-2 sm:w-10/12 mx-auto my-10">
@@ -121,7 +143,6 @@ const FindDoctors = () => {
         }`}
         style={{ boxShadow: " 0 .5rem 1rem rgba(0,0,0,.15)" }}
       >
-        {/* <ProgressBar indexNumber={indexNumber} stepsName={stepsName} currentStep={currentStep} progress={progress} showSymptoms={showSymptoms} showOrgans={showOrgans} showBodys= {showBodys}/> */}
         <section className="flex items-end gap-5 h-full justify-between py-10">
           <article
             className={`${
@@ -171,31 +192,18 @@ const FindDoctors = () => {
         </section>
       </div>
       <article
-        className={`${
+        className={`border-2 border-red ${
           visibleDoctors ? "" : "hidden xl:block "
         }  xl:inline h-full w-full xl:w-3/12 mt-20 xl:mt-5`}
       >
-        <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl">
+        <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl xl:hidden">
           Select a Doctor:
         </p>
         <div className="w-full my-5 flex justify-center items-center">
-          <div className="w-3/6 space-y-4">
-            <div className="border-2">
-              <select name="" id="">
-                <option value="">
-                  <FaClock className="text-black text-2xl border-2" /> No time
-                  Select
-                </option>
-              </select>
-            </div>
-            <div className="border-2">
-              <select name="" id="">
-                <option value="">
-                  <FaClock className="text-black text-2xl border-2" /> No time
-                  Select
-                </option>
-              </select>
-            </div>
+          
+          <div className="w-5/6 sm:w-3/6 space-y-4">
+            <CustomSelect height={52} selectorDetails={dateSelector} />
+            <CustomSelect height={40} selectorDetails={timeSelector} />
             <button
               className={` bg-green text-white text-md  px-4 py-1 mx-auto w-full rounded-md ${
                 doctorsAvaialble ? "" : "hidden"
@@ -205,6 +213,9 @@ const FindDoctors = () => {
             </button>
           </div>
         </div>
+        <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl hidden xl:block">
+          Select a Doctor:
+        </p>
       </article>
     </div>
   );
