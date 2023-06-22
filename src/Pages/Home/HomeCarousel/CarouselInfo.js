@@ -17,8 +17,8 @@ export const CarouselInfo = [
         Talk with a doctor using out highly secured HIPAA complaint <br> end-to-end encrypted video call
        </p>
        <div class='flex gap-5 flex-col sm:flex-row'>
-       <button class='bg-green btn hover:text-green w-52 md:px-6 border-2 border-green py-2 rounded-full text-white font-medium'>Ask A Doctor Online</button>
-       <button class='bg-brown  btn hover:text-brown w-52 md:px-6  py-2 rounded-full text-green font-medium border-2 border-brown'>Unlimited Chat</button>
+       <button class='text-xs bg-green btn hover:text-green w-52 md:px-6 border-2 border-green py-2 rounded-full text-white font-medium'>Ask A Doctor Online</button>
+       <button class='text-xs bg-brown  btn hover:text-brown w-52 md:px-6  py-2 rounded-full text-green font-medium border-2 border-brown'>Unlimited Chat</button>
        </div>
        </div>
        `,
@@ -34,8 +34,8 @@ export const CarouselInfo = [
         At Medco, we take the guesswork out of finding the right <br> doctors, hospitals, and care for you and your family
        </p>
        <div class='flex gap-3 sm:gap-5 flex-col sm:flex-row'>
-       <button class='bg-green btn hover:text-green w-52 md:px-6 py-2 text-white font-medium rounded-md border-2 border-green'>Profile for Every <br> Doctor in World</button>
-       <button class='bg-brown btn hover:text-brown w-52 md:px-6 md:py-2 text-green font-medium rounded-md border-2 border-brown'>More Than 10 Million <br>  Patient Ratings</button>
+       <button class='text-xs bg-green btn hover:text-green w-52 md:px-6 py-2 text-white font-medium rounded-md border-2 border-green'>Profile for Every <br> Doctor in World</button>
+       <button class='text-xs bg-brown btn hover:text-brown w-52 md:px-6 md:py-2 text-green font-medium rounded-md border-2 border-brown'>More Than 10 Million <br>  Patient Ratings</button>
        </div>
        </div>
        `,
@@ -52,7 +52,7 @@ export const CarouselInfo = [
         in times like today, your health is very important, <br> especially since the number of COVID-19 cases is <br> increasing day by day, so we are ready to help you <br> with your health consultation.
        </p>
        <div class='w-52 lg:w-72'>
-       <button class='w-full btn hover:text-green bg-green px-4 py-1 md:py-2 rounded-full text-white font-bold  border-2 border-green'>Book Ambulance</button>
+       <button class='text-xs w-full btn hover:text-green bg-green px-4 py-1 md:py-2 rounded-full text-white font-bold  border-2 border-green'>Book Ambulance</button>
        </div>
        </div>
        `,
@@ -69,7 +69,7 @@ export const CarouselInfo = [
        A blood donor is equal to a lifesaver. Saving a life won't cost you anything. Go ahead and donate blood <br> Be the reason for someone’s heartbeat.
        </p>
        <div class='w-52 lg:w-72' >
-       <button class='w-full  btn hover:text-green bg-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Be a Doner</button>
+       <button class='text-xs w-full  btn hover:text-green bg-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Be a Doner</button>
        </div>
        </div>
        `,
@@ -86,7 +86,7 @@ export const CarouselInfo = [
        A baby is something you carry inside you for nine months, in your arms for three years, and in your heart until the day you die.
        </p>
        <div >
-       <button class='lg:w-72 bg-brown btn hover:text-brown px-6 py-2 rounded-full  text-green font-bold border-2 border-brown'>Book Appointment</button>
+       <button class='text-xs lg:w-72 bg-brown btn hover:text-brown px-6 py-2 rounded-full  text-green font-bold border-2 border-brown'>Book Appointment</button>
        </div> 
        </div>
        `,
@@ -103,7 +103,7 @@ export const CarouselInfo = [
         As you grow older, you will discover that you have two hands <br> one for helping yourself, the other for helping others.
        </p>
        <div class='w-52 lg:w-72'>
-       <button class='w-full bg-green btn hover:text-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Volunteer </button>
+       <button class='text-xs w-full bg-green btn hover:text-green px-6 py-2 rounded-full text-white font-bold border-2 border-green'>Volunteer </button>
        </div>
        </div>
        `,
