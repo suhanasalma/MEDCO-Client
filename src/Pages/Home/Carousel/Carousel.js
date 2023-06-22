@@ -30,7 +30,7 @@ const Carousel = () => {
   };
  
   return (
-    <div className="carousel w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem] relative">
+    <div className="carousel w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem] relative rounded-md overflow-hidden">
       <div className="carousel-image-container w-full h-full ">
         {CarouselInfo?.map((info, index) => (
           <Link className={`carousel-container ${

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Title from "../../../Components/Title/Title";
 import Details from "../../../Components/Details/Details";
 import { Link } from "react-router-dom";
@@ -16,12 +17,6 @@ const OurDoctors = () => {
     );
   };
 
-  const handlePreviousSlide = () => {
-    setSelectedDoctorIndex((prevIndex) =>
-      prevIndex === 0 ? ourDoctorsInfo.length - 1 : prevIndex - 1
-    );
-  };
-
   const handleLowerSliderButton = (id) => {
     setSelectedDoctorIndex(id);
   };
@@ -36,7 +31,7 @@ const OurDoctors = () => {
           details="Handle directly by general doctors and professional and experienced specialist doctors"
         />
       </div>
-      <div className="flex flex-row lg:gap-3 xl:gap-0 gap-8  md:justify-between justify-center items-center ourDocContainer">
+      <div className="flex flex-row lg:gap-3 xl:gap-0 gap-8 md:justify-between justify-center items-center ourDocContainer">
         <div className="space-y-5">
           <div className="space-y-8 sm:block hidden doctorsHeader">
             <p className="font-bold text-lg">Our Doctors</p>
@@ -46,7 +41,7 @@ const OurDoctors = () => {
               details="Handle directly by general doctors and professional and experienced specialist doctors"
             />
           </div>
-          <div
+          <motion.div
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${selectedDoctor.bg})`,
               backgroundPosition: "center",
@@ -54,15 +49,18 @@ const OurDoctors = () => {
               backgroundSize: "cover",
             }}
             className={`${selectedDoctor.imgClass} text-white bg border-2  h-64 w-72 sm:h-52 md:w-72 md:h-52 lg:w-96 lg:h-64 rounded-s-3xl rounded-br-3xl p-5 xl:p-10 space-y-5 doctorCard`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
             <p className="lg:text-2xl">{selectedDoctor.department}</p>
             <p className="text-xl lg:text-3xl font-bold leading-relaxed">
               {selectedDoctor.name}
             </p>
             <p>
-              <Link>Read More </Link>
+              <Link>Read More</Link>
             </p>
-          </div>
+          </motion.div>
           <div>
             <LinkButton
               design="w-52 border-2 border-green"
@@ -84,12 +82,18 @@ const OurDoctors = () => {
 
         <div className="">
           <section className="relative">
-            <div className="border-[16px] border-brown sm:w-[19rem] sm:h-[19rem] md:w-[21rem] md:h-[22rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl  sm:rounded-s-full overflow-hidden mx-auto doctorImage">
-              <img
-                className={`${selectedDoctor.imgClass} w-full h-full object-cover object-top `}
+            <div
+              key={selectedDoctor.id}
+              className="border-[16px] border-brown sm:w-[19rem] sm:h-[19rem] md:w-[21rem] md:h-[22rem] lg:w-[24rem] lg:h-[24rem] xl:w-[30rem] xl:h-[30rem] rounded-xl sm:rounded-s-full overflow-hidden mx-auto doctorImage"
+            >
+              <motion.img
+                key={selectedDoctor?.img}
                 src={selectedDoctor?.img}
-                alt=""
-              />
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: .5 }}
+                className={`${selectedDoctor.imgClass} w-full h-full object-cover object-top `}
+              ></motion.img>
             </div>
 
             <button
