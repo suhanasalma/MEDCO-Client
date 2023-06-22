@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import "./Carousel.css";
-import video from "../../../Assests/HomeCarousel/autism.jpg";
-import doctors from "../../../Assests/HomeCarousel/ADHD.jpg";
-import ambulance from "../../../Assests/HomeCarousel/diabetics.jpg";
-import pregnancy from "../../../Assests/HomeCarousel/pregnancy.jpg";
-import blood from "../../../Assests/HomeCarousel/blood.jpeg";
-import volunter from "../../../Assests/HomeCarousel/volunter.jpg";
 import { Link } from 'react-router-dom';
 import { CarouselInfo } from "../HomeCarousel/CarouselInfo";
 
