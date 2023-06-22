@@ -2,6 +2,7 @@ import React from 'react';
 import MaleSvg from './MaleSvg';
 import FemaleSvg from './FemaleSvg';
 import BabySvg from './BabySvg';
+import './HumanBody.css'
 
 const HumanBody = ({ organ, handleBodyPartClick }) => {
   return (

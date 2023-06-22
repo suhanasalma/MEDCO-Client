@@ -2,30 +2,29 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main";
 import Home from "../../Pages/Home/Home/Home";
 import Register from "../../Pages/LoginRegister/Register/Register";
-import FindDoctors from "../../Pages/FindDoctors/FindDoctors/FindDoctors";
-
+import OrganSearch from "../../Pages/FindDoctors/OrganSearches/OrganSearch/OrganSearch";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
-    children:[
+    element: <Main />,
+    children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/home",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/register",
-        element: <Register/>,
+        element: <Register />,
       },
       {
         path: "/findDoctors",
-        element: <FindDoctors/>,
+        element: <OrganSearch />,
       },
-    ]
+    ],
   },
 ]);

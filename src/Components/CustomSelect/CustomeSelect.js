@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './CustomeSelect.css'
 const CustomSelect = ({
   height,
   selectorDetails,

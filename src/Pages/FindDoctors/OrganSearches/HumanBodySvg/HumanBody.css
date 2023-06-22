@@ -1,0 +1,28 @@
+.st0 {
+    opacity: .5;
+    fill: #fff;
+    enable-background: new
+}
+.active{
+    fill:  #d7ccb7;
+}
+
+.st0:hover {
+  fill:  #af976d;
+}
+.cls-1:hover {
+  fill:  #af976d;
+}
+
+.st1 {
+    fill: #65656a
+}
+
+.cls-1 {
+    fill: #fff;
+    fill-opacity: .5
+}
+
+.cls-2 {
+    fill: #65656a
+}

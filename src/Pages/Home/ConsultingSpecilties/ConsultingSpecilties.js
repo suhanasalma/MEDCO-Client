@@ -4,7 +4,7 @@ import { searchInfos } from "../PopularSearches/PopularSearchesInfo";
 import TreatmentCategoryCard from "../../../Components/Card/TreatmentCategoryCard/TreatmentCategoryCard";
 import Details from "../../../Components/Details/Details";
 import "./ConsultingSpecilties.css";
-import { organsInfo } from "../../FindDoctors/FindDoctors/OrganInfo";
+
 
 const ConsultingSpecilties = () => {
   return (

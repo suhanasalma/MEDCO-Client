@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { organsInfos } from "./OrganInfo";
-import { Symptoms } from "./OrganInfo";
-import HumanBody from "../HumanBodySvg/HumanBody";
-import BreadCrumbs from "../../../Components/BreadCrumbs/BreadCrumbs";
-import "./findDoctor.css";
-import AffectedOrgans from "../AffectedOrgans/AffectedOrgans";
+import BreadCrumbs from "../../../../Components/BreadCrumbs/BreadCrumbs";
 import SelectSymptoms from "../SelectSymptoms/SelectSymptoms";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import CustomSelect from "../../../Components/CustomSelect/CustomeSelect";
+import HumanBody from "../HumanBodySvg/HumanBody";
+import AffectedOrgans from "../AffectedOrgans/AffectedOrgans";
+import { Symptoms, organsInfos } from "./OrganInfo";
+import CustomSelect from "../../../../Components/CustomSelect/CustomeSelect";
 import { FaClock, FaCalendarAlt } from "react-icons/fa";
 
-const FindDoctors = () => {
+
+const OrganSearch = () => {
   const [organ, setOrgan] = useState("MaleHead");
   const [symptom, setSymptom] = useState("");
   const [selectDoctor, setSelectDoctor] = useState("");
@@ -239,4 +238,4 @@ const FindDoctors = () => {
   );
 };
 
-export default FindDoctors;
+export default OrganSearch;
