@@ -11,6 +11,7 @@ import OurPartners from "../OurPartners/OurPartners";
 import RecommendedPackages from "../RecommendedPackages/RecommendedPackages";
 import AllKindOfForms from "../AllKindOfForms/AllKindOfForms";
 import Carousel from "../Carousel/Carousel";
+import NewOurDoctors from "../OurDoctors/NewOurDoctors";
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
       <Carousel/>
       <HomeMainService />
       <OurDoctors />
+      <NewOurDoctors/>
       <PopularSearches />
       <StartOnlineConsultancy />
       <ConsultingSpecilties />
