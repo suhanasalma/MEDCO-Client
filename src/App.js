@@ -3,6 +3,7 @@ import { router } from "./Routes/PublicRoutes/router";
 import "animate.css";
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [user, setUser] = useState(null);
 

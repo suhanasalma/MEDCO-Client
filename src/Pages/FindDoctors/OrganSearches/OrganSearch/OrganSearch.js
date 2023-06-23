@@ -122,17 +122,7 @@ const OrganSearch = () => {
   };
 
   return (
-    <div className="p-2 sm:w-10/12 mx-auto my-10">
-      <BreadCrumbs
-        breadcrumbs={[
-          { title: "Home", link: "/home" },
-          {
-            title: "Find A Doctor",
-            active: true,
-            link: "/findDoctors",
-          },
-        ]}
-      />
+    <div className="p-2 w-full mx-auto mb-10">
       <ProgressBar
         stepsName={stepsName}
         currentStep={currentStep}
@@ -141,6 +131,7 @@ const OrganSearch = () => {
         showOrgans={showOrgans}
         showBodys={showBodys}
       />
+      <p className="text-center text-brown font-medium text-2xl hidden xl:block">Interactive Symptom Checker </p>
       <div
         className={`my-14 h-[440px] px-6 py-10 ${
           visibleDoctors && "hidden xl:block"
