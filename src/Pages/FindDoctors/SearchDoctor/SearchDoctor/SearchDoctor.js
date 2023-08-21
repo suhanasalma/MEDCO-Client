@@ -28,7 +28,7 @@ const SearchDoctor = () => {
 
 
   return (
-    <section className="py-10 px-4 w-full mx-auto mb-10 bg-green min-h-[240px] border-4">
+    <section className="py-10 px-4 w-full mx-auto mb-10 bg-green min-h-[240px] ">
       <div className="w-full flex justify-center items-center h-52">
         <div className="lg:flex justify-around items-center gap-5 w-full ">
           <div className="lg:w-4/12 space-y-3">

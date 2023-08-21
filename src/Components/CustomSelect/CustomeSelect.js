@@ -22,8 +22,8 @@ const CustomSelect = ({
         }`}
         onClick={toggleSelect}
       >
-        <selectorDetails.icon />
-        {selectedOption}
+        <selectorDetails.icon className='text-green'/>
+        <span className="text-brown">{selectedOption}</span>
       </div>
       <div
         className={`select-items ${
