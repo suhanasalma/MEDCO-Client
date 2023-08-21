@@ -2,6 +2,7 @@
    color:black;
    padding: 5px;
    border-radius: 10px;
+   outline: none;
 }
 
 .react-datepicker__year-select {
