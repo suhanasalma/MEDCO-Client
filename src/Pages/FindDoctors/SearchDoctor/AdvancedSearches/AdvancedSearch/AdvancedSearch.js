@@ -48,8 +48,8 @@ const AdvancedSearch = ({ advanceSearch }) => {
       <div>
         <p>Days</p>
         <div className="grid grid-cols-4 lg:grid-cols-7 gap-5 lg:gap-0">
-          {days.map((day) => (
-            <div className=" flex items-center gap-2">
+          {days.map((day,i) => (
+            <div key={i} className=" flex items-center gap-2">
               <div
                 className={`rounded-full bg-white border-4 border-green w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 `}
               >
@@ -71,8 +71,8 @@ const AdvancedSearch = ({ advanceSearch }) => {
       <div className="my-8">
         <p>Times</p>
         <div className="grid grid-cols-3 gap-5 lg:gap-0">
-          {times.map((time) => (
-            <div className=" flex items-center gap-2">
+          {times.map((time,i) => (
+            <div key={i} className=" flex items-center gap-2">
               <div
                 className={`rounded-full bg-white border-4 border-green w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 `}
               >

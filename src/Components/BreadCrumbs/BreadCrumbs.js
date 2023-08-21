@@ -11,7 +11,7 @@ const BreadCrumbs = ({breadcrumbs}) => {
                breadcrumbs.map((breadCrumb,i)=> <NavLink key={i} to={breadCrumb.link}
                className={({ isActive }) =>
                  ` flex items-center gap-2 font-normal ${
-                   isActive ? "text-brown " : "text-[#007bff]"
+                   isActive ? "text-brown " : "text-green"
                  }`
                }>{breadCrumb.title} {!breadCrumb.active? <VscChevronRight className='text-gray text-xl font-thin' />:''} </NavLink>) 
             }
