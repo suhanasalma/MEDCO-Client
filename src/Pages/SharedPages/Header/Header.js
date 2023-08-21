@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import FixedHeader from './FixedHeader';
 import MainNavMenu from './MainNavMenu';
 
-const TestHeader = () => {
+const Header = () => {
 
    return (
      <section className="p-2 lg:w-10/12 mx-auto ">
@@ -13,4 +13,4 @@ const TestHeader = () => {
    );
 };
 
-export default TestHeader;
+export default Header;

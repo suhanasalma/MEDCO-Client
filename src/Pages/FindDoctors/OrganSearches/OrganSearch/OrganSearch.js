@@ -177,6 +177,7 @@ const OrganSearch = () => {
                         Select Symptom:
                     </p>
                     <SelectSymptoms
+                    selectDoctor={selectDoctor}
                         handleSymptomsClick={handleSymptomsClick}
                         Symptoms={Symptoms}
                         symptom={symptom}
@@ -216,7 +217,7 @@ const OrganSearch = () => {
                     </div>
                 )}
             </div>
-            <p className="text-center text-brown xl:text-green sm:text-3xl text-2xl hidden xl:block">
+            <p className="text-center text-brown xl:text-green font-medium sm:text-3xl text-2xl hidden xl:block">
                 Select a Doctor:
             </p>
         </div>

@@ -8,13 +8,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addDays, setHours, setMinutes } from "date-fns";
-import './DoctorCard.css'
+import "./DoctorCard.css";
 
 const DoctorCard = () => {
   const [seeAppointment, setSeeAppointment] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(
-    setHours(setMinutes(new Date(), 30), 16)
-  );
+  const [selectedDate, setSelectedDate] =
+    useState(null);
+    // setHours(setMinutes(new Date(), 30), 16)
 
   const availableTimes = [
     {
@@ -40,7 +40,7 @@ const DoctorCard = () => {
     },
   ];
 
-  const disabledDays = availableTimes
+  const notDisabledDays = availableTimes
     .map((item) => {
       switch (item.day) {
         case "SUN":
@@ -65,14 +65,16 @@ const DoctorCard = () => {
 
   const disableSpecificDays = (date) => {
     const day = date.getDay();
-    return disabledDays.includes(day);
+    return notDisabledDays.includes(day);
   };
 
   const getDayClassName = (date) => {
-    // return disableSpecificDays(date) ? 'red-day' : '';
+    return disableSpecificDays(date) ? "active-day" : "";
   };
+
+  console.log(selectedDate);
   return (
-    <div className="shadow-xl w-64 mt-10 border-2 border-light-brown rounded-md">
+    <div className="shadow-md w-64 mt-10 border-2 border-light-brown rounded-md">
       <div className="flex justify-center items-center gap-3">
         <img className="w-7 h-7 object-contain my-4" src={logo} alt="" />
         <p className="text-sm text-green font-thin">Medco</p>
@@ -90,13 +92,13 @@ const DoctorCard = () => {
       <div className="p-3 bg-green text-center text-white cursor-pointer">
         <p>View Profile</p>
       </div>
-      <div className="flex justify-between items-center gap-5 p-4 text-xl text-green relative">
+      <div className="flex justify-between items-start gap-5 pt-4 px-4 text-xl text-green relative mt-2 ">
         <div className=" group">
           <a href="tel:+880151515151">
             <VscCallOutgoing className="cursor-pointer" />
           </a>
 
-          <p className="opacity-0 group-hover:opacity-100 duration-300 absolute text-xs z-20">
+          <p className="opacity-0 group-hover:opacity-100 duration-300 absolute text-xs top-0 z-20">
             Call for appointment
           </p>
         </div>
@@ -105,7 +107,7 @@ const DoctorCard = () => {
             <FaRegComments className="cursor-pointer" />
           </Link>
 
-          <span className="opacity-0 group-hover:opacity-100 duration-300 absolute text-xs z-20 ">
+          <span className="opacity-0 group-hover:opacity-100 duration-300 absolute text-xs z-20 top-0">
             send any queries
           </span>
         </div>
@@ -114,22 +116,24 @@ const DoctorCard = () => {
             onClick={() => setSeeAppointment(!seeAppointment)}
             className="cursor-pointer"
           />
-
-          <span className="opacity-0 group-hover:opacity-100 duration-300 absolute right-0 text-xs z-20">
-            Check availibilities
-          </span>
-        </div>
-      </div>
-<DatePicker
+          <DatePicker
         selected={selectedDate}
         onChange={setSelectedDate}
         maxDate={addDays(new Date(), 7)}
         minDate={new Date()}
         filterDate={disableSpecificDays}
-        dateFormat="MMMM d, yyyy h:mm aa"
+        dateFormat="MMMM d, yyyy"
         dayClassName={getDayClassName}
-        showTimeSelect
+        // showTimeSelect
+        className="opacity-0 w-10 h-10 right-0 -left-3 bottom-5 absolute mx-auto" 
       />
+
+          <span className="opacity-0 group-hover:opacity-100 duration-300 absolute right-0 text-xs z-20 top-0">
+            Check availibilities
+          </span>
+        </div>
+      </div>
+      
     </div>
   );
 };
