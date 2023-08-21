@@ -18,11 +18,9 @@ import {
   FaAngleDown,
   FaAngleUp,
 } from "react-icons/fa";
-import HeaderInput from "../Header/HeaderInput";
+import HeaderInput from "./HeaderInput";
 import FlotingMenuBar from "./FlotingMenuBar";
 import AuthForm from "../../LoginRegister/Auth/AuthForm";
-
-// import HeaderInput from "../Header/HeaderInput";
 
 const FixedHeader = () => {
   const [mainNavOpen, setMainNavOpen] = useState(false);

@@ -3,7 +3,7 @@ import { TbChevronDown, TbArrowsMinimize } from "react-icons/tb";
 import { FaMobileAlt } from "react-icons/fa";
 
 import { Link, NavLink } from "react-router-dom";
-import { menus } from "../Header/headerMenu";
+import { menus } from "./headerMenu";
 
 const FlotingMenuBar = ({
   setMainNavOpen,
