@@ -74,7 +74,7 @@ const DoctorCard = () => {
 
   console.log(selectedDate);
   return (
-    <div className="shadow-md w-64 mt-10 border-2 border-light-brown rounded-md">
+    <div className="shadow-md w-64 md:w-56 lg:w-64 mt-10 border-2 border-light-brown rounded-md">
       <div className="flex justify-center items-center gap-3">
         <img className="w-7 h-7 object-contain my-4" src={logo} alt="" />
         <p className="text-sm text-green font-thin">Medco</p>
