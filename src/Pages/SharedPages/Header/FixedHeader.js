@@ -158,7 +158,7 @@ const FixedHeader = () => {
         </div>
         <ul
           className={` duration-700 ease-in-out border-2 border-green font-bold text-green bg-white absolute right-0 px-4 py-2 space-y-4 ${
-            !userOpen ? " z-0 opacity-0" : "  z-50 "
+            !userOpen ? " z-0 opacity-0 pointer-events-none	" : "  z-50 "
           }`}
         >
           <li className="flex items-center gap-2">
@@ -169,7 +169,7 @@ const FixedHeader = () => {
           </li>
           <li onClick={handleOpenModal} className="flex items-center gap-2">
             <FaRegUserCircle />
-            <Link>Register</Link>
+            <span>Register</span>
           </li>
           <li>
             <NavLink
