@@ -21,7 +21,7 @@ const FlotingMenuBar = ({
 }) => {
   return (
     <section
-      className={`h-fit duration-1000 ease-in-out absolute z-40 w-full bg-green text-white  ${
+      className={`h-fit duration-1000 ease-in-out absolute z-40 w-full bg-green text-white border-b-2 border-white ${
         mainNavOpen ? "p-5 top-14 md:top-12 lg:top-20 " : "top-[-500px] "
       }`}
     >
