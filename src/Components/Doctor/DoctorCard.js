@@ -72,7 +72,6 @@ const DoctorCard = () => {
     return disableSpecificDays(date) ? "active-day" : "";
   };
 
-  console.log(selectedDate);
   return (
     <div className="shadow-md w-64 md:w-56 lg:w-64 mt-10 border-2 border-light-brown rounded-md">
       <div className="flex justify-center items-center gap-3">

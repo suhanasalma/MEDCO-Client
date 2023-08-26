@@ -27,7 +27,7 @@ const CustomSelect = ({
       </div>
       <div
         className={`select-items ${
-          height ? `h-${height}` : "h-[300px]"
+          height ? `h-${height}` : "h-72"
         } text-sm ${isOpen ? "" : "select-hide"}`}
       >
         {selectorDetails?.options?.map((option, index) => (

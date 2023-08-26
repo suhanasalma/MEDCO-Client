@@ -7,7 +7,6 @@ import AffectedOrgans from "../AffectedOrgans/AffectedOrgans";
 import { Symptoms, organsInfos } from "./OrganInfo";
 import CustomSelect from "../../../../Components/CustomSelect/CustomeSelect";
 import { FaClock, FaCalendarAlt } from "react-icons/fa";
-import DoctorCard from "../../../../Components/Doctor/DoctorCard";
 import SelectDoctor from "../SelectDoctor/SelectDoctor";
 
 const OrganSearch = () => {
@@ -18,7 +17,7 @@ const OrganSearch = () => {
   const [visibleOrgan, setVisibleOrgan] = useState(false);
   const [visibleSymptom, setVisibleSymptom] = useState(false);
   const [visibleDoctors, setVisibleDoctors] = useState(false);
-  const [doctorsAvaialble, setDoctorsAvailable] = useState(true);
+  const [doctorsAvaialble, setDoctorsAvailable] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
 
@@ -27,6 +26,7 @@ const OrganSearch = () => {
   };
 
   const handleBodyPartClick = (event) => {
+    setSelectDoctor('')
     setOrgan(event);
     setVisibleHuman(false);
     setVisibleDoctors(false);
@@ -44,6 +44,7 @@ const OrganSearch = () => {
     setCurrentStep(3);
   };
   const handleSymptomsClick = (event) => {
+    setDoctorsAvailable(false)
     setSelectDoctor(event);
     setVisibleDoctors(true);
     setVisibleOrgan(false);
@@ -51,9 +52,6 @@ const OrganSearch = () => {
     setVisibleSymptom(false);
     setCurrentStep(4);
   };
-  // const handleDoctorClick = (event) => {
-  //   setCurrentStep(4)
-  // };
 
   const showBodys = () => {
     setVisibleHuman(true);
@@ -62,7 +60,7 @@ const OrganSearch = () => {
     setVisibleDoctors(false);
   };
   const showOrgans = () => {
-    if (progress >= 33.33333333333333 && progress <= 100) {
+    if (progress >= 33 && progress <= 100) {
       setVisibleHuman(false);
       setVisibleOrgan(true);
       setVisibleSymptom(false);
@@ -70,7 +68,7 @@ const OrganSearch = () => {
     }
   };
   const showSymptoms = () => {
-    if (progress >= 66.66666666666666 && progress <= 100) {
+    if (progress >= 66 && progress <= 100) {
       setVisibleHuman(false);
       setVisibleOrgan(false);
       setVisibleDoctors(false);
@@ -115,6 +113,7 @@ const OrganSearch = () => {
     icon: FaClock,
     title: "No Time Specified",
     options: [
+      "No Time Specified",
       "12:00 AM - 08:00 AM",
       "08:00 AM - 01:00 PM",
       "01:00 PM - 04:00 PM",
@@ -122,8 +121,6 @@ const OrganSearch = () => {
       "08:00 PM - 12:00 AM",
     ],
   };
-
-  console.log('selected',selectDoctor);
 
   return (
     <div className="p-2 w-full mx-auto mb-10">
@@ -181,7 +178,7 @@ const OrganSearch = () => {
                         Select Symptom:
                     </p>
                     <SelectSymptoms
-                    selectDoctor={selectDoctor}
+                        selectDoctor={selectDoctor}
                         handleSymptomsClick={handleSymptomsClick}
                         Symptoms={Symptoms}
                         symptom={symptom}
@@ -207,18 +204,17 @@ const OrganSearch = () => {
                             setOpenSelectIndex={setOpenSelectIndex}
                             isOpen={openSelectIndex === 1}
                             toggleSelect={() => handleSelectToggle(1)}
-                            height={40}
+                            height={52}
                             selectorDetails={timeSelector}
                         />
-                        <button
-                            className={` bg-green text-white text-md  px-4 py-1 mx-auto w-full rounded-md ${
-                            doctorsAvaialble ? "" : "hidden" }`} >
+                        <button onClick={()=>setDoctorsAvailable(true)}
+                            className={` bg-green text-white text-md  px-4 py-1 mx-auto w-full rounded-md `} >
                             Search Doctor
                         </button>
                     </div>
                 )}
             </div>
-            {selectDoctor && selectDoctor !== "Others" && 
+            {(selectDoctor && selectDoctor !== "Others") || doctorsAvaialble && 
             
             <SelectDoctor />
             }
