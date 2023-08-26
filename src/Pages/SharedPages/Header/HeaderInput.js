@@ -3,11 +3,11 @@ import React from "react";
 const HeaderInput = () => {
   return (
     <section className="lg:w-2/6 ">
-      <fieldset className=" rounded-md space-y-1 dark:text-gray-100 border-2 px-2 border-green lg:block hidden">
+      <fieldset className="rounded-md space-y-1 dark:text-gray-100 border-2 px-2 border-green lg:block hidden w-full">
         <label htmlFor="Search" className="hidden">
           Search
         </label>
-        <div className="relative">
+        <div className="relative w-full">
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
             <button
               type="button"
@@ -27,7 +27,7 @@ const HeaderInput = () => {
             type="search"
             name="Search"
             placeholder="Search..."
-            className="input py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900 focus:dark:border-violet-400"
+            className="w-full input py-1 pl-10 text-sm rounded-md focus:outline-none "
           />
         </div>
       </fieldset>
