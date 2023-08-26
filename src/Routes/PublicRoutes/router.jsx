@@ -5,6 +5,8 @@ import Register from "../../Pages/LoginRegister/Register/Register";
 import OrganSearch from "../../Pages/FindDoctors/OrganSearches/OrganSearch/OrganSearch";
 import FindDoctorsContainer from "../../Pages/FindDoctors/FindDoctorsContainer/FindDoctorsContainer";
 import ClinicAndCenters from "../../Pages/ClinicAndCenters/ClinicAndCentersContainer/ClinicAndCenters";
+import ConditionsAndTreatments from "../../Pages/ConditionsAndTreatments/ConditionsAndTreatments/ConditionsAndTreatments";
+import BookinAppointments from "../../Pages/BookAppointments/BookinAppointments/BookinAppointments";
 
 export const router = createBrowserRouter([
   {
@@ -28,8 +30,16 @@ export const router = createBrowserRouter([
         element: <FindDoctorsContainer />,
       },
       {
-        path: "/clincandcenter",
+        path: "/ClincAndCenter",
         element: <ClinicAndCenters />,
+      },
+      {
+        path: "/ConditionsAndTreatment",
+        element: <ConditionsAndTreatments />,
+      },
+      {
+        path: "/BookinAppointments",
+        element: <BookinAppointments />,
       },
     ],
   },
