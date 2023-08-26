@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Carousel.css";
 import { Link } from 'react-router-dom';
-import { CarouselInfo } from "../HomeCarousel/CarouselInfo";
-
-
+import { CarouselInfo } from "./CarouselInfo";
 
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
