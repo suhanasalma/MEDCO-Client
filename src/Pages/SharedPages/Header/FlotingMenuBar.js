@@ -171,7 +171,7 @@ const FlotingMenuBar = ({
             to="/"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
-                isActive ? "text-green" : "text-brown"
+                isActive ? "text-green" : "text-white"
               }`
             }
           >
@@ -182,10 +182,10 @@ const FlotingMenuBar = ({
 
         <div className="px-2 cursor-pointer  border-light-gray">
           <NavLink
-            to="/"
+            to="/findDoctors"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
-                isActive ? "text-brown" : "text-green"
+                isActive ? "text-brown" : "text-white"
               }`
             }
           >
@@ -194,10 +194,10 @@ const FlotingMenuBar = ({
         </div>
         <div className="px-2 cursor-pointer  border-light-gray">
           <NavLink
-            to="/"
+            to="/ClincAndCenter"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
-                isActive ? "text-brown" : "text-green"
+                isActive ? "text-brown" : "text-white"
               }`
             }
           >
@@ -206,10 +206,10 @@ const FlotingMenuBar = ({
         </div>
         <div className="cursor-pointer  border-light-gray">
           <NavLink
-            to="/"
+            to="/ConditionsAndTreatment"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
-                isActive ? "text-brown" : "text-green"
+                isActive ? "text-brown" : "text-white"
               }`
             }
           >
@@ -218,10 +218,10 @@ const FlotingMenuBar = ({
         </div>
         <div className="px-2 cursor-pointer  border-light-gray">
           <NavLink
-            to="/"
+            to="/BookinAppointments"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
-                isActive ? "text-brown" : "text-green"
+                isActive ? "text-brown" : "text-white"
               }`
             }
           >
@@ -233,7 +233,7 @@ const FlotingMenuBar = ({
             to="/"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
-                isActive ? "text-brown" : "text-green"
+                isActive ? "text-brown" : "text-white"
               }`
             }
           >
