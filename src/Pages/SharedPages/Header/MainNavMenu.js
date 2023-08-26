@@ -15,7 +15,7 @@ const MainNavMenu = () => {
         Find a Doctor
       </NavLink>
       <NavLink
-        to="/"
+        to="/clincandcenter"
         className={({ isActive }) =>
           `text-sm  flex items-center gap-2 ${
             isActive ? "text-brown font-bold" : "text-green"

@@ -4,6 +4,7 @@ import Home from "../../Pages/Home/Home/Home";
 import Register from "../../Pages/LoginRegister/Register/Register";
 import OrganSearch from "../../Pages/FindDoctors/OrganSearches/OrganSearch/OrganSearch";
 import FindDoctorsContainer from "../../Pages/FindDoctors/FindDoctorsContainer/FindDoctorsContainer";
+import ClinicAndCenters from "../../Pages/ClinicAndCenters/ClinicAndCentersContainer/ClinicAndCenters";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "/findDoctors",
         element: <FindDoctorsContainer />,
+      },
+      {
+        path: "/clincandcenter",
+        element: <ClinicAndCenters />,
       },
     ],
   },
