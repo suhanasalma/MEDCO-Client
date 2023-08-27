@@ -1,4 +1,4 @@
-/* .title {
+.title {
   position: relative;
 }
 
@@ -10,13 +10,11 @@
   background: #af976d;
   left: 0;
   right: 0%;
-  top: 50px;
+  top: 120%;
   transform: translate(-50%, -50%);
   transition: transform 500ms ease-in-out;
   transform: scale(0);
   transform-origin:center;
-  transform: scale(0);
-
 }
 
 .title:hover::after {
@@ -40,12 +38,11 @@
   background: #af976d;
   left: 0;
 
-  top: 50px;
+  top: 120%;
   transform: translate(-50%, -50%);
   transition: transform 500ms ease-in-out;
   transform: scale(0);
   transform-origin:center;
-  transform: scale(0);
 }
 
 .sideTitle:hover::after {
@@ -66,8 +63,7 @@
   width: 0;
   background: #af976d;
   left: 0;
-
-  top: 220px;
+  top: 100%;
   transform: translate(-50%, -50%);
   transition: transform 500ms ease-in-out;
   transform: scale(0);
@@ -81,4 +77,4 @@
   width: 60%;
   margin: auto;
 
-} */
+}
