@@ -32,26 +32,36 @@ const FooterMenu = () => {
   return (
     <section className="my-10">
       <div className="flex justify-center items-center gap-5">
-        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
+        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-500 ease-in-out hover:border-green hover:text-brown">
           <FaFacebookF />
         </div>
-        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
+        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-500 ease-in-out hover:border-green hover:text-brown">
           <FaTwitter />
         </div>
-        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
+        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-500 ease-in-out hover:border-green hover:text-brown">
           <FaInstagram />
         </div>
-        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
+        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-500 ease-in-out hover:border-green hover:text-brown">
           <FaYoutube />
         </div>
-        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-1000 ease-in-out hover:border-green hover:text-brown">
+        <div className="border-2 border-light-gray rounded-full p-2 text-green hover:scale-125 duration-500 ease-in-out hover:border-green hover:text-brown">
           <FaWeixin />
         </div>
       </div>
       <div className="mt-10 md:flex lg:justify-center gap-20 flex-wrap lg:flex-nowrap p-10 hidden">
         <div>
           <p className="border-b-2 border-brown">Service</p>
-          <ul className="text-sm text-gray list-disc ml-7 mt-5">
+          <ul className="text-sm text-gray list-disc ml-7 mt-5 leading-loose">
+            {services?.map((service, i) => (
+              <li key={i} className="cursor-pointer ">
+                {service.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="border-b-2 border-brown">Service</p>
+          <ul className="text-sm text-gray list-disc ml-7 mt-5 leading-loose">
             {services?.map((service, i) => (
               <li key={i} className="cursor-pointer">
                 {service.name}
@@ -61,17 +71,7 @@ const FooterMenu = () => {
         </div>
         <div>
           <p className="border-b-2 border-brown">Service</p>
-          <ul className="text-sm text-gray list-disc ml-7 mt-5">
-            {services?.map((service, i) => (
-              <li key={i} className="cursor-pointer">
-                {service.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="border-b-2 border-brown">Service</p>
-          <ul className="text-sm text-gray list-disc ml-7 mt-5">
+          <ul className="text-sm text-gray list-disc ml-7 mt-5 leading-loose">
             {services.slice(0, 5)?.map((service, i) => (
               <li key={i} className="cursor-pointer">
                 {service.name}
@@ -81,7 +81,7 @@ const FooterMenu = () => {
         </div>
         <div>
           <p className="border-b-2 border-brown">Service</p>
-          <ul className="text-sm text-gray list-disc ml-7 mt-5">
+          <ul className="text-sm text-gray list-disc ml-7 mt-5 leading-loose">
             {services?.map((service, i) => (
               <li key={i} className="cursor-pointer">
                 {service.name}

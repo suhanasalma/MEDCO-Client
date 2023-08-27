@@ -35,8 +35,7 @@ const RightsFooter = () => {
           Privacy Policy | Terms of Services | Cookies Policy
         </p>
         <small>
-          © 2023 Bumrungrad International Hospital A Joint Commission
-          International (JCI) accredited hospital
+          © 2023 MEDCO, all rights reserved by MEDCO
         </small>
         <p className="mb-2 leading-loose">
           33 Sukhumvit 3, Wattana, Dhaka 1207 Bangladesh. <br /> All rights
