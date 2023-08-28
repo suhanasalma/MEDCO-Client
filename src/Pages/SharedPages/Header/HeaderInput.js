@@ -2,7 +2,7 @@ import React from "react";
 
 const HeaderInput = () => {
   return (
-    <section className="lg:w-2/6 ">
+    <section className="lg:w-2/6 bg-transparent">
       <fieldset className="rounded-md space-y-1 dark:text-gray-100 border-2 px-2 border-green lg:block hidden w-full">
         <label htmlFor="Search" className="hidden">
           Search
@@ -27,7 +27,7 @@ const HeaderInput = () => {
             type="search"
             name="Search"
             placeholder="Search..."
-            className="w-full input py-1 pl-10 text-sm rounded-md focus:outline-none "
+            className="w-full input py-1 pl-10 text-sm rounded-md focus:outline-none bg-transparent	"
           />
         </div>
       </fieldset>
