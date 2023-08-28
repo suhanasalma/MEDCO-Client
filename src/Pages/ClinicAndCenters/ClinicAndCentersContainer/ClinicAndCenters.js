@@ -5,6 +5,8 @@ import Title from "../../../Components/Title/Title";
 import HeaderInput from "../../SharedPages/Header/HeaderInput";
 import Symptoms from "../Symptoms/Symptoms";
 import Hospitals from "../Hospitals/Hospitals";
+import video from "../../../Assests/HomeCarousel/autism.jpg";
+import video1 from "../../../Assests/hospitalBuilding.jpg";
 
 const ClinicAndCenters = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -14,8 +16,17 @@ const ClinicAndCenters = () => {
   };
   return (
     <section className="">
-      <div>
-        <Carousel />
+      <div className="h-[500px] relative">
+        {/* <Carousel /> */}
+        <img
+          className="h-full w-full object-cover"
+          src={video}
+          alt="clinic and center"
+        />
+        <div style={{position:"absolute", top:"50%" , left:"50%",transform: "translate(-50%, -50%)"}}> 
+          <p className="text-4xl text-green font-bold ">Clinics and Centers</p>
+        </div>
+        <div></div>
         <BreadCrumbs
           breadcrumbs={[
             { title: "Home", link: "/home" },
@@ -27,9 +38,9 @@ const ClinicAndCenters = () => {
           ]}
         />
       </div>
-      <div className="my-10">
-        <Title design="title text-center" title="Clinic and Center" />
-        <div className="flex flex-col items-center my-10 gap-5 bg-light-green h-80 py-10 w-9/12 mx-auto shadow shadow-green">
+      <div className="mt-20">
+
+        <div className="flex flex-col items-center my-10 gap-5 bg-light-gray h-80 py-10  mx-auto shadow shadow-green">
           <section className="lg:w-3/6 bg-white rounded-lg">
             <fieldset className="rounded-lg space-y-1 px-2 w-full py-3">
               <div className="relative w-full ">
@@ -58,7 +69,7 @@ const ClinicAndCenters = () => {
             Search
           </button>
         </div>
-        <div className="flex justify-evenly -mt-40 bg-light-brown w-8/12 mx-auto py-5">
+        <div className="flex justify-evenly -mt-40 bg-white w-10/12 mx-auto py-5 shadow-2xl">
           <Symptoms />
           <Hospitals />
         </div>
