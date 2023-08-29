@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Carousel from "../../Home/Carousel/Carousel";
 import BreadCrumbs from "../../../Components/BreadCrumbs/BreadCrumbs";
 import Title from "../../../Components/Title/Title";
-import HeaderInput from "../../SharedPages/Header/HeaderInput";
 import Symptoms from "../Symptoms/Symptoms";
 import Hospitals from "../Hospitals/Hospitals";
 import video from "../../../Assests/HomeCarousel/autism.jpg";
@@ -16,17 +14,26 @@ const ClinicAndCenters = () => {
   };
   return (
     <section className="">
-      <div className="h-[500px] relative">
-        {/* <Carousel /> */}
-        <img
-          className="h-full w-full object-cover"
-          src={video}
-          alt="clinic and center"
-        />
-        <div style={{position:"absolute", top:"50%" , left:"50%",transform: "translate(-50%, -50%)"}}> 
-          <p className="text-4xl text-green font-bold ">Clinics and Centers</p>
+      <div>
+        <div className="h-72 sm:h-80 lg:h-96 relative mb-5" >
+          <img
+            className="h-full w-full object-cover"
+            src={video}
+            alt="clinic and center"
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <p className="text-3xl sm:text-4xl text-green font-bold">
+              Clinics and Centers
+            </p>
+          </div>
         </div>
-        <div></div>
         <BreadCrumbs
           breadcrumbs={[
             { title: "Home", link: "/home" },
@@ -38,8 +45,7 @@ const ClinicAndCenters = () => {
           ]}
         />
       </div>
-      <div className="mt-20">
-
+      <div className="my-20">
         <div className="flex flex-col items-center my-10 gap-5 bg-light-gray h-80 py-10  mx-auto shadow shadow-green">
           <section className="lg:w-3/6 bg-white rounded-lg">
             <fieldset className="rounded-lg space-y-1 px-2 w-full py-3">
@@ -69,7 +75,7 @@ const ClinicAndCenters = () => {
             Search
           </button>
         </div>
-        <div className="flex justify-evenly -mt-40 bg-white w-10/12 mx-auto py-5 shadow-2xl">
+        <div className="md:flex justify-evenly -mt-40 bg-white w-10/12 mx-auto py-5 shadow-2xl">
           <Symptoms />
           <Hospitals />
         </div>
