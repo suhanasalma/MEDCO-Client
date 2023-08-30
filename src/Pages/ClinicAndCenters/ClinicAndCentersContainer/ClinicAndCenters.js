@@ -4,7 +4,7 @@ import Title from "../../../Components/Title/Title";
 import Symptoms from "../Symptoms/Symptoms";
 import Hospitals from "../Hospitals/Hospitals";
 import video from "../../../Assests/HomeCarousel/autism.jpg";
-import video1 from "../../../Assests/hospitalBuilding.jpg";
+import video1 from "../../../Assests/clinicAndCenter.jpeg";
 
 const ClinicAndCenters = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -45,9 +45,9 @@ const ClinicAndCenters = () => {
           ]}
         />
       </div>
-      <div className="my-20">
+      <div className="my-20 w-11/12 2xl:w-full mx-auto">
         <div className="flex flex-col items-center my-10 gap-5 bg-light-gray h-80 py-10  mx-auto shadow shadow-green">
-          <section className="lg:w-3/6 bg-white rounded-lg">
+          <section className="w-11/12 sm:w-8/12 lg:w-3/6 bg-white rounded-lg">
             <fieldset className="rounded-lg space-y-1 px-2 w-full py-3">
               <div className="relative w-full ">
                 <span className="absolute inset-y-0 right-0 flex items-center pl-2">
