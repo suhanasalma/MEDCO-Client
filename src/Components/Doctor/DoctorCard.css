@@ -1,13 +1,15 @@
 
 
 .active-day {
-    background-color: #2c4c3bed; /* Change this color as per your preference */
+    background-color: #af976d; 
     border-radius: 50%;
-    color: white; /* Change text color to make it visible */
+    color: white;
+    font: bold;
 }
 
 .active-day:hover{
     background-color: #af976d;
+    color: white;
 }
 
 
