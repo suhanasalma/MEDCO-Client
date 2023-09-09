@@ -5,11 +5,13 @@ import { VscCallOutgoing, VscCalendar } from "react-icons/vsc";
 import { FaRegComments } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./DoctorCard.css";
-import AvailableDays from "../DatePicker/DatePicker";
+import AvailableDays from "../AvailableDays/AvailableDays";
+import Modal from "../ReactDayPicker/Modal";
 
 const DoctorCard = () => {
   const [seeAppointment, setSeeAppointment] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
 
   const availableTimes = [
     {
@@ -54,7 +56,7 @@ const DoctorCard = () => {
         <div className="p-3 bg-green text-center text-white cursor-pointer">
             <p>View Profile</p>
         </div>
-        <div className="flex justify-between items-start gap-5 pt-4 px-4 text-xl text-green relative mt-2 ">
+        <div className="flex justify-between items-start gap-5 pt-4 px-4 text-xl text-green relative mt-2 py-5">
             <div className=" group">
                 <a className="" href="tel:+880151515151">
                     <VscCallOutgoing className="cursor-pointer group" />
@@ -75,18 +77,23 @@ const DoctorCard = () => {
             </div>
             <div className=" group">
                 <VscCalendar
-                    onClick={() => setSeeAppointment(!seeAppointment)}
+                    onClick={() => setOpenModal(true)}
                     className="cursor-pointer"
                 />
-                <AvailableDays selected={selectedDate} setSelectedDate={setSelectedDate} availableTimes={availableTimes} />
-                <span className="opacity-0 group-hover:opacity-100 duration-300 absolute right-0 text-xs z-20 top-0">
+                {/* <AvailableDays selected={selectedDate} setSelectedDate={setSelectedDate} availableTimes={availableTimes} /> */}
+                <span 
+                className="opacity-0 group-hover:opacity-100 duration-300 absolute right-0 text-xs z-20 top-0"
+                >
                     Book Appointment
                 </span>
             </div>
         </div>
-        {/* {selectedDate && (
-        <p>Selected Date: {selectedDate.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" })}</p>
-      )} */}
+       <div>
+       {openModal &&
+        <Modal openModal={openModal} setOpenModal={setOpenModal} availableTimes={availableTimes}/>
+       }
+       </div>
+       
     </div>
   );
 };
