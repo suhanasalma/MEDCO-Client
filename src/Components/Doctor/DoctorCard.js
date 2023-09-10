@@ -78,7 +78,7 @@ const DoctorCard = () => {
                     <VscCallOutgoing className="cursor-pointer group" />
                 </a>
 
-                <p className={`${openModal ? "opacity-0 z-0":"opacity-0 group-hover:opacity-100 duration-300 absolute text-xs top-0 z-20"} `}>
+                <p className="opacity-0 group-hover:opacity-100 duration-300 absolute text-xs top-0 z-20">
                     Call for appointment
                 </p>
             </div>
@@ -87,7 +87,7 @@ const DoctorCard = () => {
                     <FaRegComments className="cursor-pointer" />
                 </Link>
 
-                <span className={`${openModal ? "opacity-0 z-0":"opacity-0 group-hover:opacity-100 duration-300 absolute text-xs top-0 z-20"} `}>
+                <span className="opacity-0 group-hover:opacity-100 duration-300 absolute text-xs top-0 z-20">
                     send any queries
                 </span>
             </div>
@@ -98,7 +98,7 @@ const DoctorCard = () => {
                 />
                 {/* <AvailableDays selected={selectedDate} setSelectedDate={setSelectedDate} availableTimes={availableTimes} /> */}
                 <span 
-                className={`${openModal ? "opacity-0 z-0":"opacity-0 group-hover:opacity-100 duration-300 absolute right-0 text-xs z-20 top-0"} `}
+                className="opacity-0 group-hover:opacity-100 duration-300 absolute right-0 text-xs z-20 top-0"
                 >
                     Book Appointment
                 </span>
