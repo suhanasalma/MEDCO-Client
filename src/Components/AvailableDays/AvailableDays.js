@@ -2,7 +2,40 @@ import React from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const AvailableDays = ({setSelectedDate,selectedDate,availableTimes}) => {
+const AvailableDays = ({setSelectedDate,selectedDate}) => {
+
+
+    const availableTimes = [
+        {
+          day: "FRI",
+          month:'SEP',
+          year:2023,
+          time: {15:["10:00","12:00","12:15","12:30"],22:["10:00","12:00","12:15","12:30"],29:["10:00","12:00","12:15","12:30"]},
+          location: "Medical Clinics (Building A 15B)",
+        },
+        {
+          day: "SAT",
+          month:'SEP',
+          year:2023,
+          time: {16:["10:00","12:00","12:15","12:30"],23:["10:00","12:00","12:15","12:30"],30:["10:00","12:00","12:15","12:30"]},
+          location: "Medical Clinics (Building A 15B)",
+        },
+        {
+          day: "MON",
+          month:'SEP',
+          year:2023,
+          time: {11:["10:00","12:00","12:15","12:30"],18:["10:00","12:00","12:15","12:30"],25:["10:00","12:00","12:15","12:30"]},
+          location: "Medical Clinics (Building A 15B)",
+        },
+    
+        {
+          day: "TUE",
+          month:'SEP',
+          year:2023,
+          time: {12:["10:00","12:00","12:15","12:30"],19:["10:00","12:00","12:15","12:30"],26:["10:00","12:00","12:15","12:30"]},
+          location: "Medical Clinics (Building A 15B)",
+        },
+      ];
 
     const isDateAvailable = (date) => {
         const today = new Date();

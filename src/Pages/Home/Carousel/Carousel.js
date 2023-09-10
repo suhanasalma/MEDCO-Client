@@ -25,12 +25,11 @@ const Carousel = () => {
     <div className="carousel w-full h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[40rem] relative rounded-md overflow-hidden">
       <div className="carousel-image-container w-full h-full ">
         {CarouselInfo?.map((info, index) => (
-          <Link className={`carousel-container ${
+          <Link key={index} className={`carousel-container ${
             index === currentImageIndex ? "active" : ""
           }`}>
              <div dangerouslySetInnerHTML={{ __html: info.details }} />
           <img
-            key={index}
             className={`carousel-image h-full w-full object-cover object-center `}
             src={info.img}
             alt=''
