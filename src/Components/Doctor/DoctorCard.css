@@ -27,15 +27,15 @@
        
     }
     50%{
-        border:8px solid #E5F6DF;
+        border:4px solid #E5F6DF;
        border-radius:  30% 60% 70% 40% /50% 60% 30% 60%;
     }
     75%{
-        border:6px solid #af976d;
+        border:4px solid #af976d;
        border-radius:   60%  40% 30% 70%/60% 30% 70% 40%;
     }
     100%{
-        border:6px solid #E5F6DF;
+        border:4px solid #E5F6DF;
        border-radius:   60%  40% 30% 70%/60% 30% 70% 40%;
     }
  }
