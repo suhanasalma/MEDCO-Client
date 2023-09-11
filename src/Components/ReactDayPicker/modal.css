@@ -17,13 +17,6 @@
     text-align: left;
 }
 
-.my-selected:not([disabled]) { 
-    font-weight: bold; 
-    border: 2px solid #af976d;
-    color: #af976d; 
-  }
-
-  
 .rdp-table {
   margin: 0;
   max-width: 100% !important;
@@ -31,18 +24,24 @@
 
 }
 
-  .my-selected:hover:not([disabled]) { 
+.my-selected:not([disabled]) { 
+    font-weight: bold; 
+    border: 2px solid #af976d;
+    color: #af976d; 
+  }
+
+.my-selected:hover:not([disabled]) { 
     border-color: #af976d;
     color: #af976d;
   }
-  .my-today { 
+  /* .my-today { 
     color: white;
     font-weight: bold;
-    background-color:#af976d;
+    background-color:#2c4c3b;
   }
  
   .my-today:hover { 
     color: black;
     
-  }
+  } */
  

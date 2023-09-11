@@ -15,20 +15,21 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal}) => {
     footer = <p className="font-bold text-gray mt-2"><span className="text-sm">{location}</span> <br/> {format(selected, "PP")}.<br/> <span className="text-brown font-semi-bold">{Object.keys(selectedTime)}</span></p>;
   }
 
-  const isDateAvailable = (date) => {
-    const today = new Date();
-    const thirtyDaysFromNow = new Date();
-    thirtyDaysFromNow.setDate(today.getDate() + 60);
+  const disabledDays = (date) => {
+    let today = new Date();
+    today = today.setDate(today.getDate() -1)
+    const isOlder = date < today;
 
     const dayOfWeek = date
       .toLocaleDateString("en-US", { weekday: "short" })
       .toUpperCase();
-    // Check if the date is within the next 30 days and it matches an available day
+    console.log('details',isBefore(date, today));
     return (
-      isBefore(date, today) ||
+        isOlder ||
       !availableSlots.days.some((day) => day === dayOfWeek)
     );
   };
+
   const isActive = (date) => {
     const today = new Date();
     const thirtyDaysFromNow = new Date();
@@ -81,7 +82,7 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal}) => {
         mode="single"
         selected={selected}
         onSelect={isTimeAvailable}
-        disabled={isDateAvailable}
+        disabled={disabledDays}
         disableNavigation
         styles={{
           caption: { color: "#af976d" },
