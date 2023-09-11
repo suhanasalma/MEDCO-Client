@@ -2,11 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../LayOut/Main";
 import Home from "../../Pages/Home/Home/Home";
 import Register from "../../Pages/LoginRegister/Register/Register";
-import OrganSearch from "../../Pages/FindDoctors/OrganSearches/OrganSearch/OrganSearch";
 import FindDoctorsContainer from "../../Pages/FindDoctors/FindDoctorsContainer/FindDoctorsContainer";
 import ClinicAndCenters from "../../Pages/ClinicAndCenters/ClinicAndCentersContainer/ClinicAndCenters";
 import ConditionsAndTreatments from "../../Pages/ConditionsAndTreatments/ConditionsAndTreatments/ConditionsAndTreatments";
-import BookinAppointments from "../../Pages/BookAppointments/BookinAppointments/BookinAppointments";
+import BookinAppointmentsContainer from "../../Pages/BookAppointments/BookinAppointmentsContainer/BookinAppointmentsContainer";
 
 export const router = createBrowserRouter([
   {
@@ -39,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/BookinAppointments",
-        element: <BookinAppointments />,
+        element: <BookinAppointmentsContainer />,
       },
     ],
   },
