@@ -23,7 +23,6 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal}) => {
     const dayOfWeek = date
       .toLocaleDateString("en-US", { weekday: "short" })
       .toUpperCase();
-    console.log('details',isBefore(date, today));
     return (
         isOlder ||
       !availableSlots.days.some((day) => day === dayOfWeek)

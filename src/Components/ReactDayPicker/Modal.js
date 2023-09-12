@@ -25,7 +25,7 @@ const Modal = ({openModal,setOpenModal,availableSlots}) => {
                 backgroundColor: "rgba(0, 0, 0, 0.7)",
             }}
            className='w-full fixed top-0 left-0 right-0 z-30 flex justify-center items-center h-screen'>
-            <div className='bg-white p-10 xl:w-4/12 lg:w-5/12 md:w-6/12 w-11/12 h-[95%] overflow-auto'>
+            <div className='bg-white p-10 xl:w-4/12 lg:w-5/12 md:w-6/12 w-11/12 min-h-fit max-h-[95%] overflow-auto'>
                 <p className='text-xl font-bold text-brown mb-10 cursor-pointer'  onClick={() => setOpenModal(false)}>X</p>
                 <p className='text-xl text-gray'>Select a Date and Time</p>
                 <DoctorSelectAvailableDays setOpenModal={setOpenModal} availableSlots={availableSlots}/>
