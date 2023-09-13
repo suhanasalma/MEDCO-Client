@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { VscTrash } from "react-icons/vsc";
 import selectImage from "../../../Assests/Logo/selectimages.png";
-import doctor from "../../../Assests/OurDoctors/8.jpg";
-import { TbCircleCheckFilled } from "react-icons/tb";
-import BookDoctorList from "../BookDoctorList/BookDoctorList";
-import departments from "./DepartmentSelect/departments";
-import DepartmentSelect from "./DepartmentSelect/DepartmentSelect";
+import { TbCircleCheckFilled ,TbCalendar} from "react-icons/tb";
+import BookDoctorListModal from "../BookDoctorListModal/BookDoctorListModal";
+import {departments,availableSlots,doctorList} from "../DepartmentSelect/departments";
+import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
+import SelectDoctorDaysModal from "../../../Components/ReactDayPicker/SelectDoctorDaysModal";
+import { Link } from "react-router-dom";
 
 const TelemedicineAppointment = () => {
   const fileInputRef = useRef(null);
@@ -17,6 +18,10 @@ const TelemedicineAppointment = () => {
   const[selectDoctor,setSelectDoctor] = useState('')
   const[selectDepartment,setSelectDepartment] = useState('')
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
+  const [selectAppointmentDateModal,setSelectAppointmentDateModal] = useState(false)
+  const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
+
+  console.log("selectAppointmentDate",selectAppointmentDate);
 
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
@@ -40,53 +45,13 @@ const TelemedicineAppointment = () => {
     fileInputRef.current.value = "";
   };
 
-  const doctorList = [
-    {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-        {
-        "name":"Prof.Dr. Yuen Tannirandorn",
-        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
-        "img":doctor
-        },
-  ]
+  const selectDateAndTime = () =>{
+    if(selectDepartment || selectDoctor){
+        setSelectAppointmentDateModal(true)
+    }else{
+        alert('please select a doctor or any department')
+    }
+  }
 
 
   return (
@@ -180,7 +145,7 @@ const TelemedicineAppointment = () => {
                 {recommendDoctor === "recommend_doctor"  && <div><hr className="text-green my-2"/> <div className="">
                   
                   <p className="text-gray font-medium mb-2">Please select a department</p>
-                    <DepartmentSelect  
+                    <DepartmentSelect  setSelectDepartment={setSelectDepartment}
                     setOpenSelectIndex={setOpenSelectIndex}
                     isOpen={openSelectIndex === 0}
                     toggleSelect={() => handleSelectToggle(0)} 
@@ -215,7 +180,7 @@ const TelemedicineAppointment = () => {
                 {recommendDoctor === "not_recommend_doctor"  && <div><hr className="text-green my-2"/> <div className="flex justify-between items-center">
                   {selectDoctor ?
                  <div  className='cursor-pointer rounded-md flex items-center gap-2' >
-                 <img className='w-10 rounded-full object-cover' src={selectDoctor.img} alt='doctor_image'/>
+                 <img className='w-10 h-10 rounded-full object-cover' src={selectDoctor.img} alt='doctor_image'/>
                  <div className='text-sm space-y-1'>
                      <p>{selectDoctor.name}</p>
                      <p className='text-xs text-gray font-normal'>{selectDoctor.details}</p>
@@ -232,7 +197,8 @@ const TelemedicineAppointment = () => {
             <p>When would you like to book this appointment for?</p>
             <div className="font-normal text-sm space-y-5">
               <p
-                onClick={() => setEarlyTime("early_time")}
+                onClick={() => {setEarlyTime("early_time")
+                setSelectAppointmentDate(null)}}
                 className={`${
                   earlyTime === "early_time"
                     ? "bg-light-green text-green font-semibold shadow-sm border-2 border-light-green"
@@ -248,15 +214,16 @@ const TelemedicineAppointment = () => {
                   </span>
                 )}
               </p>
-              <p
-                onClick={() => setEarlyTime("select_time")}
+              <div
+                onClick={() => {setEarlyTime("select_time")
+                selectDateAndTime()}}
                 className={`${
                   earlyTime === "select_time"
                     ? "bg-light-green text-green font-semibold shadow-sm border-2 border-light-green"
                     : "border-2 border-light-gray"
-                }  rounded-md p-2 flex justify-between items-center`}
+                }  rounded-md p-2 flex justify-between items-center cursor-pointer`}
               >
-                Choose a preferred a date and time
+               {selectAppointmentDate? <div className="flex items-center gap-2"><TbCalendar className="text-2xl"/> <p>{selectAppointmentDate[0]} <br/>{selectAppointmentDate[1]}</p></div>:<p>Choose a preferred a date and time</p>}
                 {earlyTime === "select_time" && (
                   <span
                     className={`${earlyTime === "select_time" && "text-green"}`}
@@ -264,15 +231,28 @@ const TelemedicineAppointment = () => {
                     <TbCircleCheckFilled />
                   </span>
                 )}
-              </p>
+              </div>
             </div>
           </section>
           <div className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
-            <button>Next</button>
+            <Link to="/BookinSummery">Next</Link>
           </div>
         </form>
       </article>
-    {openModal&&  <BookDoctorList setSelectDoctor={setSelectDoctor} doctorList={doctorList} openModal={openModal} setOpenModal={setOpenModal}/>}
+    {openModal&&  
+    <BookDoctorListModal 
+        setSelectDoctor={setSelectDoctor} 
+        doctorList={doctorList} 
+        openModal={openModal} 
+        setOpenModal={setOpenModal}
+    />}
+    {selectAppointmentDateModal && 
+    <SelectDoctorDaysModal 
+        setSelectAppointmentDate={setSelectAppointmentDate} 
+        openModal={selectAppointmentDateModal} 
+        setOpenModal={setSelectAppointmentDateModal} 
+        availableSlots={availableSlots}
+    />}
     </div>
   );
 };

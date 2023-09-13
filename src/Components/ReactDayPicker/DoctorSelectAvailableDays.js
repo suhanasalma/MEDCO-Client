@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { format, isBefore, addDays } from "date-fns";
 import { DayPicker, Row, RowProps } from "react-day-picker";
 
+
 import "react-day-picker/dist/style.css";
 
-const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal}) => {
+const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppointmentDate}) => {
   const [selected, setSelected] = useState();
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
   const [selectedTime, setSelectedTime] = useState('');
   const [location, setLocation] = useState('');
 
-  let footer = <p>Please pick a day.</p>;
+  let header = <p>Please pick a day.</p>;
   if (selected) {
-    footer = <p className="font-bold text-gray mt-2"><span className="text-sm">{location}</span> <br/> {format(selected, "PP")}.<br/> <span className="text-brown font-semi-bold">{Object.keys(selectedTime)}</span></p>;
+  
+    header = <p className="font-bold text-gray mt-2"><span className="text-sm">{location}</span> <br/> {format(selected, "PP")}.<br/> <span className="text-brown font-semi-bold">{Object.keys(selectedTime)}</span></p>;
   }
+
+//   useEffect(()=>{
+//     setSelectAppointmentDate(format(selected, "PP"),Object.keys(selectedTime))
+//   },[selected,selectedTime,setSelectAppointmentDate])
 
   const disabledDays = (date) => {
     let today = new Date();
@@ -74,9 +80,15 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal}) => {
     }
   };  
 
+  const setDateTime = () =>{
+    setSelectAppointmentDate([format(selected, "PP"),...Object.keys(selectedTime)])
+    setOpenModal(false)
+
+  }
+
   return (
     <div>
-        {footer}
+        {header}
       <DayPicker
         mode="single"
         selected={selected}
@@ -110,7 +122,7 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal}) => {
           ))}
         </div>
       </div>
-      <div onClick={() => setOpenModal(false)} className="bg-brown text-white font-medium text-center rounded-lg py-1 text-md mt-10">
+      <div onClick={setDateTime} className="bg-brown text-white font-medium text-center rounded-lg py-1 text-md mt-10">
         <button>Book Appointment</button>
       </div>
     </div>

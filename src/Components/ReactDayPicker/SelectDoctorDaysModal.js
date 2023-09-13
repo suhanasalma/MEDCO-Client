@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import DoctorSelectAvailableDays from './DoctorSelectAvailableDays';
 import './modal.css'
+import { VscChromeClose } from "react-icons/vsc";
 
 
-const Modal = ({openModal,setOpenModal,availableSlots}) => {
+const SelectDoctorDaysModal = ({openModal,setOpenModal,availableSlots,setSelectAppointmentDate}) => {
     useEffect(() => {
         if (openModal) {
           // Prevent scrolling of the page when the modal is open
@@ -26,12 +27,12 @@ const Modal = ({openModal,setOpenModal,availableSlots}) => {
             }}
            className='w-full fixed top-0 left-0 right-0 z-30 flex justify-center items-center h-screen'>
             <div className='bg-white p-10 xl:w-4/12 lg:w-5/12 md:w-6/12 w-11/12 min-h-fit max-h-[95%] overflow-auto'>
-                <p className='text-xl font-bold text-brown mb-10 cursor-pointer'  onClick={() => setOpenModal(false)}>X</p>
+                <p className='text-xl font-bold text-brown mb-10 cursor-pointer'  onClick={() => setOpenModal(false)}><VscChromeClose/></p>
                 <p className='text-xl text-gray'>Select a Date and Time</p>
-                <DoctorSelectAvailableDays setOpenModal={setOpenModal} availableSlots={availableSlots}/>
+                <DoctorSelectAvailableDays  setSelectAppointmentDate={setSelectAppointmentDate} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
             </div>
         </div>
     );
 };
 
-export default Modal;
+export default SelectDoctorDaysModal;

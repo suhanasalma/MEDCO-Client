@@ -6,11 +6,13 @@ const DepartmentSelect = ({
   toggleSelect,
   isOpen,
   setOpenSelectIndex,
+  setSelectDepartment
 }) => {
   const [selectedOption, setSelectedOption] = useState(selectorDetails.title);
   const handleSelect = (option) => {
     setSelectedOption(option);
     setOpenSelectIndex(null);
+    setSelectDepartment(option)
   };
 
 

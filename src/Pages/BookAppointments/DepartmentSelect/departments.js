@@ -1,7 +1,16 @@
 import { FaUserNurse } from "react-icons/fa";
+import doctor from "../../../Assests/OurDoctors/8.jpg";
+import doctor2 from "../../../Assests/OurDoctors/1.jpg";
+import doctor3 from "../../../Assests/OurDoctors/2.jpg";
+import doctor4 from "../../../Assests/OurDoctors/3.jpg";
+import doctor5 from "../../../Assests/OurDoctors/4.jpg";
+import doctor6 from "../../../Assests/OurDoctors/5.jpg";
+import doctor7 from "../../../Assests/OurDoctors/6.jpg";
+import doctor8 from "../../../Assests/OurDoctors/7.jpg";
 
 
-const departments ={ 
+
+export const departments ={ 
     icon: FaUserNurse,
     title: "--- Please select ---",
     options: [
@@ -677,7 +686,95 @@ const departments ={
 
 
 
+  export const availableSlots = {
+    "days":["FRI","SAT","MON","TUE"],
+    2023:{
+        "SEP":{
+            "FRI":{
+                dates:{
+                    15:[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    22:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    29:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                location: "Medical Clinics (Building A 15B)",
+            },
+            "SAT":{
+                dates:{
+                    16:[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    23:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    30:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                location: "Medical Clinics (Building B 15B)",
+            },
+            "MON":{
+                dates:{
+                    11:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    18:[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    25:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                location: "Medical Clinics (Building C 15B)",
+            },
+            "TUE":{dates:
+                {
+                    12:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    19:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    26:[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                location: "Medical Clinics (Building D 15B)",
+            },
+        }
+    },
+    
+};
 
+
+export const doctorList = [
+    {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor2
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor3
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor4
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor5
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor6
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor7
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor8
+        },
+        {
+        "name":"Prof.Dr. Yuen Tannirandorn",
+        "details":"OB/GYN, OB/GYN - Maternal & Fetal Medicine",
+        "img":doctor
+        },
+  ]
   
 // <select className="outline-none border-0 bg-light-green" name="p$lt$zoneContent$masterPlaceholder$p$lt$zoneAppointment$BIHAppointment2019$ddlSpecialty" id="p_lt_zoneContent_masterPlaceholder_p_lt_zoneAppointment_BIHAppointment2019_ddlSpecialty" required="">
 //     <option value="">--- Please select ---</option>
@@ -686,5 +783,5 @@ const departments ={
 //     }
 // </select>
   
-  export default departments;
+//   export default departments;
   
