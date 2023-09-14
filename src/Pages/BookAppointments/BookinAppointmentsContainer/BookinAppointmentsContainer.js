@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import BreadCrumbs from "../../../Components/BreadCrumbs/BreadCrumbs";
-import OrganSearch from "../../FindDoctors/OrganSearches/OrganSearch/OrganSearch";
-import SearchDoctor from "../../FindDoctors/SearchDoctor/SearchDoctor/SearchDoctor";
 import TelemedicineAppointment from "../TelemedicineAppointment/TelemedicineAppointment";
 import PhysicalAppointment from "../PhysicalAppointment/PhysicalAppointment";
 
 
 const BookinAppointmentsContainer = () => {
-  const [telemedicineAppointment, setTelemedicineAppointment] = useState(false);
+  const [telemedicineAppointment, setTelemedicineAppointment] = useState(true);
 
   const handleTelemedicineAppointment = () => {
     setTelemedicineAppointment(true);

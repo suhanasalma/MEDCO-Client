@@ -41,10 +41,10 @@ export const router = createBrowserRouter([
         path: "/BookinAppointments",
         element: <BookinAppointmentsContainer />,
       },
-      {
-        path: "/BookinSummery",
-        element: <BookingSummery/>,
-      },
+    //   {
+    //     path: "/BookinSummery",
+    //     element: <BookingSummery/>,
+    //   },
     ],
   },
 ]);

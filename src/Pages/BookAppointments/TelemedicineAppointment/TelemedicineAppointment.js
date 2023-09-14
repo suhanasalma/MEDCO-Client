@@ -7,6 +7,7 @@ import {departments,availableSlots,doctorList} from "../DepartmentSelect/departm
 import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
 import SelectDoctorDaysModal from "../../../Components/ReactDayPicker/SelectDoctorDaysModal";
 import { Link } from "react-router-dom";
+import BookingSummery from "../BookingSummery/BookingSummery";
 
 const TelemedicineAppointment = () => {
   const fileInputRef = useRef(null);
@@ -20,8 +21,7 @@ const TelemedicineAppointment = () => {
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
   const [selectAppointmentDateModal,setSelectAppointmentDateModal] = useState(false)
   const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
-
-  console.log("selectAppointmentDate",selectAppointmentDate);
+  const [bookingSummery, setBookingSummery] = useState(false);
 
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
@@ -63,8 +63,8 @@ const TelemedicineAppointment = () => {
           having to leave home.
         </span>
       </p>
-      <article className="w-10/12 sm:w-8/12 lg:w-7/12 mx-auto  space-y-3">
-        <p>Book an Appointment</p>
+     <article className="w-10/12 sm:w-8/12 lg:w-7/12 mx-auto  space-y-3">
+     { !bookingSummery ? <><p>Book an Appointment</p>
         <p className="text-gray font-normal">
           Please fill in the form below to book an appointment at Bumrungrad.
         </p>
@@ -234,10 +234,10 @@ const TelemedicineAppointment = () => {
               </div>
             </div>
           </section>
-          <div className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
-            <Link to="/BookinSummery">Next</Link>
+          <div onClick={()=>setBookingSummery(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
+            <p >Next</p>
           </div>
-        </form>
+        </form></>: <BookingSummery setBookingSummery={setBookingSummery}/>}
       </article>
     {openModal&&  
     <BookDoctorListModal 
@@ -253,6 +253,7 @@ const TelemedicineAppointment = () => {
         setOpenModal={setSelectAppointmentDateModal} 
         availableSlots={availableSlots}
     />}
+    
     </div>
   );
 };
