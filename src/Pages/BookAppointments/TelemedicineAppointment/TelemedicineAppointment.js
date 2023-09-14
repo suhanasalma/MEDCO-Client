@@ -6,7 +6,6 @@ import BookDoctorListModal from "../BookDoctorListModal/BookDoctorListModal";
 import {departments,availableSlots,doctorList} from "../DepartmentSelect/departments";
 import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
 import SelectDoctorDaysModal from "../../../Components/ReactDayPicker/SelectDoctorDaysModal";
-import { Link } from "react-router-dom";
 import BookingSummery from "../BookingSummery/BookingSummery";
 
 const TelemedicineAppointment = () => {
@@ -15,9 +14,9 @@ const TelemedicineAppointment = () => {
   const [recommendDoctor, setRecommendDoctor] = useState("");
   const [earlyTime, setEarlyTime] = useState("");
   const [openModal,setOpenModal] = useState(false)
-  const[textLength,setTextLength] = useState(0)
-  const[selectDoctor,setSelectDoctor] = useState('')
-  const[selectDepartment,setSelectDepartment] = useState('')
+  const [textLength,setTextLength] = useState(0)
+  const [selectDoctor,setSelectDoctor] = useState('')
+  const [selectDepartment,setSelectDepartment] = useState('')
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
   const [selectAppointmentDateModal,setSelectAppointmentDateModal] = useState(false)
   const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
