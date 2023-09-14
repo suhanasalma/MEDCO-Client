@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { VscChevronLeft } from "react-icons/vsc";
 import image from "../../../Assests/OurDoctors/1.jpg";
 import acne from "../../../Assests/OurDoctors/acne.jpg";
 import { TbCalendar } from "react-icons/tb";
+import CompletedBookingLinkModal from "../TelemedicineAppointment/CompletedBookingLinkModal";
 
 const BookingSummery = ({ setBookingSummery }) => {
+    const [openModal,setOpenModal] = useState(false)
   let customerDetails = {
     Name: "Suhana Salma",
     Address: "Dhaka Bangladesh",
@@ -66,7 +68,6 @@ const BookingSummery = ({ setBookingSummery }) => {
           <div className="flex items-center gap-2  border-y-2 border-r-2  border-l-8 border-l-brown border-light-gray px-4 py-1 rounded-lg calender">
             <TbCalendar className="text-2xl text-brown" />{" "}
             <p>
-              {" "}
               30 Sept 2023 <br />
               10:30
             </p>
@@ -97,9 +98,10 @@ const BookingSummery = ({ setBookingSummery }) => {
           </div>
         </div>
       </div>
-      <div className="bg-green text-white p-2 text-center rounded-lg cursor-pointer mt-10">
+      <div onClick={()=>setOpenModal(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer mt-10">
         <p>Book Appointment</p>
       </div>
+      {openModal &&<CompletedBookingLinkModal setBookingSummery={setBookingSummery} openModal={openModal} setOpenModal={setOpenModal}/>}
     </div>
   );
 };
