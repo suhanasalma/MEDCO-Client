@@ -26,6 +26,7 @@ const DepartmentSelect = ({
       >
         <selectorDetails.icon className='text-green'/>
         <span className="text-green">{selectedOption}</span>
+        {/* <input className="text-green w-full custom-department-select" type="search" placeholder={selectedOption}/> */}
       </div>
       <div
         className={`select-department-items ${
@@ -36,9 +37,9 @@ const DepartmentSelect = ({
           <div
             key={index}
             className={`${option.name === selectedOption ? "same-department-as-selected" : ""}`}
-            onClick={() => handleSelect(option.name)}
+            onClick={() => handleSelect(option.label)}
           >
-            {option.name}
+            {option.label}
           </div>
         ))}
       </div>

@@ -32,8 +32,10 @@ const CompletedBookingLinkModal = ({openModal,setOpenModal,setBookingSummery}) =
             }}
            className='w-full fixed top-0 left-0 right-0 z-30 flex justify-center items-center h-screen'>
             <div className='bg-white p-10 w-10/12 md:w-8/12 lg:w-6/12 min-h-fit max-h-[95%] overflow-auto'>
-            <p className='text-xl font-bold text-brown mb-5 cursor-pointer'  onClick={() => setOpenModal(false)}><VscChromeClose/></p>
+            <p className='text-xl font-bold text-brown mb-5 cursor-pointer' onClick={goToTelemedicinePage}><VscChromeClose/></p>
+            <p className='text-center text-brown font-bold text-lg'>Your appointment is confirm kindly join with meet link. </p>
             <p className='flex items-center flex-wrap gap-2 mt-5 text-gray'>  
+           
                 <img className='h-8' src={meetLogo} alt='meet_link'/> Meet Link: <span className='underline text-[#1a73e8]'>meet.google.com/aoc-hwas-opb</span> </p>
                 <ul className='text-xs text-gray font-normal list-decimal px-3 mt-5 space-y-2'>
                     <li>Your appointment is confirm kindly save this meet link or you can find this link in your <Link className='text-[#1a73e8]'>appointment list</Link></li>
