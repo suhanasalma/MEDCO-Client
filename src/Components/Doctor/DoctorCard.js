@@ -6,7 +6,7 @@ import { FaRegComments } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./DoctorCard.css";
 import AvailableDays from "../AvailableDays/AvailableDays";
-import Modal from "../ReactDayPicker/Modal";
+import SelectDoctorDaysModal from "../ReactDayPicker/SelectDoctorDaysModal";
 
 const DoctorCard = () => {
   const [seeAppointment, setSeeAppointment] = useState(false);
@@ -106,7 +106,7 @@ const DoctorCard = () => {
         </div>
        <div>
        {openModal &&
-        <Modal openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
+        <SelectDoctorDaysModal openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
        }
        </div>
        

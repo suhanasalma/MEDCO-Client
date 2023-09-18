@@ -1,0 +1,66 @@
+
+
+.custom-department-select {
+    position: relative;
+    border:1px solid rgb(228, 223, 223);
+
+  }
+  
+  .custom-department-select select {
+    display: none; /*hide original SELECT element:*/
+
+  }
+
+  
+  .select-department-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-color: gray transparent transparent transparent;
+  }
+ 
+  
+  .select-department-items div,.select-department-selected {
+    color: gray;
+    font-size: 12px;
+    padding: 5px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+
+  .select-department-items {
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 2px solid #D3D3D3;
+    overflow: scroll;
+  }
+  
+  .select-department-hide {
+    display: none;
+  }
+  
+  .select-department-items div:hover, .same-department-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+/* 
+  .custom-department-select {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    box-shadow: 0;
+  }
+
+  .custom-department-select::placeholder{
+    color: #2c4c3b;
+  } */
