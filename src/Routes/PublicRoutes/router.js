@@ -7,6 +7,7 @@ import ClinicAndCenters from "../../Pages/ClinicAndCenters/ClinicAndCentersConta
 import ConditionsAndTreatments from "../../Pages/ConditionsAndTreatments/ConditionsAndTreatments/ConditionsAndTreatments";
 import BookinAppointmentsContainer from "../../Pages/BookAppointments/BookinAppointmentsContainer/BookinAppointmentsContainer";
 import BookingSummery from "../../Pages/BookAppointments/BookingSummery/BookingSummery";
+import AllDoctors from "../../Pages/AllDoctors/AllDoctorsContainer/AllDoctors";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
     //     path: "/BookinSummery",
     //     element: <BookingSummery/>,
     //   },
+    {
+        path: "/Doctors",
+        element: <AllDoctors/>,
+      },
     ],
   },
 ]);
