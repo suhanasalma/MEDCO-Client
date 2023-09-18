@@ -41,7 +41,7 @@
  }
  
 
- .doctorCardImg{
+ /* .doctorCardImg{
     
     border:4px double #2c4c3b;
     border-radius: 50%;
@@ -50,23 +50,23 @@
     -webkit-animation:border_animates 8s linear infinite ;
     -moz-aanimation: border_animates 8s linear infinite ;
     -o-animation:border_animates 8s linear infinite ;
- }
- .doctorCardImg::after {
+ } */
+ /* .doctorCardImg::after {
     position: absolute;
     content: '';
     background: #2c4c3b;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    bottom: 50%;
-    left: 50%;
+    top: 10%;
+    left: 85%;
     transform: translate(-50%,-50%);
     animation: profile_animates 8s linear infinite ;
     -webkit-animation:profile_animates 8s linear infinite ;
     -moz-aanimation: profile_animates 8s linear infinite ;
     -o-animation:profile_animates 8s linear infinite ;
- }
-
+ } */
+/* 
  @keyframes profile_animates{
     0%{
         transform: rotate(0deg)translate(-62px)rotate(0deg);
@@ -102,4 +102,4 @@
     animation-play-state:paused;
     cursor: pointer;
 
- }
+ } */

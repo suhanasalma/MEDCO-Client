@@ -73,13 +73,13 @@ const DoctorSearchFields = () => {
 
   return (
     <div className="w-5/12 md:w-3/12 sticky top-0">
-      <div className="space-y-5 px-5 py-10 ">
-        <div>
-          Visit fee
+      <div className="space-y-5 px-5 py-10 text-gray font-semibold"> 
+        <div  className="">
+         <p className="text-gray font-semibold text-xl mb-2"> Visit Fee</p>
           <div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center ">
               <div className="flex items-center gap-2">
-                <p>MIN</p>
+                <p className="text-gray">MIN</p>
                 <input
                   className="border-2 w-20 text-center"
                   placeholder={minPriceRange}
@@ -109,7 +109,7 @@ const DoctorSearchFields = () => {
             <TfiSearch />
           </div>
         </div>
-        <div>
+        <div className="space-y-1">
           <p>Country</p>
           <Select
             theme={(theme) => ({
@@ -128,7 +128,7 @@ const DoctorSearchFields = () => {
             options={countries}
           />
         </div>
-        <div>
+        <div className="space-y-1">
           <p>District/State</p>
           <Select
             theme={(theme) => ({
@@ -147,7 +147,7 @@ const DoctorSearchFields = () => {
             options={countries}
           />
         </div>
-        <div>
+        <div className="space-y-1">
           <p>Speciality</p>
           <Select
             theme={(theme) => ({
@@ -166,7 +166,7 @@ const DoctorSearchFields = () => {
             options={countries}
           />
         </div>
-        <div>
+        <div className="space-y-1">
           <p>Qualifications</p>
           <Select
             theme={(theme) => ({
@@ -185,7 +185,7 @@ const DoctorSearchFields = () => {
             options={countries}
           />
         </div>
-        <div>
+        <div className="space-y-1">
           <p>Departments</p>
           <Select
             theme={(theme) => ({
@@ -204,7 +204,7 @@ const DoctorSearchFields = () => {
             options={countries}
           />
         </div>
-        <div>
+        <div className="space-y-1">
           <p>Hospitals</p>
           <Select
             theme={(theme) => ({
