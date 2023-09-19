@@ -103,3 +103,19 @@
     cursor: pointer;
 
  } */
+
+
+ .middleLine{
+    position: relative;
+
+ }
+
+ .middleLine::before{
+    background-color: gray;
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -30%;
+ }
