@@ -2,15 +2,19 @@ import React from 'react';
 import { VscCallOutgoing, VscCalendar } from "react-icons/vsc";
 import { FaRegComments } from "react-icons/fa";
 import img from "../../../Assests/OurDoctors/6.jpg";
+import { FaArrowRight } from "react-icons/fa";
+
 
 const Card = ({item}) => {
     return (
         <div
             className="flex justify-around items-center h-full"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-2 ">
-              <div>
-                <div style={{outlineColor:`${item}`}} className={`w-24 h-24 relative outline-double outline-4 outline-offset-2 rounded-full doctorCardImg`}>
+            <div  className=''
+            >
+                <div className='mb-5 text-right'><button className='border-2 border-white text-white rounded-md text-xs text-right px-2 py-1'>View Profile</button></div>
+
+                <div style={{outlineColor:"white"}} className={`w-16 h-16 relative outline-double outline-4 outline-offset-2 rounded-full doctorCardImg mx-auto`}>
                   <img
                     className="w-full h-full rounded-full object-cover object-top mx-auto  "
                     src={img}
@@ -35,30 +39,31 @@ const Card = ({item}) => {
                   <p className="text-xs ">Senior at orthopedic</p>
                 </div>
 
-                <div className="cursor-pointer flex items-center justify-center gap-3 mt-4 text-green">
+                <div className="cursor-pointer flex items-center justify-center gap-3 mt-4 text-white my-5">
                   <VscCalendar />
                   <VscCallOutgoing />
                   <FaRegComments />
                 </div>
+
+              <div className=" middleLine text-xs text-center">
+              <div>
+              <p className='text-light-gray'>Degree <span className='text-white  font-bold'>MBBS, FCPS</span></p>
+              
+              </div>
+              <div>
+              <p className='text-light-gray'>Speciality <span className='text-white  font-bold'>Senior at Orthopedic</span></p>
+              
+              </div>
+              <div>
+              <p className='text-light-gray'>Chamber  <span className='text-white  font-bold'>Dhaka, Bangladesh</span></p>
+             
+              </div>
+              <div className='flex items-center mt-5 hover:underline'>
+                <FaArrowRight/>Booking Available Online
               </div>
             </div>
-            <div className=" middleLine">
-              <div>
-              <p>Degree</p>
-              <p>MBBS, FCPS</p>
-              </div>
-              <div>
-              <p>Speciality</p>
-              <p>Senior at Orthopedic</p>
-              </div>
-              <div>
-              <p>Chamber</p>
-              <p>Dhaka, Bangladesh</p>
-              </div>
-              <div>
-                Booking Available Online
-              </div>
             </div>
+            
           </div>
     );
 };

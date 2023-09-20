@@ -5,8 +5,8 @@ import { FaRegComments } from "react-icons/fa";
 import Card from "./Card";
 const AllDoctorCards = () => {
   return (
-    <div className="w-7/12 min-h-fit max-h-screen overflow-auto shadow-lg ">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3">
+    <div className="sm:w-7/12 min-h-fit max-h-screen overflow-auto shadow-lg ">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 ">
             {[
             "#af976d",
             "#2c4c3b",
@@ -22,7 +22,7 @@ const AllDoctorCards = () => {
             "blue",
             ].map((item, i) => (
             <div
-                className="group hover:w-96 hover:z-10 border-x-2 border-b-2 border-green  h-72 flex justify-around items-center"
+                className="group hover:z-10 border-x-2 border-b-2 border-green  h-80 flex justify-around items-center"
                 key={i}
             >
                 <div className="flex flex-col items-center justify-center h-full gap-2 group-hover:hidden">
@@ -68,7 +68,22 @@ const AllDoctorCards = () => {
             </div>
         ))}
       </div>
-      <Card />
+      {/* <div className="card hover:z-50">
+            <div class="imgBox">
+              <img src={img} alt="doctor" />
+              <img src={img2} alt="doctor" />
+            </div>
+            <div class="details">
+              <div class="content">
+                <p>Hi this is suhana</p>
+                <div className="social-icons">
+                  <VscCalendar />
+                  <VscCallOutgoing />
+                  <FaRegComments />
+                </div>
+              </div>
+            </div>
+          </div> */}
     </div>
   );
 };

@@ -72,8 +72,8 @@ const DoctorSearchFields = () => {
   };
 
   return (
-    <div className="w-5/12 md:w-3/12 sticky top-0">
-      <div className="space-y-5 px-5 py-10 text-gray font-semibold"> 
+    <div className="sm:w-5/12 xl:w-3/12">
+      <div className="space-y-5 px-5 py-10 text-gray font-semibold w-full grid grid-cols-1 gap-5 sm:block"> 
         <div  className="">
          <p className="text-gray font-semibold text-xl mb-2"> Visit Fee</p>
           <div>
@@ -99,7 +99,7 @@ const DoctorSearchFields = () => {
             <input onInput={(e) => handleRange(e)} type="range" />
           </div>
         </div>
-        <div className="relative border-[1px] border-l-light-gray border-y-light-gray border-r-green py-1">
+        <div className="relative border-[1px] border-l-light-gray border-y-light-gray border-r-green py-1 text-center">
           <input
             className="px-2 outline-none w-11/12"
             placeholder="Search"
