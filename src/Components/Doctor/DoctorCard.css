@@ -121,7 +121,7 @@
  } */
 
 
-  .card{
+  /* .card{
     position: relative;
    
     background: gray;
@@ -173,4 +173,4 @@
 
  .card .imgBox img:nth-child(2){
     transform: rotateY(180deg);
- }
+ } */
