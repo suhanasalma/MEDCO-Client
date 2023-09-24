@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { format, isBefore, addDays } from "date-fns";
-import { DayPicker, Row, RowProps } from "react-day-picker";
-
-
+import React, { useState } from "react";
+import { format } from "date-fns";
+import { DayPicker} from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import { useNavigate } from "react-router-dom";
 
-const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppointmentDate}) => {
+
+const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppointmentDate, bookingSummery,buttonName}) => {
   const [selected, setSelected] = useState();
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
   const [selectedTime, setSelectedTime] = useState('');
   const [location, setLocation] = useState('');
+  const navigate = useNavigate();
+
 
   let header = <p>Please pick a day.</p>;
   if (selected) {
@@ -17,9 +19,6 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppoin
     header = <p className="font-bold text-gray mt-2"><span className="text-sm">{location}</span> <br/> {format(selected, "PP")}.<br/> <span className="text-brown font-semi-bold">{Object.keys(selectedTime)}</span></p>;
   }
 
-//   useEffect(()=>{
-//     setSelectAppointmentDate(format(selected, "PP"),Object.keys(selectedTime))
-//   },[selected,selectedTime,setSelectAppointmentDate])
 
   const disabledDays = (date) => {
     let today = new Date();
@@ -81,8 +80,17 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppoin
   };  
 
   const setDateTime = () =>{
-    setSelectAppointmentDate([format(selected, "PP"),...Object.keys(selectedTime)])
-    setOpenModal(false)
+    if(selectedTime===null || selectedTime==='' || selectedTime==='undefined'){
+        alert('please select a date and time')
+       
+    }else{
+        setSelectAppointmentDate([format(selected, "PP"),...Object.keys(selectedTime)])
+        setOpenModal(false)
+    }
+    if(selectedTime!==null && selectedTime!=='' && selectedTime!=='undefined' && bookingSummery){
+        navigate("/BookingSummery");
+    }
+    
 
   }
 
@@ -123,7 +131,7 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppoin
         </div>
       </div>
       <div onClick={setDateTime} className="bg-brown text-white font-medium text-center rounded-lg py-1 text-md mt-10">
-        <button>Book Appointment</button>
+        <button>{buttonName}</button>
       </div>
     </div>
   );

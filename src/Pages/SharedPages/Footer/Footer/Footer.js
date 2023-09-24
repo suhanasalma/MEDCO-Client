@@ -5,7 +5,7 @@ import RightsFooter from '../RightsFooter';
 
 const Footer = () => {
    return (
-      <div>
+      <div className='mt-10'>
          <ContactFooter/>
          <FooterMenu/>
          <RightsFooter/>

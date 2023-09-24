@@ -3,7 +3,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import meetLogo from '../../../Assests/Logo/google_meet.png'
 import { Link } from 'react-router-dom';
 
-const CompletedBookingLinkModal = ({openModal,setOpenModal,setBookingSummery}) => {
+const CompletedBookingLinkModal = ({openModal,setOpenModal,setBookingSummeryPage}) => {
 
     useEffect(() => {
         if (openModal) {
@@ -22,7 +22,7 @@ const CompletedBookingLinkModal = ({openModal,setOpenModal,setBookingSummery}) =
 
       const goToTelemedicinePage = () =>{
         setOpenModal(false)
-        setBookingSummery(false)
+        setBookingSummeryPage(false)
         window.scrollTo(0, 0)
       }
     return (

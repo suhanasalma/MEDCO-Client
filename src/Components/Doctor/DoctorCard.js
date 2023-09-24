@@ -12,6 +12,7 @@ const DoctorCard = () => {
   const [seeAppointment, setSeeAppointment] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+  const [bookingSummery,setBookingSummery] = useState(true)
 
     const availableSlots = {
         "days":["FRI","SAT","MON","TUE"],
@@ -106,7 +107,7 @@ const DoctorCard = () => {
         </div>
        <div>
        {openModal &&
-        <SelectDoctorDaysModal openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
+        <SelectDoctorDaysModal buttonName = "Book Appointment" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectedDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
        }
        </div>
        

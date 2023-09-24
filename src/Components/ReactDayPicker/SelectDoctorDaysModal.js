@@ -4,7 +4,7 @@ import './modal.css'
 import { VscChromeClose } from "react-icons/vsc";
 
 
-const SelectDoctorDaysModal = ({openModal,setOpenModal,availableSlots,setSelectAppointmentDate}) => {
+const SelectDoctorDaysModal = ({openModal,setOpenModal,availableSlots,setSelectAppointmentDate,bookingSummery,buttonName }) => {
     useEffect(() => {
         if (openModal) {
           // Prevent scrolling of the page when the modal is open
@@ -29,7 +29,7 @@ const SelectDoctorDaysModal = ({openModal,setOpenModal,availableSlots,setSelectA
             <div className='bg-white p-10 xl:w-4/12 lg:w-5/12 md:w-6/12 w-11/12 min-h-fit max-h-[95%] overflow-auto'>
                 <p className='text-xl font-bold text-brown mb-10 cursor-pointer'  onClick={() => setOpenModal(false)}><VscChromeClose/></p>
                 <p className='text-xl text-gray'>Select a Date and Time</p>
-                <DoctorSelectAvailableDays  setSelectAppointmentDate={setSelectAppointmentDate} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
+                <DoctorSelectAvailableDays buttonName={buttonName} bookingSummery={bookingSummery}  setSelectAppointmentDate={setSelectAppointmentDate} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
             </div>
         </div>
     );

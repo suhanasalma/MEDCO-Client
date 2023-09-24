@@ -20,7 +20,7 @@ const TelemedicineAppointment = () => {
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
   const [selectAppointmentDateModal,setSelectAppointmentDateModal] = useState(false)
   const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
-  const [bookingSummery, setBookingSummery] = useState(false);
+  const [bookingSummeryPage, setBookingSummeryPage] = useState(false);
 
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
@@ -63,7 +63,7 @@ const TelemedicineAppointment = () => {
         </span>
       </p>
      <article className="w-10/12 sm:w-8/12 lg:w-7/12 mx-auto  space-y-3">
-     { !bookingSummery ? <><p>Book an Appointment</p>
+     { !bookingSummeryPage ? <><p>Book an Appointment</p>
         <p className="text-gray font-normal">
           Please fill in the form below to book an appointment at Bumrungrad.
         </p>
@@ -233,10 +233,10 @@ const TelemedicineAppointment = () => {
               </div>
             </div>
           </section>
-          <div onClick={()=>setBookingSummery(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
+          <div onClick={()=>setBookingSummeryPage(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
             <p >Next</p>
           </div>
-        </form></>: <BookingSummery setBookingSummery={setBookingSummery}/>}
+        </form></>: <BookingSummery setBookingSummeryPage={setBookingSummeryPage}/>}
       </article>
     {openModal&&  
     <BookDoctorListModal 
@@ -247,6 +247,7 @@ const TelemedicineAppointment = () => {
     />}
     {selectAppointmentDateModal && 
     <SelectDoctorDaysModal 
+        buttonName="Select Date & Time" 
         setSelectAppointmentDate={setSelectAppointmentDate} 
         openModal={selectAppointmentDateModal} 
         setOpenModal={setSelectAppointmentDateModal} 

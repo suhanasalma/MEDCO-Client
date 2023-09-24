@@ -12,7 +12,9 @@ const PhysicalAppointment = () => {
   const [selectDepartment, setSelectDepartment] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
+  const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
   const [openModal, setOpenModal] =useState(false)
+  const [bookingSummery,setBookingSummery] = useState(false)
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
   };
@@ -127,23 +129,8 @@ const PhysicalAppointment = () => {
         </div>
         <div>
         {openModal &&
-            <SelectDoctorDaysModal openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots} />
-
+            <SelectDoctorDaysModal buttonName="Select Date & Time" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectAppointmentDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots} />
         }
-      {/* <AnimatePresence>
-        {openModal && (
-          <motion.div
-            key="advanced-search"
-            initial={{ height: 0, opacity: 0, overflow: "hidden" }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="advanced-search"
-          >
-            <SelectDoctorDaysModal openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots} />
-          </motion.div>
-        )}
-      </AnimatePresence> */}
         </div>
       </section>
     </div>

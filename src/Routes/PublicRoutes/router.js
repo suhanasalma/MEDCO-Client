@@ -42,10 +42,10 @@ export const router = createBrowserRouter([
         path: "/BookinAppointments",
         element: <BookinAppointmentsContainer />,
       },
-    //   {
-    //     path: "/BookinSummery",
-    //     element: <BookingSummery/>,
-    //   },
+      {
+        path: "/BookingSummery",
+        element: <BookingSummery/>,
+      },
     {
         path: "/Doctors",
         element: <AllDoctors/>,
