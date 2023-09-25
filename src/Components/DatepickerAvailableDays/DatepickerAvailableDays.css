@@ -1,0 +1,15 @@
+
+
+.active-day {
+    background-color: #af976d; 
+    border-radius: 50%;
+    color: white;
+    font: bold;
+}
+
+.active-day:hover{
+    background-color: #af976d;
+    color: white;
+}
+
+

@@ -3,7 +3,6 @@ import Title from "../../../Components/Title/Title";
 import cancer from "../../../Assests/Packages/cancer.jpg";
 import heart from "../../../Assests/Packages/heart.jpg";
 import skin from "../../../Assests/Packages/skin.jpg";
-import Details from "../../../Components/Details/Details";
 import RecommendedPackage from "./RecommendedPackage";
 import LinkButton from "../../../Components/LinkButton/LinkButton";
 
@@ -37,10 +36,7 @@ const RecommendedPackages = () => {
           title="Recommended Packages"
           design="title text-center text-2xl sm:text-4xl"
         />
-        <Details
-          design="text-sm md:w-8/12 lg:w-8/12 mx-auto text-center"
-          details="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio necessitatibus ipsum quidem ut? Libero possimus placeat unde enim consequatur quis numquam itaque ut illo? Officiis assumenda modi facilis sed optio incidunt ipsa aspernatur consequuntur amet laboriosam. Velit eaque voluptates dignissimos, deserunt ipsam praesentium, commodi a eos reprehenderit nemo ipsa?"
-        />
+        <p className="text-gray text-sm md:w-8/12 lg:w-8/12 mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio necessitatibus ipsum quidem ut? Libero possimus placeat unde enim consequatur quis numquam itaque ut illo? Officiis assumenda modi facilis sed optio incidunt ipsa aspernatur consequuntur amet laboriosam. Velit eaque voluptates dignissimos, deserunt ipsam praesentium, commodi a eos reprehenderit nemo ipsa?</p>
       </div>
       <div className=" md:flex container mx-auto mt-10  xl:justify-between md:justify-center xl:flex-nowrap md:flex-wrap grid sm:grid-cols-2 grid-cols-1 justify-items-center ">
         {specialPackage?.map((pack, i) => (
@@ -50,7 +46,6 @@ const RecommendedPackages = () => {
       <div className="w-52 mx-auto  mt-10 shadow-lg shadow-light-green">
         <LinkButton
           title="See All Packages"
-          design="w-52  border-2 border-green"
         />
       </div>
     </div>

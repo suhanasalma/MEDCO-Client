@@ -1,5 +1,4 @@
 import React from 'react';
-import Details from '../../../Components/Details/Details';
 import { Link } from 'react-router-dom';
 
 const SpecialServiceCard = ({
@@ -45,10 +44,7 @@ const SpecialServiceCard = ({
         {card.name}
       </p>
       {hoveredCardIndex === i && (
-        <Details
-          details= {card.details}
-          design="text-sm w-full text-white text-center mb-5"
-        />
+        <p className='text-sm w-full text-white text-center mb-5 '>{card.details}</p>
       )}
       {hoveredCardIndex === i ? (
         <div className="text-center">

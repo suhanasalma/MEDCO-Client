@@ -2,6 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/PublicRoutes/router";
 import "animate.css";
 import { useEffect, useState } from "react";
+import '../src/Pages/SharedPages/Styles/Styles.css'
 
 
 function App() {

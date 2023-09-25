@@ -1,0 +1,40 @@
+{"availableSlots" : {
+    "days":["FRI","SAT","MON","TUE"],
+    "2023":{
+        "SEP":{
+            "FRI":{
+                "dates":{
+                    "15":[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "22":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "29":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                "location": "Medical Clinics (Building A 15B)"
+            },
+            "SAT":{
+                "dates":{
+                    "16":[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "23":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "30":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                "location": "Medical Clinics (Building B 15B)"
+            },
+            "MON":{
+                "dates":{
+                    "11":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "18":[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "25":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                "location": "Medical Clinics (Building C 15B)"
+            },
+            "TUE":{"dates":
+                {
+                    "12":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "19":[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
+                    "26":[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}]
+                },
+                "location": "Medical Clinics (Building D 15B)"
+            }
+        }
+    }
+    
+}}

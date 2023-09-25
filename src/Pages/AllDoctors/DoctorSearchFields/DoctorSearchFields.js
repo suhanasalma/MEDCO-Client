@@ -4,6 +4,7 @@ import { countries } from "./InformationLists";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import chroma from "chroma-js";
+import './doctorSearchFields.css'
 
 const DoctorSearchFields = () => {
   const animatedComponents = makeAnimated();
