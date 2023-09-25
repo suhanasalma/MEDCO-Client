@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { VscChromeClose } from "react-icons/vsc";
 
 
-const BookDoctorListModal = ({openModal,setOpenModal,doctorList,setSelectDoctor}) => {
+const DoctorListModal = ({openModal,setOpenModal,doctorList,setSelectDoctor}) => {
     useEffect(() => {
         if (openModal) {
           // Prevent scrolling of the page when the modal is open
@@ -50,4 +50,4 @@ const BookDoctorListModal = ({openModal,setOpenModal,doctorList,setSelectDoctor}
     );
 };
 
-export default BookDoctorListModal;
+export default DoctorListModal;

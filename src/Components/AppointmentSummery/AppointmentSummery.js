@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { VscChevronLeft } from "react-icons/vsc";
-import image from "../../../Assests/OurDoctors/1.jpg";
-import acne from "../../../Assests/OurDoctors/acne.jpg";
+import image from "../../Assests/OurDoctors/1.jpg";
+import acne from "../../Assests/OurDoctors/acne.jpg";
 import { TbCalendar } from "react-icons/tb";
-import CompletedBookingLinkModal from "../TelemedicineAppointment/CompletedBookingLinkModal";
+import CompletedBookingLinkModal from "../../Pages/BookAppointments/TelemedicineAppointment/CompletedBookingLinkModal";
 
-const BookingSummery = ({ setBookingSummeryPage }) => {
+const AppointmentSummery = ({ setBookingSummeryPage }) => {
     const [openModal,setOpenModal] = useState(false)
   let customerDetails = {
     Name: "Suhana Salma",
@@ -108,4 +108,4 @@ const BookingSummery = ({ setBookingSummeryPage }) => {
   );
 };
 
-export default BookingSummery;
+export default AppointmentSummery;

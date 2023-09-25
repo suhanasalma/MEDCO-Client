@@ -68,7 +68,7 @@ const SearchDoctor = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="advanced-search"
+            // className="advanced-search"
           >
             <AdvancedSearch advanceSearch={advanceSearch} />
           </motion.div>

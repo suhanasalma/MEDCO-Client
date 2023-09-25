@@ -1,5 +1,5 @@
 import React from "react";
-import DoctorCard from "./Doctor/DoctorCard";
+import DoctorCard from "../../../../Components/DoctorCards/DoctorCard";
 import './selectDoctor.css'
 
 const SelectDoctor = () => {

@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import doctor from "../../../../../Assests/OurDoctors/6.jpg";
-import logo from "../../../../../Assests/Logo/MEDCO1.png";
+import doctor from "../../Assests/OurDoctors/6.jpg";
+import logo from "../../Assests/Logo/MEDCO1.png";
 import { VscCallOutgoing, VscCalendar } from "react-icons/vsc";
 import { FaRegComments } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styles from "./DoctorCard.module.css";
-import SelectDoctorDaysModal from "../../../../../Components/ReactDayPicker/SelectDoctorDaysModal";
+import DoctorSlotsModal from "../ReactDayPicker/DoctorSlotsModal";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import {
     useQuery,
   } from 'react-query'
+import AppointmentType from "./AppointmentType";
 
 const DoctorCard = () => {
   const [seeAppointment, setSeeAppointment] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [appointType, setAppointType] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [bookingSummery,setBookingSummery] = useState(true)
 
@@ -25,10 +28,8 @@ const DoctorCard = () => {
        )
   })
 
-  console.log('data', data);
-
   return (
-    <div className="shadow-md w-64 md:w-56 lg:w-64 mt-10 border-2 border-light-brown rounded-md">
+    <div className={`shadow-md w-64 md:w-56 lg:w-64 mt-10 ${appointType? "h-fit" : "h-96"} border-2 border-light-brown rounded-md`}>
         <div className="flex justify-center items-center gap-3">
             <img className="w-7 h-7 object-contain my-4" src={logo} alt="" />
             <p className="text-sm text-green font-thin">Medco</p>
@@ -67,7 +68,7 @@ const DoctorCard = () => {
             </div>
             <div className=" group">
                 <VscCalendar
-                    onClick={() => setOpenModal(true)}
+                    onClick={() => setAppointType(!appointType)}
                     className="cursor-pointer"
                 />
                 <span 
@@ -78,9 +79,23 @@ const DoctorCard = () => {
             </div>
         </div>
        <div>
+       <AnimatePresence>
+        {appointType && (
+          <motion.div
+            key="appointment_type"
+            initial={{ height: 0, opacity: 0, overflow: "hidden" }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{  opacity: 0, height: 0 ,overflow: "hidden" }}
+            transition={{ duration: 0.3 }}
+          >
+           <AppointmentType setOpenModal={setOpenModal} />
+          </motion.div>
+        )}
+      </AnimatePresence>
        {openModal &&
-        <SelectDoctorDaysModal buttonName = "Book Appointment" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectedDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={data.availableSlots}/>
+        <DoctorSlotsModal buttonName = "Book Appointment" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectedDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={data.availableSlots}/>
        }
+      
        </div>
        
     </div>

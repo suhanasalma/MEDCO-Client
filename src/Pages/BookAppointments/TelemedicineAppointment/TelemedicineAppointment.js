@@ -2,11 +2,13 @@ import React, { useRef, useState } from "react";
 import { VscTrash } from "react-icons/vsc";
 import selectImage from "../../../Assests/Logo/selectimages.png";
 import { TbCircleCheckFilled ,TbCalendar} from "react-icons/tb";
-import BookDoctorListModal from "../BookDoctorListModal/BookDoctorListModal";
+import DoctorListModal from "../DoctorListModal/DoctorListModal";
 import {departments,availableSlots,doctorList} from "../DepartmentSelect/departments";
 import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
-import SelectDoctorDaysModal from "../../../Components/ReactDayPicker/SelectDoctorDaysModal";
-import BookingSummery from "../BookingSummery/BookingSummery";
+import DoctorSlotsModal from "../../../Components/ReactDayPicker/DoctorSlotsModal";
+import AppointmentSummery from "../../../Components/AppointmentSummery/AppointmentSummery";
+import Select from "react-select";
+import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 
 const TelemedicineAppointment = () => {
   const fileInputRef = useRef(null);
@@ -142,14 +144,8 @@ const TelemedicineAppointment = () => {
                 </p>
                
                 {recommendDoctor === "recommend_doctor"  && <div><hr className="text-green my-2"/> <div className="">
-                  
                   <p className="text-gray font-medium mb-2">Please select a department</p>
-                    <DepartmentSelect  setSelectDepartment={setSelectDepartment}
-                    setOpenSelectIndex={setOpenSelectIndex}
-                    isOpen={openSelectIndex === 0}
-                    toggleSelect={() => handleSelectToggle(0)} 
-                    selectorDetails={departments}
-                    />
+                  <SelectOptions options={departments.options}/>
                 </div>
                 </div>}
               </div>
@@ -236,17 +232,17 @@ const TelemedicineAppointment = () => {
           <div onClick={()=>setBookingSummeryPage(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
             <p >Next</p>
           </div>
-        </form></>: <BookingSummery setBookingSummeryPage={setBookingSummeryPage}/>}
+        </form></>: <AppointmentSummery setBookingSummeryPage={setBookingSummeryPage}/>}
       </article>
     {openModal&&  
-    <BookDoctorListModal 
+    <DoctorListModal 
         setSelectDoctor={setSelectDoctor} 
         doctorList={doctorList} 
         openModal={openModal} 
         setOpenModal={setOpenModal}
     />}
     {selectAppointmentDateModal && 
-    <SelectDoctorDaysModal 
+    <DoctorSlotsModal 
         buttonName="Select Date & Time" 
         setSelectAppointmentDate={setSelectAppointmentDate} 
         openModal={selectAppointmentDateModal} 

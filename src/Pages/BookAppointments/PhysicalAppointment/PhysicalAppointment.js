@@ -6,7 +6,7 @@ import { availableSlots, departments } from "../DepartmentSelect/departments";
 import Select from "react-select";
 import { motion, AnimatePresence } from "framer-motion";
 
-import SelectDoctorDaysModal from "../../../Components/ReactDayPicker/SelectDoctorDaysModal";
+import DoctorSlotsModal from "../../../Components/ReactDayPicker/DoctorSlotsModal";
 
 const PhysicalAppointment = () => {
   const [selectDepartment, setSelectDepartment] = useState("");
@@ -129,7 +129,7 @@ const PhysicalAppointment = () => {
         </div>
         <div>
         {openModal &&
-            <SelectDoctorDaysModal buttonName="Select Date & Time" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectAppointmentDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots} />
+            <DoctorSlotsModal buttonName="Select Date & Time" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectAppointmentDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={availableSlots} />
         }
         </div>
       </section>

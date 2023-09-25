@@ -5,7 +5,7 @@ import "react-day-picker/dist/style.css";
 import { useNavigate } from "react-router-dom";
 
 
-const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppointmentDate, bookingSummery,buttonName}) => {
+const DoctorSlots = ({availableSlots ,setOpenModal,setSelectAppointmentDate, bookingSummery,buttonName}) => {
   const [selected, setSelected] = useState();
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
   const [selectedTime, setSelectedTime] = useState('');
@@ -13,7 +13,7 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppoin
   const navigate = useNavigate();
 
 
-  let header = <p>Please pick a day.</p>;
+  let header = <p></p>;
   if (selected) {
   
     header = <p className="font-bold text-gray mt-2"><span className="text-sm">{location}</span> <br/> {format(selected, "PP")}.<br/> <span className="text-brown font-semi-bold">{Object.keys(selectedTime)}</span></p>;
@@ -88,7 +88,7 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppoin
         setOpenModal(false)
     }
     if(selectedTime!==null && selectedTime!=='' && selectedTime!=='undefined' && bookingSummery){
-        navigate("/BookingSummery");
+        navigate("/AppointmentSummery");
     }
     
 
@@ -137,4 +137,4 @@ const DoctorSelectAvailableDays = ({availableSlots ,setOpenModal,setSelectAppoin
   );
 };
 
-export default DoctorSelectAvailableDays;
+export default DoctorSlots;
