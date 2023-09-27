@@ -1,7 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Title from "../../../Components/Title/Title";
-import Details from "../../../Components/Details/Details";
 import square from "../../../Assests/Partners/square.png";
 import DMC from "../../../Assests/Partners/DMC.jpg";
 import CMC from "../../../Assests/Partners/chittagong-medical-college-hospita.png";
@@ -54,10 +53,7 @@ const OurPartners = () => {
           title="Our Partners"
           design="title text-center text-2xl 2xl:text-4xl"
         />
-        <Details
-          design="text-sm md:w-8/12 lg:w-8/12 mx-auto text-center"
-          details="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio necessitatibus ipsum quidem ut? Libero possimus placeat unde enim consequatur quis numquam itaque ut illo? Officiis assumenda modi facilis sed optio incidunt ipsa aspernatur consequuntur amet laboriosam. Velit eaque voluptates dignissimos, deserunt ipsam praesentium, commodi a eos reprehenderit nemo ipsa?"
-        />
+        <p className="text-sm md:w-8/12 lg:w-8/12 mx-auto text-center text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio necessitatibus ipsum quidem ut? Libero possimus placeat unde enim consequatur quis numquam itaque ut illo? Officiis assumenda modi facilis sed optio incidunt ipsa aspernatur consequuntur amet laboriosam. Velit eaque voluptates dignissimos, deserunt ipsam praesentium, commodi a eos reprehenderit nemo ipsa?</p>
       </div>
       <div className="my-10">
         <Marquee pauseOnClick={true} autoFill={true}>

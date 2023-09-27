@@ -2,11 +2,13 @@ import React, { useRef, useState } from "react";
 import { VscTrash } from "react-icons/vsc";
 import selectImage from "../../../Assests/Logo/selectimages.png";
 import { TbCircleCheckFilled ,TbCalendar} from "react-icons/tb";
-import BookDoctorListModal from "../BookDoctorListModal/BookDoctorListModal";
+import DoctorListModal from "../DoctorListModal/DoctorListModal";
 import {departments,availableSlots,doctorList} from "../DepartmentSelect/departments";
 import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
-import SelectDoctorDaysModal from "../../../Components/ReactDayPicker/SelectDoctorDaysModal";
-import BookingSummery from "../BookingSummery/BookingSummery";
+import DoctorSlotsModal from "../../../Components/ReactDayPicker/DoctorSlotsModal";
+import AppointmentSummery from "../../../Components/AppointmentSummery/AppointmentSummery";
+import Select from "react-select";
+import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 
 const TelemedicineAppointment = () => {
   const fileInputRef = useRef(null);
@@ -20,7 +22,7 @@ const TelemedicineAppointment = () => {
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
   const [selectAppointmentDateModal,setSelectAppointmentDateModal] = useState(false)
   const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
-  const [bookingSummery, setBookingSummery] = useState(false);
+  const [appointmentSummeryPage, setAppointmentSummeryPage] = useState(false);
 
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
@@ -63,7 +65,7 @@ const TelemedicineAppointment = () => {
         </span>
       </p>
      <article className="w-10/12 sm:w-8/12 lg:w-7/12 mx-auto  space-y-3">
-     { !bookingSummery ? <><p>Book an Appointment</p>
+     { !appointmentSummeryPage ? <><p>Book an Appointment</p>
         <p className="text-gray font-normal">
           Please fill in the form below to book an appointment at Bumrungrad.
         </p>
@@ -142,14 +144,8 @@ const TelemedicineAppointment = () => {
                 </p>
                
                 {recommendDoctor === "recommend_doctor"  && <div><hr className="text-green my-2"/> <div className="">
-                  
                   <p className="text-gray font-medium mb-2">Please select a department</p>
-                    <DepartmentSelect  setSelectDepartment={setSelectDepartment}
-                    setOpenSelectIndex={setOpenSelectIndex}
-                    isOpen={openSelectIndex === 0}
-                    toggleSelect={() => handleSelectToggle(0)} 
-                    selectorDetails={departments}
-                    />
+                  <SelectOptions options={departments.options}/>
                 </div>
                 </div>}
               </div>
@@ -233,20 +229,21 @@ const TelemedicineAppointment = () => {
               </div>
             </div>
           </section>
-          <div onClick={()=>setBookingSummery(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
+          <div onClick={()=>setAppointmentSummeryPage(true)} className="bg-green text-white p-2 text-center rounded-lg cursor-pointer">
             <p >Next</p>
           </div>
-        </form></>: <BookingSummery setBookingSummery={setBookingSummery}/>}
+        </form></>: <AppointmentSummery setAppointmentSummeryPage={setAppointmentSummeryPage}/>}
       </article>
     {openModal&&  
-    <BookDoctorListModal 
+    <DoctorListModal 
         setSelectDoctor={setSelectDoctor} 
         doctorList={doctorList} 
         openModal={openModal} 
         setOpenModal={setOpenModal}
     />}
     {selectAppointmentDateModal && 
-    <SelectDoctorDaysModal 
+    <DoctorSlotsModal 
+        buttonName="Select Date & Time" 
         setSelectAppointmentDate={setSelectAppointmentDate} 
         openModal={selectAppointmentDateModal} 
         setOpenModal={setSelectAppointmentDateModal} 

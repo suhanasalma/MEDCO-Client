@@ -24,7 +24,7 @@ const MainNavMenu = () => {
       >
         Clinics & Centers
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/ConditionsAndTreatment"
         className={({ isActive }) =>
           `text-sm  flex items-center gap-2 ${
@@ -33,7 +33,17 @@ const MainNavMenu = () => {
         }
       >
         Conditions & Treatments
-      </NavLink>
+      </NavLink> */}
+      <NavLink
+            to="/Doctors"
+            className={({ isActive }) =>
+              `text-sm flex items-center gap-2 ${
+                isActive ? "text-brown font-bold" : "text-green"
+              }`
+            }
+          >
+            Doctors
+          </NavLink>
       <NavLink
         to="/BookinAppointments"
         className={({ isActive }) =>

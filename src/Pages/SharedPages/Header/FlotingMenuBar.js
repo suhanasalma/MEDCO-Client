@@ -47,7 +47,7 @@ const FlotingMenuBar = ({
                     to="/"
                     className={({ isActive }) =>
                       `text-sm font-bold flex items-center gap-2 ${
-                        isActive ? "text-brown" : "text-green"
+                        isActive ? "text-brown" : "text-white"
                       }`
                     }
                   >
@@ -74,7 +74,7 @@ const FlotingMenuBar = ({
                     to="/"
                     className={({ isActive }) =>
                       `text-sm font-bold flex items-center gap-2 ${
-                        isActive ? "text-brown" : "text-green"
+                        isActive ? "text-brown" : "text-white"
                       }`
                     }
                   >
@@ -101,7 +101,7 @@ const FlotingMenuBar = ({
                     to="/"
                     className={({ isActive }) =>
                       `text-sm font-bold flex items-center gap-2 ${
-                        isActive ? "text-brown" : "text-green"
+                        isActive ? "text-brown" : "text-white"
                       }`
                     }
                   >
@@ -128,7 +128,7 @@ const FlotingMenuBar = ({
                     to="/"
                     className={({ isActive }) =>
                       `text-sm font-bold flex items-center gap-2 ${
-                        isActive ? "text-brown" : "text-green"
+                        isActive ? "text-brown" : "text-white"
                       }`
                     }
                   >
@@ -205,7 +205,7 @@ const FlotingMenuBar = ({
           </NavLink>
         </div>
         <div className="cursor-pointer  border-light-gray">
-          <NavLink
+          {/* <NavLink
             to="/ConditionsAndTreatment"
             className={({ isActive }) =>
               `text-sm font-bold flex items-center gap-2 ${
@@ -214,6 +214,16 @@ const FlotingMenuBar = ({
             }
           >
             Conditions & Treatments
+          </NavLink> */}
+          <NavLink
+            to="/Doctors"
+            className={({ isActive }) =>
+              `text-sm font-bold flex items-center gap-2 ${
+                isActive ? "text-brown" : "text-white"
+              }`
+            }
+          >
+            Doctors
           </NavLink>
         </div>
         <div className="px-2 cursor-pointer  border-light-gray">

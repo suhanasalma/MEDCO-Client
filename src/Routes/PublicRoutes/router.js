@@ -6,7 +6,8 @@ import FindDoctorsContainer from "../../Pages/FindDoctors/FindDoctorsContainer/F
 import ClinicAndCenters from "../../Pages/ClinicAndCenters/ClinicAndCentersContainer/ClinicAndCenters";
 import ConditionsAndTreatments from "../../Pages/ConditionsAndTreatments/ConditionsAndTreatments/ConditionsAndTreatments";
 import BookinAppointmentsContainer from "../../Pages/BookAppointments/BookinAppointmentsContainer/BookinAppointmentsContainer";
-import BookingSummery from "../../Pages/BookAppointments/BookingSummery/BookingSummery";
+import AppointmentSummery from "../../Components/AppointmentSummery/AppointmentSummery";
+import AllDoctors from "../../Pages/AllDoctors/AllDoctorsContainer/AllDoctors";
 
 export const router = createBrowserRouter([
   {
@@ -41,10 +42,14 @@ export const router = createBrowserRouter([
         path: "/BookinAppointments",
         element: <BookinAppointmentsContainer />,
       },
-    //   {
-    //     path: "/BookinSummery",
-    //     element: <BookingSummery/>,
-    //   },
+      {
+        path: "/AppointmentSummery",
+        element: <AppointmentSummery/>,
+      },
+    {
+        path: "/Doctors",
+        element: <AllDoctors/>,
+      },
     ],
   },
 ]);

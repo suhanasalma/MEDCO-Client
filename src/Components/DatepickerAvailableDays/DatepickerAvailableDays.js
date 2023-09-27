@@ -1,8 +1,9 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import './DatepickerAvailableDays.css'
 
-const AvailableDays = ({setSelectedDate,selectedDate}) => {
+const DatepickerAvailableDays = ({setSelectedDate,selectedDate}) => {
 
 
     const availableTimes = [
@@ -77,4 +78,4 @@ const AvailableDays = ({setSelectedDate,selectedDate}) => {
     );
 };
 
-export default AvailableDays;
+export default DatepickerAvailableDays;

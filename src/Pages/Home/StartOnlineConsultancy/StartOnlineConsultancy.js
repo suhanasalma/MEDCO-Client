@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Title from "../../../Components/Title/Title";
-import Details from "../../../Components/Details/Details";
 import text from "../../../Assests/onlineconsultancy/text.jpg";
 import call from "../../../Assests/onlineconsultancy/call.jpg";
 import video from "../../../Assests/onlineconsultancy/videoCall.jpg";
@@ -67,10 +66,7 @@ const StartOnlineConsultancy = () => {
           design="lg:text-4xl xl:text-5xl lg:leading-normal xl:leading-relaxed onlineConsultancyTitle"
           title="Start an online chat, consultation with a doctor"
         />
-        <Details
-          design="text-sm"
-          details="Post unlimited follow-ups to the doctor for the next 50 or 100 hours by picking one of out #iclinic100hrs chat services."
-        />
+        <p className="text-gray text-sm">Post unlimited follow-ups to the doctor for the next 50 or 100 hours by picking one of out #iclinic100hrs chat services.</p>
         <div className="grid grid-cols-2 gap-10 Onlineconsultency">
           {consultancyOptions?.map((option, i) => (
             <section key={i} className="flex items-center">
@@ -97,7 +93,7 @@ const StartOnlineConsultancy = () => {
         </div>
         <div className="onlineBtn ">
           <LinkButton
-            design="w-72  border-2 border-green"
+            design="sm:w-72 "
             title={
               selectOption?.button ? selectOption?.button : "Choose a Option"
             }

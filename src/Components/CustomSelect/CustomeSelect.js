@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './CustomeSelect.css'
+import styles from './CustomeSelect.module.css'
 const CustomSelect = ({
   height,
   selectorDetails,
@@ -15,10 +15,10 @@ const CustomSelect = ({
 
 
   return (
-    <div className="custom-select w-full">
+    <div className={`${styles.customSelect} w-full`}>
       <div
-        className={`flex gap-2 items-center select-selected ${
-          isOpen ? "select-arrow-active" : ""
+        className={`flex gap-2 items-center ${styles.selectSelected} ${
+          isOpen ? styles.selectArrowActive : ""
         }`}
         onClick={toggleSelect}
       >
@@ -26,14 +26,14 @@ const CustomSelect = ({
         <span className="text-brown">{selectedOption}</span>
       </div>
       <div
-        className={`select-items ${
+        className={`${styles.selectItems} ${
           height ? `h-${height}` : "h-72"
-        } text-sm ${isOpen ? "" : "select-hide"}`}
+        } text-sm ${isOpen ? "" : styles.selectHide}`}
       >
         {selectorDetails?.options?.map((option, index) => (
           <div
             key={index}
-            className={`${option === selectedOption ? "same-as-selected" : ""}`}
+            className={`${option === selectedOption ? styles.sameAsSelected : ""}`}
             onClick={() => handleSelect(option)}
           >
             {option}

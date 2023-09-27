@@ -103,9 +103,9 @@ const FixedHeader = () => {
   };
   return (
     <div className="flex justify-between items-center gap-5 relative">
-      <NavLink to="/">
+      <Link to="/">
         <img className="w-10 lg:w-16 rounded-lg" src={logo} alt="" />
-      </NavLink>
+      </Link>
       <HeaderInput />
       <div className="relative group">
         <NavLink

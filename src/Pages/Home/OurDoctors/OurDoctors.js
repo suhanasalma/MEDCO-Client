@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Title from "../../../Components/Title/Title";
-import Details from "../../../Components/Details/Details";
 import { Link } from "react-router-dom";
 import { ourDoctorsInfo } from "./OurDoctorsInfo";
 import "./ourDoctors.css";
@@ -26,20 +25,14 @@ const OurDoctors = () => {
       <div className="space-y-4 hidden mb-5 secondDetails">
         <p className="font-bold text-lg">Our Doctors2</p>
         <Title design="text-4xl" title="Qualified Doctors" />
-        <Details
-          // design="w-96"
-          details="Handle directly by general doctors and professional and experienced specialist doctors"
-        />
+        <p className="text-gray">Handle directly by general doctors and professional and experienced specialist doctors</p>
       </div>
       <div className="flex flex-row lg:gap-3 xl:gap-0 gap-8 md:justify-between justify-center items-center ourDocContainer">
         <div className="space-y-5">
           <div className="space-y-8 sm:block hidden doctorsHeader">
             <p className="font-bold text-lg">Our Doctors</p>
             <Title design="text-4xl" title="Qualified Doctors" />
-            <Details
-              design="w-80 lg:w-96"
-              details="Handle directly by general doctors and professional and experienced specialist doctors"
-            />
+            <p className="text-gray w-80 lg:w-96">Handle directly by general doctors and professional and experienced specialist doctors</p>
           </div>
           <motion.div
             style={{
@@ -63,7 +56,6 @@ const OurDoctors = () => {
           </motion.div>
           <div>
             <LinkButton
-              design="w-52 border-2 border-green"
               title="View All Doctors"
             />
           </div>

@@ -1,0 +1,49 @@
+{ "datas" : [
+    {
+      "name": "Heart Disease"
+    },
+    {
+      "name": "Cancer"
+    },
+    {
+      "name": "Diabetes"
+    },
+    {
+      "name": "Hepatitis B/C"
+    },
+    {
+      "name": "Sexually Transmitted Diseases"
+    },
+    {
+      "name": "Typhoid (last on year)"
+    },
+    {
+      "name": "Lung Disease"
+    },
+    {
+      "name": "Tuberculosis"
+    },
+    {
+      "name": "Allergic Disease"
+    },
+    {
+      "name": "Kidney Diseases"
+    },
+    {
+      "name": "Epilepsy"
+    },
+    {
+      "name": "Abnormal Bleeding Tendency"
+    },
+    {
+      "name": "Jaundice (last one year)"
+    },
+    {
+      "name": "Malaria"
+    },
+    {
+      "name": "Fainting spells"
+    }
+  ]
+ 
+}

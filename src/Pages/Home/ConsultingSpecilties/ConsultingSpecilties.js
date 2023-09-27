@@ -1,19 +1,16 @@
 import React from "react";
 import Title from "../../../Components/Title/Title";
 import { searchInfos } from "../PopularSearches/PopularSearchesInfo";
-import TreatmentCategoryCard from "../../../Components/Card/TreatmentCategoryCard/TreatmentCategoryCard";
-import Details from "../../../Components/Details/Details";
+import TreatmentCategoryCard from "../../../Components/TreatmentCategoryCard/TreatmentCategoryCard";
 import "./ConsultingSpecilties.css";
-
 
 const ConsultingSpecilties = () => {
   return (
     <div className="w-10/12 mx-auto mb-32 ">
       <Title design="title text-center" title="Our Consulting Specialties" />
-      <Details
-        design=" text-center sm:w-9/12 mx-auto mt-5"
-        details="Ask a doctor online and get quick medical advice for your health queries or visit our hospitals. Our medical panel consists of over 3500+ doctors from 80+ specialities"
-      />
+      <p  className=" text-gray text-center sm:w-9/12 mx-auto mt-5"
+       >Ask a doctor online and get quick medical advice for your health queries or visit our hospitals. Our medical panel consists of over 3500+ doctors from 80+ specialities</p>
+
       <div className="speConsultation grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-14">
         {searchInfos.specialties?.map((data, i) => (
           <TreatmentCategoryCard

@@ -3,7 +3,7 @@ import Title from "../../../Components/Title/Title";
 import "./PopularSearches.css";
 import { searchInfos } from "./PopularSearchesInfo";
 import Carousel from "react-elastic-carousel";
-import TreatmentCategoryCard from "../../../Components/Card/TreatmentCategoryCard/TreatmentCategoryCard";
+import TreatmentCategoryCard from "../../../Components/TreatmentCategoryCard/TreatmentCategoryCard";
 
 const PopularSearches = () => {
   const [searchInformation, setSearchInformation] = useState(

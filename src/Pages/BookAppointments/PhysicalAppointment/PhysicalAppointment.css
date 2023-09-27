@@ -103,3 +103,18 @@
     transform: translate(-50%, -50%); 
     transition: background-color 0.2s ease; 
 }
+.radio-inn-circle {
+    width: 8px; 
+    height: 8px; 
+    background-color: transparent; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    transition: background-color 0.2s ease; 
+}
+
+.radio-input:checked + .radio-out-circle .radio-inn-circle {
+    background-color: #2c4c3b; 
+}
