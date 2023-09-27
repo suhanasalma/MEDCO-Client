@@ -24,6 +24,7 @@ const TelemedicineAppointment = () => {
   const [selectAppointmentDate,setSelectAppointmentDate] = useState(null)
   const [appointmentSummeryPage, setAppointmentSummeryPage] = useState(false);
 
+
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
   };
