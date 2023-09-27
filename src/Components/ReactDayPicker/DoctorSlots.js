@@ -5,7 +5,7 @@ import "react-day-picker/dist/style.css";
 import { useNavigate } from "react-router-dom";
 
 
-const DoctorSlots = ({availableSlots ,setOpenModal,setSelectAppointmentDate, bookingSummery,buttonName}) => {
+const DoctorSlots = ({availableSlots ,setOpenModal,setSelectAppointmentDate, bookingSummery,buttonName,setAppointmentSummeryPage}) => {
   const [selected, setSelected] = useState();
   const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
   const [selectedTime, setSelectedTime] = useState('');
@@ -88,7 +88,7 @@ const DoctorSlots = ({availableSlots ,setOpenModal,setSelectAppointmentDate, boo
         setOpenModal(false)
     }
     if(selectedTime!==null && selectedTime!=='' && selectedTime!=='undefined' && bookingSummery){
-        navigate("/AppointmentSummery");
+        setAppointmentSummeryPage(true);
     }
     
 

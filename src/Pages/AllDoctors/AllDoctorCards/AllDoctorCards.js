@@ -1,6 +1,8 @@
 import React from "react";
 import DoctorCard from "../../../Components/DoctorCards/DoctorCard";
-const AllDoctorCards = () => {
+import { useState } from "react";
+const AllDoctorCards = ({setAppointmentSummeryPage}) => {
+
   return (
     <div className="min-h-fit max-h-screen overflow-auto shadow-lg ">
         <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 justify-items-center	select_doctor gap-5">
@@ -18,7 +20,7 @@ const AllDoctorCards = () => {
                 "#af976d",
                 "#2c4c3b",
                 "blue",
-                ].map(item=><DoctorCard/>)
+                ].map(item=><DoctorCard setAppointmentSummeryPage={setAppointmentSummeryPage}/>)
             }
         </div>
     </div>

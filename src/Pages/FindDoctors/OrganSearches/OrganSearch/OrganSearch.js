@@ -8,6 +8,7 @@ import { Symptoms, organsInfos } from "./OrganInfo";
 import CustomSelect from "../../../../Components/CustomSelect/CustomeSelect";
 import { FaClock, FaCalendarAlt } from "react-icons/fa";
 import SelectDoctor from "../SelectDoctor/SelectDoctor";
+import AppointmentSummery from "../../../../Components/AppointmentSummery/AppointmentSummery";
 
 const OrganSearch = () => {
   const [organ, setOrgan] = useState("MaleHead");
@@ -20,6 +21,7 @@ const OrganSearch = () => {
   const [doctorsAvaialble, setDoctorsAvailable] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [openSelectIndex, setOpenSelectIndex] = useState(null);
+  const [appointmentSummeryPage,setAppointmentSummeryPage] = useState(false)
 
   const handleSelectToggle = (index) => {
     setOpenSelectIndex(index === openSelectIndex ? null : index);
@@ -124,7 +126,7 @@ const OrganSearch = () => {
 
   return (
     <div className="p-2 w-full mx-auto mb-10">
-      <ProgressBar
+      {appointmentSummeryPage? <AppointmentSummery setAppointmentSummeryPage={setAppointmentSummeryPage}/>:<><ProgressBar
         stepsName={stepsName}
         currentStep={currentStep}
         progress={progress}
@@ -222,9 +224,9 @@ const OrganSearch = () => {
           </div>
         )}
         {((selectDoctor && selectDoctor !== "Others") || doctorsAvaialble) && (
-          <SelectDoctor />
+          <SelectDoctor setAppointmentSummeryPage={setAppointmentSummeryPage}/>
         )}
-      </div>
+      </div></>}
     </div>
   );
 };
