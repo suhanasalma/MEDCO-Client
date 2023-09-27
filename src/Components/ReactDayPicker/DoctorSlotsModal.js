@@ -5,7 +5,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import SelectOptions from '../SelectOptions/SelectOptions';
 
 
-const DoctorSlotsModal = ({openModal,setOpenModal,availableSlots,setSelectAppointmentDate,bookingSummery,buttonName }) => {
+const DoctorSlotsModal = ({openModal,setOpenModal,availableSlots,setSelectAppointmentDate,bookingSummery,buttonName ,setAppointmentSummeryPage}) => {
     useEffect(() => {
         if (openModal) {
           // Prevent scrolling of the page when the modal is open
@@ -37,7 +37,7 @@ const DoctorSlotsModal = ({openModal,setOpenModal,availableSlots,setSelectAppoin
                   <SelectOptions options={options}/>
                   </div>
                 </div> */}
-                <DoctorSlots buttonName={buttonName} bookingSummery={bookingSummery}  setSelectAppointmentDate={setSelectAppointmentDate} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
+                <DoctorSlots setAppointmentSummeryPage={setAppointmentSummeryPage} buttonName={buttonName} bookingSummery={bookingSummery}  setSelectAppointmentDate={setSelectAppointmentDate} setOpenModal={setOpenModal} availableSlots={availableSlots}/>
             </div>
         </div>
     );

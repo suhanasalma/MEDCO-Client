@@ -13,7 +13,7 @@ import {
   } from 'react-query'
 import AppointmentType from "./AppointmentType";
 
-const DoctorCard = () => {
+const DoctorCard = ({setAppointmentSummeryPage}) => {
   const [seeAppointment, setSeeAppointment] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [appointType, setAppointType] = useState(false);
@@ -93,7 +93,7 @@ const DoctorCard = () => {
         )}
       </AnimatePresence>
        {openModal &&
-        <DoctorSlotsModal buttonName = "Book Appointment" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectedDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={data.availableSlots}/>
+        <DoctorSlotsModal setAppointmentSummeryPage={setAppointmentSummeryPage} buttonName = "Book Appointment" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectedDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={data.availableSlots}/>
        }
       
        </div>
