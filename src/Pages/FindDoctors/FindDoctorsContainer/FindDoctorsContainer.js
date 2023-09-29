@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BreadCrumbs from "../../../Components/BreadCrumbs/BreadCrumbs";
 import OrganSearch from "../OrganSearches/OrganSearch/OrganSearch";
-import SearchDoctor from "../SearchDoctor/SearchDoctor/SearchDoctor";
+import FindDoctor from "../SearchDoctor/FindDoctor/FindDoctor";
 
 
 const FindDoctorsContainer = () => {
@@ -15,7 +15,7 @@ const FindDoctorsContainer = () => {
     {
       id: 1,
       name: "Blood Doner",
-      component: OrganSearch,
+      component: FindDoctor,
     },
   ];
   const handleOrganTab = () => {
@@ -52,7 +52,7 @@ const FindDoctorsContainer = () => {
           Find a Doctor
         </p>
       </section>
-      {organSearch ? <OrganSearch /> : <SearchDoctor />}
+      {organSearch ? <OrganSearch /> : <FindDoctor />}
     </div>
   );
 };
