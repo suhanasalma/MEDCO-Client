@@ -52,7 +52,7 @@ const MainNavMenu = () => {
           }`
         }
       >
-        Book Appointments
+        Book Appointment
       </NavLink>
       <NavLink
         to="/"
@@ -62,7 +62,7 @@ const MainNavMenu = () => {
           }`
         }
       >
-        Book a Hotel
+        Contact Us
       </NavLink>
       <NavLink
         to="/"
@@ -73,6 +73,16 @@ const MainNavMenu = () => {
         }
       >
         Ambulance
+      </NavLink>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `text-sm  flex items-center gap-2 ${
+            isActive ? "text-brown font-bold" : "text-green"
+          }`
+        }
+      >
+        DashBoard
       </NavLink>
     </div>
   );

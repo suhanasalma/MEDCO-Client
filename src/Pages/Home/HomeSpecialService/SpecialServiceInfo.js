@@ -25,7 +25,7 @@ export const specialServices = [
       "Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered",
   },
   {
-    name: "Book a Hotel",
+    name: "Contact Us",
     image: hotel,
     details:
       "Now you can connect with the doctor from anywhere. There is no need to doubt the quality of consultation and treatment offered",

@@ -155,7 +155,7 @@ const FlotingMenuBar = ({
                     to="/"
                     className={({ isActive }) =>
                       `text-sm font-bold flex items-center gap-2 ${
-                        isActive ? "text-brown" : "text-green"
+                        isActive ? "text-brown" : "text-white"
                       }`
                     }
                   >
@@ -235,7 +235,7 @@ const FlotingMenuBar = ({
               }`
             }
           >
-            Book Appointments
+            Book Appointment
           </NavLink>
         </div>
         <div className="px-2 cursor-pointer ">

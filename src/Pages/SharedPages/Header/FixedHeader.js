@@ -109,7 +109,7 @@ const FixedHeader = () => {
       <HeaderInput />
       <div className="relative group">
         <NavLink
-          to="/h"
+          to="/home"
           className={({ isActive }) =>
             `text-sm font-bold flex items-center gap-2 ${
               isActive ? "text-brown" : "text-green"
@@ -129,7 +129,7 @@ const FixedHeader = () => {
       </div>
       <div className="relative group">
         <NavLink
-          to="/"
+          to="/home"
           className={({ isActive }) =>
             `text-sm font-bold flex items-center gap-2 ${
               isActive ? "text-brown" : "text-green"
