@@ -2,6 +2,7 @@
 .step {
     display: flex;
     z-index: -1;
+
 }
 
 .step__item {
@@ -79,8 +80,8 @@
 }
 
 .radio-outer-circle {
-    width: 20px; 
-    height: 20px; 
+    width: 15px; 
+    height: 15px; 
     border: 2px solid #af976d;
     border-radius: 50%;
     display: inline-block; 
@@ -93,8 +94,8 @@
 }
 
 .radio-inner-circle {
-    width: 12px; 
-    height: 12px; 
+    width: 8px; 
+    height: 8px; 
     background-color: transparent; 
     border-radius: 50%;
     position: absolute;

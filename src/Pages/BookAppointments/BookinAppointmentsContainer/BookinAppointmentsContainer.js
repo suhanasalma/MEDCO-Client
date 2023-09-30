@@ -14,7 +14,7 @@ const BookinAppointmentsContainer = () => {
     setTelemedicineAppointment(false);
   };
   return (
-    <div className="p-2 sm:w-10/12 mx-auto my-10">
+    <div className="p-2 sm:w-10/12 mx-auto my-5">
       <BreadCrumbs
         breadcrumbs={[
           { title: "Home", link: "/home" },

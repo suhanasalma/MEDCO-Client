@@ -15,6 +15,19 @@ const ClinicAndCenters = () => {
   return (
     <section className="">
       <div>
+      <div className="w-11/12 2xl:w-10/12 my-5 mx-auto">
+      <BreadCrumbs
+          breadcrumbs={[
+            { title: "Home", link: "/home" },
+            {
+              title: "Clinics and Centers",
+              active: true,
+              link: "/ClincAndCenter",
+            },
+          ]}
+        />
+      </div>
+     
         <div className="h-72 sm:h-80 lg:h-96 relative mb-5" >
           <img
             className="h-full w-full object-cover"
@@ -34,16 +47,7 @@ const ClinicAndCenters = () => {
             </p>
           </div>
         </div>
-        <BreadCrumbs
-          breadcrumbs={[
-            { title: "Home", link: "/home" },
-            {
-              title: "Clinics and Centers",
-              active: true,
-              link: "/ClincAndCenter",
-            },
-          ]}
-        />
+      
       </div>
       <div className="my-20 w-11/12 2xl:w-10/12 mx-auto">
         <div className="flex flex-col items-center my-10 gap-5 bg-light-gray h-80 py-10  mx-auto shadow shadow-green">

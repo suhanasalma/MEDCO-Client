@@ -48,6 +48,8 @@ const DoctorSlots = ({availableSlots ,setOpenModal,setSelectAppointmentDate, boo
     );
   };
 
+  console.log('available slots',availableSlots);
+
 
   const isTimeAvailable = (date) => {
     if (!date || !date.getFullYear) {

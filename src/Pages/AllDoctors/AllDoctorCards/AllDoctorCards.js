@@ -4,7 +4,7 @@ import { useState } from "react";
 const AllDoctorCards = ({setAppointmentSummeryPage}) => {
 
   return (
-    <div className="min-h-fit max-h-screen overflow-auto shadow-lg ">
+    <div className="min-h-fit max-h-screen overflow-auto">
         <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 justify-items-center	select_doctor gap-5">
             {
                 [

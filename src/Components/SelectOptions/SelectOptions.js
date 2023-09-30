@@ -60,6 +60,7 @@ const SelectOptions = ({isMulti=false,closeMenuOnSelect=true,options}) => {
             ...dot(data.color || "#2c4c3b"),
             color: "#2c4c3b",
             fontWeight: "500",
+            fontSize:"13px"
         }),
     };
     return (

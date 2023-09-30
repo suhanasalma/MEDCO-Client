@@ -689,10 +689,10 @@ export const departments ={
   export const availableSlots = {
     "days":["FRI","SAT","MON","TUE"],
     2023:{
-        "SEP":{
+        "OCT":{
             "FRI":{
                 dates:{
-                    15:[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
+                    6:[{"10:00":"booked"},{"12:00":"booked"},{"12:15":"empty"},{"12:30":"empty"}],
                     22:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}],
                     29:[{"10:00":"booked"},{"12:00":"empty"},{"12:15":"empty"},{"12:30":"empty"}]
                 },

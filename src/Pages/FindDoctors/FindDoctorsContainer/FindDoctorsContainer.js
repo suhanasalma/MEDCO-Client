@@ -25,7 +25,7 @@ const FindDoctorsContainer = () => {
     setOrganSearch(false);
   };
   return (
-    <div className="p-2 sm:w-10/12 mx-auto my-10">
+    <div className="p-2 sm:w-10/12 mx-auto mb-10 mt-5">
       <BreadCrumbs
         breadcrumbs={[
           { title: "Home", link: "/home" },
@@ -36,7 +36,7 @@ const FindDoctorsContainer = () => {
           },
         ]}
       />
-      <section className="flex border-b-2 border-b-light-gray items-center mt-10">
+      <section className="flex border-b-2 border-b-light-gray items-center mt-5">
         <p
           onClick={handleOrganTab}
           className={`cursor-pointer px-14 py-2 text-white
