@@ -10,6 +10,7 @@ const InputField = ({
   label,
   type,
   disabled,
+  required
 }) => {
   return (
     <div className="relative">
@@ -29,6 +30,7 @@ const InputField = ({
         {label}
       </label>
       <input
+        required = {required}
         disabled={disabled}
         onFocus={() => {
           setFocus(true);
@@ -46,6 +48,11 @@ const InputField = ({
       {errors[name] && (
         <span className="text-red text-xs absolute left-5 -bottom-2 ">
           {errors[name].message}
+        </span>
+      )}
+      {required && (
+        <span className="text-red text-xs absolute left-5 -bottom-2 ">
+          This field is required
         </span>
       )}
     </div>

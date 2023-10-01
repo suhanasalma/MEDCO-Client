@@ -6,8 +6,8 @@ export const inputFieldValidation = yup
     firstName: yup
       .string("name should be in string")
       .required("This field is required")
-      .max(20, "Name should not exceed 20 characters")
-      .matches(/^[^0-9][^0-9]*$/, "Name should not contain numbers"), //Name should not start with a number or contain numbers
+      .max(20, "Name should not exceed 20 characters"),
+    //   .matches(/^[^0-9][^0-9]*$/, "Name should not contain numbers"), 
     age: yup
       .mixed()
       .test("is-valid-age", "Age must be a valid number", function (value) {
