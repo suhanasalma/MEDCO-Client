@@ -30,7 +30,7 @@ const AppointmentDetails = ({setShowDoctor,showDoctor,setRecommendDoctor,recomme
                     value="Recommend a doctor"
                     type="radio"
                     name="choose_doctor"
-                    checked
+                    defaultChecked
                   />
 
                   <span className="radio-outer-circle">
@@ -51,7 +51,7 @@ const AppointmentDetails = ({setShowDoctor,showDoctor,setRecommendDoctor,recomme
                     value="I will choose my doctor"
                     type="radio"
                     name="choose_doctor"
-                    checked={showDoctor}
+                    defaultChecked={showDoctor}
                   />
 
                   <span className="radio-outer-circle">
@@ -84,7 +84,7 @@ const AppointmentDetails = ({setShowDoctor,showDoctor,setRecommendDoctor,recomme
                     value="Recommend a doctor"
                     type="radio"
                     name="choose_date"
-                    checked
+                    defaultChecked
                   />
 
                   <span className="radio-outer-circle">
@@ -100,7 +100,7 @@ const AppointmentDetails = ({setShowDoctor,showDoctor,setRecommendDoctor,recomme
                     value="I will choose my doctor"
                     type="radio"
                     name="choose_date"
-                    checked={selectAppointmentDate}
+                    defaultChecked={selectAppointmentDate}
                   />
 
                   <span className="radio-outer-circle">
@@ -207,8 +207,8 @@ const AppointmentDetails = ({setShowDoctor,showDoctor,setRecommendDoctor,recomme
                 <p className="flex-1">LOCATION</p>
               </div>
               <div className="">
-                {doctorSchedule.map((schedule) => (
-                  <div className="flex justify-between items-center text-xs py-2">
+                {doctorSchedule.map((schedule,i) => (
+                  <div key={i} className="flex justify-between items-center text-xs py-2">
                     <p className="flex-1">{schedule.day}</p>
                     <p className="flex-1">{schedule.time}</p>
                     <p className="flex-1">{schedule.location}</p>

@@ -20,7 +20,7 @@ const AllDoctorCards = ({setAppointmentSummeryPage}) => {
                 "#af976d",
                 "#2c4c3b",
                 "blue",
-                ].map(item=><DoctorCard setAppointmentSummeryPage={setAppointmentSummeryPage}/>)
+                ].map((item,i)=><DoctorCard key={i} setAppointmentSummeryPage={setAppointmentSummeryPage}/>)
             }
         </div>
     </div>

@@ -8,7 +8,6 @@ const Main = () => {
     <div className="overflow-hidden mx-auto max-w-screen-2xl">
       <Header />
       <Outlet />
-      {/* <Header/> */}
       <Footer/>
     </div>
   );

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { VscChromeClose } from "react-icons/vsc";
-import meetLogo from '../../../Assests/Logo/google_meet.png'
+import meetLogo from '../../Assests/Logo/google_meet.png'
 import { Link } from 'react-router-dom';
 
-const DoctorMeetLinkModal = ({openModal,setOpenModal,setBookingSummeryPage}) => {
+const DoctorMeetLinkModal = ({openModal,setOpenModal,setAppointmentSummeryPage}) => {
 
     useEffect(() => {
         if (openModal) {
@@ -22,8 +22,8 @@ const DoctorMeetLinkModal = ({openModal,setOpenModal,setBookingSummeryPage}) => 
 
       const goToTelemedicinePage = () =>{
         setOpenModal(false)
-        setBookingSummeryPage(false)
-        window.scrollTo(0, 0)
+        setAppointmentSummeryPage(false)
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       }
     return (
         <div  

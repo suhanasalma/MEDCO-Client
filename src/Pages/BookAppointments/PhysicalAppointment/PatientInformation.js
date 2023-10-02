@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { VscChromeClose, VscTrash } from "react-icons/vsc";
+import { BiUserCheck } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useSelector } from "react-redux";
 import InputField from "../../../Components/InputField/InputField";
+import CustomSelect from "../../../Components/CustomSelect/CustomeSelect";
 
 const PatientInformation = () => {
   const [firstNameFocus, setfirstNameFocus] = useState(false);
@@ -12,7 +13,11 @@ const PatientInformation = () => {
   const [phoneFocus, setPhoneFocus] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
   const [hasBeforeAppointment, setHasBeforeAppointment] = useState(false);
+  const [openSelectIndex, setOpenSelectIndex] = useState(null);
   const [doctorCodeFocus, setDoctorCodeFocus] = useState(false);
+  const handleSelectToggle = (index) => {
+    setOpenSelectIndex(index === openSelectIndex ? null : index);
+  };
   const registrationSchema = useSelector(
     (state) => state?.validation?.validationSchema
   );
@@ -63,12 +68,22 @@ const PatientInformation = () => {
     console.log(submittedData);
     reset();
   };
+  const genderSelector = {
+    icon: BiUserCheck,
+    title: "---Please select---",
+    options: [
+      "---Please select---",
+      "Male",
+      "Female",
+      "Others",
+    ],
+  };
   return (
     <div>
       <form className="" onSubmit={handleSubmit(handleInformation)}>
         <section
           className=" grid grid-cols-2 
-          sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-start Information"
+          sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-10 items-center Information"
         >
           {formInputs?.map((field, i) => (
             <InputField
@@ -90,7 +105,7 @@ const PatientInformation = () => {
         >
           <div className="relative rounded-full bg-white border-2  w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 border-green-500 focus-within:border-green-500">
             <input
-              checked={hasBeforeAppointment}
+              defaultChecked={hasBeforeAppointment}
               type="checkbox"
               className="opacity-0 absolute rounded-full  cursor-pointer"
             />
@@ -120,10 +135,17 @@ const PatientInformation = () => {
               // disabled={signIn}
             />
         </div>
-        <div>
+        <div className="">
             <p className="text-brown">Date of birth</p>
-            <input className="border-2 border-light-brown bg-light-brown" type="date"/>
+            <input className="border-2 border-[#F9F6EE] bg-[#F9F6EE] outline-none w-full px-4 py-1 rounded-sm text-brown" type="date"/>
         </div>
+        <CustomSelect
+              setOpenSelectIndex={setOpenSelectIndex}
+              isOpen={openSelectIndex === 0}
+              toggleSelect={() => handleSelectToggle(0)}
+              height={40}
+              selectorDetails={genderSelector}
+            />
         </section>
        <button>SUbmit</button>
       </form>

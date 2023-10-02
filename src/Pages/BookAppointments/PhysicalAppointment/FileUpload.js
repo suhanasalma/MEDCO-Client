@@ -117,8 +117,8 @@ const deleteUploadFile = (name) => {
       </div>
       <div>
       <div className="mt-2 space-y-5 w-8/12 ">
-          {uplodedFiles?.map((file) => (
-            <div className="flex items-center gap-5 bg-light-brown px-2 py-1 rounded-md">
+          {uplodedFiles?.map((file,i) => (
+            <div key={i} className="flex items-center gap-5 bg-light-brown px-2 py-1 rounded-md">
               <AiFillFileText className="text-2xl" />
               <div className="flex justify-between items-center w-full">
               <div className="text-sm">
@@ -134,8 +134,8 @@ const deleteUploadFile = (name) => {
           ))}
         </div>
         <div className="mt-2 space-y-5 w-8/12 ">
-          {files?.map((file) => (
-            <div className="bg-light-brown p-2 rounded-md">
+          {files?.map((file,i) => (
+            <div key={i} className="bg-light-brown p-2 rounded-md">
               <div className="flex items-center gap-5 ">
                 <AiFillFileText className="text-2xl" />
                 <div className="flex justify-between items-center w-full">

@@ -4,10 +4,8 @@ import selectImage from "../../../Assests/Logo/selectimages.png";
 import { TbCircleCheckFilled ,TbCalendar} from "react-icons/tb";
 import DoctorListModal from "../DoctorListModal/DoctorListModal";
 import {departments,availableSlots,doctorList} from "../DepartmentSelect/departments";
-import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
 import DoctorSlotsModal from "../../../Components/ReactDayPicker/DoctorSlotsModal";
 import AppointmentSummery from "../../../Components/AppointmentSummery/AppointmentSummery";
-import Select from "react-select";
 import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 
 const TelemedicineAppointment = () => {
@@ -84,7 +82,7 @@ const TelemedicineAppointment = () => {
                 <span className=" text-light-gray">{textLength}/2000</span>
               </div>
               <p>
-                Attach a file{" "}
+                Attach a file
                 <span className="text-gray text-sm">(Optional)</span>
               </p>
               <div className="relative mt-5">

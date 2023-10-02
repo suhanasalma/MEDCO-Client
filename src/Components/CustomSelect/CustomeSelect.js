@@ -17,7 +17,7 @@ const CustomSelect = ({
   return (
     <div className={`${styles.customSelect} w-full`}>
       <div
-        className={`flex gap-2 items-center ${styles.selectSelected} ${
+        className={`flex gap-2 items-center  ${styles.selectSelected} ${
           isOpen ? styles.selectArrowActive : ""
         }`}
         onClick={toggleSelect}

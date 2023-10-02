@@ -1,18 +1,9 @@
 import React from "react";
 import "./PhysicalAppointment.css";
-import DepartmentSelect from "../DepartmentSelect/DepartmentSelect";
 import { useState } from "react";
-import { availableSlots, departments } from "../DepartmentSelect/departments";
-import DoctorSlotsModal from "../../../Components/ReactDayPicker/DoctorSlotsModal";
-import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
-import { TbCircleCheckFilled, TbCalendar } from "react-icons/tb";
-import FileUpload from "./FileUpload";
-import doctor from "../../../Assests/OurDoctors/6.jpg";
-import logo from "../../../Assests/Logo/MEDCO1.png";
-import styles from "../../../Components/DoctorCards/DoctorCard.module.css";
-import { AiFillClockCircle } from "react-icons/ai";
 import AppointmentDetails from "./AppointmentDetails";
 import PatientInformation from "./PatientInformation";
+import AppointmentSummery from "../../../Components/AppointmentSummery/AppointmentSummery";
 
 const PhysicalAppointment = () => {
   const [selectDepartment, setSelectDepartment] = useState("");
@@ -23,14 +14,7 @@ const PhysicalAppointment = () => {
   const [bookingSummery, setBookingSummery] = useState(false);
   const [textLength, setTextLength] = useState(0);
   const [recommendDoctor, setRecommendDoctor] = useState(true);
-
-  const handleSelectToggle = (index) => {
-    setOpenSelectIndex(index === openSelectIndex ? null : index);
-  };
-  const handleFileInput = (e) => {
-    let file = e.target.files[0];
-    console.log("file", file);
-  };
+  const [currentPage, setCurrentPage] = useState(1);
 
   const doctorSchedule = [
     {
@@ -45,27 +29,51 @@ const PhysicalAppointment = () => {
     },
   ];
 
+  const handleNextPage = () => {
+        setCurrentPage(currentPage + 1);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+  const handlePrevPage = () => {
+        setCurrentPage(currentPage - 1);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+  console.log("currentPage", currentPage);
+
   return (
-    <section className="shadow-sm rounded-md p-4">
+    <section className="shadow-sm rounded-md p-4 ">
       <div className="sm:w-10/12 lg:w-11/12 xl:w-10/12 mx-auto ">
-        <div className="step text-xs ">
+        <div className="step text-xs text-green font-medium">
           <div className="step__item" id="divStep1">
             <p className="step__item__text">Appointment Details</p>
-            <p className="step__item__number active">1</p>
+            <p
+              className={`step__item__number ${currentPage === 1 && "active"} `}
+            >
+              1
+            </p>
           </div>
           <div className="step__item " id="divStep2">
             <p className="step__item__text">Patient's information</p>
-            <p className="step__item__number">2</p>
+            <p
+              className={`step__item__number ${currentPage === 2 && "active"} `}
+            >
+              2
+            </p>
           </div>
           <div className="step__item" id="divStep3">
             <p className="step__item__text">Additional Services</p>
-            <p className="step__item__number">3</p>
+            <p
+              className={`step__item__number ${currentPage === 3 && "active"} `}
+            >
+              3
+            </p>
           </div>
         </div>
 
-        {/* <AppointmentDetails setShowDoctor ={setShowDoctor}
-            showDoctor ={showDoctor}
-            setRecommendDoctor = {setRecommendDoctor}
+        {currentPage === 1 && (
+          <AppointmentDetails
+            setShowDoctor={setShowDoctor}
+            showDoctor={showDoctor}
+            setRecommendDoctor={setRecommendDoctor}
             recommendDoctor={recommendDoctor}
             setSelectAppointmentDate={setSelectAppointmentDate}
             setOpenModal={setOpenModal}
@@ -74,13 +82,28 @@ const PhysicalAppointment = () => {
             doctorSchedule={doctorSchedule}
             openModal={openModal}
             bookingSummery={bookingSummery}
-            textLength={textLength}/> */}
-        <PatientInformation />
+            textLength={textLength}
+          />
+        )}
+        {currentPage === 2 && <PatientInformation />}
+        {currentPage === 3 && <AppointmentSummery/>}
       </div>
-     <div className="text-center flex items-center justify-center gap-10 mt-10"> 
-        <button className="bg-green text-white px-4 py-1 w-32 rounded-md">Back</button> 
-        <button className="bg-green text-white px-4 py-1 w-32 rounded-md">Next</button>
-     </div>
+      <div className="text-center flex items-center justify-center gap-10 mt-10">
+        {currentPage !== 1 && (
+          <button
+            onClick={handlePrevPage}
+            className="bg-green text-white px-4 py-1 w-32 rounded-md"
+          >
+            Back
+          </button>
+        )}
+        { currentPage !== 3 &&<button
+          onClick={handleNextPage}
+          className="bg-green text-white px-4 py-1 w-32 rounded-md"
+        >
+          Next
+        </button>}
+      </div>
     </section>
   );
 };
