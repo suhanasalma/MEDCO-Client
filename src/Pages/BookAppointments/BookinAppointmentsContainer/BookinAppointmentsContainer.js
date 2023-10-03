@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BreadCrumbs from "../../../Components/BreadCrumbs/BreadCrumbs";
 import TelemedicineAppointment from "../TelemedicineAppointment/TelemedicineAppointment";
 import PhysicalAppointment from "../PhysicalAppointment/PhysicalAppointment";
+import { Link } from "react-router-dom";
 
 
 const BookinAppointmentsContainer = () => {
@@ -25,22 +26,25 @@ const BookinAppointmentsContainer = () => {
           },
         ]}
       />
-      <section className="flex border-b-2 border-b-light-gray items-center mt-10">
+      <div className="flex justify-between items-center border-b-2 border-b-light-gray  mt-10">
+      <section className="flex items-center">
         <p
           onClick={handleTelemedicineAppointment}
-          className={`cursor-pointer px-14 py-2 text-white
+          className={`cursor-pointer px-4 sm:px-14 py-2 text-white text-sm sm:text-base
             ${telemedicineAppointment ? "bg-gray " : "bg-light-gray"}`}
         >
           Telemedicine Appointment
         </p>
         <p
           onClick={handleBookAppointment}
-          className={`cursor-pointer px-14 py-2 text-white
+          className={`cursor-pointer px-4 sm:px-14 py-2 text-white text-sm sm:text-base
             ${!telemedicineAppointment ? "bg-gray " : "bg-light-gray "} `}
         >
           Book Appointment
         </p>
       </section>
+      <Link className="text-brown font-medium hover:underline text-sm sm:text-base">Cancel or Manage Appointments</Link>
+      </div>
       {telemedicineAppointment ? <TelemedicineAppointment /> : <PhysicalAppointment />}
     </div>
   );

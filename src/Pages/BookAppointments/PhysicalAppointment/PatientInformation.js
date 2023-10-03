@@ -139,6 +139,8 @@ const PatientInformation = () => {
             <p className="text-brown">Date of birth</p>
             <input className="border-2 border-[#F9F6EE] bg-[#F9F6EE] outline-none w-full px-4 py-1 rounded-sm text-brown" type="date"/>
         </div>
+        <div>
+        <p className="text-brown">Gender</p>
         <CustomSelect
               setOpenSelectIndex={setOpenSelectIndex}
               isOpen={openSelectIndex === 0}
@@ -146,6 +148,8 @@ const PatientInformation = () => {
               height={40}
               selectorDetails={genderSelector}
             />
+        </div>
+        
         </section>
        <button>SUbmit</button>
       </form>
