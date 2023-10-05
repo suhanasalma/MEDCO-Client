@@ -38,7 +38,7 @@ const RecommendedPackages = () => {
         />
         <p className="text-gray text-sm md:w-8/12 lg:w-8/12 mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio necessitatibus ipsum quidem ut? Libero possimus placeat unde enim consequatur quis numquam itaque ut illo? Officiis assumenda modi facilis sed optio incidunt ipsa aspernatur consequuntur amet laboriosam. Velit eaque voluptates dignissimos, deserunt ipsam praesentium, commodi a eos reprehenderit nemo ipsa?</p>
       </div>
-      <div className=" md:flex container mx-auto mt-10  xl:justify-between md:justify-center xl:flex-nowrap md:flex-wrap grid sm:grid-cols-2 grid-cols-1 justify-items-center ">
+      <div className=" md:flex container mx-auto mt-10  xl:justify-between md:justify-center xl:flex-nowrap md:flex-wrap grid sm:grid-cols-2 grid-cols-1 gap-10 justify-items-center ">
         {specialPackage?.map((pack, i) => (
           <RecommendedPackage key={i} pack={pack} />
         ))}

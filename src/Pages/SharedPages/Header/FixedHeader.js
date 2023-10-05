@@ -3,13 +3,15 @@ import logo from "../../../Assests/Logo/MEDCO1.png";
 import {
   TbBell,
   TbUserPlus,
-  TbShoppingCartDiscount,
   TbSunFilled,
   TbMoonStars,
   TbLogin,
   TbLayoutDashboard,
   TbArrowsCross,
 } from "react-icons/tb";
+import {
+    BiMessageDetail
+} from "react-icons/bi";
 import { VscThreeBars } from "react-icons/vsc";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -136,7 +138,7 @@ const FixedHeader = () => {
             }`
           }
         >
-          <TbShoppingCartDiscount className="text-2xl " />
+          <BiMessageDetail className="text-2xl " />
           {notification > 0 && (
             <p className="bg-green rounded-full w-3 h-3  text-sm text-center font-bold absolute bottom-4 right-0"></p>
           )}

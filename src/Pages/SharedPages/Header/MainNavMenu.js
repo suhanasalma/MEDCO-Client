@@ -82,7 +82,7 @@ const MainNavMenu = () => {
           }`
         }
       >
-        DashBoard
+        Patient Services
       </NavLink>
     </div>
   );
