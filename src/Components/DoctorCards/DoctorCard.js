@@ -12,8 +12,9 @@ import {
     useQuery,
   } from 'react-query'
 import AppointmentType from "./AppointmentType";
+import DoctorDetails from "../DoctorDetails/DoctorDetails";
 
-const DoctorCard = ({setAppointmentSummeryPage}) => {
+const DoctorCard = ({setAppointmentSummeryPage,setDoctorDetails,doctorDetails}) => {
   const [seeAppointment, setSeeAppointment] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [appointType, setAppointType] = useState(false);
@@ -44,7 +45,7 @@ const DoctorCard = ({setAppointmentSummeryPage}) => {
             <p className="text-green font-medium text-sm">Medicine Specialist</p>
             <p className="text-sm font-light">ID: 20232108</p>
         </div>
-        <div className="p-3 bg-green text-center text-white cursor-pointer">
+        <div onClick={()=>setDoctorDetails(true)} className="p-3 bg-green text-center text-white cursor-pointer">
             <p>View Profile</p>
         </div>
         <div className="flex justify-between items-start gap-5 pt-4 px-4 text-xl text-green relative mt-2 py-5">
@@ -95,7 +96,6 @@ const DoctorCard = ({setAppointmentSummeryPage}) => {
        {openModal &&
         <DoctorSlotsModal setAppointmentSummeryPage={setAppointmentSummeryPage} buttonName = "Book Appointment" bookingSummery={bookingSummery} setSelectAppointmentDate={setSelectedDate} openModal={openModal} setOpenModal={setOpenModal} availableSlots={data.availableSlots}/>
        }
-      
        </div>
        
     </div>

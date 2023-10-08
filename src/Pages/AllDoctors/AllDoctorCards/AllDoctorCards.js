@@ -1,7 +1,7 @@
 import React from "react";
 import DoctorCard from "../../../Components/DoctorCards/DoctorCard";
 import { useState } from "react";
-const AllDoctorCards = ({setAppointmentSummeryPage}) => {
+const AllDoctorCards = ({setAppointmentSummeryPage,setDoctorDetails,doctorDetails}) => {
 
   return (
     <div className="min-h-fit max-h-screen overflow-auto">
@@ -20,7 +20,8 @@ const AllDoctorCards = ({setAppointmentSummeryPage}) => {
                 "#af976d",
                 "#2c4c3b",
                 "blue",
-                ].map((item,i)=><DoctorCard key={i} setAppointmentSummeryPage={setAppointmentSummeryPage}/>)
+                ].map((item,i)=><DoctorCard setDoctorDetails={setDoctorDetails}
+                doctorDetails={doctorDetails} key={i} setAppointmentSummeryPage={setAppointmentSummeryPage}/>)
             }
         </div>
     </div>

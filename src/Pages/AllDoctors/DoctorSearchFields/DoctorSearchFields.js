@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { TfiSearch } from "react-icons/tfi";
 import { countries } from "./InformationLists";
-import './doctorSearchFields.css'
+import "./doctorSearchFields.css";
 import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 
-const DoctorSearchFields = () => {
+const DoctorSearchFields = ({filterOptions}) => {
   const [minPriceRange, setMinPriceRange] = useState(500);
   const [maxPriceRange, setMaxPriceRange] = useState(5000);
   const [step, setStep] = useState(500);
@@ -33,7 +33,7 @@ const DoctorSearchFields = () => {
     right: `${100 - ((maxPriceRange - step) / dynamicMaxValue) * 100}%`,
   };
   return (
-    <div className="md:w-4/12 xl:w-3/12  min-h-fit max-h-screen overflow-auto">
+    <div className={`${filterOptions?"":"hidden md:block"} md:w-4/12 xl:w-3/12  min-h-fit max-h-screen overflow-auto`}>
       <div className="space-y-10 px-5 py-10 text-gray font-semibold w-full grid grid-cols-1 sm:block">
         <div className="">
           <p className="text-gray font-semibold text-xl mb-2">
@@ -140,29 +140,52 @@ const DoctorSearchFields = () => {
         </div>
         <div className="space-y-1">
           <p>Country</p>
-          <SelectOptions options={countries} isMulti={false} closeMenuOnSelect={true}/>
+          <SelectOptions
+            options={countries}
+            isMulti={false}
+            closeMenuOnSelect={true}
+          />
         </div>
         <div className="space-y-1">
           <p>District/State</p>
-          <SelectOptions options={countries} isMulti={false} closeMenuOnSelect={true}/>
-          
+          <SelectOptions
+            options={countries}
+            isMulti={false}
+            closeMenuOnSelect={true}
+          />
         </div>
         <div className="space-y-1">
           <p>Speciality</p>
-         
-          <SelectOptions options={countries} isMulti={true} closeMenuOnSelect={false}/>
+
+          <SelectOptions
+            options={countries}
+            isMulti={true}
+            closeMenuOnSelect={false}
+          />
         </div>
         <div className="space-y-1">
           <p>Qualifications</p>
-          <SelectOptions options={countries} isMulti={true} closeMenuOnSelect={false}/>
+          <SelectOptions
+            options={countries}
+            isMulti={true}
+            closeMenuOnSelect={false}
+          />
         </div>
         <div className="space-y-1">
           <p>Departments</p>
-          <SelectOptions options={countries} isMulti={true} closeMenuOnSelect={false}/>
+          <SelectOptions
+            options={countries}
+            isMulti={true}
+            closeMenuOnSelect={false}
+          />
         </div>
         <div className="space-y-1">
           <p>Hospitals</p>
-             <SelectOptions options={countries} isMulti={true} closeMenuOnSelect={false}/>
+          <SelectOptions
+            options={countries}
+            isMulti={true}
+            closeMenuOnSelect={false}
+          />
         </div>
       </div>
     </div>
