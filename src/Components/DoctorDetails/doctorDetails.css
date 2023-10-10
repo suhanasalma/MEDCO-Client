@@ -1,0 +1,16 @@
+.appointmentCard{
+    /* position: relative; */
+}
+
+.appointmentCard::after{
+    position: absolute;
+    top: -15px;
+    left: 0;
+    content: '';
+    background: #2c4c3b;
+    height: 20px;
+    width: 20px;
+    aspect-ratio: 1;
+    clip-path: polygon(93.30% 75.00%,6.70% 75.00%,50.00% 0.00%);
+}
+

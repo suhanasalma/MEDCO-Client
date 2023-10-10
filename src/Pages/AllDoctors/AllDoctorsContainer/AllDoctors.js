@@ -58,7 +58,7 @@ const AllDoctors = () => {
             >
               Search Doctor <MdOutlineExpandMore className={`text-2xl duration-300 transition-all ease-in-out ${filterOptions?" rotate-0":"rotate-180 "} `}/>
             </p>
-            <DoctorSearchFields filterOptions={filterOptions} />
+            <DoctorSearchFields doctorDetails={doctorDetails} filterOptions={filterOptions} />
             <AllDoctorCards
               setDoctorDetails={setDoctorDetails}
               doctorDetails={doctorDetails}
@@ -69,10 +69,9 @@ const AllDoctors = () => {
                 backgroundColor: "rgba(0, 0, 0, 0.2)",
               }}
               className={`fixed top-0 transition-all w-full duration-700 ease-in-out ${
-                doctorDetails ? "right-0" : "right-[-2000px]"
+                doctorDetails ? "right-0" : "right-[-5000px]"
               }`}
             >
-              {" "}
               <DoctorDetails setDoctorDetails={setDoctorDetails} />
             </div>
           </section>

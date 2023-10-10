@@ -4,7 +4,7 @@ import { countries } from "./InformationLists";
 import "./doctorSearchFields.css";
 import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 
-const DoctorSearchFields = ({filterOptions}) => {
+const DoctorSearchFields = ({filterOptions,doctorDetails}) => {
   const [minPriceRange, setMinPriceRange] = useState(500);
   const [maxPriceRange, setMaxPriceRange] = useState(5000);
   const [step, setStep] = useState(500);
@@ -33,7 +33,7 @@ const DoctorSearchFields = ({filterOptions}) => {
     right: `${100 - ((maxPriceRange - step) / dynamicMaxValue) * 100}%`,
   };
   return (
-    <div className={`${filterOptions?"":"hidden md:block"} md:w-4/12 xl:w-3/12  min-h-fit max-h-screen overflow-auto`}>
+    <div className={`${filterOptions?"":"hidden md:block"} ${doctorDetails?" pointer-events-none":" pointer-events-auto"} md:w-4/12 xl:w-3/12  min-h-fit max-h-screen overflow-auto`}>
       <div className="space-y-10 px-5 py-10 text-gray font-semibold w-full grid grid-cols-1 sm:block">
         <div className="">
           <p className="text-gray font-semibold text-xl mb-2">

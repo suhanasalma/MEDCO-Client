@@ -4,7 +4,7 @@ import { useState } from "react";
 const AllDoctorCards = ({setAppointmentSummeryPage,setDoctorDetails,doctorDetails}) => {
 
   return (
-    <div className="min-h-fit max-h-screen overflow-auto">
+    <div className={`${doctorDetails?" pointer-events-none":" pointer-events-auto"} min-h-fit max-h-screen overflow-auto`}>
         <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 justify-items-center	select_doctor gap-5">
             {
                 [
