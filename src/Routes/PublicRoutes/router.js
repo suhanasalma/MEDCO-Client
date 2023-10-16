@@ -8,7 +8,7 @@ import ConditionsAndTreatments from "../../Pages/ConditionsAndTreatments/Conditi
 import BookinAppointmentsContainer from "../../Pages/BookAppointments/BookinAppointmentsContainer/BookinAppointmentsContainer";
 import AppointmentSummery from "../../Components/AppointmentSummery/AppointmentSummery";
 import AllDoctors from "../../Pages/AllDoctors/AllDoctorsContainer/AllDoctors";
-import DoctorDetails from "../../Components/DoctorDetails/DoctorDetails";
+import ContactUsContainer from "../../Pages/ContactUs/ContactUsContainer/ContactUsContainer";
 
 export const router = createBrowserRouter([
     {
@@ -52,8 +52,8 @@ export const router = createBrowserRouter([
                 element: <AllDoctors />,
             },
             {
-                path: "/details",
-                element: <DoctorDetails />,
+                path: "/ContactUs",
+                element: <ContactUsContainer />,
             },
         ],
     },

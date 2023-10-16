@@ -55,7 +55,7 @@ const MainNavMenu = () => {
         Book Appointment
       </NavLink>
       <NavLink
-        to="/"
+        to="/ContactUs"
         className={({ isActive }) =>
           `text-sm  flex items-center gap-2 ${
             isActive ? "text-brown font-bold" : "text-green"

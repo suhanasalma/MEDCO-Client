@@ -102,7 +102,7 @@ const deleteUploadFile = (name) => {
       <div className="w-full mt-2 text-sm text-light-gray">
         <label
           onChange={uploadFile}
-          className={`${uploading?"bg-light-gray border-2 w-full border-light-gray pl-2 flex justify-between items-center text-green":"border-2 w-full border-light-gray pl-2 flex justify-between items-center"} rounded-md`}
+          className={`${uploading?"bg-light-gray border-2 w-full border-light-gray pl-2 flex justify-between items-center text-green":"border-2 w-full border-light-gray pl-2 flex justify-between items-center"} rounded-sm`}
         >
          {uploading?"uploading..." :"Choose file..."}
           <input  

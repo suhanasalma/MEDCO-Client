@@ -5,7 +5,7 @@ import DoctorSlotsModal from "../../../Components/ReactDayPicker/DoctorSlotsModa
 import DoctorDetails from "../../../Components/DoctorDetails/DoctorDetails.js";
 import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 import { TbCircleCheckFilled, TbCalendar } from "react-icons/tb";
-import FileUpload from "./FileUpload";
+import FileUpload from "../../../Components/FileUpload/FileUpload";
 import doctor from "../../../Assests/OurDoctors/6.jpg";
 import logo from "../../../Assests/Logo/MEDCO1.png";
 import { AiFillClockCircle } from "react-icons/ai";
