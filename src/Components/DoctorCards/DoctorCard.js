@@ -7,14 +7,12 @@ import { Link } from "react-router-dom";
 import styles from "./DoctorCard.module.css";
 import DoctorSlotsModal from "../ReactDayPicker/DoctorSlotsModal";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
 import {
     useQuery,
   } from 'react-query'
 import AppointmentType from "./AppointmentType";
-import DoctorDetails from "../DoctorDetails/DoctorDetails";
 
-const DoctorCard = ({setAppointmentSummeryPage,setDoctorDetails,doctorDetails}) => {
+const DoctorCard = ({setAppointmentSummeryPage,setSeeDoctorDetails,seeDoctorDetails}) => {
   const [seeAppointment, setSeeAppointment] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [appointType, setAppointType] = useState(false);
@@ -45,7 +43,7 @@ const DoctorCard = ({setAppointmentSummeryPage,setDoctorDetails,doctorDetails}) 
             <p className="text-green font-medium text-sm">Medicine Specialist</p>
             <p className="text-sm font-light">ID: 20232108</p>
         </div>
-        <div onClick={()=>setDoctorDetails(true)} className="p-3 bg-green text-center text-white cursor-pointer">
+        <div onClick={()=>setSeeDoctorDetails(true)} className="p-3 bg-green text-center text-white cursor-pointer">
             <p>View Profile</p>
         </div>
         <div className="flex justify-between items-start gap-5 pt-4 px-4 text-xl text-green relative mt-2 py-5">
