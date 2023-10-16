@@ -8,10 +8,10 @@ import { MdOutlineExpandMore } from "react-icons/md";
 
 const AllDoctors = () => {
   const [appointmentSummeryPage, setAppointmentSummeryPage] = useState(false);
-  const [doctorDetails, setDoctorDetails] = useState(false);
+  const [seeDoctorDetails, setSeeDoctorDetails] = useState(false);
   const [filterOptions, setFilterOptions] = useState(false);
   useEffect(() => {
-    if (doctorDetails) {
+    if (seeDoctorDetails) {
       // Prevent scrolling of the page when the modal is open
       document.body.style.overflow = "hidden";
     } else {
@@ -23,7 +23,7 @@ const AllDoctors = () => {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [doctorDetails]);
+  }, [seeDoctorDetails]);
   return (
     <div className={`my-5 w-11/12 2xl:w-10/12 mx-auto`}>
       <BreadCrumbs
@@ -58,10 +58,10 @@ const AllDoctors = () => {
             >
               Search Doctor <MdOutlineExpandMore className={`text-2xl duration-300 transition-all ease-in-out ${filterOptions?" rotate-0":"rotate-180 "} `}/>
             </p>
-            <DoctorSearchFields doctorDetails={doctorDetails} filterOptions={filterOptions} />
+            <DoctorSearchFields doctorDetails={seeDoctorDetails} filterOptions={filterOptions} />
             <AllDoctorCards
-              setDoctorDetails={setDoctorDetails}
-              doctorDetails={doctorDetails}
+              setSeeDoctorDetails={setSeeDoctorDetails}
+              seeDoctorDetails={seeDoctorDetails}
               setAppointmentSummeryPage={setAppointmentSummeryPage}
             />
             <div
@@ -69,10 +69,10 @@ const AllDoctors = () => {
                 backgroundColor: "rgba(0, 0, 0, 0.2)",
               }}
               className={`fixed top-0 transition-all w-full duration-700 ease-in-out ${
-                doctorDetails ? "right-0" : "right-[-5000px]"
+                seeDoctorDetails ? "right-0" : "right-[-5000px]"
               }`}
             >
-              <DoctorDetails setDoctorDetails={setDoctorDetails} />
+              <DoctorDetails setSeeDoctorDetails={setSeeDoctorDetails} />
             </div>
           </section>
         </>

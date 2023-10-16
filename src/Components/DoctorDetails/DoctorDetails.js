@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import doctorImage from "../../Assests/OurDoctors/1.jpg";
 import { FcSurvey, FcVideoCall, FcCallback, FcComments } from "react-icons/fc";
 import {FaNotesMedical } from "react-icons/fa";
@@ -17,16 +17,18 @@ import { GiDoctorFace } from "react-icons/gi";
 import { BsArrowRight } from "react-icons/bs";
 import { AiOutlineClose ,AiOutlineCloseSquare} from "react-icons/ai";
 import "./doctorDetails.css";
-const DoctorDetails = ({ setDoctorDetails }) => {
+const DoctorDetails = ({ setSeeDoctorDetails ,seeDoctorDetails}) => {
   const [makeAppointment, setMakeAppointment] = useState(false);
   const [physicalAppointmentVisible, setPhysicalAppointmentVisible] =
     useState(false);
   const [telemedicineAppointmentVisible, setTelemedicineAppointmentVisible] =
     useState(false);
+
   return (
+
     <div className="z-[1000] bg-white h-screen overflow-auto w-11/12 sm:w-9/12 ml-auto ">
       <p className="p-4" >
-      <AiOutlineCloseSquare onClick={() => setDoctorDetails(false)} className="text-xl text-green font-bold shadow-lg cursor-pointer"/>      </p>
+      <AiOutlineCloseSquare onClick={() => setSeeDoctorDetails(false)} className="text-xl text-green font-bold shadow-lg cursor-pointer"/>      </p>
       <section>
         <div className="flex flex-col lg:flex-row items-center justify-between xl:justify-around bg-brown sm:p-20 pb-40 p-5">
           <img
