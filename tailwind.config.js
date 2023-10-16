@@ -11,6 +11,7 @@ module.exports = {
       "light-brown": "#d7ccb7",
       gray: "#646569",
       "light-gray": "#D3D3D3",
+      "soft-gray": "#f2f3f4",
       "soft_black":"#3b444b"
     },
     extend: {},

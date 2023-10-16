@@ -1,24 +1,32 @@
 import React, { useState } from "react";
 import doctorImage from "../../Assests/OurDoctors/1.jpg";
 import { FcSurvey, FcVideoCall, FcCallback, FcComments } from "react-icons/fc";
+import {FaNotesMedical } from "react-icons/fa";
+import { TbCertificate } from "react-icons/tb";
+
 import {
   RiVideoChatLine,
   RiCommunityLine,
   RiMailDownloadLine,
   RiPhoneLine,
 } from "react-icons/ri";
+import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
+
 import { GiDoctorFace } from "react-icons/gi";
 
 import { BsArrowRight } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose ,AiOutlineCloseSquare} from "react-icons/ai";
 import "./doctorDetails.css";
 const DoctorDetails = ({ setDoctorDetails }) => {
   const [makeAppointment, setMakeAppointment] = useState(false);
+  const [physicalAppointmentVisible, setPhysicalAppointmentVisible] =
+    useState(false);
+  const [telemedicineAppointmentVisible, setTelemedicineAppointmentVisible] =
+    useState(false);
   return (
     <div className="z-[1000] bg-white h-screen overflow-auto w-11/12 sm:w-9/12 ml-auto ">
-      <p className="py-2" onClick={() => setDoctorDetails(false)}>
-        X
-      </p>
+      <p className="p-4" >
+      <AiOutlineCloseSquare onClick={() => setDoctorDetails(false)} className="text-xl text-green font-bold shadow-lg cursor-pointer"/>      </p>
       <section>
         <div className="flex flex-col lg:flex-row items-center justify-between xl:justify-around bg-brown sm:p-20 pb-40 p-5">
           <img
@@ -57,10 +65,7 @@ const DoctorDetails = ({ setDoctorDetails }) => {
               onClick={() => setMakeAppointment(!makeAppointment)}
               className="bg-green hover:text-green font-medium btn text-white px-5 sm:px-10 py-2 rounded-md flex items-center justify-between gap-2"
             >
-              <button>
-                Make an appointment
-               
-              </button>
+              <button>Make an appointment</button>
               {!makeAppointment ? <BsArrowRight /> : <AiOutlineClose />}
             </div>
 
@@ -71,30 +76,28 @@ const DoctorDetails = ({ setDoctorDetails }) => {
                 </p>
                 <div className="border-b-2  border-b-light-gray py-2 px-4 text-brown flex items-center gap-2 cursor-pointer">
                   <RiPhoneLine className="text-2xl" />
-                  <div>
+                  <div className="text-left">
                     <p>By Phone</p>
                     <p>01515332</p>
                   </div>
                 </div>
                 <div className="border-b-2 border-b-light-gray py-2 px-4 text-brown flex items-center gap-2 cursor-pointer">
                   <RiMailDownloadLine className="text-2xl" />
-                  <div>
-                    {" "}
+                  <div className="text-left">
                     <p>By Email</p>
                     <p>dr@gmail.com</p>
                   </div>
                 </div>
                 <div className="border-b-2 border-b-light-gray py-2 px-4 text-brown flex items-center gap-2 cursor-pointer">
                   <RiVideoChatLine className="text-2xl" />
-                  <div>
-                    {" "}
+                  <div className="text-left">
                     <p>Telemedicine Appointment</p>
                     <p>01515332</p>
                   </div>
                 </div>
                 <div className="py-2 px-4 text-brown flex items-center gap-2 cursor-pointer">
                   <RiCommunityLine className="text-2xl" />
-                  <div>
+                  <div className="text-left">
                     <p>Physical Appointment</p>
                     <p>dr@gmail.com</p>
                   </div>
@@ -142,17 +145,184 @@ const DoctorDetails = ({ setDoctorDetails }) => {
           </div>
         </div>
       </section>
-      <section className="w-9/12 mx-auto my-10">
+      <section className="w-11/12 mx-auto my-10">
         <p className="sm:text-xl text-brown font-medium">
-          CONSULTATION HOURS AT THE AMERICAN HOSPITAL OF PARIS
+          CONSULTATION HOURS FOR
         </p>
 
-        <div>
-          <p className="sm:text-lg text-brown font-medium">For Telemedicine</p>
+        <div className="my-5">
+          <p
+            onClick={() =>
+              setTelemedicineAppointmentVisible(!telemedicineAppointmentVisible)
+            }
+            className="sm:text-lg text-green font-medium flex items-center gap-5 cursor-pointer"
+          >
+            For Telemedicine
+            {telemedicineAppointmentVisible ? <RxEyeOpen /> : <RxEyeNone />}
+          </p>
+          <div
+            className={`${
+              telemedicineAppointmentVisible ? "" : "hidden"
+            } grid grid-cols-1 md:grid-cols-2 gap-10 lg:hidden`}
+          >
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
+              <div key={i} className="shadow-md p-5 border-2 border-soft-gray text-gray font-semibold">
+                <p className="">Date: 15th AUG</p>
+                <p>Day: Sun</p>
+
+                <div className="">
+                  <p>Time:</p>
+                  <div className="grid grid-cols-2 gap-5">
+                    <p className="bg-gray text-white p-1 rounded-sm">
+                      10:00 - 10:30
+                    </p>
+                    <p className="bg-gray text-white p-1 rounded-sm">
+                      10:30 - 11:00
+                    </p>
+                    <p className="bg-gray text-white p-1 rounded-sm">
+                      10:00 - 10:30
+                    </p>
+                    <p className="bg-gray text-white p-1 rounded-sm">
+                      10:30 - 11:00
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden lg:block">
+            <table className="w-full">
+              <thead className="bg-light-gray border-b-2 border-gray">
+                <tr className="">
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left flex items-center gap-2">
+                    Date
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Day
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Time
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className={`${telemedicineAppointmentVisible ? "" : "hidden"}`}
+              >
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
+                  <tr
+                    key={i}
+                    className={`${
+                      i === 0 || i % 2 === 0 ? "bg-soft-gray" : ""
+                    }`}
+                  >
+                    <td className="p-3 text-sm text-gray">15th AUG</td>
+                    <td className="p-3 text-sm text-gray">SUN</td>
+                    <td className="p-3 text-sm text-gray flex items-center justify-between gap-5">
+                      <p className="bg-gray text-white p-1 rounded-sm">
+                        10:00 - 10:30
+                      </p>
+                      <p className="bg-gray text-white p-1 rounded-sm">
+                        10:30 - 11:00
+                      </p>
+                      <p className="bg-gray text-white p-1 rounded-sm">
+                        10:00 - 10:30
+                      </p>
+                      <p className="bg-gray text-white p-1 rounded-sm">
+                        10:30 - 11:00
+                      </p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div>
-          <p>Physical Appointment</p>
+          <p
+            onClick={() =>
+              setPhysicalAppointmentVisible(!physicalAppointmentVisible)
+            }
+            className="sm:text-lg text-green font-medium cursor-pointer flex items-center gap-5"
+          >
+            Physical Appointment
+            {physicalAppointmentVisible ? <RxEyeOpen /> : <RxEyeNone />}
+          </p>
+          <div
+            className={`${
+              physicalAppointmentVisible ? "" : "hidden"
+            } grid grid-cols-1 md:grid-cols-2 gap-10 lg:hidden`}
+          >
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
+              <div key={i} className="shadow-md p-5 border-2 border-soft-gray text-gray font-semibold">
+                <p>Date: 15th AUG</p>
+                <p>Day: Sun</p>
+                <p>Bangladesh Hospital: 09:00 - 12:00</p>
+              </div>
+            ))}
+          </div>
+          <div className="hidden lg:block">
+            <table className="w-full">
+              <thead className="bg-light-gray border-b-2 border-gray">
+                <tr className="cursor-pointer">
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left flex items-center gap-2">
+                    Date
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Day
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Bangladesh Hospital
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Sheikh Mujib Medical Hospital
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Bangladesh Hospital
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Sheikh Mujib Medical Hospital
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className={`${physicalAppointmentVisible ? "" : "hidden"}`}
+              >
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
+                  <tr
+                    key={i}
+                    className={`${
+                      i === 0 || i % 2 === 0 ? "bg-[#f2f3f4]" : ""
+                    }`}
+                  >
+                    <td className="p-3 text-sm text-gray">15th AUG</td>
+                    <td className="p-3 text-sm text-gray">Sun</td>
+                    <td className="p-3 text-sm text-gray">09:00 - 12:00</td>
+                    <td className="p-3 text-sm text-gray">--</td>
+                    <td className="p-3 text-sm text-gray">09:00 - 12:00</td>
+                    <td className="p-3 text-sm text-gray">--</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+      </section>
+      <section className="w-11/12 mx-auto my-10">
+        <p className="sm:text-xl text-brown font-medium">CLINICAL EXPERTISE & SERVICES OFFERED:</p>
+        <ul>
+            {
+              [0,1,2,3,4].map((item,i)=><li key={i} className="font-semibold text-gray text-sm flex items-center gap-2"><FaNotesMedical className="text-green"/>Ear Tubes (Grommets)</li>)  
+            }
+        </ul>
+      </section>
+      <section className="w-11/12 mx-auto my-10">
+        <p className="sm:text-xl text-brown font-medium">PROFESSIONAL EXPERIENCE:</p>
+        <ul>
+            {
+              [0,1,2,3,4].map((item,i)=><li key={i} className="font-semibold text-gray text-sm flex items-center gap-2"><TbCertificate className="text-green"/>ENT Consultant , Albertus- Centre, Germany</li>)  
+            }
+        </ul>
       </section>
     </div>
   );
