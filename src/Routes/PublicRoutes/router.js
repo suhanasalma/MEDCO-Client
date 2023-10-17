@@ -9,6 +9,8 @@ import BookinAppointmentsContainer from "../../Pages/BookAppointments/BookinAppo
 import AppointmentSummery from "../../Components/AppointmentSummery/AppointmentSummery";
 import AllDoctors from "../../Pages/AllDoctors/AllDoctorsContainer/AllDoctors";
 import ContactUsContainer from "../../Pages/ContactUs/ContactUsContainer/ContactUsContainer";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
+import DashboardLayout from "../../LayOut/DashboardLayout/DashboardLayout";
 
 export const router = createBrowserRouter([
     {
@@ -54,6 +56,17 @@ export const router = createBrowserRouter([
             {
                 path: "/ContactUs",
                 element: <ContactUsContainer />,
+            },
+           
+        ],
+    },
+    {
+        path: "/dashboard",
+        element: <DashboardLayout />,
+        children: [
+            {
+                path: "/dashboard",
+                element: <Dashboard />,
             },
         ],
     },

@@ -175,14 +175,14 @@ const FixedHeader = () => {
           </li>
           <li>
             <NavLink
-              to="/"
+              to="/dashboard"
               className={({ isActive }) =>
                 `text-sm font-bold flex items-center gap-2 ${
                   isActive ? "text-brown" : "text-green"
                 }`
               }
             >
-              <TbLayoutDashboard /> DashBoard
+              <TbLayoutDashboard /> Dashboard
             </NavLink>
           </li>
         </ul>
