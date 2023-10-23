@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import doctor from "../../Assests/OurDoctors/6.jpg";
-import logo from "../../Assests/Logo/MEDCO1.png";
+import logo from "../../Assests/Logo/MEDCO2.png";
 import { VscCallOutgoing, VscCalendar } from "react-icons/vsc";
 import { FaRegComments } from "react-icons/fa";
 import { Link } from "react-router-dom";

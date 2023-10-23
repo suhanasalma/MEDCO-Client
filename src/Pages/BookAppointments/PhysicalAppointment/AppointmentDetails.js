@@ -7,7 +7,7 @@ import SelectOptions from "../../../Components/SelectOptions/SelectOptions";
 import { TbCircleCheckFilled, TbCalendar } from "react-icons/tb";
 import FileUpload from "../../../Components/FileUpload/FileUpload";
 import doctor from "../../../Assests/OurDoctors/6.jpg";
-import logo from "../../../Assests/Logo/MEDCO1.png";
+import logo from "../../../Assests/Logo/MEDCO2.png";
 import { AiFillClockCircle } from "react-icons/ai";
 const AppointmentDetails = ({
   setShowDoctor,

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import logo from "../../../Assests/Logo/MEDCO1.png";
+import logo from "../../../Assests/Logo/MEDCO2.png";
 import {
   TbBell,
   TbUserPlus,
