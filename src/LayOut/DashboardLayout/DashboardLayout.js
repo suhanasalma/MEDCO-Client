@@ -6,7 +6,6 @@ const DashboardLayout = () => {
   return (
     <div className="flex">
       <DashboardMenus />
-
       <div className="bg-soft-gray flex-1">
         <Outlet />
       </div>
