@@ -18,6 +18,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import DataTable from 'react-data-table-component';
+
 
 const Dashboard = () => {
   const cardsInfo = [
@@ -57,22 +59,22 @@ const Dashboard = () => {
 
   const chartData = [
     {
-      name: "January",
+      name: "Jan",
       Male: 4000,
       Female: 2400,
     },
     {
-      name: "February",
+      name: "Feb",
       Male: 3000,
       Female: 1398,
     },
     {
-      name: "March",
+      name: "Mar",
       Male: 2000,
       Female: 9800,
     },
     {
-      name: "April",
+      name: "Apr",
       Male: 2780,
       Female: 3908,
     },
@@ -82,42 +84,64 @@ const Dashboard = () => {
       Female: 4800,
     },
     {
-      name: "June",
+      name: "Jun",
       Male: 2390,
       Female: 3800,
     },
     {
-      name: "July",
+      name: "Jul",
       Male: 3490,
       Female: 4300,
     },
     {
-      name: "August",
+      name: "Aug",
       Male: 3490,
       Female: 4300,
     },
     {
-      name: "September",
+      name: "Sep",
       Male: 3490,
       Female: 4300,
     },
     {
-      name: "October",
+      name: "Oct",
       Male: 3490,
       Female: 4300,
     },
     {
-      name: "November",
+      name: "Nov",
       Male: 3490,
       Female: 4300,
     },
     {
-      name: "December",
+      name: "Dec",
       Male: 3490,
       Female: 4300,
     },
   ];
+  const columns = [
+    {
+        name: 'Title',
+        selector: row => row.title,
+    },
+    {
+        name: 'Year',
+        selector: row => row.year,
+    },
+];
 
+const data = [
+    {
+        id: 1,
+        title: 'Beetlejuice',
+        year: '1988',
+    },
+    {
+        id: 2,
+        title: 'Ghostbusters',
+        year: '1984',
+    },
+]
   return (
     <div className="px-5">
       <div className="bg-green h-32 w-[50%] flex justify-around items-center mt-20 rounded-md">
@@ -153,7 +177,7 @@ const Dashboard = () => {
           </div>
           <div className="bg-white p-5">
             <div className="flex items-center justify-between">
-              <p>Patient Overview</p>
+              <p className="text-soft-black font-semibold">Patient Overview</p>
               <div className="flex items-center justify-between gap-5">
                 <div className="w-40">
                   <SelectOptions options={overviewMonths} />
@@ -161,10 +185,8 @@ const Dashboard = () => {
                 <FaEllipsisH />
               </div>
             </div>
-            <div>
-              <p>Male</p>
-              <p>Female</p>
-              <ResponsiveContainer width="100%" height="100%">
+            <div className="mt-10">
+              <ResponsiveContainer width="100%" aspect={3}>
                 <LineChart
                   width={500}
                   height={300}
@@ -177,20 +199,30 @@ const Dashboard = () => {
                   }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
+                  <XAxis
+                    dataKey="name"
+                    tick={{ stroke: "#D3D3D3", strokeWidth: 0.1 }}
+                  />
+                  <YAxis tick={{ stroke: "#D3D3D3", strokeWidth: 0.1 }} />
                   <Tooltip />
                   <Legend />
                   <Line
                     type="monotone"
                     dataKey="Female"
-                    stroke="#8884d8"
+                    stroke="#2c4c3b"
+                    strokeWidth="2"
                     activeDot={{ r: 8 }}
                   />
-                  <Line type="monotone" dataKey="Male" stroke="#82ca9d" />
+                  <Line type="monotone" dataKey="Male" stroke="#af976d" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
+          </div>
+          <div>
+          <DataTable
+            columns={columns}
+            data={data}
+        />
           </div>
         </section>
         <section>this is 2nd section og</section>
