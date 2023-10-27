@@ -127,7 +127,7 @@ const DashboardRightSide = () => {
         </div>
         <div className="mt-10">
           <ResponsiveContainer width="100%" aspect={3}>
-            <PieChart width={400} height={400}>
+            <PieChart width={400} height={800}>
               <Tooltip />
               <Pie
                 data={accountChartdata}

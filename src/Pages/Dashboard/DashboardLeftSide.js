@@ -58,13 +58,7 @@ const DashboardLeftSide = () => {
           "bg-color": "light-brown",
           "text-color": "brown",
         },
-        {
-          icon: FaRegHospital,
-          title: "Hospitals",
-          count: "632.000",
-          "bg-color": "light-green",
-          "text-color": "green",
-        },
+       
       ];
       let overviewMonths = [
         { value: "monthly", label: "Monthly" },
@@ -153,10 +147,12 @@ const DashboardLeftSide = () => {
         },
         {
           name: "Gender",
+          hide: 'sm',
           selector: (row) => <row.gender className="text-xl text-brown" />,
         },
         {
           name: "Active",
+          hide: 'sm',
           selector: (row) => (
             <div>
               {row.active ? (
@@ -175,8 +171,9 @@ const DashboardLeftSide = () => {
         },
         {
           name: "Actions",
+          hide: 'md',
           selector: (row) => (
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 ">
               <div className="bg-green w-8 h-8 rounded-full flex items-center justify-center text-white">
                 <FaCheck />
               </div>
@@ -237,7 +234,7 @@ const DashboardLeftSide = () => {
       ];
     return (
         <section className="2xl:w-7/12 w-11/12 mx-auto">
-          <div className="w-full flex flex-wrap items-center justify-between gap-5">
+          <div className="w-full flex flex-wrap items-center justify-center sm:justify-between gap-5">
             {cardsInfo.map((card, i) => (
               <div
                 key={i}
@@ -255,8 +252,8 @@ const DashboardLeftSide = () => {
               </div>
             ))}
           </div>
-          <div className="bg-white p-5 my-10 rounded-lg">
-            <div className="flex items-center justify-between">
+          <div className="bg-white sm:p-5 my-10 rounded-lg">
+            <div className="flex flex-col sm:flex-row  items-center justify-between">
               <p className="text-soft-black font-semibold">Patient Overview</p>
               <div className="flex items-center justify-between gap-5">
                 <div className="w-40">
@@ -308,7 +305,7 @@ const DashboardLeftSide = () => {
               responsive
               // selectableRows
               // selectableRowsHighlight
-              // expandableRows
+              expandableRows
               columns={columns}
               data={data}
               title="Doctors"

@@ -8,6 +8,7 @@ import {
   BiBell,
   BiCalendarStar,
   BiLogOut,
+  BiMenu
 } from "react-icons/bi";
 import {
   TbLayoutDashboard,
@@ -322,7 +323,8 @@ const DashboardMenus = () => {
     { id: 15, name: "Settings", icon: TbSettings, to: "/" },
   ];
   return (
-    <div className="bg-white w-66 h-screen p-5 overflow-scroll ">
+   
+      <div className="h-screen p-2 overflow-scroll">
       <Link to="/home" className="flex items-center justify-center my-5">
         <img className="w-10 lg:w-16 rounded-lg" src={logo} alt="" />
         <p className="text-green font-bold text-2xl">Medco</p>
@@ -385,7 +387,7 @@ const DashboardMenus = () => {
               <NavLink
                 to={menu.to}
                 className={({ isActive }) =>
-                  `block w-full  px-2 py-1 ${
+                  `block w-full  ${
                     isActive
                       ? "text-green bg-light-green rounded-md font-semibold shadow-md"
                       : "text-gray"
