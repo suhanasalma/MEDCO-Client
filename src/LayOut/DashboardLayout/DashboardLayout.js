@@ -4,7 +4,7 @@ import DashboardMenus from "./DashboardMenus";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex">
+    <div className="flex overflow-auto">
       <DashboardMenus />
       <div className="bg-soft-gray flex-1">
         <Outlet />

@@ -322,7 +322,7 @@ const DashboardMenus = () => {
     { id: 15, name: "Settings", icon: TbSettings, to: "/" },
   ];
   return (
-    <div className="bg-white w-66 h-screen p-5 overflow-scroll">
+    <div className="bg-white w-66 h-screen p-5 overflow-scroll ">
       <Link to="/home" className="flex items-center justify-center my-5">
         <img className="w-10 lg:w-16 rounded-lg" src={logo} alt="" />
         <p className="text-green font-bold text-2xl">Medco</p>
@@ -362,9 +362,8 @@ const DashboardMenus = () => {
                       className=" ml-7 mt-5"
                     >
                       {menu?.menus?.map((item, i) => (
-                        <p className="mt-2 hover:text-green hover:bg-light-green hover:rounded-md">
+                        <p key={i} className="mt-2 hover:text-green hover:bg-light-green hover:rounded-md">
                           <NavLink
-                            key={i}
                             to={item.to}
                             className={({ isActive }) =>
                               `block w-full  px-2 py-1 ${
